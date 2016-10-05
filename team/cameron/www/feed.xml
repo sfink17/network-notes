@@ -6,20 +6,9 @@
 </description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 05 Oct 2016 17:58:02 +0000</pubDate>
-    <lastBuildDate>Wed, 05 Oct 2016 17:58:02 +0000</lastBuildDate>
+    <pubDate>Wed, 05 Oct 2016 18:48:56 +0000</pubDate>
+    <lastBuildDate>Wed, 05 Oct 2016 18:48:56 +0000</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
-    
-      <item>
-        <title>Programming a simple FTP server</title>
-        <description>
-</description>
-        <pubDate>Wed, 05 Oct 2016 17:54:00 +0000</pubDate>
-        <link>/2016/10/05/ftp-server.html</link>
-        <guid isPermaLink="true">/2016/10/05/ftp-server.html</guid>
-        
-        
-      </item>
     
       <item>
         <title>Socket Programming in Python</title>
