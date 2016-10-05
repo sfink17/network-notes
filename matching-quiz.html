@@ -165,13 +165,10 @@ var viewModel = function() {
 
 
     var questions = [];
-    questions.push( { "state": "Iowa", "capital": "Des Moines" } );
-    questions.push( { "state": "Minnesota", "capital": "Saint Paul" } );
-    questions.push( { "state": "Wisconsin", "capital": "Madison" } );
-    questions.push( { "state": "Illinois", "capital": "Springfield" } );
-    questions.push( { "state": "Missouri", "capital": "Jefferson City" } );
-    questions.push( { "state": "Nebraska", "capital": "Lincoln" } );
-    questions.push( { "state": "South Dakota", "capital": "Pierre" } );
+    questions.push( { "delay": "processing delay", "define": "examine the packet’s header and determine where to direct the packet." } );
+    questions.push( { "delay": "queuing delay", "define": "as it waits to be transmitted onto the link." } );
+    questions.push( { "delay": "transmission delay", "define": "the amount of time required for the router to push out the packet." } );
+    questions.push( { "delay": "propagation delay", "define": "the time it takes a bit to go one router to the next." } );
 
     var scrambledQuestions = shuffle( questions );
 
