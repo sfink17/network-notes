@@ -7,10 +7,62 @@
 </head>
 <body>
     <h1>
-        Your Name
+        Tyler Langtimm
     </h1>
     <p>
-        Write a sentence or two to introduce yourself.
+        Hi! I'm Tyler. I enjoy Tennis, Game Design, and Esports. In particular, I enjoy competitive Super Smash Bros.
+        I look forward to meeting you all.
+        
+        Notes: October 4th 2016
+        Section 1.6: Networks Under Attack
+        
+        Malware: Data from the internet that infects hosts for malicious intent. Examples include spyware (collects private
+        information, to send back to the origin of the spyware for their use), or deleting files from the host.
+        
+        Once infected with malware, hosts may inadvertently be enrolled in a botnet.
+        Botnet: A network of hosts infected with malware, controlled by the malware distributor, to be used to further spread
+        malware through spam email, or to perform a DoS attack against some host they have a bone to pick with.
+        
+        Most malware is Self Replicating: Can spread itself from one host to another, growing at a potentially exponential
+        pace.
+        
+        Malware is spread in two ways, Viruses, and Worms.
+        Viruses: Malware that requires the host's user to interact with it in some way. The text uses a very simple email
+        spam example, where a user opens an attached document that runs malicious code of some sort, such as installing
+        spyware.
+        Worms: Malware that can enter a device without the host's user interaction. The text again provides an example.
+        If you were to run a network application that was vulnerable to the worm, the application could accept this
+        malware and install it without the user knowing it. Once in a host, worms scan other computers in the network, and
+        attack any other hosts that are running the same vulnerable application.
+        
+        DoS attacks: an attack that renders a host, network, or infrastructure unusable by legitimate users.
+        DoS attacks typically come in one of three flavors:Vulnerability Attacks, Bandwith Flooding, and Connection Flooding.
+        The only type that the text goes into are Bandwithd Flooding, which is typically performed via
+        DDoS attack. DDoS stands for Distributed Denial of Service attack. Essentially, the attackers uses 'slave' hosts
+        from a botnet to send traffic to the target, until it cant handle the stress of the increased traffic.
+        
+        Packet Sniffers are programs that 'sniff' packets being sent through a network. Wireshark, which we used in class
+        today, is a packet sniffer, for instance. People can place packet sniffers and attempt to aquire packets containing
+        users personal information. Packet sniffers are hard to detect, since they don't actually add anything to the network,
+        just read from it.
+        
+        IP Spoofing: Sending a packet with a fake source address. Basically, this would be like sending someone a letter with
+        an address from one of their friends, so that they are more likely to open it. Though in this case that letter would
+        containt malware. So for a real world example, if that letter contained nothing but exploding glitter. And then that
+        glitter burned your house down.
+        
+        
+        October 5th Lab Notes (helpful Linux network commands)
+        Ping (ping ip_or_host_name): Sends an echo request to the given host or ip, then returns with the response and round
+            trip time. IMPORTANT: To stop the ping, use Ctrl+C.
+        Trace Route (traceroute machine_name_or_ip): Shows the route a packet takes to the given destination, by giving a
+            series of hosts it travels through.
+        Trace Path (tracepath machine_name_or_ip): Same as Trace Route, except it doesn't take 'complicated' options, whatever
+            that means, I'm unsure.
+        IfConfig (ifconfig): Lists all information on all network devices currently up.
+        
+        
+        
     </p>
 </body>
 </html>
