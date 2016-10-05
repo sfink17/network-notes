@@ -29,9 +29,13 @@ body{
 			<li>Virii (Viruses): Malware that gets onto a system with some user interaction, usually via an email, phishing (social engineering), or by visiting a malicious site. Once inside a host system, it continues to replicate by phishing from the host (usually via email) or by making the host a slave.
 			<li>Trojan Horse Programs (not covered): Malware that is used to give backdoors into host systems so that the attacker, or even multiple attackers, can use the computer for credential theft, phishing, spam, and more. The way this type of malware works is similar to the original story of the Wooden Trojan Horse, as trojans disguise themselves as legitimate programs, or are implanted in seemingly harmless programs.</li></ol> 
 	<li style="color:red">Packet Sniffing</li> 
-		<ol> 
+		<ul> 
 			<li>Usually Done via a MITM (Man in the Middle Attack via arpspoofing, DNS hijacking, etc.), this involves the attacker running a packet sniffer (looking at you, wireshark!) in order to gain sensitive information about the victim(s). This could include passwords, file downloads, VoIP (Voice of IP calls), and more. Password stealing requires the attacker to be running an SSL stripper, which takes away the secure certificate of the site and enforces http over https (passwords can be seen in cleartext this way).</li> 
-		</ol> 
+		</ul> 
+	<li style="color:red">IP Spoofing</li> 
+		<ul> 
+			<li>This is done by manipulating the packets sent so that the source IP address (where the information from the packets is coming from, and where it's going to be sent to be received) is modified so that a different IP is used in place of the attackers IP. This could be done for a multitude of reasons, however the biggest ones can be to perform incomplete Syn-Ack DoS/DDoS attacks and to mask the attackers IP address.</li> 
+		</ul>
 	</ol>
 <h4 style="color:yellow; background-color: black">There are other ways attackers can compromise hosts (via various forms of exploitation, phishing, ransom-ware, spam, etc), but these will be covered later!</h4> 
 <br><br><br><br><br><br><br><br><br>
