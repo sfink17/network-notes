@@ -26,6 +26,7 @@
             </ul>
 		<h3><u>Class Notes</u></h3>
 		<h4>October 5th</h4>
+		<h5>Lecture</h5>
 			<ul>
 				<li>Packets: Different names in different layers</li>
 					<ul>
@@ -45,18 +46,58 @@
 					</ul>
 				<li>Reliable Transport--Finite State Machine</li>
 			</ul>
+		<h5>Lab</h5>
+			<ul>
+				<li>Linux commands for checking networks</li>
+					<ul>
+						<li>netstat: Displays the contents of /proc/net files.  The status of ports (open, closed, waiting, etc.).</li>
+						<li>tcpdump: captures packets off the network interface and interprets them (sniffer).  Can save packets for later inspection</li>
+						<li>ping: sends ech requests to the specified host on the command line.  List responses.</li>
+						<li>hostname: Tells user the host name of the computer</li>
+						<li>traceroute: Shows the route of a packet.  Lists the series of host that the packet passes though to the destination.</li>
+						<li>tracepath: same as traceroute, but won't take complicated options</li>
+						<li>findsmb: list info about machines that respond to SMB queries</li>
+						<li>nmap: queries machines as to whether they are up and what ports are open</li>
+						<li>ifconfig: lists all information on all network devices currently up</li>
+						<li>ifconfig eth0 down: takes eth0 down, and won't reciece or send till back up</li>
+						<li>ifup: brings any device back up.  ifup eth0 will bring eth0 if it is off</li>
+						<li>ifdown: brings down any device that is currently down</li>
+						<li>ifcfg: configures a particular interface</li>
+						<li>route: displys or modifies the routing table</li>
+						<li>netstat command: displays network connections, routing tables, interfaces and more.</li>
+						<li>ss -s: displays currently established, closed, orphaned and waiting TCP sockets.</li>
+						<li>netstat -s:  same as <i>ss -s</i></li>
+						<li>ss -l: displays all open network ports</li>
+						<li>netstat -tulpn: same as <i>ss -l</i></li>
+						<li>ss -t -a: displays all TCP sockets</li>
+						<li>netstat -nat:same as <i>ss -t -a</i></li>
+						<li>ss -u -a: displays all UDP sockets</li>
+						<li>netstat -nau: same as <i>ss -u -a</i></li>
+						<li>nslookup: queries DNS lookup name</li>
+						<li>telnet: communicate with another hostname</li>
+						<li>finger: view user information</li>
+						<li>ftp: File Transfer Protocol.  Standard network protocol to transfer computer files between a client and server</li>
+						<li>rsync: copies files across a network</li>
+						<li>scp: securly copies files and directories between remote hosts wihout starting an FTP session or logging into the remote system, uses SSH to transfer data</li>
+						<li>ssh: program for loggin into a remote machine and for executing commands on a remote machine.  Replaces rlogin and rsh</li>
+					</ul>
+			</ul>
 		<h4>October 6th</h4>
 			
         <h3><u>Definitions</u></h3>
             <ul>
-                <li>Communication link: connection that allows transfer of information between hosts and end systems</li>
+                <li>Communication link: connection that allows transfer of information between hosts and end systems.</li>
                 <li>Packet switches: groups all transmitted data into suitably sized blocks, called packets, which are then transmitted.</li>
-                <li>Transmission rate:  speed in bits/second that data is passed over a link</li>
-                <li>Packet: package of information sent over a link.  May be the whole set, or a part of the total data</li>
+                <li>Transmission rate:  speed in bits/second that data is passed over a link.</li>
+                <li>Packet: package of information sent over a link.  May be the whole set, or a part of the total data.</li>
                 <li>Link-layer switch:</li>
                 <li>Router switch:</li>
                 <li>Route/Path: sequence of communication links and packet switches that a packet goes from end system to end system.</li>
-                <li>Internet Service Provider: a network of packet switches and communication links.  Provide connection to end systems</li>
+                <li>Internet Service Provider: a network of packet switches and communication links.  Provide connection to end systems and content providers.</li>
+		<li>TCP/IP: Specifies the format of the packets that are sent and recieved among routers and end systems.</li>
+		<li>Distributed applications: Have multiple end systems that exhchange data with eachother.</li>
+		<li>Application Programming Interface (API): specifies how a program running on one end system ask the Internet infrastructure to deliver data to a specific destination program running on another end system.</li>
+		
             </ul>
 </body>
 </html>
