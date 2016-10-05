@@ -5,13 +5,22 @@
     Hello
 </title>
 </head>
-<body style='background-color: #DEFFDB;'>
+<body id='bod' style='background-color: #003200;'>
     <h1>
         Nigel Ticknor
     </h1>
     <p>
-        My favorite color is green, and I have been interested in Computer Science since I was 3 years old.<br>
-		I have enjoyed writing TCP connections in the past.
+        Hello,<br>My name is Nigel, and I am a 2nd year Computer Science major.<br>I can't connect you to the WiFi right now, but you can come in to Law Hall room 312 between 8AM and 4PM or visit <a href='https://getconnected.cornellcollege.edu/'>this link</a> and attempt it on your own.
     </p>
 </body>
+<script language='javascript'>
+    var gv = 50,i=1;
+    setInterval(function()
+    {
+        document.getElementById('bod').style.backgroundColor = 'rgb(0,'+gv+',0)';
+        gv+=i;
+        if(gv==255||gv==50)i*=-1;
+        
+    }, 75);
+</script>
 </html>
