@@ -15,7 +15,7 @@
         Double major in biology and computer, already graduated with a bachlor in biology so I've pristeged back to a freshman. <br/>
         Dank memes and crippling depression. 
     </p>
-    <h2><strong>NOTES:</strong></h2>
+    <h2>NOTES:</h2>
         <h3><u>Hierarchy of Abstractions</u></h3>
             <ul>
                 <li>Application: Message</li>
@@ -25,6 +25,13 @@
                 <li>Physical</li>
             </ul>
 		<h3><u>Class Notes</u></h3>
+		<h4>October 3rd</h4>
+			<ul>
+				<li>end to end delay in a store and foreward transmission system:</li>
+					<ul>
+						<li>d<sub>end-to-end</sub>=N(L/R)</li>
+					</ul>
+			</ul>
 		<h4>October 5th</h4>
 		<h5>Lecture</h5>
 			<ul>
@@ -42,7 +49,7 @@
 					</ul>
 				<li>Routing (Describe and classify algorithms)</li>
 					<ul>
-						<li>Diykstra's Shortest path algorithm</li>
+						<li>Dijkstra's Shortest path algorithm -- finds shortest distance between nodes, picks starting node, and checks distance between all adjacent nodes.</li>
 					</ul>
 				<li>Reliable Transport--Finite State Machine</li>
 			</ul>
@@ -97,7 +104,22 @@
 		<li>TCP/IP: Specifies the format of the packets that are sent and recieved among routers and end systems.</li>
 		<li>Distributed applications: Have multiple end systems that exhchange data with eachother.</li>
 		<li>Application Programming Interface (API): specifies how a program running on one end system ask the Internet infrastructure to deliver data to a specific destination program running on another end system.</li>
-		
+		<li>Protocol: Defines the format and the order of messages echanged between two or more communicating entities.  Also the actions taken on the transmission or receipt of a message/event.</li>
+		<li>Client: Host/end system that is usually a desktop, mobile PC or other smaller computer system.</li>
+		<li>Server: Host/end system that is usually a more powerful machine that stores and distributes webpages, streams videos, emails, ect.</li>
+		<li>Physical medium: Allows a bit to be sent by propagating electro magnetic waves or optical pulses.  Examples include twisted-pair copper wire, coaxial cable, multimode fiber-optic cable, terrestrial radio spectrom, and satellite radio spectrum.</li>
+		<li>Guided media: Type of physical medium, waves are guided along a solid medium.</li>
+		<li>Unguided media: Type of physical medium, waves propagate in the air or outer space.</li>
+		<li>Geostationary satellites: Permanently remain above the same spot on Earth.  High orbit, which means longer delay.</li>
+		<li>Low-earth orbiting satellites: Much closer to Earth and are not stationary.  Less delay, but requires more of them.  Can communicate between eachother.</li>
+		<li>Store-and-foreward transmission: Type of packet switch, must recieve the whole package, before it can start to sent the first bits of hte packet onto the outbound link.</li>
+		<li>Output buffer/output queue: Stores packets that the router is about to send to a link.  In a store-and-foreward system.</li>
+		<li>Packet loss: If the output buffer is full an incoming packet may be dropped.</li>
+		<li>Forwarding table: Maps destinations addresses to the outbound links of the router</li>
+		<li>Circuit switching:  Resources needed along a path for communication between end systems are reserved for the duration of hte communication.  Wasteful due to silent periods when dedicated circuts are silent.</li>
+		<li>Packet Switching: Resources are not reserved, and a session's messages use the resources on demand.  As such messages/packets may have to wait for access to a link or other resources.</li>
+		<li>Frequency-division multiplexing: (FDM) Frequency spectrum of a link is divided up among the connections established across the link.</li>
+		<li>Time-division multiplexing: (TDM) Time is divided into frames of fixed duration and each frame is divided into a fixed number of time slots.  Network dedicates one time slot in every frame to the connection.  Dedicated to the sole use of that connection.</li>
             </ul>
 </body>
 </html>
