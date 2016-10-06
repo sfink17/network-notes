@@ -63,7 +63,7 @@
         <p>Here’s an example of a simple server in Python that prints what it recieves, 
 and sends back the same data uppercased.</p>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">socketserver</span>
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">SocketServer</span> <span class="kn">as</span> <span class="nn">socketserver</span>
     
 <span class="k">class</span> <span class="nc">MyTCPHandler</span><span class="p">(</span><span class="n">socketserver</span><span class="o">.</span><span class="n">StreamRequestHandler</span><span class="p">):</span>
     <span class="s">"""
@@ -99,8 +99,8 @@ and sends back the same data uppercased.</p>
 </code></pre>
 </div>
 
-<p>This is written for Python 3, there are some small incompatibilities that 
-prevent it from running on Python 2.</p>
+<p>This is written for Python 2, there is a tiny modification you can make to run 
+on Python 3.</p>
 
 <p>Also, it uses the <code class="highlighter-rouge">ForkingMixIn</code>, which creates a new process for each request,
 for greater availability.</p>
