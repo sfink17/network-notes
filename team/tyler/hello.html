@@ -66,7 +66,20 @@
         hostname (hostname): Tells you the hostname of the computer thats being used.
         
         October 5th Textbook Notes
-        <u>
+        <u>Transport Services Provided by the Internet</u>
+        When you create a new network application for the internet, you have to choose between using TCP and UDP for a transport protocol.
+        TCP
+            TCP Provides two main services:
+            Connection Oriented Service:Client and server exchange  transport control information before they begin exchanging messages.
+                This is called the 'handshaking procedure'. After the 'handshake', a "TCP Connection" exists. Once the connection exists,
+                the two processes can send messages to each other at the same time. After they finish, the connection must be 'torn down'.
+            Reliable Data Transfer service:
+            All data will be sent without error and in the proper order. No missing or duplicate bytes.
+        UDP
+            Connectionless
+            Not reliable. Messages may arrive out of order or not at all.
+            Less 'frilly'. Very lightweight transfer protocol.
+            
         
     </p>
 </body>
