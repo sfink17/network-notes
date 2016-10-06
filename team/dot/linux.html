@@ -25,14 +25,14 @@
 </head>
 <body>
     <h1>
-        How to Use a Linux Terminal
+        Linux Terminal Basics
     </h1>
     <h3>Open the terminal</h3>
-    <ol>
+    <ul>
         <li>Click the "Teminal" icon (grey box filled with black with an arrow and underscore inside) in the sidebar</li>
 	<li>Search the computer for "Terminal"</li>
 	<li>Keyboard shortcut: Ctrl+Alt+T</li>
-    </ol>
+    </ul>
     <h3>Basic Information</h3>
     <ul>
         <li>Press the up arrow on the keyboard to see the previously entered command</li>
@@ -42,12 +42,12 @@
 	<li>Press Tab to autocomplete a file or directory name. If more than one name is possible from the characters entered, it will complete as much as possible without knowing which you wish to select. (Ex: 'tyler a' vs 'tyler b', pressing Tab after entering 't' will give you 'tyler ')</li>
 	<li>Copy: Ctrl-Shift-C</li>
 	<li>Paste: Ctrl-Shift-V</li>
-	<li>? can be used to replace any one character</li>
-	<li>* can be used to replace any number of characters, including zero</li>
+	<li><span class="code">?</span> can be used to replace any one character</li>
+	<li><span class="code">*</span> can be used to replace any number of characters, including zero</li>
 	<li><span class="code">man [command]</span> will provide a manual for that command and its uses, though not all commands have a manual</li>
 	<li>All commands are case-sensitive</li>
-	<li>File names are displayed in white</li>
-	<li>Directory names are displayed in blue</li>
+	<li>File names are displayed in <span style="color:white">white</span></li>
+	<li>Directory names are displayed in <span style="color:cornflowerblue">blue</span></li>
     </ul>
     <h3>Common Commands</h3>
     <ul>
@@ -129,7 +129,17 @@
 	</ul>
 	<li><span class="code">more</span> and <span class="code">less</span></li>
 	<ul>
-	    <li><span class="code">[command] | more
+	    <li>Shows results of a command which has a long result in a more readable way</li>
+	    <li><span class="code">[command] | more</span> shows results one page at a time</li>
+	    <li>Cycle through pages by pressing Space</li>
+	    <li><span class="code">[command] | less</span> shows the first page of results and allows scrolling</li>
+	    <li>Scroll through pages with the up and down arrow keys</li>
+	    <li>Exit both less and more by pressing <span class="code">q</span></li>
+	</ul>
+	<li class="code">wc</li>
+	<ul>
+	    <li>Gives the wordcount of a file</li>
+	    <li class="code">wc [file]</li>
 	</ul>
     </ul>
 </body>
