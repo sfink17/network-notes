@@ -6,7 +6,10 @@ CSC-317 Notes
 </title>
 </head>
 <body>
-	<h1>8.2.2 Notes</h1>
+<button onclick = "oc(822)">8.2.2 Notes</button>
+<button onclick = "oc(823)">8.2.3 Notes</button>
+<div id = "822" style = "display:none">
+    <h1>8.2.2 Notes</h1>
 	<ul>
 		<li>1961 to 1972</li>
 			<ul>
@@ -61,6 +64,104 @@ CSC-317 Notes
 			</ul>
 		</ul>
 	</ul>
+<hr style="height:3px;border:none;color:#333;background-color:#333;">
+</div>
+
+
+<div id = "823" style  ="display:none">
+	<h1>8.2.3 Notes</h1>
+		<ul>
+			<li><h2>P2P(Peer To Peer)</h2></li>
+			<li>future challenges:
+			<ul>
+				<li>ISP Friendly: If switching from downstream to upstream will change from server to redsidential ISP, so there will be significant pressure on ISPs.</li>
+				<li>Security: because P2P is so open and highly distributed, so securing it will be difficult.</li>
+				<li>Incentives: volunteers supply the bandwidth, storyage, and computation resources to application, so their might be a challenge in incentive design.</li>
+			</ul>
+
+
+			<li><h2>process</h2></li>
+			<ul>
+				<li>can be thought of as a program that is running within an end system.</li>
+			</ul>
+
+
+			<li><h2>client and server</h2></li>
+			<ul>
+				<li>browser is a client process.</li>
+				<li>Web server is a server process.</li>
+			</ul>
+
+
+			<li><h2>socket</h2></li>
+			<ul>
+				<li>When a process wants to send a message to antoher process on another host, it shoves the message out its socket.</li>
+			</ul>
+
+
+			<li><h2>IP address</h2></li>
+			<ul>
+				<li>the host identified</li>
+			</ul>
+
+
+			<li><h2>Services along four dimensions:</h2></li>
+			<ul>
+
+
+			<li><h3>Reliable Data Transfer</h3></li>
+			<ul>
+				<li>a transport-layer protocol can potentially provide to an application is process-to-process reliable data transfer.  However, there is a loss-tolerant applications that may not arrive but that is acceptable.</li>
+			</ul>
+
+
+			<li><h2>Throughput</h2></li>
+			<ul>
+				<li>rate at which the sending process can deliver bits to the receiving process.</li>
+			</ul>
+
+
+			<li><h2>Timing</h2></li>
+			<ul>
+				<li>a transport-layer protocol can guarantee that time contraints on data delivery will be achieved.</li>
+			</ul>
+
+
+			<li><h2>Security</h2></li>
+			<ul>
+				<li>A transport protocol can provide an application with one or more security services.</li>
+			</ul>
+
+			</ul>
+		</ul>
+<hr style="height:3px;border:none;color:#333;background-color:#333;">
+		
+</div>
+
+
+<!--
+			<li>
+
+
+			<li><h2></h2></li>
+			<ul>
+				<li></li>
+			</ul>
+
+-->
+
+
 <!-- All of this information is from Computer Networking: Top-Down Approach (w/Access Code) Edition: 6th and other sources -->
+<!-- style="height:3px;border:none;color:#333;background-color:#333;" was taken from http://stackoverflow.com/questions/4151743/how-i-change-the-thickness-of-my-hr-tag  and I take no credit!
+-->
+<script>
+function oc(id){
+	if(document.getElementById(id).style.display == "none"){
+		document.getElementById(id).style.display = "block";
+	} else {
+		document.getElementById(id).style.display = "none";
+	}
+}
+</script>
 </body>
 </html>
