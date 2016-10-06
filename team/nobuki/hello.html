@@ -19,10 +19,6 @@
         <li>self-replicating: once it infects one host, from that host it seeks entry into other hosts over the Internet</li>
         <li>Viruses: malware that require some form of user interaction to infect the user’s device</li>
         <li>Worms are malware that can enter a device without any explicit user interaction</li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
         
         <li>DoS attacks, or Denial-of-Service attacks do exactly what the name implies. It renders a network, host, or other piece
 of infrastructure unusable by legitimate users</li>
@@ -46,10 +42,24 @@ of infrastructure unusable by legitimate users</li>
             <li>the best defense is cryptography</li>  
         </ul> 
         <li>IP spoofing: giving a false source to hide the attacker as another user</li>
-        
-        
-        
-    
+    </ul>
+    <h1>Network Applications</h1>
+    <ul>
+        <li>It is important to write programs that run on different types of end systems.</li>
+        <li>When writing the code, it should be written in a way that can be run on multiple end systems (written in java, C, or python)</li>
+        <li>You don't need to write code that runs in network core devices like routers, or linked layer switches, because you can't</li>
+        <li>Application Architecture</li>
+        <ul>
+            <li>Client-Server Architecture: there is an always-oh host called a server. that server services requests from many other hosts called clients</li>
+            <li>two clients don't directly communicate with each other</li>
+            <li>the server has an IP address</li>
+            <li>Client can always contact the server by sending packets to the IP address</li>
+            <li>Data Center: a large virtual server housing a large number of hosts. It is used if only one server is handling all the requests and it is being overwhelmed.</li>
+            <li>Peer-to-peer or P2P doesnt rely on dedicated servers</li>
+            <li>p2p connects hosts directly called peers</li>
+            <li>peers are personal devices</li>
+            <li>self scalability: peers create the workload, but also take the workload.</li>
+        </ul>
     </ul>
 </body>
 </html>
