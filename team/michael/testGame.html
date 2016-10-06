@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+h1 {color:red;}
+p {color:blue;}
+</style>
+<title>
+    Hello
+</title>
+</head>
+<body style="background-color:powderblue;">
+    <h1>
+        Michael
+    </h1>
+  
+<canvas id="myCanvas" width="720" height="480" style="border:1px solid #000000;">
+<script>
+var canvas = document.querySelector('myCanvas');
+var ctx = canvas.getContext('2d');
+var W = canvas.width = window.innerWidth;
+var H = canvas.height = window.innerHeight;
+ 
+// Velocity x
+var vx = 0;
+// Velocity y
+var vy = (Math.random() * -10) - 5;
+
+var gravity = 0.5; // Just a random value
+
+function Ball() {
+    this.radius = 50;
+    this.x = canvas.width / 2;
+    this.y = canvas.height - this.radius - 20;
+ 
+    this.draw = function(ctx) {
+        ctx.fillStyle = 'black';
+        ctx.beginPath();
+ 
+        ctx.arc(
+            this.x,
+            this.y,
+            this.radius,
+            0,
+            Math.PI*2,
+            false
+        );
+ 
+        ctx.closePath();
+        ctx.fill();
+    }
+}
+ 
+var ball = new Ball();
+
+(function renderFrame() {
+    requestAnimationFrame(renderFrame);
+    ctx.clearRect(0, 0, W, H);
+ 
+    ball.x += vx;
+    ball.y += vy;
+ vy += gravity; // adding gravity to velocity 
+    ball.draw(ctx);
+}());
+
+</script>
+</canvas> 
+</body>
+</html>
+ 
+
