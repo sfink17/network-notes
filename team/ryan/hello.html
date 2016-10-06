@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
+<body style="background-color:#E51616;">
+<text style="color:#00EADC;">
 <title>
-    Will the real Ryan Conrardy please stand up?
+    Run The Conrardy
 </title>
 </head>
 <body>
     <h1>
         Ryan Conrardy
     </h1>
+    <img src="http://www.windishagency.com/assets/21767/f40a1fae.jpg" alt="Run The Jewels">
     <p>
         From outside Chicago, Illinois. <br/>
         Biggest G in the computer Science program.  <br/>
@@ -108,6 +111,7 @@
 			</ul>
 		<h5>Lab</h5>
 			<ul>
+				<!--...-->
 			</ul>
 		<h4>October 7th</h4>
 			
@@ -120,7 +124,7 @@
                 <li>Link-layer switch:</li>
                 <li>Router switch:</li>
                 <li>Route/Path: sequence of communication links and packet switches that a packet goes from end system to end system.</li>
-                <li>Internet Service Provider: a network of packet switches and communication links.  Provide connection to end systems and content providers.</li>
+                <li>Internet Service Provider (ISP): a network of packet switches and communication links.  Provide connection to end systems and content providers.</li>
 		<li>TCP/IP: Specifies the format of the packets that are sent and recieved among routers and end systems.</li>
 		<li>Distributed applications: Have multiple end systems that exhchange data with eachother.</li>
 		<li>Application Programming Interface (API): specifies how a program running on one end system ask the Internet infrastructure to deliver data to a specific destination program running on another end system.</li>
@@ -140,6 +144,19 @@
 		<li>Packet Switching: Resources are not reserved, and a session's messages use the resources on demand.  As such messages/packets may have to wait for access to a link or other resources.</li>
 		<li>Frequency-division multiplexing: (FDM) Frequency spectrum of a link is divided up among the connections established across the link.</li>
 		<li>Time-division multiplexing: (TDM) Time is divided into frames of fixed duration and each frame is divided into a fixed number of time slots.  Network dedicates one time slot in every frame to the connection.  Dedicated to the sole use of that connection.</li>
+		<li>Customer:  Access ISP.</li>
+		<li>Provider: Global transit ISP.  Network of routers and communication links that spans the globe, and has at least one router near the access ISP.</li>
+		<li>Regional ISP: An ISP in a region that all access ISPs in that region connect.</li>
+		<li>teir-1 ISP: large ISP network, similar to global ISP concept, but not as large.  Regional ISPs and come access ISPs connect to teir-1 ISPs.</li>
+		<li>Points of Presence (PoPs): Group of one or more routers, in the same location, that allow customer ISPs in a provider's network to connect to ther provider ISPs.</li>
+		<li>Multi-home: When an ISP connects to two or more provider ISPs.</li>
+		<li>Peer (connection): ISPs at the same level of heirarchy connect their networks together directly, so that the traffic between them passes via direct communicaion rather than over upstream intermediaries</li>
+		<li>Internet Exchange Point (ISP): Meeting point where multiple ISPs can peer together.</li>
+		<li>Nodal processing delay: Time required to examine the packet's header to determine where to direct the packet.  Also time to check for bit-level errors.</li>
+		<li>Queuing delay: The delay that a packet experience when it waits to be transmitted onto the link/node.  Depends on the number of earlier arrived packets.<li>
+		<li>Transimission delay: Packets can only be transmitted after all the packets that arrived before it have been transmitted.  Transimission delay is the length of the packet in bits (L) and the transmission rate from router to router in bits/second (R), this it is expressed as L/R. Or the amout of time required to transmit all of the packet's bits into the link.</li>
+		<li>Propagation delay: Time required to propagate from the beginning of the link to the end router.</li>
+		<li>Traffic intensity: With a = averate rate of packet arrival in queue, R = transmission rate, L = length of bits of packets (all), then traffic intensity is equal to (La)/R.  If traffic intensity > 1 averate rate of bit arrival exceeds rate of transmission.  If traffic intensity <= 1 there is no queing delay as all packets are transmitted before arrival of the next.</li>
             </ul>
 </body>
 </html>
