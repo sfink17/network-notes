@@ -2,7 +2,7 @@
 <html>
 <head>
 <title>
-    10/5/2016
+    Hello
 </title>
 <style>
     body {
@@ -16,23 +16,20 @@
 	color: lavender;
     }
     p {
-	color: lightgreen;
+	color: lightblue;
     }
     h1 {
-        color: darkorchid;
+        color: white;
+    }
+    h2 {
+        color: yellow;
     }
     li {
-	color: lightblue;
+	color: pink;
     }
 </style>
 </head>
 <body>
-    <h1>
-        Notes for October 5th
-    </h1>
-    <ul>
-      <li>Notes, eventually</li>
-    </ul>
-<a href="./hello.html">Home</a>
+
 </body>
 </html>
