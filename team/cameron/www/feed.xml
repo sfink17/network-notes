@@ -6,8 +6,8 @@
 </description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 05 Oct 2016 18:48:56 +0000</pubDate>
-    <lastBuildDate>Wed, 05 Oct 2016 18:48:56 +0000</lastBuildDate>
+    <pubDate>Wed, 05 Oct 2016 19:46:05 +0000</pubDate>
+    <lastBuildDate>Wed, 05 Oct 2016 19:46:05 +0000</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
@@ -51,8 +51,8 @@ and sends back the same data uppercased.&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;p&gt;Note that this uses utilities supplied by Python 3, the &lt;code class=&quot;highlighter-rouge&quot;&gt;socketserver&lt;/code&gt; package,
-which did not exist in Python 2.&lt;/p&gt;
+&lt;p&gt;This is written for Python 3, there are some small incompatibilities that 
+prevent it from running on Python 2.&lt;/p&gt;
 
 &lt;p&gt;Also, it uses the &lt;code class=&quot;highlighter-rouge&quot;&gt;ForkingMixIn&lt;/code&gt;, which creates a new process for each request,
 for greater availability.&lt;/p&gt;

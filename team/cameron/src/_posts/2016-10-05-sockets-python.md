@@ -43,8 +43,8 @@ if __name__ == "__main__":
     server.serve_forever()
 ```
 
-Note that this uses utilities supplied by Python 3, the `socketserver` package,
-which did not exist in Python 2.
+This is written for Python 3, there are some small incompatibilities that 
+prevent it from running on Python 2.
 
 Also, it uses the `ForkingMixIn`, which creates a new process for each request,
 for greater availability.

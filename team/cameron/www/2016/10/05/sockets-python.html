@@ -99,8 +99,8 @@ and sends back the same data uppercased.</p>
 </code></pre>
 </div>
 
-<p>Note that this uses utilities supplied by Python 3, the <code class="highlighter-rouge">socketserver</code> package,
-which did not exist in Python 2.</p>
+<p>This is written for Python 3, there are some small incompatibilities that 
+prevent it from running on Python 2.</p>
 
 <p>Also, it uses the <code class="highlighter-rouge">ForkingMixIn</code>, which creates a new process for each request,
 for greater availability.</p>
