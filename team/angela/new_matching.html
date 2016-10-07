@@ -9,13 +9,8 @@ Matching Quiz
 </script>
 <style>
 
-body{
-
-background:#ffff99;
-
-}
 .matched {
-    background: #80ff80;
+    background: #FF8888;
 }
 
 .unmatched {
@@ -26,20 +21,19 @@ background:#ffff99;
 </head>
 <body>
 
-<h1 style = "text-align:center;margin-bottom:30px">Matching Quiz</h1>
+<h1>Matching Quiz</h1>
 
-
-<table align="center">
+<table>
 
 <tr>
-<th>delay</th>
-<th>Definition</th>
+<th>year</th>
+<th>person City</th>
 
 <tbody data-bind="foreach: rows()">
 <tr data-bind="css: matchStatus">
-<td data-bind="click: leftResponder, text: leftList.delay">
+<td data-bind="click: leftResponder, text: leftList.year">
 </td>
-<td data-bind="click: rightResponder, text: rightList().definition">
+<td data-bind="click: rightResponder, text: rightList().person">
 </td>
 </tbody>
 
@@ -49,9 +43,6 @@ background:#ffff99;
 </tr>
 
 </table>
-<div style = "text-align:center">
-	<img style="margin-top:30px;margin-bottom:30px;text-align:center" src="http://static1.squarespace.com/static/5687ae051c1210feadfd7fa4/5688af4c40667a3869192f29/579c92d8725e2570d04ec497/1469879045973/PrecisionFitness_YouCanDoIt_Success_Baby2.jpg?format=1000w" alt="Encouraging Image">
-</div>
 
 <script>
 var viewModel = function() {
@@ -130,7 +121,7 @@ var viewModel = function() {
             return function() {
 
                 if( prevRow >= 0 && prevCol >= 0 ) {
-                    if( that.rows()[prevRow]().leftList.delay === that.rows()[row]().rightList().delay ) {
+                    if( that.rows()[prevRow]().leftList.year === that.rows()[row]().rightList().year ) {
                         var temp = that.rows()[prevRow]().rightList();
                         that.rows()[prevRow]().rightList( that.rows()[row]().rightList() );
                         that.rows()[row]().rightList( temp );
@@ -153,7 +144,7 @@ var viewModel = function() {
                 nextTuple.rightResponder = responder( index, 1 );
 
                 nextTuple.matchStatus = ko.pureComputed( function() {
-                    if( nextTuple.leftList.delay === nextTuple.rightList().delay ) {
+                    if( nextTuple.leftList.year === nextTuple.rightList().year ) {
                         return "matched";
                     } // if
                     else {
@@ -174,10 +165,11 @@ var viewModel = function() {
 
 
     var questions = [];
-    questions.push( { "delay": "transmission", "definition": "amount of time required for the router to push out the packet." } );
-    questions.push( { "delay": "propagation", "definition": "the time it takes a bit to go from one router to the next." } );
-    questions.push( { "delay": "processing", "definition": "The time required to examine the packet’s header and determine where to direct the packet." } );
-    questions.push( { "delay": "queuing", "definition": "as it waits to be transmitted onto the link" } );
+    questions.push( { "year": "1961-1972", "person": "Leonard Kleinrock" } );
+    questions.push( { "year": "1972-1980", "person": "Norman Abramson" } );
+    questions.push( { "year": "1980-1990", "person": "Minitel project" } );
+    questions.push( { "year": "1990's", "person": "Tim Berners-Lee" } );
+    
 
     var scrambledQuestions = shuffle( questions );
 
@@ -198,4 +190,3 @@ ko.applyBindings( vm );
 
 </body
 </html>
-

@@ -8,38 +8,54 @@ Matching Quiz
 <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.0/knockout-min.js">
 </script>
 <style>
-
-body{
-
-background:#ffff99;
-
+body {
+	background-color: black;
+	background-image: url("images/stars.gif");
 }
+    a:link {
+	color: deepskyblue;
+    }
+    a:visited {
+	color: lavender;
+    }
+
 .matched {
-    background: #80ff80;
+    background: lightblue;
+    color: green;
+}
+h1 {
+    color: turquoise;
+}
+p {
+    color: seagreen;
+}
+th {
+    color: aqua;
 }
 
 .unmatched {
-    background: #8888FF;
+    background: pink;
+    color: red;
 }
 
 </style>
 </head>
 <body>
 
-<h1 style = "text-align:center;margin-bottom:30px">Matching Quiz</h1>
+  <h1>Matching Quiz</h1>
+  <p>Do you know your classmates' names?</p>
 
-
-<table align="center">
+<table>
 
 <tr>
-<th>delay</th>
-<th>Definition</th>
+<th>First Name</th>
+<th>Last Name</th>
 
 <tbody data-bind="foreach: rows()">
 <tr data-bind="css: matchStatus">
-<td data-bind="click: leftResponder, text: leftList.delay">
+<td data-bind="click: leftResponder, text: leftList.firstName">
 </td>
-<td data-bind="click: rightResponder, text: rightList().definition">
+<td data-bind="click: rightResponder, text: rightList().lastName">
 </td>
 </tbody>
 
@@ -49,15 +65,12 @@ background:#ffff99;
 </tr>
 
 </table>
-<div style = "text-align:center">
-	<img style="margin-top:30px;margin-bottom:30px;text-align:center" src="http://static1.squarespace.com/static/5687ae051c1210feadfd7fa4/5688af4c40667a3869192f29/579c92d8725e2570d04ec497/1469879045973/PrecisionFitness_YouCanDoIt_Success_Baby2.jpg?format=1000w" alt="Encouraging Image">
-</div>
+<a href="./hello.html">Home</a>
 
 <script>
 var viewModel = function() {
 
     var that = {};
-
 
     /* shuffle (scramble) the elements of an array */
     var shuffle = function( list ) {
@@ -130,7 +143,7 @@ var viewModel = function() {
             return function() {
 
                 if( prevRow >= 0 && prevCol >= 0 ) {
-                    if( that.rows()[prevRow]().leftList.delay === that.rows()[row]().rightList().delay ) {
+                    if( that.rows()[prevRow]().leftList.firstName === that.rows()[row]().rightList().firstName ) {
                         var temp = that.rows()[prevRow]().rightList();
                         that.rows()[prevRow]().rightList( that.rows()[row]().rightList() );
                         that.rows()[row]().rightList( temp );
@@ -153,7 +166,7 @@ var viewModel = function() {
                 nextTuple.rightResponder = responder( index, 1 );
 
                 nextTuple.matchStatus = ko.pureComputed( function() {
-                    if( nextTuple.leftList.delay === nextTuple.rightList().delay ) {
+                    if( nextTuple.leftList.firstName === nextTuple.rightList().firstName ) {
                         return "matched";
                     } // if
                     else {
@@ -174,10 +187,22 @@ var viewModel = function() {
 
 
     var questions = [];
-    questions.push( { "delay": "transmission", "definition": "amount of time required for the router to push out the packet." } );
-    questions.push( { "delay": "propagation", "definition": "the time it takes a bit to go from one router to the next." } );
-    questions.push( { "delay": "processing", "definition": "The time required to examine the packet’s header and determine where to direct the packet." } );
-    questions.push( { "delay": "queuing", "definition": "as it waits to be transmitted onto the link" } );
+    questions.push( { "firstName": "Dot", "lastName": "Carmichael" } );
+    questions.push( { "firstName": "Nobuki", "lastName": "Harata" } );
+    questions.push( { "firstName": "Nam", "lastName": "Phan" } );
+    questions.push( { "firstName": "Simon", "lastName": "Fink" } );
+    questions.push( { "firstName": "Nigel", "lastName": "Ticknor" } );
+    questions.push( { "firstName": "Michael", "lastName": "Paquette" } );
+    questions.push( { "firstName": "Angela", "lastName": "Aley" } );
+    questions.push( { "firstName": "Tyler", "lastName": "Langtimm" } );
+    questions.push( { "firstName": "Jeremy", "lastName": "Novak" } );
+    questions.push( { "firstName": "Akash", "lastName": "Surti" } );
+    questions.push( { "firstName": "Ryan", "lastName": "Conrardy" } );
+    questions.push( { "firstName": "Paul", "lastName": "DeMange" } );
+    questions.push( { "firstName": "Joe", "lastName": "Sterchele" } );
+    questions.push( { "firstName": "Salem", "lastName": "Ozaki" } );
+    questions.push( { "firstName": "Henry", "lastName": "Weeks" } );
+    questions.push( { "firstName": "Kyle", "lastName": "Drum" } );
 
     var scrambledQuestions = shuffle( questions );
 
@@ -195,7 +220,6 @@ var vm = viewModel();
 ko.applyBindings( vm );
 
 </script>
-
+<!-- u:normertweiner p:iylsycpbii -->
 </body
 </html>
-

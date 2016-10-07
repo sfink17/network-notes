@@ -10,11 +10,12 @@
         Tyler Langtimm
     </h1>
     <p>
+        <u>October 3rd, Introduction</u>
         Hi! I'm Tyler. I enjoy Tennis, Game Design, and Esports. In particular, I enjoy competitive Super Smash Bros.
         I look forward to meeting you all.
         
         Notes: October 4th 2016
-        Section 1.6: Networks Under Attack
+        <u>Section1.6: Networks Under Attack</u>
         
         Malware: Data from the internet that infects hosts for malicious intent. Examples include spyware (collects private
         information, to send back to the origin of the spyware for their use), or deleting files from the host.
@@ -52,7 +53,7 @@
         glitter burned your house down.
         
         
-        October 5th Lab Notes (helpful Linux network commands)
+        <u>October 5th Lab Notes (helpful Linux network commands)</u>
         Ping (ping ip_or_host_name): Sends an echo request to the given host or ip, then returns with the response and round
             trip time. IMPORTANT: To stop the ping, use Ctrl+C.
         Trace Route (traceroute machine_name_or_ip): Shows the route a packet takes to the given destination, by giving a
@@ -60,8 +61,25 @@
         Trace Path (tracepath machine_name_or_ip): Same as Trace Route, except it doesn't take 'complicated' options, whatever
             that means, I'm unsure.
         IfConfig (ifconfig): Lists all information on all network devices currently up.
+        ifup (ifup devicename): Brings the chosen device up if currently down.
+        ifdown (ifdown devicename): Brings the chosen device down if currently up.
+        hostname (hostname): Tells you the hostname of the computer thats being used.
         
-        
+        October 5th Textbook Notes
+        <u>Transport Services Provided by the Internet</u>
+        When you create a new network application for the internet, you have to choose between using TCP and UDP for a transport protocol.
+        TCP
+            TCP Provides two main services:
+            Connection Oriented Service:Client and server exchange  transport control information before they begin exchanging messages.
+                This is called the 'handshaking procedure'. After the 'handshake', a "TCP Connection" exists. Once the connection exists,
+                the two processes can send messages to each other at the same time. After they finish, the connection must be 'torn down'.
+            Reliable Data Transfer service:
+            All data will be sent without error and in the proper order. No missing or duplicate bytes.
+        UDP
+            Connectionless
+            Not reliable. Messages may arrive out of order or not at all.
+            Less 'frilly'. Very lightweight transfer protocol.
+            
         
     </p>
 </body>
