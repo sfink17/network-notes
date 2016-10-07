@@ -1,21 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
+<body style="background-color:#E51616;">
+<text style="color:#00EADC;">
 <title>
-    Will the real Ryan Conrardy please stand up?
+    Run The Conrardy
 </title>
 </head>
 <body>
     <h1>
         Ryan Conrardy
     </h1>
+    <img src="http://www.windishagency.com/assets/21767/f40a1fae.jpg" alt="Run The Jewels">
     <p>
         From outside Chicago, Illinois. <br/>
         Biggest G in the computer Science program.  <br/>
         Double major in biology and computer, already graduated with a bachlor in biology so I've pristeged back to a freshman. <br/>
         Dank memes and crippling depression. 
     </p>
-    <h2><strong>NOTES:</strong></h2>
+    <h2>NOTES:</h2>
         <h3><u>Hierarchy of Abstractions</u></h3>
             <ul>
                 <li>Application: Message</li>
@@ -25,7 +28,15 @@
                 <li>Physical</li>
             </ul>
 		<h3><u>Class Notes</u></h3>
+		<h4>October 3rd</h4>
+			<ul>
+				<li>end to end delay in a store and foreward transmission system:</li>
+					<ul>
+						<li>d<sub>end-to-end</sub>=N(L/R)</li>
+					</ul>
+			</ul>
 		<h4>October 5th</h4>
+		<h5>Lecture</h5>
 			<ul>
 				<li>Packets: Different names in different layers</li>
 					<ul>
@@ -41,22 +52,152 @@
 					</ul>
 				<li>Routing (Describe and classify algorithms)</li>
 					<ul>
-						<li>Diykstra's Shortest path algorithm</li>
+						<li>Dijkstra's Shortest path algorithm -- finds shortest distance between nodes, picks starting node, and checks distance between all adjacent nodes.</li>
 					</ul>
 				<li>Reliable Transport--Finite State Machine</li>
 			</ul>
+		<h5>Lab</h5>
+			<ul>
+				<li>Linux commands for checking networks</li>
+					<ul>
+						<li>netstat: Displays the contents of /proc/net files.  The status of ports (open, closed, waiting, etc.).</li>
+						<li>tcpdump: captures packets off the network interface and interprets them (sniffer).  Can save packets for later inspection</li>
+						<li>ping: sends ech requests to the specified host on the command line.  List responses.</li>
+						<li>hostname: Tells user the host name of the computer</li>
+						<li>traceroute: Shows the route of a packet.  Lists the series of host that the packet passes though to the destination.</li>
+						<li>tracepath: same as traceroute, but won't take complicated options</li>
+						<li>findsmb: list info about machines that respond to SMB queries</li>
+						<li>nmap: queries machines as to whether they are up and what ports are open</li>
+						<li>ifconfig: lists all information on all network devices currently up</li>
+						<li>ifconfig eth0 down: takes eth0 down, and won't reciece or send till back up</li>
+						<li>ifup: brings any device back up.  ifup eth0 will bring eth0 if it is off</li>
+						<li>ifdown: brings down any device that is currently down</li>
+						<li>ifcfg: configures a particular interface</li>
+						<li>route: displys or modifies the routing table</li>
+						<li>netstat command: displays network connections, routing tables, interfaces and more.</li>
+						<li>ss -s: displays currently established, closed, orphaned and waiting TCP sockets.</li>
+						<li>netstat -s:  same as <i>ss -s</i></li>
+						<li>ss -l: displays all open network ports</li>
+						<li>netstat -tulpn: same as <i>ss -l</i></li>
+						<li>ss -t -a: displays all TCP sockets</li>
+						<li>netstat -nat:same as <i>ss -t -a</i></li>
+						<li>ss -u -a: displays all UDP sockets</li>
+						<li>netstat -nau: same as <i>ss -u -a</i></li>
+						<li>nslookup: queries DNS lookup name</li>
+						<li>telnet: communicate with another hostname</li>
+						<li>finger: view user information</li>
+						<li>ftp: File Transfer Protocol.  Standard network protocol to transfer computer files between a client and server</li>
+						<li>rsync: copies files across a network</li>
+						<li>scp: securly copies files and directories between remote hosts wihout starting an FTP session or logging into the remote system, uses SSH to transfer data</li>
+						<li>ssh: program for loggin into a remote machine and for executing commands on a remote machine.  Replaces rlogin and rsh</li>
+					</ul>
+			</ul>
 		<h4>October 6th</h4>
+		<h5>Lecture</h5>
+			<ul>
+				<li>2 kinds of systems archiecture:</li>
+					<ol>
+						<li>client-server: Need server always on/available</li>
+						<li>peer to peer: No central server, greater resiliancy</li>
+					</ol>
+				<li>Server: Machine/process that responds to requests<li>
+				<li>Challenges with peer to peer<li>
+					<ul>
+						<li>Asymmetric bandwith security</li>
+						<li>programming challenges</li>
+						<li>need to find peers</li>
+					</ul>
+				<!--<li></li>-->
+			</ul>
+		<h5>Lab</h5>
+			<ul>
+				<!--...-->
+			</ul>
+		<h4>October 7th</h4>
+		<h5>Lecture</h5>
+			<ul>
+				<li>Finite State Machine:</li>
+					<ol>
+						<li> An abstract machine that can be in one of  finite number of states.</li>
+						<li>A set of states.</li>
+						<li>Alphabet &#8212; A set of symbols.</li>
+						<li>Transition Function: A set of rules (Can be given in a table) if in state X and looking at symbol alpha, then next stat is y. (Given a particular state and a particular symbol/imput, then transition to another particular state)</li>
+						<li>Starting State: Need to know starting state to know where to go next.</li>
+						<li>Set of accepting states: know whether a set of states is allowed or not (good/bad).</li>
+						<li>Can be used in the development of a compiler.</li>
+						<li>Seperate FSM for receiver and sender</li>
+					</ol>
+				<li>Regular Expressions: Way of decribing regular languages.</li>
+				<li>Regular Languages: What finite state machines recognize.</li>
+				<li>4 Types of Languages</li>
+					<!--<ol>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+					</ol>-->
+				<li>Machine<==>Language</li>
+					<ul>
+						<li>Machine: Function/set of rules implied in hardwear. It is something that interprets language.</li>
+						<li>Language: Defines a machine.</li>
+					</ul>
+				<li>Lexx: Unix program given adescription of a regular language, produces a C program (a finite state machine) that recognizes the language.</li>
+				<li>4 Kinds of codes:</li>
+					<ol>
+						<li>Conveince: Unicode/ASCII-->Assigns numbers to symbols and text.</li>
+						<li>Data compression: Zip, JPEG, MP3-->Strips redundancy to send more data.</li>
+						<li>Error detection/correction system: Checksum-->Adds redundancy.</li>
+						<li>Encryption</li>
+					</ol>
+				<li></li>
+			</ul>
+		<h5>Lab</h5>
+		<h4>October 9th</h4>
 			
         <h3><u>Definitions</u></h3>
             <ul>
-                <li>Communication link: connection that allows transfer of information between hosts and end systems</li>
-                <li>Packet switches: groups all transmitted data into suitably sized blocks, called packets, which are then transmitted.</li>
-                <li>Transmission rate:  speed in bits/second that data is passed over a link</li>
-                <li>Packet: package of information sent over a link.  May be the whole set, or a part of the total data</li>
-                <li>Link-layer switch:</li>
-                <li>Router switch:</li>
-                <li>Route/Path: sequence of communication links and packet switches that a packet goes from end system to end system.</li>
-                <li>Internet Service Provider: a network of packet switches and communication links.  Provide connection to end systems</li>
+                <li><b>Communication link</b>: connection that allows transfer of information between hosts and end systems.</li>
+                <li><b>Packet switches</b>: groups all transmitted data into suitably sized blocks, called packets, which are then transmitted.</li>
+                <li><b>Transmission rate</b>:  speed in bits/second that data is passed over a link.</li>
+                <li><b>Packet</b>: package of information sent over a link.  May be the whole set, or a part of the total data.</li>
+                <li><b>Link-layer switch</b>:</li>
+                <li><b>Router switch</b>:</li>
+                <li><b>Route/Path</b>: sequence of communication links and packet switches that a packet goes from end system to end system.</li>
+                <li><b>Internet Service Provider (ISP)</b>: a network of packet switches and communication links.  Provide connection to end systems and content providers.</li>
+				<li><b>TCP/IP</b>: Specifies the format of the packets that are sent and recieved among routers and end systems.</li>
+				<li><b>Distributed applications</b>: Have multiple end systems that exhchange data with eachother.</li>
+				<li><b>Application Programming Interface (API)</b>: specifies how a program running on one end system ask the Internet infrastructure to deliver data to a specific destination program running on another end system.</li>
+				<li><b>Protocol</b>: Defines the format and the order of messages echanged between two or more communicating entities.  Also the actions taken on the transmission or receipt of a message/event.</li>
+				<li><b>Client</b>: Host/end system that is usually a desktop, mobile PC or other smaller computer system.</li>
+				<li><b>Server</b>: Host/end system that is usually a more powerful machine that stores and distributes webpages, streams videos, emails, ect.</li>
+				<li><b>Physical medium</b>: Allows a bit to be sent by propagating electro magnetic waves or optical pulses.  Examples include twisted-pair copper wire, coaxial cable, multimode fiber-optic cable, terrestrial radio spectrom, and satellite radio spectrum.</li>
+				<li><b>Guided media</b>: Type of physical medium, waves are guided along a solid medium.</li>
+				<li><b>Unguided media</b>: Type of physical medium, waves propagate in the air or outer space.</li>
+				<li><b>Geostationary satellites</b>: Permanently remain above the same spot on Earth.  High orbit, which means longer delay.</li>
+				<li><b>Low-earth orbiting satellites</b>: Much closer to Earth and are not stationary.  Less delay, but requires more of them.  Can communicate between eachother.</li>
+				<li><b>Store-and-foreward transmission</b>: Type of packet switch, must recieve the whole package, before it can start to sent the first bits of hte packet onto the outbound link.</li>
+				<li><b>Output buffer/output queue</b>: Stores packets that the router is about to send to a link.  In a store-and-foreward system.</li>
+				<li><b>Packet loss</b>: If the output buffer is full an incoming packet may be dropped.</li>
+				<li><b>Forwarding table</b>: Maps destinations addresses to the outbound links of the router</li>
+				<li><b>Circuit switching</b>:  Resources needed along a path for communication between end systems are reserved for the duration of hte communication.  Wasteful due to silent periods when dedicated circuts are silent.</li>
+				<li><b>Packet Switching</b>: Resources are not reserved, and a session's messages use the resources on demand.  As such messages/packets may have to wait for access to a link or other resources.</li>
+				<li><b>Frequency-division multiplexing</b>: (FDM) Frequency spectrum of a link is divided up among the connections established across the link.</li>
+				<li><b>Time-division multiplexing</b>: (TDM) Time is divided into frames of fixed duration and each frame is divided into a fixed number of time slots.  Network dedicates one time slot in every frame to the connection.  Dedicated to the sole use of that connection.</li>
+				<li><b>Customer</b>:  Access ISP.</li>
+				<li><b>Provider</b>: Global transit ISP.  Network of routers and communication links that spans the globe, and has at least one router near the access ISP.</li>
+				<li><b>Regional ISP</b>: An ISP in a region that all access ISPs in that region connect.</li>
+				<li><b>Teir-1 ISP</b>: large ISP network, similar to global ISP concept, but not as large.  Regional ISPs and come access ISPs connect to teir-1 ISPs.</li>
+				<li><b>Points of Presence (PoPs)</b>: Group of one or more routers, in the same location, that allow customer ISPs in a provider's network to connect to ther provider ISPs.</li>
+				<li><b>Multi-home</b>: When an ISP connects to two or more provider ISPs.</li>
+				<li><b>Peer (connection)</b>: ISPs at the same level of heirarchy connect their networks together directly, so that the traffic between them passes via direct communicaion rather than over upstream intermediaries</li>
+				<li><b>Internet Exchange Point (ISP)</b>: Meeting point where multiple ISPs can peer together.</li>
+				<li><b>Nodal processing delay</b>: Time required to examine the packet's header to determine where to direct the packet.  Also time to check for bit-level errors.</li>
+				<li><b>Queuing delay</b>: The delay that a packet experience when it waits to be transmitted onto the link/node.  Depends on the number of earlier arrived packets.<li>
+				<li><b>Transimission delay</b>: Packets can only be transmitted after all the packets that arrived before it have been transmitted.  Transimission delay is the length of the packet in bits (L) and the transmission rate from router to router in bits/second (R), this it is expressed as L/R. Or the amout of time required to transmit all of the packet's bits into the link.</li>
+				<li><b>Propagation delay</b>: Time required to propagate from the beginning of the link to the end router.</li>
+				<li><b>Traffic intensity</b>: With a = averate rate of packet arrival in queue, R = transmission rate, L = length of bits of packets (all), then traffic intensity is equal to (La)/R.  If traffic intensity > 1 averate rate of bit arrival exceeds rate of transmission.  If traffic intensity <= 1 there is no queing delay as all packets are transmitted before arrival of the next.</li>
+				
+				<!--<li><b></b>:</li>-->
             </ul>
 </body>
 </html>

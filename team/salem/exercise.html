@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+    Exercise 1
+</title>
+</head>
+<body>
+<style>
+.answer{color:red;}
+
+a:visited{
+text-decoration:underline;
+color:black;
+}
+
+a:link{
+text-decoration:underline;
+color:black;
+}
+
+a:hover{color:#73e600}
+</style>
+<button onclick = "oc(123)">Q&A </button>
+<button onclick =  "oc(234)">About Tim Berners-Lee</button>
+<button onclick = "oc(345)">Git remote fetch</button>
+<div id = "123">
+<h1>Q&A
+</h1>
+<ul>
+	<li><h2>Give a brief definition of a protocol?</h2></li>
+			<ul>
+				<li class = "answer"><u>Answer: The format and the order of messages exchanged between two or more communicating entities, as well as the actions taken on the transmission and/or receipt of a message or other event.</u></li>
+			</ul>
+	<li><h2>Who were the two people who built on Adramson's multiple-access protocal work when they developed the Ethernet protocol work when they developed the Ethernet protocol for wire-based shared broadcast networks?</h2></li>
+			<li>Robert Metcalfe and David Boggs</li>
+			<li>Norman Abramson and Minitel</li>
+			<li>Tim Berners-Lee and Ted Nelson</li>
+			<li>Donald Davies and Roger Scantlebury</li>
+		<ul>
+			<li class = "answer"><u>Answer: Robert Metcalfe and David Boggs</u></li>
+		</ul>
+	<li><h2>What is the difference between a virus and a worm</h2></li>
+		<ul>
+			<li class = "answer">Answer: Require some form of user interaction to infect the user's device, but a worm can enter a device without any explicit user interaction.</li>
+		</ul>
+	<li><h2>Match the Layers with the correct packet names.</h2></li>
+	
+		<ul class  = "answer">
+			<li>Answer:
+			<ul>
+				<li>Application : message</li>
+				<li>Transport : segment</li>
+				<li>Network : datagrams</li>
+				<li>Link : frames</li>
+				<li>Physical : none</li>
+			</ul>
+		</ul>
+	</li>
+	<li><h2>What are cookies?  Where are they stored?</h2></li>
+		<ul>
+			<li class = "answer">Answer: They allow sites to keep track of users.  They are stored in the user's end system.</li>
+		</ul>
+	<li><h2>What are the major difference between time-division multiplexing(TDM) and frequency-division multiplexing(FDM)?</h2></li>
+		<ul>
+			<li class = "answer">Answer: FDMs are frequency spectrum of a link that is divided up among the connections established across the link, whereas; TDMs are based on time that are divided into frames of fixed duration which are divided into time slots.</li>
+		</ul>
+	<li><h2>What are the two fundamental approaches to moving data through a network of links and switches?  Why would you use one over the other?</h2></li>
+		<ul>
+			<li class = "answer">Answer: Circuit switching and packet switching.  Packet over circuit because dedicated circuits are idle while nothing is going through.</li>
+		</ul>
+	<li><h2>What are the criterias for whether you want to use a TCP or UDP?</h2></li>
+		<ul>
+			<li class = "answer">Reliable data transfer, throughput, timing, and security.</li>
+		</ul>
+</ul>
+<hr style = "height:3px;border:none;color:#333;background-color:#333;">
+</div>
+<div id = "234">
+<h1>About Tim Berners-Lee</h1>
+<div>Tim Berners-Lee&#39s is a prominent and respected member of the development of data communications.  He was the inventor of the World Wide Web.  In addition, he also has some titles and accomplishments:</div>
+<ul>
+	<li>The inventor of the World Wide Web (2).</li>
+	<li>Successfully started the connection between a HTTP client and server (2).</li>
+	<li>Founded and currently directs the World Wide Web Consortium (W3C), which is the main international standards organization for the World Wide Web (2)(3).</li>
+	<li>Is a senior researcher and holder of the founders chair at MIT Computer Science and Artificial Intelligence Laboratory (CSAIL) (2).  In addition to Artificial Intelligence, they also do research on computational biology, graphics and vision, language and learning, theory of computation, robotics, and others (4).</li>
+	<li>The director of the Web Science Research Initiative (WSRI) (2).</li>
+</ul>
+<div>He had an interview at the Web 2.0 summit.  There was a cover done by cnet.  One of topics was about law and whether technology should handle law.  He beleives policemen and courts should decide right from wrong, not technology.  He also gave advise on how &#34If you want it everywhere, give it away.&#34  This was the idea that if you want it everywhere, you do not charge for the service.  He warned that large companies are a threat.  Social networks, like Facebook, might monopolize communication because they are not open to other systems.  However, he gave hope.  If small companies connection their network on a standard connection, then they could topple large companies.  Trust was one of the last subject he talked about.  He says that in order for the world of web apps to take off is trust.  Unfortunately, he did not have the answer to this. (1)</div>
+
+<h4>Reference</h4>
+<ol>
+	<li><a href = "https://www.cnet.com/news/tech-advice-from-tim-berners-lee/">https://www.cnet.com/news/tech-advice-from-tim-berners-lee/</a></li>
+	<li><a href = "https://en.wikipedia.org/wiki/Tim_Berners-Lee">https://en.wikipedia.org/wiki/Tim_Berners-Lee</a></li>
+	<li><a href = "https://en.wikipedia.org/wiki/World_Wide_Web_Consortium">https://en.wikipedia.org/wiki/World_Wide_Web_Consortium</a></li>
+	<li><a href = "https://en.wikipedia.org/wiki/MIT_Computer_Science_and_Artificial_Intelligence_Laboratory">https://en.wikipedia.org/wiki/MIT_Computer_Science_and_Artificial_Intelligence_Laboratory</a></li>
+</ol>
+<hr style = "height:3px;border:none;color:#333;background-color:#333;">
+</div>
+<div id = "345">
+<h1>Git Remote, Fetch, Upstream</h1>
+	<ul>
+		<li>After you make changes to your repo and finished merging it to the the repo that you forked from.  You can take these steps to grab the repo that you forked from and add it to your local computer, then push that to your repository in your github account.</li>
+		<li>First you need to have pulled the deposit that you have in your github account.  I would also recommend using ubuntu.</li>
+		<ol>
+			<li>Open to the command prompt.</li>
+			<li>Type: git remote add upstream “url of the repo you forked from”</li>
+			<ul>
+				<li>This will add the original repo to your list of upstreams you may or may not have.</li>
+			</ul>
+			<li>Type: git pull upstream master</li>
+			<ul>
+				<li>This will fetch the original repository and add to your local deposit.</li>
+			</ul>
+			<li>Type: git push origin master</li>
+			<ul>
+				<li>This will add the deposit on your local to the repository that is located on your github account.</li>
+			</ul>
+		</ol>
+	</ul>
+	<h4>These are other resources to help with fetch and upstream
+		<ul>
+			<li><a href = "https://help.github.com/articles/merging-an-upstream-repository-into-your-fork/">Merging an upstream repository into your fork</a></li>
+			<li><a href = "https://help.github.com/articles/fork-a-repo/">Fork A Repo</a></li>
+			<li><a href = "https://help.github.com/articles/syncing-a-fork/">Syncing a fork</a></li>
+			<li><a href = "https://2buntu.com/articles/1459/keeping-your-forked-repo-synced-with-the-upstream-source/">Provided by my teacher</a></li>
+		</ul>
+	<h4>
+<hr style = "height:3px;border:none;color:#333;background-color:#333;">
+<div>
+<script>
+function oc(id){
+	if(document.getElementById(id).style.display == "none"){
+		document.getElementById(id).style.display = "block";
+	} else {
+		document.getElementById(id).style.display = "none";
+	}
+}
+</script>
+<!-- style="height:3px;border:none;color:#333;background-color:#333;" was taken from http://stackoverflow.com/questions/4151743/how-i-change-the-thickness-of-my-hr-tag  and I take no credit!
+-->
+</body>
+</html>
