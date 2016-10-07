@@ -9,17 +9,21 @@
 <body>
   <img src="collegelogo.png" style="float:right;margin-left:2000px;width:18%;">
     <h1>
-        Assignment 0
+        Simon Fink
     </h1>
-  
+    <p>
+        I'm a Physics major attempting to finish a CS major this <br>
+        year, with my only previous course being CSC 141. I am also <br>
+        a senior. I enjoy piano, cooking, and progressive metal. <br>
+	<br>
+    </p>
+
     <div class="dropdown">
-      <button onclick="openMenu()" style="width:250px;" class="dropbtn">
-	Assignments
-      </button>
+      <button onclick="openMenu()" class="dropbtn">Notes and Files</button>
       <div id="menu" class="dropdown-content">
-	<a href="clocksynch.html">Clock Synchronization Quiz</a>
-	<a href="donald_davies.html">Donald Davies Biography</a>
-	<a>WiFiDirect Tuturial</a>
+	<a href="notes_00.html">Oct. 4 Notes</a>
+	<a href="error_code_quiz.html">Error Code Quiz</a>
+	<a href="assignment_0.html">Assignment 0</a>
       </div>
     </div>
 
