@@ -1,19 +1,51 @@
-
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
-<head>
-<title>
-    Hello
-</title>
-</head>
-<body>
-    <h1>
-        Graded Assignment 0
-    </h1>
-    <p>
-        Bob Metcalfe was the invented the ethernet and founded the company 3com. He was a very weird person. Someone who would go on stage and eat magazine articles that he
-        
-    </p>
-    
-</body>
+    <head>
+        <title>Graded Exercize 0</title>
+    </head>
+    <body>
+        <h1>Graded Exercize 0</h1>
+        <h3>Questions on Reading</h3>
+        <ol>
+            <li></li>
+                <ul>
+                    <li></li>
+                </ul>
+            <li></li>
+                <ul>
+                    <li></li>
+                </ul>
+            <li></li>
+                <ul>
+                    <li></li>
+                </ul>
+            <li></li>
+                <ul>
+                    <li></li>
+                </ul>
+            <li></li>
+                <ul>
+                    <li></li>
+                </ul>
+            <li></li>
+                <ul>
+                    <li></li>
+                </ul>
+            <li></li>
+                <ul>
+                    <li></li>
+                </ul>
+            <li></li>
+                <ul>
+                    <li></li>
+                </ul>
+        </ol>
+        <h3>Bob Metcalfe</h3>
+        <p>Bob Metcalfe, the inventor if the Ethernet and the man who started 3com, had an interesting career. It all started when he was a graduate student at Stanford. Metcalfe had a job lined up for after graduation. However, Harvard failed his PhD thesis defense, but Xerox still told him to come to the job and finish the PhD while he was working for them. While he was at Xerox, he read an article about a radio-based network in Hawaii called Alohanet. Metcalfe saw the flaws in the network and created his own version which he called the Ethernet. The Ethernet alone was a great idea, but Xerox didn’t market the Ethernet how Metcalfe wanted, so he created his own company to achieve that. He called it 3com. 
+Unfortunately, the company board determined that there were better candidates for a CEO than him, so he was moved to be the vice president of sales. During his time creating and working at 3com, he spent 10 years selling the Ethernet. After that, he decided to stop working there and become a magazine journalist for InfoWorld, because he preferred to influence the whole world instead of one company. 
+The interesting part of Bob Metcalfe is that he doesn’t attribute his success to the invention of the Ethernet. He thinks that people have great ideas all the time, but that’s not what gave him success. What gave his real success is a combination of two things: his charismatic talent of being able to communicate well, and the fact that he spent 10 years selling his product while trying to make it the standard. Metcalfe got his PhD after he invented the Ethernet and wrote his PhD thesis on that. 
+</p>
+        <h3>GitHub Tutorial</h3>
+        <p></p>
+    </body>
 </html>
