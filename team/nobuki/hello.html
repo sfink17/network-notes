@@ -19,10 +19,6 @@
         <li>self-replicating: once it infects one host, from that host it seeks entry into other hosts over the Internet</li>
         <li>Viruses: malware that require some form of user interaction to infect the user’s device</li>
         <li>Worms are malware that can enter a device without any explicit user interaction</li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
         
         <li>DoS attacks, or Denial-of-Service attacks do exactly what the name implies. It renders a network, host, or other piece
 of infrastructure unusable by legitimate users</li>
@@ -46,10 +42,50 @@ of infrastructure unusable by legitimate users</li>
             <li>the best defense is cryptography</li>  
         </ul> 
         <li>IP spoofing: giving a false source to hide the attacker as another user</li>
+    </ul>
+    <h1>Network Applications</h1>
+    <ul>
+        <li>It is important to write programs that run on different types of end systems.</li>
+        <li>When writing the code, it should be written in a way that can be run on multiple end systems (written in java, C, or python)</li>
+        <li>You don't need to write code that runs in network core devices like routers, or linked layer switches, because you can't</li>
+        <li>Application Architecture</li>
+        <ul>
+            <li>Client-Server Architecture: there is an always-oh host called a server. that server services requests from many other hosts called clients</li>
+            <li>two clients don't directly communicate with each other</li>
+            <li>the server has an IP address</li>
+            <li>Client can always contact the server by sending packets to the IP address</li>
+            <li>Data Center: a large virtual server housing a large number of hosts. It is used if only one server is handling all the requests and it is being overwhelmed.</li>
+            <li>Peer-to-peer or P2P doesnt rely on dedicated servers</li>
+            <li>p2p connects hosts directly called peers</li>
+            <li>peers are personal devices</li>
+            <li>self scalability: peers create the workload, but also take the workload.</li>
+        </ul>
+    </ul>
+    <h1>Elctronic Mail in the Internet</h1>
+    <ul>
+        <li>email is asyncronous, which means you don't have to syncronise with other people. You can send and recieve mail when convenient</li>
+        <li>There are three major components to the Internet mail system.</li>
+        <ul>
+            <li>user agents</li>
+            <li>mail servers</li>
+            <li>SMPT(Simple Mail Transfer Protocol)</li>
+            <ul>
+                <li>SMPT transfers messages from the sender to the reciever.</li>
+                <li>SMPT orignally was from 1982</li>
+                <li>SMPT tries to deliver a message to the reciever. If the message is not recieved, it will try again later.</li>
+                <li>SMPT has two sides: a client side and a server side.</li>
+                <li>the client side sends the messages while the server side recieves the messages</li>
+                <li>The SMTP runs on steps. First, the client SMTP establishes a connection at the server SMTP. Then those two perform some application layer handshaking. then the two exchange information such as the email address of both sender and reciever and the message. Then the message is sent.</li>
+            </ul>
+        </ul>
         
-        
-        
-    
+        <li>There are differences between HTTP and SMTP</li>
+        <li>HTTP uses a pull protocol</li>
+        <li>A pull protocol is when information is loaded to a web server and the information can be pulled at convenience.</li>
+        <li>SMTP uses a push protocol</li>
+        <li>a push protocol pushes the information to the reciever. if the reciever doesn't get it/isn't able to, it will try again at a later time. </li>
+        <li>SMTP requires the message to be in 7-bit ASCII while HTTP does not.</li>
+        <li></li>
     </ul>
 </body>
 </html>
