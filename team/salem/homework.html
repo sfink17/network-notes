@@ -8,6 +8,7 @@ CSC-317 Notes
 <body>
 <button onclick = "oc(822)">8.2.2 Notes</button>
 <button onclick = "oc(823)">8.2.3 Notes</button>
+<button onclick = "oc(824)">8.2.4 Notes</button>
 <div id = "822" style = "display:none">
     <h1>8.2.2 Notes</h1>
 	<ul>
@@ -138,9 +139,52 @@ CSC-317 Notes
 		
 </div>
 
+<div id = "824" style  ="display:none">
+	<h1>8.2.4 Notes</h1>
+		<ul>
+			<li><h2>SMTP</h2></li>
+			<ul>
+				<li>Once the SMTP client and server have introduced themselves to each other, the client sends the message. SMTP can count on the reliable data transfer service of TCP to get the message to the server without errors. The client then repeats this process over the same TCP connection if it has other messages to send to the server; otherwise, it instructs TCP to close the connection.
+</li>
 
-<!--
-			<li>
+				<li>SMTP uses persistent connections</li>
+			</ul>
+			<li><h2>HTTP comparing SMTP</h2></li>
+			<ol>
+				<li><ul><li>HTTP transfers files (also called objects) from a Web server to a Web client (typically a browser)</li>
+				<li>SMTP transfers files (that is, e-mail messages) from one mail server to another mail server.</li></ul></li>
+				
+				<hr>
+
+
+				<li><ul><li>HTTP is mostly uses the pull protocol:</li>
+					<ul><li>someone loads information on a Web server and users use HTTP to pull the information from the server at their convenience.</li></ul>
+				<li>SMTP mostly uses the push protocal:</li>
+					<ul><li>the sending mail server pushes the file to the receiving mail server.</li></ul>
+				<li>They both use TCP to initialize the connection.</li>
+				</ul></li>
+
+				<hr>
+
+
+				<li><ul><li>SMTP requires each message, including the body of each message, to be in 7-bit ASCII format.  If the message is not in 7-bit ASCII format, then the message has to be encoded into 7-bit ASCII.</li>
+				<li>HTTP data does not impose this restriction</li>
+				</ul></li>
+
+				<hr>
+
+			<li><ul>
+				<li>HTTP encapsulates each object in its own HTTP response message.</li>
+				<li>SMTP places all of objects that belongs to the message into one message.</li>
+			</li></ul>
+			</ol>
+		</ul>
+<hr style="height:3px;border:none;color:#333;background-color:#333;">
+		
+</div>
+
+<!-- This is a nice formate to just copy and paste into your page
+			<li> -- This is merely to show how everything would be alined.
 
 
 			<li><h2></h2></li>
@@ -165,3 +209,4 @@ function oc(id){
 </script>
 </body>
 </html>
+
