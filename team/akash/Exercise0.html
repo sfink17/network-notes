@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+    Graded Exercise 0
+</title>
+</head>
+    
+<script language='javascript'>
+    function toggle() {
+        var ele = document.getElementById("toggleText");
+        var text = document.getElementById("displayText");
+        if(ele.style.display == "block"){
+            ele.style.display = "none";
+            text.innerHTML = "Answer";
+        } else {
+            ele.style.display = "block";
+            text.innerHTML = "Hide";
+        }
+    }
+</script>
+
+<body>
+    <h1>Graded Exercise 0</h1>
+    
+    <h3>Questions</h3>
+    <ol>
+        <li>What is the role of protocols in a network?<br/>
+            <a id="displayText" href="javascript:toggle();">Answer</a>
+            <div id="toggleText" style="display: none">A protocol defines the format and the order of messages exchanged between two or more communicating entities, as weel as the actions taken on the transmission and/or receipt of a message or other event.<br/>
+            Pg. 9</div>
+        </li>
+        <li>Question 2<br/>
+        </li>
+        <li>Question 3<br/>
+        </li>
+        <li>Question 4</li>
+        <li>Question 5</li>
+        <li>Question 6</li>
+        <li>Question 7</li>
+        <li>Question 8</li>
+    </ol>
+</body>
+</html>
+ 
+
