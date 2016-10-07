@@ -6,27 +6,16 @@
 </description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 05 Oct 2016 17:58:02 +0000</pubDate>
-    <lastBuildDate>Wed, 05 Oct 2016 17:58:02 +0000</lastBuildDate>
+    <pubDate>Thu, 06 Oct 2016 13:45:41 +0000</pubDate>
+    <lastBuildDate>Thu, 06 Oct 2016 13:45:41 +0000</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
-    
-      <item>
-        <title>Programming a simple FTP server</title>
-        <description>
-</description>
-        <pubDate>Wed, 05 Oct 2016 17:54:00 +0000</pubDate>
-        <link>/2016/10/05/ftp-server.html</link>
-        <guid isPermaLink="true">/2016/10/05/ftp-server.html</guid>
-        
-        
-      </item>
     
       <item>
         <title>Socket Programming in Python</title>
         <description>&lt;p&gt;Here’s an example of a simple server in Python that prints what it recieves, 
 and sends back the same data uppercased.&lt;/p&gt;
 
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;socketserver&lt;/span&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;SocketServer&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;socketserver&lt;/span&gt;
     
 &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;MyTCPHandler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;socketserver&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;StreamRequestHandler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
     &lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;
@@ -62,8 +51,8 @@ and sends back the same data uppercased.&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;p&gt;Note that this uses utilities supplied by Python 3, the &lt;code class=&quot;highlighter-rouge&quot;&gt;socketserver&lt;/code&gt; package,
-which did not exist in Python 2.&lt;/p&gt;
+&lt;p&gt;This is written for Python 2, there is a tiny modification you can make to run 
+on Python 3.&lt;/p&gt;
 
 &lt;p&gt;Also, it uses the &lt;code class=&quot;highlighter-rouge&quot;&gt;ForkingMixIn&lt;/code&gt;, which creates a new process for each request,
 for greater availability.&lt;/p&gt;
