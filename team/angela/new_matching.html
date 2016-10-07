@@ -8,54 +8,32 @@ Matching Quiz
 <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.0/knockout-min.js">
 </script>
 <style>
-body {
-	background-color: black;
-	background-image: url("images/stars.gif");
-}
-    a:link {
-	color: deepskyblue;
-    }
-    a:visited {
-	color: lavender;
-    }
 
 .matched {
-    background: lightblue;
-    color: green;
-}
-h1 {
-    color: turquoise;
-}
-p {
-    color: seagreen;
-}
-th {
-    color: aqua;
+    background: #FF8888;
 }
 
 .unmatched {
-    background: pink;
-    color: red;
+    background: #8888FF;
 }
 
 </style>
 </head>
 <body>
 
-  <h1>Matching Quiz</h1>
-  <p>Do you know your classmates' names?</p>
+<h1>Matching Quiz</h1>
 
 <table>
 
 <tr>
-<th>First Name</th>
-<th>Last Name</th>
+<th>year</th>
+<th>person City</th>
 
 <tbody data-bind="foreach: rows()">
 <tr data-bind="css: matchStatus">
-<td data-bind="click: leftResponder, text: leftList.firstName">
+<td data-bind="click: leftResponder, text: leftList.year">
 </td>
-<td data-bind="click: rightResponder, text: rightList().lastName">
+<td data-bind="click: rightResponder, text: rightList().person">
 </td>
 </tbody>
 
@@ -65,12 +43,12 @@ th {
 </tr>
 
 </table>
-<a href="./hello.html">Home</a>
 
 <script>
 var viewModel = function() {
 
     var that = {};
+
 
     /* shuffle (scramble) the elements of an array */
     var shuffle = function( list ) {
@@ -143,7 +121,7 @@ var viewModel = function() {
             return function() {
 
                 if( prevRow >= 0 && prevCol >= 0 ) {
-                    if( that.rows()[prevRow]().leftList.firstName === that.rows()[row]().rightList().firstName ) {
+                    if( that.rows()[prevRow]().leftList.year === that.rows()[row]().rightList().year ) {
                         var temp = that.rows()[prevRow]().rightList();
                         that.rows()[prevRow]().rightList( that.rows()[row]().rightList() );
                         that.rows()[row]().rightList( temp );
@@ -166,7 +144,7 @@ var viewModel = function() {
                 nextTuple.rightResponder = responder( index, 1 );
 
                 nextTuple.matchStatus = ko.pureComputed( function() {
-                    if( nextTuple.leftList.firstName === nextTuple.rightList().firstName ) {
+                    if( nextTuple.leftList.year === nextTuple.rightList().year ) {
                         return "matched";
                     } // if
                     else {
@@ -187,22 +165,11 @@ var viewModel = function() {
 
 
     var questions = [];
-    questions.push( { "firstName": "Dot", "lastName": "Carmichael" } );
-    questions.push( { "firstName": "Nobuki", "lastName": "Harata" } );
-    questions.push( { "firstName": "Nam", "lastName": "Phan" } );
-    questions.push( { "firstName": "Simon", "lastName": "Fink" } );
-    questions.push( { "firstName": "Nigel", "lastName": "Ticknor" } );
-    questions.push( { "firstName": "Michael", "lastName": "Paquette" } );
-    questions.push( { "firstName": "Angela", "lastName": "Aley" } );
-    questions.push( { "firstName": "Tyler", "lastName": "Langtimm" } );
-    questions.push( { "firstName": "Jeremy", "lastName": "Novak" } );
-    questions.push( { "firstName": "Akash", "lastName": "Surti" } );
-    questions.push( { "firstName": "Ryan", "lastName": "Conrardy" } );
-    questions.push( { "firstName": "Paul", "lastName": "DeMange" } );
-    questions.push( { "firstName": "Joe", "lastName": "Sterchele" } );
-    questions.push( { "firstName": "Salem", "lastName": "Ozaki" } );
-    questions.push( { "firstName": "Henry", "lastName": "Weeks" } );
-    questions.push( { "firstName": "Kyle", "lastName": "Drum" } );
+    questions.push( { "year": "1961-1972", "person": "Leonard Kleinrock" } );
+    questions.push( { "year": "1972-1980", "person": "Norman Abramson" } );
+    questions.push( { "year": "1980-1990", "person": "Minitel project" } );
+    questions.push( { "year": "1990's", "person": "Tim Berners-Lee" } );
+    
 
     var scrambledQuestions = shuffle( questions );
 
@@ -220,6 +187,6 @@ var vm = viewModel();
 ko.applyBindings( vm );
 
 </script>
-<!-- u:normertweiner p:iylsycpbii -->
+
 </body
 </html>
