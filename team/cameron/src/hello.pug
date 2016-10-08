@@ -1,0 +1,21 @@
+doctype html
+html(lang="en")
+  head
+    title= "Cam's Network Notes"
+    link(href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css", rel="stylesheet", integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u", crossorigin="anonymous")
+    link(rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/default.min.css")
+    script(src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js")
+    script | hljs.initHighlightingOnLoad();
+  body
+    .jumbotron
+      .container
+        h1 Week 0 Exercise
+        h3 Cam's Network Notes
+    .container
+      .row
+        include:markdown-it(linkify=true, langPrefix="highlight-") _posts/graded-week0.md
+           
+          
+            
+          
+      
