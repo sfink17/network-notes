@@ -26,13 +26,13 @@ Matching Quiz
 </head>
 <body>
 
-<h1>Matching Quiz</h1>
+<h1>OSI Model Matching Quiz</h1>
 
 <table>
 
 <tr>
-<th>State</th>
-<th>Capital City</th>
+<th>Level</th>
+<th>Layer</th>
 
 <tbody data-bind="foreach: rows()">
 <tr data-bind="css: matchStatus">
@@ -170,13 +170,13 @@ var viewModel = function() {
 
 
     var questions = [];
-    questions.push( { "state": "Iowa", "capital": "Des Moines" } );
-    questions.push( { "state": "Minnesota", "capital": "Saint Paul" } );
-    questions.push( { "state": "Wisconsin", "capital": "Madison" } );
-    questions.push( { "state": "Illinois", "capital": "Springfield" } );
-    questions.push( { "state": "Missouri", "capital": "Jefferson City" } );
-    questions.push( { "state": "Nebraska", "capital": "Lincoln" } );
-    questions.push( { "state": "South Dakota", "capital": "Pierre" } );
+    questions.push( { "state": "1", "capital": "Application Layer" } );
+    questions.push( { "state": "2", "capital": "Presentation Layer" } );
+    questions.push( { "state": "3", "capital": "Session Layer" } );
+    questions.push( { "state": "4", "capital": "Transport Layer" } );
+    questions.push( { "state": "5", "capital": "Network Layer" } );
+    questions.push( { "state": "6", "capital": "Link Layer" } );
+    questions.push( { "state": "7", "capital": "Physical Layer" } );
 
     var scrambledQuestions = shuffle( questions );
 
