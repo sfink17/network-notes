@@ -11,6 +11,10 @@
                 <ul>
                     <li>The source of the attack is distributed in a DDoS, so instead of blocking just one source, you must block multiple, which is much harder to do. </li>
                 </ul>
+            <li>What year (give or take 6 years) was the first packet switch installed?</li>
+                <ul>
+                    <li>1969</li>
+                </ul>
             <li>What is the equation for the end-to-end Delay for one packet and what does each constant/variable stand for?</li>
                 <ul>
                     <li>a.	dend-to-end=N(L/R)</li>
@@ -33,14 +37,11 @@
                     <li>a.	HTTP uses a pull protocol and SMTP uses push protocol.</li>
                     <li>b.	A push protocol will push the information to the receiver, while a pull protocol will load the information on a web server and the client can pull the information at any time. </li>
                 </ul>
-            <li></li>
+            <li>Describe the rarest first technique.</li>
                 <ul>
-                    <li></li>
+                    <li>When torrenting, out of the chunks you don't have, you request to rarest (least amount of uploaders have the chunk) chunk first.</li>
                 </ul>
-            <li></li>
-                <ul>
-                    <li></li>
-                </ul>
+
         </ol>
         <h3>Bob Metcalfe</h3>
         <p>Bob Metcalfe, the inventor if the Ethernet and the man who started 3com, had an interesting career. It all started when he was a graduate student at Stanford. Metcalfe had a job lined up for after graduation. However, Harvard failed his PhD thesis defense, but Xerox still told him to come to the job and finish the PhD while he was working for them. While he was at Xerox, he read an article about a radio-based network in Hawaii called Alohanet. Metcalfe saw the flaws in the network and created his own version which he called the Ethernet. The Ethernet alone was a great idea, but Xerox didn’t market the Ethernet how Metcalfe wanted, so he created his own company to achieve that. He called it 3com. 
