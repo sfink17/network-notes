@@ -33,9 +33,9 @@
                     <li>a.	HTTP uses a pull protocol and SMTP uses push protocol.</li>
                     <li>b.	A push protocol will push the information to the receiver, while a pull protocol will load the information on a web server and the client can pull the information at any time. </li>
                 </ul>
-            <li></li>
+            <li>Describe the rarest first technique.</li>
                 <ul>
-                    <li></li>
+                    <li>When torrenting, out of the chunks you don't have, you request to rarest (least amount of uploaders have the chunk) chunk first.</li>
                 </ul>
             <li></li>
                 <ul>
