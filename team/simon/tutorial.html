@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+    notes_00
+</title>
+ <link href="css/styles.css" rel="stylesheet">
+</head>
+<body>
+  <img src="collegelogo.png" style="float:right;margin-left:2000px;width:18%;">
+    <h1>
+        Tutorial
+    </h1>
+	<h2>
+		<u>WiFi Direct Tutorial</u>
+	</h2>
+	<p>
+		For this tutorial, I&#39;ll be walking you through a brief look at the foundation of Android WiFi Direct Application<br> 
+		layer protocol. This is part of a Networking class, not an Android Programming class, so I&#39;ll provide the basic framework <br>
+		for the app. You may be prompted to provide a couple of examples of code to finish the app. Here are a couple of basic Android <br>
+		programming terms that will be helpful to know:
+<br><br>
+Activity: Each new, interactable screen a user sees has an underlying &#34;activity.&#34; Code written in activities dictate each discrete action a user can make.
+<br><br>
+Broadcast Receiver: A service that listens over the app&#39;s WiFi Direct channel and sends commands to an underlying activity after certain events occur.
+<br><br>
+You&#39;ll be looking through a series of in app steps that will end in a functional WiFi Direct app. This app will send basic messages, <br>
+but can be easily modified for sharing other types of data.
+    </p>
+	<ol style="text-align:left;margin-left:200px;margin-right:200px">
+			
+			<li>In the provided folder, navigate to app/src/main/java/com/example/simplewifidirectchat. This contains all of the core java files for the program. MainActivity.java contains the code for the main screen of the app. The OnCreate method is executed when the app starts up. There are three core Objects and one core Class. You&#39;ll see the former of these initiated here: the WiFi P2P Manager, the Channel, and the Broadcast Receiver. You can look at the core of the Broadcast Receiver class if you&#39;d like; it&#39;s an always-on service that listens for specific state changes. We&#39;ll now follow the path around the app.</li>
+			<br>
+			<li>The app has an options menu that initiates the connection. Scroll down to the bottom of the class, and look for the OnOptionItemSelected method. When a certain icon is chosen (the only icon in this case), a linked activity that searched for nearby devices will be launched. After searching, you&#39;ll be able to choose from a selection. The chosen device info is forwarded to the connectDevice method.</li>
+			<br>
+			<li>This method extracts some important information from the raw device data. We&#39;ll take the MAC address and some configuration info and send them to a series of client connect threads.</li>
+			<br>
+			<li>The client will connect through ConnectedThread. A new socket is created, with pointers to the Server&#39;s MAC address and the port to connect to. Specify this port here, after the comma following the address in the socket.connect method. You may use any unused port. Keep in mind you&#39;ll be initiating this port on the Server thread, so remember this number.</li>
+			<br>
+			<li>The Server initiates a similar thread, but only needs to specify a port number and wait for the client to connect. In mConnectServerStream, there is a declaration for a new ServerSocket object. In the empty parentheses after ServerSocket, type the same port you specified for the client.</li>
+			<br>
+			<li>Your devices should be able to connect now. Both the Client and Server threads are still running. When both of them started, they set up input and output streams. Each has an underlying buffer of an array of bytes. Within the declaration, specify the size of this buffer. A large buffer size will reduce the probability of packet loss, but a smaller buffer size will reduce queueing delay (A power of two is pretty standard).</li>
+			
+	</ol>
+	
+	
+</body>
+</html>
