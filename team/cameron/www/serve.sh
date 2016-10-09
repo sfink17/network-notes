@@ -1,1 +1,0 @@
-bundle exec jekyll serve -d ../www --host $IP --port $PORT
