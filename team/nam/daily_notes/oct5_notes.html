@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head></head>
+	<body>
+		<h1>CHAPTER 2.2: The Web and HTTP</h1>
+		<ol>
+			<li>
+				<h3>Overview</h3>
+				<ul>
+					<li><p>HTTP, standing for HyperText Transfer Protocol, is a Web's application protocol.</p></li>
+					<li>HTTP is implemented in two programs: a client program and a server program, talking to each other by exchanging HTTP message.</li>
+					<li>A Web page, also called a document, consists of objects, which can simply be files - such as an HTML file, a JPEG file, a Java aplet, or a video clip - that is addressable by a single URL.</li>	
+					<li>When a user requests a Web page, the browser sends HTTP request message for the object in the page to the server. Then the server receives the requests and responds with HTTP response messages that contain the objects.</li>
+					<li>HTTP uses TCP as its underlying transport protocol.</li>
+					<li>HTTP is a stateless protocol, meaning an HTTP server maintains no information about the clients</li>
+				</ul>
+			</li>
+			<li>
+				<h3>Non-Persistent and Persistent Connections</h3>
+				<ol>
+					<li>
+						<h4>Non-Persistent Connections</h4>
+						<p>Each request/response pair is sent over separate TCP connections.</p>
+						<p>Each TCP connection is closed after the server sent the object - the connection does not persist for other objects. Thus, each TCP connection transports exactly one request message and one response message.</p>
+						<p>The total response time is two RTTs (round-trip time), which is the time it takes for a small packet to travel from client to server and then back to the client, plus the transmission time at the server of the HTML file.</p>
+						<p>Downside: for each of these connections, TCP buffers must be allocated and TCP variables must be kept in both client and server. This can place a significant burden on the Web server, which maybe serving requests from hundreds of clients simultaneously.</p>
+					</li>
+					<li>
+						<h4>Persistent Connections</h4>
+						<p>All the request and their corresponding responses are sent over the same TCP connection.</p>
+						<p>The server leaves the TCP connection open after sending a response. Subsequent requests and responses between the same client and server can be sent over the same connection.</p> 
+						<p>These requests for objects can be made back-to-back, without waiting for replies to pending requests.</p>
+						<p>Typically, the HTTP server closes a connection when it isn't used for a certain time (a configurable timeout interval).</p>
+						<p></p>
+					</li>
+				</ol>
+			</li>
+			<li>
+				<h3>HTTP Message Format</h3>
+				<ol>
+					<li>
+						<h4>HTTP Request Message</h4>
+						<p>Request line: method, URL, Version</p>
+						<p>Header lines: header field name, value</p>
+						<p>Entity body</p>
+						<p></p>
+					</li>
+					<li>
+						<h4>HTTP Response Message</h4>
+						<p>Status line: version, status code (e.g 200), phrase (e.g OK)</p>
+						<p>Header lines: header field name value</p>
+						<p>Entity body</p>
+					</li>
+				</ol>
+			</li>
+			<li>
+				<h3>User-Server Interaction: Cookies</h3>
+				<p>Cookies allow sites to keep track of users.</p>
+				<p>4 components: (1) a cookie header line in the HTTP response message; (2) a cookie header line in the HTTP request message; (3) a cookie file kept on the user’s end system and managed by the user’s browser; and (4) a back-end database at the Web site.</p>
+				<p>Cookies can be used to identify a user.</p>
+			</li>
+			<li>
+				<h3>Web Caching</h3>
+			</li>
+			<li>
+				<h3>The Conditional GET</h3>
+			</li>
+		</ol>
+	</body>
+</html>
