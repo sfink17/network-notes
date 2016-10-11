@@ -79,8 +79,48 @@
             Connectionless
             Not reliable. Messages may arrive out of order or not at all.
             Less 'frilly'. Very lightweight transfer protocol.
-            
         
-    </p>
+        <u>October 10th Textbook Notes</u>
+        The Transport-layer provide a <b>logical connection</b> between two applications. This means that the two applications can act
+        as though they were directly connected, even if they actually have to go through dozens of steps to reach each other. I imagine
+        this is critically important in things such as online videogames, or other such applications, where real time interaction is a 
+        must. Transport layer protocols are implemented in the end systems, not the network routers. 
+        <u> The Transport Layer of the Internet</u>
+        The internet makes two transport-layer protocols available to the application layer, TCP and UDP.
+        UDP (User Datagram Protocol) is unreliable, and connectionless.
+        TCP (Transmission Control Protocol) is reliable, and connection-oriented.
+        The application developer must choose between these two transport-layer protocols.
+        
+        As a brief aside, the Internet's network layer protocol is called <b>IP</b>. IP provides logical connections between hosts, but
+        its a <b>best effort delivery service</b>. This means that it will try its best to deliver segments between hosts, but its
+        ultimately unreliable. It doesn't guarentee that the segments are delivered, it doesn't guarentee they'll arrive in the same
+        order that they were sent, and it doesn't guarentee the integrity of those segments. Every host has atleast one network-layer
+        address, aka, an <b>IP Address</b>
+        
+        The most important function of TCP and UDP is <b> Transport layer multiplexing and demultiplexing</b>. Basically, this is
+        extending the IP delivery service between two end systems, into a delivery service between two <i>applications</i> running on 
+        those end systems.
+        
+        In addition, TCP and UDP also provide some of the integrity checking that IP doesn't, using error detection fields in their
+        headers.
+        
+        As mentioned above, UDP is unreliable. These are the only functions UDP provides, and so it doesn't guarentee that data sent will
+        be received. However, TCP provides several more services.
+        
+        Using techniques called flow control, sequence numbers, acknowledgements, and timers, TCP provides reliable data transfer. This
+        is its biggest benefit over UDP by far.
+        
+        TCP also provides congestion control, which prevents any one connection from swamping routers and links with heavy traffic.
+        It does this by basically capping the rate that a connection can send traffic into the network. However, UDP is unregulated, and
+        so can send as much or as little traffic as it pleases.
+
+
+
+
+
+
+        
+        
+ </p>
 </body>
 </html>
