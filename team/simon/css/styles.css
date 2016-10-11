@@ -7,10 +7,13 @@
 h1 { font-size: 2em; color: #353535; }
 h2 { font-size: 1.5em; color: #353535; }
 h3 { font-size: 1 em; color: #353535; }
+ul  { text-align: left;}
+ol  { text-align: left;}
 
 body {
     font-family: "Computer Modern";
     text-align: center;
+    margin-left: 200px; margin-right: 200px;
 }
 
 .dropbtn {
