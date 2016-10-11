@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<body style="background-color:#E51616;">
+		<text style="color:#00EADC;">
+		<title>
+			
+		</title>
+	</head>
+	<body>
+		<a href="/home/local/CORNELL-COLLEGE/rconrardy17/network-notes/team/ryan/hello.html"> Home </a>
+	</body>
+</html>

@@ -20,100 +20,10 @@
     </p>
     <h2>NOTES:</h2>
         <a href="/home/local/CORNELL-COLLEGE/rconrardy17/network-notes/team/ryan/hierarchyOfAbstractions.html">Hierarchy of Abstractions</a>
-        <h3><u>Hierarchy of Abstractions</u></h3>
-            <ul>
-                <li>Application: Message</li>
-                <li>Transport: Segment</li>
-                <li>Network: Datagrams</li>
-                <li>Link: Frames</li>
-                <li>Physical</li>
-            </ul>
 		<h3><u>Class Notes</u></h3>
-		<h4>October 3rd</h4>
-			<ul>
-				<li>end to end delay in a store and foreward transmission system:</li>
-					<ul>
-						<li>d<sub>end-to-end</sub>=N(L/R)</li>
-					</ul>
-			</ul>
-		<h4>October 5th</h4>
-		<h5>Lecture</h5>
-			<ul>
-				<li>Packets: Different names in different layers</li>
-					<ul>
-						<li>How big? (how many bits?)</li>
-						<li>What kinds of info does packet carry?</li>
-						<li>How is packet divided/organized? (Which group of bits fot which info)</li>
-					</ul>
-				<li>Naming/Addressing</li>
-					<ul>
-						<li>IP Addresses</li>
-						<li>Ports</li>
-						<li>Mac Addresses</li>
-					</ul>
-				<li>Routing (Describe and classify algorithms)</li>
-					<ul>
-						<li>Dijkstra's Shortest path algorithm -- finds shortest distance between nodes, picks starting node, and checks distance between all adjacent nodes.</li>
-					</ul>
-				<li>Reliable Transport--Finite State Machine</li>
-			</ul>
-		<h5>Lab</h5>
-			<ul>
-				<li>Linux commands for checking networks</li>
-					<ul>
-						<li>netstat: Displays the contents of /proc/net files.  The status of ports (open, closed, waiting, etc.).</li>
-						<li>tcpdump: captures packets off the network interface and interprets them (sniffer).  Can save packets for later inspection</li>
-						<li>ping: sends ech requests to the specified host on the command line.  List responses.</li>
-						<li>hostname: Tells user the host name of the computer</li>
-						<li>traceroute: Shows the route of a packet.  Lists the series of host that the packet passes though to the destination.</li>
-						<li>tracepath: same as traceroute, but won't take complicated options</li>
-						<li>findsmb: list info about machines that respond to SMB queries</li>
-						<li>nmap: queries machines as to whether they are up and what ports are open</li>
-						<li>ifconfig: lists all information on all network devices currently up</li>
-						<li>ifconfig eth0 down: takes eth0 down, and won't reciece or send till back up</li>
-						<li>ifup: brings any device back up.  ifup eth0 will bring eth0 if it is off</li>
-						<li>ifdown: brings down any device that is currently down</li>
-						<li>ifcfg: configures a particular interface</li>
-						<li>route: displys or modifies the routing table</li>
-						<li>netstat command: displays network connections, routing tables, interfaces and more.</li>
-						<li>ss -s: displays currently established, closed, orphaned and waiting TCP sockets.</li>
-						<li>netstat -s:  same as <i>ss -s</i></li>
-						<li>ss -l: displays all open network ports</li>
-						<li>netstat -tulpn: same as <i>ss -l</i></li>
-						<li>ss -t -a: displays all TCP sockets</li>
-						<li>netstat -nat:same as <i>ss -t -a</i></li>
-						<li>ss -u -a: displays all UDP sockets</li>
-						<li>netstat -nau: same as <i>ss -u -a</i></li>
-						<li>nslookup: queries DNS lookup name</li>
-						<li>telnet: communicate with another hostname</li>
-						<li>finger: view user information</li>
-						<li>ftp: File Transfer Protocol.  Standard network protocol to transfer computer files between a client and server</li>
-						<li>rsync: copies files across a network</li>
-						<li>scp: securly copies files and directories between remote hosts wihout starting an FTP session or logging into the remote system, uses SSH to transfer data</li>
-						<li>ssh: program for loggin into a remote machine and for executing commands on a remote machine.  Replaces rlogin and rsh</li>
-					</ul>
-			</ul>
-		<h4>October 6th</h4>
-		<h5>Lecture</h5>
-			<ul>
-				<li>2 kinds of systems archiecture:</li>
-					<ol>
-						<li>client-server: Need server always on/available</li>
-						<li>peer to peer: No central server, greater resiliancy</li>
-					</ol>
-				<li>Server: Machine/process that responds to requests<li>
-				<li>Challenges with peer to peer<li>
-					<ul>
-						<li>Asymmetric bandwith security</li>
-						<li>programming challenges</li>
-						<li>need to find peers</li>
-					</ul>
-				<!--<li></li>-->
-			</ul>
-		<h5>Lab</h5>
-			<ul>
-				<!--...-->
-			</ul>
+		<a href="/home/local/CORNELL-COLLEGE/rconrardy17/network-notes/team/ryan/Oct3.html">October 3rd</a></br>
+		<a href="/home/local/CORNELL-COLLEGE/rconrardy17/network-notes/team/ryan/Oct5.html">October 5th</a></br>
+		<a href="/home/local/CORNELL-COLLEGE/rconrardy17/network-notes/team/ryan/Oct6.html">October 6th</a></br>
 		<h4>October 7th</h4>
 		<h5>Lecture</h5>
 			<ul>
