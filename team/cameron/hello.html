@@ -1,17 +1,116 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>
-    Hello
-</title>
-</head>
-<body>
-    <h1>
-        Cameron Seebach
-    </h1>
-    <p>
-	I want to be a part of a towering love. <br>
-        - Cameron Seebach
-    </p>
-</body>
-</html>
+<!DOCTYPE html><html lang="en"><head><title>Cam's Network Notes</title><link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/default.min.css"><script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js"></script><script>| hljs.initHighlightingOnLoad();</script></head><body><div class="jumbotron"><div class="container"><h1>Week 0 Exercise</h1><h3>Cam's Network Notes</h3></div></div><div class="container"><div class="row"><h1>8 Review Questions</h1>
+<ol>
+<li>
+<p>Which kind of switching is this unfunny joke about?</p>
+<blockquote>
+<p>A man walks into a bar, and orders a beer. The bartender calls the
+wholesaler. The wholesaler calls the brewery. The brewery makes the beer.
+The brewery sells the beer to the wholesaler. The wholesaler sells the beer
+to the bar. The bartender serves the man, and the man starts drinking
+the beer.</p>
+<p>In the meantime, a second person walks into the bar. The bartender yells,
+&quot;Can't you see I'm busy!!&quot;</p>
+</blockquote>
+<p>Answer: circuit switching</p>
+</li>
+<li>
+<p>What kind of loss, suffered by a packet switching network, could be
+alleviated if infinite output buffer sizes were possible?</p>
+<p>Packet loss.</p>
+</li>
+<li>
+<p>What is 'distributed' about a DDoS attack?</p>
+<p>The attack comes from many computers that are geographically distinct, making
+it more difficult to figure out which computers are legitimate requests.</p>
+</li>
+<li>
+<p>Why don't we use two layers of the ISO OSI model?</p>
+<p>We do use them, but we leave the choices there to application developers.
+Most applications do make presentation and session choices.</p>
+</li>
+<li>
+<p>Fill in the network protocol in this joke:</p>
+<blockquote>
+<p>I would tell you a joke about ___, but you might not get it.</p>
+</blockquote>
+<p>Answer: UDP</p>
+</li>
+<li>
+<p>Which network protocol does this joke reflect?</p>
+<blockquote>
+<p>Hello, would you like to hear a joke?</p>
+<p>Yes, I'd like to hear a joke.</p>
+<p>OK, I'll tell you a joke.</p>
+<p>OK, I'll hear a joke.</p>
+<p>Are you ready to hear a joke?</p>
+<p>Yes, I am ready to hear a joke.</p>
+<p>OK, I'm about to send the joke. It will last 10 seconds, it has two
+characters, it does not have a setting, it ends with a punchline.</p>
+<p>OK, I'm ready to hear the joke that will last 10 seconds, has two
+characters, does not have a setting and will end with a punchline.</p>
+<p>I'm sorry, your connection has timed out...Hello, would you like to hear a
+joke?</p>
+</blockquote>
+<p>Answer: TCP</p>
+</li>
+<li>
+<p>Name two protocols that are involved in the sending and retrieval of e-mail.</p>
+<p>Pick two of: SMTP, POP3, IMAP, HTTP</p>
+</li>
+<li>
+<p>Why is the opening of a TCP connection called a &quot;three-way handshake&quot;?</p>
+<p>The opening part of a client's TCP connection goes to a &quot;welcoming socket&quot;,
+which is not unique to the client. Then, a unique socket for the connection
+is created.</p>
+</li>
+</ol>
+<h1>Influential person: Bob Taylor</h1>
+<p>This account was taken from the book, <em>Where Wizards Stay Up Late</em>, by Katie
+Hafner and Matthew Lyon.</p>
+<p>Bob Taylor was the leader of the ARPANET project at ARPA, where he lead the
+development of the Interface Message Processor units that were initially
+installed at each node of the fledgling network.</p>
+<p>ARPANET was one very early incarnation of the Internet that connected four nodes
+across the country at top-level universities. This network was established by
+December of 1969, and shortly thereafter Bob left the project to pursue other
+opportunities.</p>
+<p>He's not as well known as Cerf or Baran as he was the manager of the project
+through an office at the Pentagon known as the IPTO, instead of a direct
+engineering contributor.</p>
+<p>In 1994, when many of the original ARPANET contributors re-assembled to
+celebrate the 25th anniversary of their achievement, the press had already created the
+myth that ARPANET had been created partially to provide communication in the
+event of a nuclear attack on the US. Bob Taylor had attempted to remedy this
+false belief to no avail.</p>
+<p>ARPANET had been created as a scientific enterprise, to link universities
+together so that they could share computing resources. Mainframe computers at
+that time were very expensive, and it would be a time and expense savings if
+researchers from one university could avoid getting their own computer.</p>
+<p>One anecdote from his career I found interesting - the initial pitch for ARPANET
+was for one million dollars, and Taylor got this funding without a laid-out plan
+and in a twenty minute conversation with his boss, the leader of ARPA, Charlie
+Herzfeld.</p>
+<h1>Tutorial on ifdown and ifup, and a little ifconfig</h1>
+<p>If you ever, on Linux, need to change your network configuration, you'll need
+to know the network interface name.</p>
+<p>You can get this from <code>ifconfig</code> - the command without arguments prints all
+the interfaces installed on the computer. An ifconfig listing will have the name
+of the interface in the first line of each block, each block corresponding to
+one interface. Example for an interface named <code>eno1</code>.</p>
+<pre><code>eno1      Link encap:Ethernet  HWaddr 90:b1:1c:88:bc:1d  
+          inet addr:10.101.6.28  Bcast:10.101.6.255  Mask:255.255.255.0
+          inet6 addr: fe80::8c3d:d00f:c95:8a5a/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:73651 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:61284 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:60730681 (60.7 MB)  TX bytes:10256534 (10.2 MB)
+          Interrupt:20 Memory:f7c00000-f7c20000 
+</code></pre>
+<p>Say that you wanted to change your <code>eno1</code> to a static IP address - on Ubuntu
+you would make the necessary changes to <code>/etc/network/interfaces</code>. Then, you
+would run the following to apply those changes:</p>
+<pre><code class="highlight-bash">ifdown eno1
+ifup eno1
+</code></pre>
+</div></div></body></html>
