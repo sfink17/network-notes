@@ -61,9 +61,22 @@
 			</li>
 			<li>
 				<h3>Web Caching</h3>
+				<p>A <b>Web cache</b> - also called a <b>proxy server</b> - is a network entity that satisfies HTTP request on behalf of an origin Web Server.</p>
+				<p>A cache is both a server and a client at the same time.</p>
+				<p><b>Web cache processing</b></p>
+				<ol>
+					<li>The browser establishes a TCP connection to the Web cache and sends an HTTP request for the object to the Web cache.</li>
+					<li>The Web cache checks to see if it has a copy of the object stored locally. If it does, the Web cache returns the object within HTTP response message to the client browser.</li>
+					<li>If the Web cache does not have the object, the Web cache opena a TCP connection to the origin server. The Web Cache then sends the HTTP request for the object into cache-to-server TCP connection. After receiving this request, the origin server sends the object within an HTTP response to the Web cache.</li>
+					<li>When the Web cache receives the object, it stores a copy in its local storage and sends a copy, within an HTTP response message, to the client browser (over the existing connection between the client browser and the Web cache</li>
+				</ol>
+				<p>A Web cache can substantially reduce the response time for a client request.</p>
+				<p>A Web cache can also substantially reduce the Web traffic in the Internet as a whole, thereby improving the performance for all applications.</p>
 			</li>
 			<li>
 				<h3>The Conditional GET</h3>
+				<p>The <b>conditional GET</b> is a mechanism of HTTP that allows a cache to verify that its object is up-to-date</p>
+				<p>The request message (1) uses the GET method and (2) includes an If-Modified-Since: header line</p>
 			</li>
 		</ol>
 	</body>
