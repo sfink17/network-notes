@@ -36,11 +36,16 @@ html(lang="en" ng-app)
           .row
             .col-xs-4
               button.btn-primary.btn.btn-block(ng-click="post = '3.1'") 3.1
+            .col-xs-4
+              button.btn-primary.btn.btn-block(ng-click="post = '3.2'") 3.2
       .row
-        .post(ng-show="post == 'week0'")
-          include:markdown-it(linkify=true, langPrefix="highlight-") _posts/graded-week0.md
-        .post(ng-show="post == '3.1'")
-          include:markdown-it(linkify=true, langPrefix="highlight-") _posts/notes-3.1.md   
+        .col-xs-12
+          .post(ng-show="post == 'week0'")
+            include:markdown-it(linkify=true, langPrefix="highlight-") _posts/graded-week0.md
+          .post(ng-show="post == '3.1'")
+            include:markdown-it(linkify=true, langPrefix="highlight-") _posts/notes-3.1.md 
+          .post(ng-show="post == '3.2'")
+            include:markdown-it(linkify=true, langPrefix="highlight-") _posts/notes-3.2.md 
           
             
           
