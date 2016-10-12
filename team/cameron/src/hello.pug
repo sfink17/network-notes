@@ -38,6 +38,8 @@ html(lang="en" ng-app)
               button.btn-primary.btn.btn-block(ng-click="post = '3.1'") 3.1
             .col-xs-4
               button.btn-primary.btn.btn-block(ng-click="post = '3.2'") 3.2
+            .col-xs-4
+              button.btn-primary.btn.btn-block(ng-click="post = '3.3'") 3.3
       .row
         .col-xs-12
           .post(ng-show="post == 'week0'")
@@ -46,6 +48,8 @@ html(lang="en" ng-app)
             include:markdown-it(linkify=true, langPrefix="highlight-") _posts/notes-3.1.md 
           .post(ng-show="post == '3.2'")
             include:markdown-it(linkify=true, langPrefix="highlight-") _posts/notes-3.2.md 
+          .post(ng-show="post == '3.3'")
+            include:markdown-it(linkify=true, langPrefix="highlight-") _posts/notes-3.3.md
           
             
           
