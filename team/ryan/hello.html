@@ -3,11 +3,27 @@
 <head>
 <body style="background-color:#E51616;">
 <text style="color:#00EADC;">
+<style>
+h1{ text-align: center;}
+p{ text-align: center;}
+h2{ text-align: center;}
+h3{ text-align: center;}
+a{ text-align: center;}
+img {
+    display: block;
+    margin: auto;
+    width: 40%;
+}
+</style>
 <title>
     Run The Conrardy
 </title>
 </head>
 <body>
+	<audio controls>
+		<source src="Run The Jewels - Blockbuster Night Part 1.mp3" type="audio/mpeg">
+		Your browser does not support the audio element.
+	</audio>
     <h1>
         Ryan Conrardy
     </h1>
@@ -18,189 +34,22 @@
         Double major in biology and computer, already graduated with a bachlor in biology so I've pristeged back to a freshman. <br/>
         Dank memes and crippling depression. 
     </p>
-    <h2>NOTES:</h2>
-        <a href="/home/local/CORNELL-COLLEGE/rconrardy17/network-notes/team/ryan/hierarchyOfAbstractions.html">Hierarchy of Abstractions</a>
+	<h2>NOTES:</h2>
+		<p><a href="hierarchyOfAbstractions.html">Hierarchy of Abstractions</a></br>
+		<a href="Definitions.html">Definitions</a></br></p>
 		<h3><u>Class Notes</u></h3>
-		<a href="/home/local/CORNELL-COLLEGE/rconrardy17/network-notes/team/ryan/Oct3.html">October 3rd</a></br>
-		<a href="/home/local/CORNELL-COLLEGE/rconrardy17/network-notes/team/ryan/Oct5.html">October 5th</a></br>
-		<a href="/home/local/CORNELL-COLLEGE/rconrardy17/network-notes/team/ryan/Oct6.html">October 6th</a></br>
-		<h4>October 7th</h4>
-		<h5>Lecture</h5>
-			<ul>
-				<li>Finite State Machine:</li>
-					<ol>
-						<li> An abstract machine that can be in one of  finite number of states.</li>
-						<li>A set of states.</li>
-						<li>Alphabet &#8212; A set of symbols.</li>
-						<li>Transition Function: A set of rules (Can be given in a table) if in state X and looking at symbol alpha, then next stat is y. (Given a particular state and a particular symbol/imput, then transition to another particular state)</li>
-						<li>Starting State: Need to know starting state to know where to go next.</li>
-						<li>Set of accepting states: know whether a set of states is allowed or not (good/bad).</li>
-						<li>Can be used in the development of a compiler.</li>
-						<li>Seperate FSM for receiver and sender</li>
-					</ol>
-				<li>Regular Expressions: Way of decribing regular languages.</li>
-				<li>Regular Languages: What finite state machines recognize.</li>
-				<li>4 Types of Languages</li>
-					<!--<ol>
-						<li></li>
-						<li></li>
-						<li></li>
-						<li></li>
-					</ol>-->
-				<li>Machine<==>Language</li>
-					<ul>
-						<li>Machine: Function/set of rules implied in hardwear. It is something that interprets language.</li>
-						<li>Language: Defines a machine.</li>
-					</ul>
-				<li>Lexx: Unix program given adescription of a regular language, produces a C program (a finite state machine) that recognizes the language.</li>
-				<li>4 Kinds of codes:</li>
-					<ol>
-						<li>Conveince: Unicode/ASCII-->Assigns numbers to symbols and text.</li>
-						<li>Data compression: Zip, JPEG, MP3-->Strips redundancy to send more data.</li>
-						<li>Error detection/correction system: Checksum-->Adds redundancy.</li>
-						<li>Encryption</li>
-					</ol>
-				<li></li>
-			</ul>
-		<h5>Lab</h5>
-			<p>No notes</p>
-		<h4>October 10th</h4>
-		<h5>Lecture</h5>
-			<ul>
-				<li>Multipul ways to itentify something.  In certian situations one way might be more better than another to use to identify.</li>
-				<li><b>hostname</b>:Mnemonic way to identify an address.  Useful for people, but not computers. Tells little about computer/server's location.  Made of variable alphanumeric characters.</li>
-				<li><b>IP addres</b>:IP numbers are the social security numbers to websites.  Decimal formatted, 4 numbers, 0-255 seperate by a period. (ie. 0.255.16.255). Heirarchical, read left to right.</li>
-				<li><b>DNS</b>:(Domain Name System)A data base that links hostnames to IP addresses.  Distributed database and an API.  Berkeley Internet Name Domain (BIND) uses the DNS.  Runs on UDP transport protocol on port number 53 (love bug: 53).  Adds delay, usually short, sometimes a little longer.  Usually delay is shortened by nearby lower level DNS servers cacheing commonly used urls for fast lookup.  Used indirectly.</li>
-				<li><b>cache</b>: Local memory that stores what you looked up last.  Used everywhere to speed up preformance.</li>
-				<li><b>Host aliasing</b>: A DNS service.  When there are multipul host names that point to an IP address it makes sure that they both direct to the correct location or the <i>canonical hostname</i>.</li>
-				<li><b>Mail server aliasing</b>: A DNS service.  Allows the lookup of the <i>canonical hostname</i> of the email address.</li>
-				<li><b>Load distribution</b>:A DNS service.  For large websites with multipul IP addresses it roates which address is used to avoid overloading one server.  This balances the amount of users requesting each server.<li>
-				<li><b>DNS Problems, for simple centralized design:</b></li>
-					<ul>
-						<li>Single point failure: If the DNS server crashes so does the internet (assuming one server).</li>
-						<li>Traffic volume: One server would have to handle all traffic, would become incredibly slow.</li>
-						<li>Distant centralized database: Delays created by DNS server being physically far away.</li>
-						<li>Maitenance: Would have to contain addresses and hostnames for the whole internet, would be huge and require frequent updates.</li>
-					</ul>
-				<li><b>Alternate</b></li>
-					<ul>
-						<li>Root DNS servers: Main root servers that contain whole or most of DNS.  Multipul with lower level servers below them.  There are 13 root servers atm.</li>
-						<li>Top-level domain (TLD) servers: Responsible for top-level domains, which as .com, .org., .net, .edu, and .gov and country level domains.  </li>
-						<li>Authoritative DNS servers: Organizations on the internet had an authoritative DNS server that houses the records of their host names and IP addresses.  Such as universities and large companies.</li>
-					</ul>
-				<li><b>DNS message</b></li>
-					<ul>
-						<li>Identification (2 bytes)</li>
-						<li>Flags (2 bytes)</li>
-						<li># of Questions (2 bytes)</li>
-						<li># of answer RRs (2 bytes)</li>
-						<li># of authority RRs (2 bytes)</li>
-						<li># of additional RRs (2bytes)</li>
-						<li>Questions</li>
-						<li>Answers</li>
-						<li>Authority</li>
-						<li>additional info</li>
-					</ul>
-				<li><b>DNS vulnerabilities</b></li>
-					<ul>
-						<li>DDoS attacks: either sending packets to the root servers in large amounts to slow them down and stop replies.  Or send many DNS queires to top-level-domain servers to slow them down.<li>
-						<li>Man in the middle: Intercepts queries from hosts and returns bogus replies.  This redirects people to false websites.</li>
-						<li>DNS poisioning: Sends a bogus reply to the DNS server so it caches the false records.</li>
-						<li>Use DNS to create a DDoS against a server, by sending queires to many authoritative DNS servers, each having the spoofed source address of the target host.  If packets are larger in bytes than  query then they can potentially overwhelm a target.</li>
-					</ul>
-				<li><b>Wireshark</b></li>
-					<ul>
-						<li>Packet sniffing softwear</li>
-						<li>Displays info such as source address, destination address, frames, contents, protocol, etc.</li>
-						<li>Allows you to see traffic between computer and other hosts on the internet</li>
-						<li>Allows you to filter packets by protocol, ip addresses, etc.  In real time.</li>
-					</ul>
-			</ul>
-				
-		<h5>Lab</h5>
-			<p>Nothing (wireshark labs)</p>
-		<h4>October 11th</h4>
-		<h5>Lecture</h5>
-			<ul>
-				<li><b>Apache</b>: Feather logo.  "A patchy" program, name comes from a 'fix to a program', needed a lot of fixes.  Webserver.  Has a module to interpret php in a website.  Port 80 (by default)</li>
-				<li><b>GlassFish</b>: Webserver, displays java servers.  Finds requested file, looks for 'special' java code, executes java, produces html, sends it back to client.  Same way apache looks for php.  May run with another webserver service. Port 88 (by default)</li>
-				<li>Use other softwear so when you see a request for a specific part of a url, redirect to other webserver (such as glassfish), and then get returned data to return to users.</li>
-				<li><b>Framework</b>: Programming language, and a collection of classes that can be used.  (ie. Ruby on rails, cake for php, jango for python).</li>
-				<li><b>Bean</b>:Name of a java class in a java webserver network.  One of the beans <b>MUST</b> take no parameters.</li>
-				<li>"Java webservers are difficult" -- Leon</li>
-				<li><b>Student Notes: UDP</b></li>
-					<ul>
-						<li>Less reliable than TCP</li>
-						<li>More flexibility, speed, light weight</li>
-						<li>No throttling--all messages immediatly sent</li>
-						<li>No consistant connection</li>
-						<li>Used by steaming services,DNS, etc.</li>
-						<li>Uses checksum to detect errors</li>
-							<ul>
-								<li>Adds 4 lines, 3 are 16 bit numbers, 4th is 1s compliment, checks to see if 1s compliment is accurate</li>
-								<li>possible for false positive, or false negative</li>
-							</ul>
-					</ul>
-				<li><b>Student Notes: 8.3.1 Reading notes</b></li>
-					<ul>
-						<li>logical communication: From application perspective hosts are directly connected.</li>
-						<li>TCP: Reliable, connection-oriented service</li>
-						<li>UDP: Unreliable, connectionless service</li>
-						<li>IP: Best effort to deliver segments, no guarentee</li>
-						<li>Transport-layer multiplexing and demultiplexing: Extending host-to-host deliver to process-to-process.  Both in TCP and UDP.</li>
-						<li>Congestion control: Prevents any 1 TCP connection from swapping links between communicating links</li>
-						<li>flow control: limits amount of data a sender can send.  Keeps from over filling a reciever's buffer</li>
-						<li>Socket: dat passes from process to network</li>
-						<li>well known ports: 0-1023</li>
-						<li>Hand shake: before and fter data transmissions via TCP host sends a synchronized method to server, and the server sends back a synchronized method to open comunications</li>
-					</ul>
-			</ul>
-		<h5>Lab</h5>
-			
-        <h3><u>Definitions</u></h3>
-            <ul>
-                <li><b>Communication link</b>: connection that allows transfer of information between hosts and end systems.</li>
-                <li><b>Packet switches</b>: groups all transmitted data into suitably sized blocks, called packets, which are then transmitted.</li>
-                <li><b>Transmission rate</b>:  speed in bits/second that data is passed over a link.</li>
-                <li><b>Packet</b>: package of information sent over a link.  May be the whole set, or a part of the total data.</li>
-                <li><b>Link-layer switch</b>:</li>
-                <li><b>Router switch</b>:</li>
-                <li><b>Route/Path</b>: sequence of communication links and packet switches that a packet goes from end system to end system.</li>
-                <li><b>Internet Service Provider (ISP)</b>: a network of packet switches and communication links.  Provide connection to end systems and content providers.</li>
-				<li><b>TCP/IP</b>: Specifies the format of the packets that are sent and recieved among routers and end systems.</li>
-				<li><b>Distributed applications</b>: Have multiple end systems that exhchange data with eachother.</li>
-				<li><b>Application Programming Interface (API)</b>: specifies how a program running on one end system ask the Internet infrastructure to deliver data to a specific destination program running on another end system.</li>
-				<li><b>Protocol</b>: Defines the format and the order of messages echanged between two or more communicating entities.  Also the actions taken on the transmission or receipt of a message/event.</li>
-				<li><b>Client</b>: Host/end system that is usually a desktop, mobile PC or other smaller computer system.</li>
-				<li><b>Server</b>: Host/end system that is usually a more powerful machine that stores and distributes webpages, streams videos, emails, ect.</li>
-				<li><b>Physical medium</b>: Allows a bit to be sent by propagating electro magnetic waves or optical pulses.  Examples include twisted-pair copper wire, coaxial cable, multimode fiber-optic cable, terrestrial radio spectrom, and satellite radio spectrum.</li>
-				<li><b>Guided media</b>: Type of physical medium, waves are guided along a solid medium.</li>
-				<li><b>Unguided media</b>: Type of physical medium, waves propagate in the air or outer space.</li>
-				<li><b>Geostationary satellites</b>: Permanently remain above the same spot on Earth.  High orbit, which means longer delay.</li>
-				<li><b>Low-earth orbiting satellites</b>: Much closer to Earth and are not stationary.  Less delay, but requires more of them.  Can communicate between eachother.</li>
-				<li><b>Store-and-foreward transmission</b>: Type of packet switch, must recieve the whole package, before it can start to sent the first bits of hte packet onto the outbound link.</li>
-				<li><b>Output buffer/output queue</b>: Stores packets that the router is about to send to a link.  In a store-and-foreward system.</li>
-				<li><b>Packet loss</b>: If the output buffer is full an incoming packet may be dropped.</li>
-				<li><b>Forwarding table</b>: Maps destinations addresses to the outbound links of the router</li>
-				<li><b>Circuit switching</b>:  Resources needed along a path for communication between end systems are reserved for the duration of hte communication.  Wasteful due to silent periods when dedicated circuts are silent.</li>
-				<li><b>Packet Switching</b>: Resources are not reserved, and a session's messages use the resources on demand.  As such messages/packets may have to wait for access to a link or other resources.</li>
-				<li><b>Frequency-division multiplexing</b>: (FDM) Frequency spectrum of a link is divided up among the connections established across the link.</li>
-				<li><b>Time-division multiplexing</b>: (TDM) Time is divided into frames of fixed duration and each frame is divided into a fixed number of time slots.  Network dedicates one time slot in every frame to the connection.  Dedicated to the sole use of that connection.</li>
-				<li><b>Customer</b>:  Access ISP.</li>
-				<li><b>Provider</b>: Global transit ISP.  Network of routers and communication links that spans the globe, and has at least one router near the access ISP.</li>
-				<li><b>Regional ISP</b>: An ISP in a region that all access ISPs in that region connect.</li>
-				<li><b>Teir-1 ISP</b>: large ISP network, similar to global ISP concept, but not as large.  Regional ISPs and come access ISPs connect to teir-1 ISPs.</li>
-				<li><b>Points of Presence (PoPs)</b>: Group of one or more routers, in the same location, that allow customer ISPs in a provider's network to connect to ther provider ISPs.</li>
-				<li><b>Multi-home</b>: When an ISP connects to two or more provider ISPs.</li>
-				<li><b>Peer (connection)</b>: ISPs at the same level of heirarchy connect their networks together directly, so that the traffic between them passes via direct communicaion rather than over upstream intermediaries</li>
-				<li><b>Internet Exchange Point (ISP)</b>: Meeting point where multiple ISPs can peer together.</li>
-				<li><b>Nodal processing delay</b>: Time required to examine the packet's header to determine where to direct the packet.  Also time to check for bit-level errors.</li>
-				<li><b>Queuing delay</b>: The delay that a packet experience when it waits to be transmitted onto the link/node.  Depends on the number of earlier arrived packets.<li>
-				<li><b>Transimission delay</b>: Packets can only be transmitted after all the packets that arrived before it have been transmitted.  Transimission delay is the length of the packet in bits (L) and the transmission rate from router to router in bits/second (R), this it is expressed as L/R. Or the amout of time required to transmit all of the packet's bits into the link.</li>
-				<li><b>Propagation delay</b>: Time required to propagate from the beginning of the link to the end router.</li>
-				<li><b>Traffic intensity</b>: With a = averate rate of packet arrival in queue, R = transmission rate, L = length of bits of packets (all), then traffic intensity is equal to (La)/R.  If traffic intensity > 1 averate rate of bit arrival exceeds rate of transmission.  If traffic intensity <= 1 there is no queing delay as all packets are transmitted before arrival of the next.</li>
-				
-				<!--<li><b></b>:</li>-->
-            </ul>
+<!--/home/local/CORNELL-COLLEGE/rconrardy17/network-notes/team/ryan/-->
+		<p><a href="Oct3.html">October 3rd</a></br>
+		<a href="Oct5.html">October 5th</a></br>
+		<a href="Oct6.html">October 6th</a></br>
+		<a href="Oct7.html">October 7th</a></br>
+		<a href="Oct10.html">October 10th</a></br>
+		<a href="Oct11.html">October 11th</a></br></p>
+	<h2>LABS:</h2>
+		<p><a href="Wireshark.html">Wireshark</a></br>
+		</P>
+	<h2>GRADED EXERCIZES:</h2>
+		<p><a href="gradedexercize0.html">Graded Exercize 0</a></br>
+		</p>
 </body>
 </html>
