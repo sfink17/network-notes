@@ -55,6 +55,117 @@
 		<li>Encryption</li>
 	</ol>
 </ul>
+	<h3>Class Notes 10/10/2016</h3>
+	<ul>
+		<li>Different forms of identifier are used in different circumstances</li>
+		<li>Hostname</li>
+		<ul>
+			<li>variable-length alphanumeric string identifier</li>
+			<li>provide little information about the sit'es location</li>
+			<li>difficult for computers to parse</li>
+		</ul>
+		<li>IPv4 Address</li>
+		<ul>
+			<li>4-byte computer-readable numeric identifier</li>
+			<li>describes its location</li>
+			<li>Format: byte.byte.byte.byte (123.45.67.89)</li>
+		</ul>
+		<li>Mnemonic: <i>device to help you memorize something</i></li>
+		<li><b>D</b>omain <b>N</b>ame <b>S</b>ystem</li>
+		<ul>
+			<li>Two part definition</li>
+			<ol>
+				<li>Distributed database</li>
+				<li>API for making queries on said database</li>
+			</ol>
+			<li>Popular example: <b>B</b>erkeley <b>I</b>nternet <b>N</b>ame <b>D</b>omain</li>
+			<li>DNS runs on port 53 over UDP</li>
+			<li>Application-level protocol used by other application-level protocols</li>
+			<li>Process of using the DNS to fetch an IP address adds delay (from milliseconds to seconds</li>
+			<li>To reduce delay, nearby DNS server caches frequently requested IPs</li>
+			<li>Cache: <i>local memory that stores what was looked up last</i></li>
+			<li>Specified in RFC 1034 and RFC 1035, updated in several more</li>
+			<li>Users do not interact directly with the DNS, only applications do</li>
+		</ul>
+		<li>DNS Services</li>
+		<ul>
+			<li>Host Aliasing</li>
+			<ul>
+				<li>Host with a complicated hostname can have one or more alias names</li>
+				<li>Complicated base url is the <b>canonical hostname</b></li>
+				<li>Alias names are usually more mnemonic</li>
+			</ul>
+			<li>Mail Server Aliasing</li>
+			<ul>
+				<li>Translate mnemonic e-mail address endings (@hotmail.com, @gmail.com, etc.)</li>
+				<li>Invoked by mail application</li>
+				<li>MX record permits company's mail server and web server to have identical alias names</li>
+			</ul>
+			<li>Load Distribution</li>
+			<ul>
+				<li>Busy sites have IPs to alleviate strain on the system</li>
+				<li>DNS alternates between which IP it distributes first to prevent all traffic from going to the same IP</li>
+			</ul>
+		</ul>
+		<li>Simple centralized DNS has many problems</li>
+		<ul>
+			<li>Single point of failure: if the server fails, the entire internet crashes</li>
+			<li>Traffic volume would be immense, creating a long queue delay</li>
+			<li>Anyone far from the database would have high delays</li>
+			<li>High maintenance requirements</li>
+		</ul>
+		<li>Distributed DNS</li>
+		<ul>
+			<li>No single machine contains all of the mappings</li>
+			<li>Machines are distributed across the world</li>
+			<li>Hierarchy of servers</li>
+			<ol>
+				<li>Root server</li>
+				<li>TLD server</li>
+				<li>Authoritative server</li>
+			</ol>
+		</ul>
+		<li>DNS Message Format</li>
+		<ol>
+			<li>Identification/Flags (4 bytes each)</li>
+			<ul>
+				<li>Identification: 16-bit number identifying the query</li>
+				<li>Flags: Yes/no indicators defining the kind of query</li>
+			</ul>
+			<li>Number of questions/Number of answer RRs (4 bytes each)</li>
+			<li>Number of Authority RRs/Number of additional RRs (4 bytes each)</li>
+			<li>Questions (variable number) (8 bytes)</li>
+			<ul>
+				<li>Name field with the name being queried</li>
+				<li>Type field with the kind of question</li>
+			</ul>
+			<li>Answers (variable number)</li>
+			<ul>
+				<li>Resource Records which were queried</li>
+			</ul>
+			<li>Authority (variable number)</li>
+			<ul>
+				<li>Records of other authoritative servers</li>
+			</ul>
+			<li>Additional Information (variable number)</li>
+			<ul>
+				<li>Other helpful records (canonical hostnames and IPs, etc</li>
+			</ul>
+		</ol>
+		<li>DNS Vulnerabilities</li>
+		<ul>
+			<li>DDoS attack</li>
+			<ul>
+				<li>Flood server with messages</li>
+				<li>Many high-level servers have packet filters, preventing them from being directly attacked</li>
+			</ul>
+			<li>Man-in-the-middle attack</li>
+			<ul>
+				<li>Intercepts queries from hosts and returns bogus replies</li>
+				<li>May then redirect client to the real server so they don't know anything is wrong</li>
+			</ul>
+		</ul>
+	</ul>
 <p style="font-size:5px; color:white">There are no hugs in computer science</p>
 <a href="./hello.html">Home</a>
 </body>

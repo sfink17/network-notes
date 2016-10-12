@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<body style="background-color:#E51616;">
+		<text style="color:#00EADC;">
+		<style>
+		body{ cursor: url('bestcursor.cur'), auto;}
+		</style>
+		<title>
+			Wireshark Lab
+		</title>
+	</head>
+	<body>
+		<h1>Wireshark Lab</h1>
+		<h2>Accessing Wireshark</h2>
+			<ul>
+				<li><i>su compsci</i></li>
+				<ul>
+					<li>[PASSWORD]</li>
+				</ul>
+				<li><i>sudo su</i></li>
+				<ul>
+					<li>[PASSWORD]</li>
+				</ul>
+				<li><i>wireshark</i></li>
+				<li>Double click on desired interface when started</li>
+			</ul>
+		<h2>Lab 1: Intro</h2>
+			<p>General overview of how to open and use wireshark</p>
+		<h2>Lab 2: HTTP</h2>
+			<ol>
+				<li>Is your browser running HTTP version 1.0 or 1.1? What version of HTTP is the server running?</li>
+					<ul>
+						<li>Both are running on 1.1</li>
+					</ul>
+				<li>What languages (if any) does your browser indicate that it can accept to the server?</li>
+					<ul>
+						<li>Accepts languages english-US, english</li>
+					</ul>
+				<li>What is the IP address of your computer? Of the gaia.cs.umass.edu server?</li>
+					<ul>
+						<li>Source IP: 10.101.6.38 (my computer). Destination IP: 128.119.245.12 (gaia.cs.umass.edu)</li>
+					</ul>
+				<li>What is the status code returned from the server to your browser?</li>
+					<ul>
+						<li>Status code: 200</li>
+					</ul>
+				<li>When was the HTML file that you are retrieving last modified at the server?</li>
+					<ul>
+						<li><i>Last modified: Mon. Oct. 10th 2016</i></li>
+					</ul>
+				<li>How many bytes of content are being returned to your browser?</li>
+					<ul>
+						<li>128 bytes</li>
+					</ul>
+				<li>By inspecting the raw data in the packet content window, do you see any headers within the data that are not displayed in the packet-listing window? If so, name one.</li>
+					<ul>
+						<li><i>Congradulations you've downloaded the file</i></li>
+					</ul>
+				<li>Inspect the contents of the first HTTP GET request from your browser to the server. Do you see an “IF-MODIFIED-SINCE” line in the HTTP GET?</li>
+					<ul>
+						<li>No</li>
+					</ul>
+				<li>Inspect the contents of the server response. Did the server explicitly return the contents of the file? How can you tell?</li>
+					<ul>
+						<li>Yes, under the ASCII text</li>
+					</ul>
+				<li>Now inspect the contents of the second HTTP GET request from your browser to the server. Do you see an “IF-MODIFIED-SINCE:” line in the HTTP GET? If so, what information follows the “IF-MODIFIED-SINCE:” header?</li>
+					<ul>
+						<li>Yes, <i>if-modified since: Mon, 10 Oct 2016 5:59:01 GMT</i></li>
+					</ul>
+				<li>What is the HTTP status code and phrase returned from the server in response to this second HTTP GET? Did the server explicitly return the contents of the file? Explain.</li>
+					<ul>
+						<li>Status code: 304, it did not.</li>
+					</ul>
+			</ol>
+		<h2>Lab 3: DNS (incomplete)</h2>
+			<ol>
+				<li>Run nslookup to obtain the IP address of a Web server in Asia. What is the IP address of that server?</li>
+					<ul>
+						<li><i>nslookup www.asdu.ait.ac.th</i></br> www.asdu.ait.ac.th    canonical name = www.misu.ait.ac.th</br> name: www.misu.ait.ac.th</br> address: 203.159.12.3</li>
+					</ul>
+				<li>Run nslookup to determine the authoritative DNS servers for a university in Europe.</li>
+					<ul>
+						<li><i>nslookup -type=NS www.ucs.cam.ac.uk</i></br> www.ucs.cam.ac.uk    canonical name = cs.falcon.csx.cam.ac.uk</br> address: 131.111.15.163</li>
+					</ul>
+				<li>Run nslookup so that one of the DNS servers obtained in Question 2 is queried for the mail servers for Yahoo! mail. What is its IP address?</li>
+					<ul>
+						<li><i>nslookup www.usc.cam.ac.uk pop.mail.yahoo.com</i></br> CONNECTION TIMED OUT</li>
+					</ul>
+			</ol>
+		<h2>Lab 4: TCP</h2>
+			<p>No such thing as HTTP continuation, it indicates multipul TCP segments that hold a single HTTP message</p>
+			<ol>
+				<li>What is the IP address and TCP port number used by the client computer (source) that is transferring the file to gaia.cs.umass.edu? </li>
+					<ul>
+						<li>192.168.1.102, port 1161.  Client</li>
+					</ul>
+				<li>What is the IP address of gaia.cs.umass.edu? On what port number is it sending and receiving TCP segments for this connection?</li>
+					<ul>
+						<li>128.119.245.12, port 80. Gaia.cs.umass</li>
+					</ul>
+				<li>What is the IP address and TCP port number used by your client computer (source) to transfer the file to gaia.cs.umass.edu?</li>
+					<ul>
+						<li>10.101.6.38, port 33524. Me</li>
+					</ul>
+				<li>What is the sequence number of the TCP SYN segment that is used to initiate the TCP connection between the client computer and gaia.cs.umass.edu? What is it in the segment that identifies the segment as a SYN segment?</li>
+					<ul>
+						<li>Flag (SYN), SYN bit is set to 1. 000000000010.</li>
+					</ul>
+				<li>What is the sequence number of the SYNACK segment sent by gaia.cs.umass.edu to the client computer in reply to the SYN? What is the value of the Acknowledgement field in the SYNACK segment? How did gaia.cs.umass.edu determine that value? What is it in the segment that identifies the segment as a SYNACK segment?</li>
+					<ul>
+						<li>Sequence number is 0. Value of the acknowlegement field is 1. Flag identifies as SYN, ACK.  000000010010.</li>
+					</ul>
+				<li>What is the sequence number of the TCP segment containing the HTTP POST command? Note that in order to find the POST command, you’ll need to dig into the packet content field at the bottom of the Wireshark window, looking for a segment with a “POST” within its DATA field.</li>
+					<ul>
+						<li>Sequence number: 164041. (No. 199)</li>
+					</ul>
+			</ol>
+		<a href="hello.html"> Home </a>
+	</body>
+</html>
