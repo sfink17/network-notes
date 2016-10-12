@@ -47,6 +47,9 @@
 							<ul>
 								<li><i>import sys</br></br>def make_packet(data):</br>	checksum = make_checksum(data)</br>	return bytearray([checksum]) + bytearray(data)</br></br>def make_checksum(data):</br>	bytes = bytearray(data)</br>	total = sum(bytes)</br>	print "total:", total</br>	without_overflow = total % 256</br>	print "without overflow:", wihtout_overflow</br>	return 255 - without_overflow</br>	print "resulting checksum:", resulting checksum</br>	return result</br></br>def maybe_corrupt(packet):</br>	if random.choice([True, False, False]):</br>		index = random.randrange(0, len(packet))</br>		packet[index] = random.randrange(0, 256)</br>		print "I am corrupt"</br></br>def is_corrupt(packet):</br>	return (sum(packet)% 256) != 255</br></br>def extract(packet):</br>	return str(packet[1:])</br></br>if __name__ == "__main__":</br>	for line in sys.stdin:</br>		packet = make_packet(line)</br>	maybe_corrupt(packet)</br>	if is_corrupt(packet):</br>		print "packet is corrupt!"</br>	else:</br>		data = extract(packet)</br>	print "packet is good:", data</br></i></li>
 							</ul>
+						<li><b>Nigel:</b></li>
+						<li>Talked about using a router, missed some of it, and the rest was too fast to write. but it was interesting.</li>
+						<li>MAC Filter: white list--put in MAC address of devices that are allowed.  Black list--put in MAC address of only banned devices.</li>
 					</ul>
 			</ul>
 		<h2>Lab<h2>
