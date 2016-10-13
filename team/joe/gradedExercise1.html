@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+
+button.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 24px;
+    transition: 0.4s;
+}
+
+button.accordion.active, button.accordion:hover {
+    background-color: #ddd; 
+}
+
+div.panel {
+    padding: 0 18px;
+    display: none;
+    background-color: white;
+}
+
+div.panel.show {
+    display: block;
+}
+
+p {
+font-size: 22px;
+}
+
+     /* Style the list */
+ul.tab {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+/* Float the list items side by side */
+    ul.tab li {float: left;
+    margin: auto;
+    }
+
+/* Style the links inside the list items */
+ul.tab li a {
+    display: inline-block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+/* Change background color of links on hover */
+ul.tab li a:hover {background-color: #ddd;}
+
+/* Create an active/current tablink class */
+ul.tab li a:focus, .active {background-color: #ccc;}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+
+</style>
+</head>
+<body>
+  <h1> Graded Exercise 1</h1>
+  <br>
+<ul class="tab">
+  <li><a href="#" class="tablinks" onclick="openCity(event, 'Questions')">Questions</a></li>
+  <li><a href="#" class="tablinks" onclick="openCity(event, 'Problem')">Problems</a></li>
+  <li><a href="#" class="tablinks" onclick="openCity(event, 'WireShark')">WireShark</a></li>
+ </ul>
+<br>
+<div id="Questions" class="tabcontent"> 
+<button class="accordion">Describe the basic difference between GO-BACK-N and SLECETIVE REPEAT</button>
+<div class="panel">
+  <p> GO-BACK-N ->Retransmits all the frames that sent after the frame which suspects to be damaged or lost.</p>
+  <p> Selective Repeat -> Retransmits only those frames that are suspected to lost or damaged.</p>
+</div>
+
+<button class="accordion">Is TCP's error-recovery Selective Repeat or Go-Back-N?</button>
+<div class="panel">
+  <p> TCP's error-recovery mechanism is best described as a hybrid of GBN and SR protocols.</p>
+</div>
+
+<button class="accordion">What is flow-control service?</button>
+<div class="panel">
+  <p> Flow-control service is added to applications to eliminate the possibilty of the sender overflowing the receiver's buffer. Flow control is thus a speed-matching service. It matches the rate at which the sender is sending against the rate at which the receiving application is reading.</p>
+</div>
+
+<button class="accordion">What is congestion control?</button>
+<div class="panel">
+  <p>Congestion control controls traffic entry into a telecommunications network, to avoid congestive collapse by avoiding oversubscription by reducing the rate of packets. </p>
+</div>
+
+<button class="accordion">Define SCTP, and explain what it is.</button>
+<div class="panel">
+  <p>The Stream Control Transmission Protocol (SCTP) is a reliable, message-oriented protocol that allows several different application-level "streams" to be multiplexed through a single SCTP connection (an approach known as "multi-streaming").</p>
+</div>
+
+<button class="accordion">Using Go-Back-N, if 48 packets were sent but packet 36 was not recieved correctly. How many packets will be resent?</button>
+<div class="panel">
+  <p> 13 packets </p>
+</div>
+
+<button class="accordion">Using Selective Repeat, if 48 packets were sent but packet 21 was not recieved correctly.How many packets will be resent?</button>
+<div class="panel">
+  <p> 1 packet </p>
+</div>
+
+<button class="accordion">Multiplexing, Demultiplexing, UDP, TCP, Reliable Data Transfer, and congestion control all belong to which protocol layer?</button>
+<div class="panel">
+  <p>Transport layer</p>
+</div>
+
+<button class="accordion">What is a socket?</button>
+<div class="panel">
+  <p> A socket is one-end point of a two-way communication link between two programs running on a network.</p>
+</div>
+
+<button class="accordion">Hostnames and IP address are mapped by what service?</button>
+<div class="panel">
+  <p> Domain Name System (DNS).</p>
+</div>
+</div>
+
+<div id="WireShark" class="tabcontent">
+
+  <button class="accordion"></button>
+
+  
+  <h3>Wireshark Lab: DNS</h3>
+    <button class="accordion"> Run <i>nslookup</i> to obtain the IP address of a Web server in Asia. What is its IP address?</button>
+<div class="panel">
+  <p> I performed <i>nslookup</i> for popzone.asia. Its IP address is 66.96.162.196.</p>
+</div>
+<button class="accordion">Run <i>nslookup</i> to determine the authoriative DNS servers for a university in Europe. What is its IP address? </button>
+<div class="panel">
+  <p>I performed <i>nslookup</i> for a European University in Ioannina Greece. Its IP address is 128.238.29.22</p>
+</div>
+<button class="accordion">Locate the DNS query and response messages. Are they sent over UDP or TCP? </button>
+<div class="panel">
+     <p> They are sent over <b>UDP</b></p>
+</div>
+<button class="accordion">What is the destination port of the DNS query message?</button>
+<div class="panel">
+  <p>The destination port for the DNS query is port <b>53</b></p>
+</div>
+<button class="accordion">What is the source port for of the DNS response message?</button>
+<div class="panel">
+  <p>The source port for the DNS query is also port <b>53</b></p>
+</div>
+<button class="accordion">Examine the DNS query message. What "Type" of DNS query is it?</button>
+<div class="panel">
+  <p>It is a type A standard Query.</p>
+</div>
+<button class="accordion">Does the query message contain and "answers"?</button>
+<div class="panel">
+  <p>It does not contain any answers.</p>
+  </div>
+</div>
+<button class="accordion">This web page that I am visiting contains images. Before retrieving each image, does your host issue a new DNS query?</button>
+<div class="panel">
+  <p>No, The host does not issue a new DNS query for each individual image</p>
+</div>
+
+
+<div id="Problem" class="tabcontent">
+</div>
+
+
+<script>
+  //This is code for the accordions
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+    acc[i].onclick = function(){
+        this.classList.toggle("active");
+        this.nextElementSibling.classList.toggle("show");
+  }
+}
+
+
+//This is the code for the tabs
+ function openCity(evt, cityName) {
+    // Declare all variables
+    var i, tabcontent, tablinks;
+
+    // Get all elements with class="tabcontent" and hide them
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+    // Get all elements with class="tablinks" and remove the class "active"
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+
+    // Show the current tab, and add an "active" class to the link that opened the tab
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}	
+</script>
+
+</body>
+</html>
