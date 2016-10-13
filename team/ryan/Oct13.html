@@ -92,7 +92,7 @@
 						<li>switching fabric</li>
 						<li>routing processor</li>
 					</ul>
-				<li>strucsure of IPv4 datagram</li>
+				<li>strucsure of IPv4 datagram (* denotes 32 bits)</li>
 					<ul>
 						<li>version (4 bits)</li>
 						<li>header length (4 bits)</li>
@@ -103,13 +103,62 @@
 						<li>flags (3 bits)(for fragmentation)</li>
 						<li>fragmentation offset (13 bits) (for fragmetation)</li>
 						<li>*</li>
-						<li>time-to-live (8 bits)(prevent endless circulation)</li>
-						<li>upper-layer protocol(8 bits)</li>
+						<li>time-to-live (8 bits)(prevent endless circulation, decremented eachtime it is processed by a router)</li>
+						<li>upper-layer protocol(8 bits)(TCP, UDP, etc.)</li>
 						<li>header checksum (16 bits)</li>
 						<li>*</li>
 						<li>source IP address (32 bits)</li>
+						<li>*</li>
+						<li>destination IP address (32 bits)</li>
 					</ul>
-				<li></li>
+				<li>why checksums in network and transport layers</li>
+					<ul>
+						<li>only IP header is checksummed at network layer</li>
+						<li>TCP/UDP checksum computed over whole segment</li>
+						<li>IP can carry data not passed to TCP/UDP</li>
+						<li>TCP/UDP can run through ATM (non IP) network</li>
+					</ul>
+				<li>TCP segment in IP datagram: 20+20 = 40 bytes of headers</li>
+				<li>decisions in the design of routers</li>
+					<ul>
+						<li>size of buffer</li>
+						<li>packet scheduling</li>
+					</ul>
+				<li>routing algorithms</li>
+					<ul>
+						<li>Classifications</li>
+							<ul>
+								<li>global vs decentralized</li>
+								<li>static vs dynamic</li>
+								<li> load sensitive vs load insensitive</li>
+							</ul>
+						<li>Link-state</li>
+							<ul>
+								<li>inputs: network topology, all links costs</li>
+								<li>each node broadcasts link-state packets to all other nodes</li>
+								<li>ie. Dijkstra's algorithm</li>
+							</ul>
+						<li>distance-vector</li>
+							<ul>
+								<li>iterative</li>
+								<li>asynchronous</li>
+								<li>distributed</li>
+								<li>self-terminating</li>
+							</ul>
+					</ul>
+				<li>intra-autonomous systems and inter autonomous routing</li>
+					<ul>
+						<li>autonomous--routers owned/administered by same organization</li>
+						<li>Intra -- within a single autonomous system</li>
+						<li>Inter -- among several autonomous systems</li>
+					</ul>
+				<li>Names of routing algorithms</li>
+					<ul>
+						<li>RIP: Routing information protocol (intra)</li>
+						<li>OSPF: Open shortest path first (intra)</li>
+						<li>IS-IS: closely related to OSPF (not discussed further)</li>
+						<li>BGP: Boarder gate protocol (inter)</li>
+					</ul>
 			</ul>
 		<h2>Lab</h2>
 			<ul>
