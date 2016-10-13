@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<body style="background-color:#E51616;">
+		<text style="color:#00EADC;">
+		<style>
+		body{ cursor: url('alsobestcursor.cur'), auto;}
+		</style>
+		<title>
+			October 13th
+		</title>
+	</head>
+	<body>
+		<h1>October 13th</h1>
+		<h2>Reading Notes</h2>
+			<ul>
+				<li>Network ongestions caused by too many sources sending data at too high a rate.</li>
+					<ol>
+						<li>Two hosts share single router with infinite buffer-->Delay increases.  Throughput ~= R/2.</li>
+						<li>Two hosts share single router with finite buffer-->Increase in retransmitted packages.  May have unneeded retransmissions.  Throughput ~= R/3 if sender does not waste retransmissions, and ~= R/4 if retransmissions are wasted due to multipule forwards.</li>
+						<li>Four hosts share four routers overlapping two-hop paths-->when a packet is dropped along a path, the transmission capacity that was used at each of the upstream links to forward that packet to the point at which it was dropped ends up having been wasted.</li>
+					</ol>
+				<li><b>Per-connection throughput</b>: Number of bytes er second at the receiver.</li>
+				<li><b>Offered load</b>: Rate at which the transport layer sends segments into the network.</li>
+				<li>Congestion Control:</li>
+					<ol>
+						<li><b>End-to-end</b>: No explicit support to transport layer.  TCP segment loss is taken as an indication of congested network and it decreases the window size.  Also sometimes uses increase in round-trip delay values as indicators of network congestion.</li>
+						<li><b>Network-assisted</b>: Network-layer components provide explicit feedback to the sender about congestion in the network.  Some may even send the specific transmission rate it can support.</li>
+					</ol>
+				<li><b>choke packet</b>: Sent by network router to the sender that informs the sender of network congestion. [Another form the router marks in the packet it sends to the reciever that it is congested, and the reciever alerts the sender.  This takes one round trip]</li>
+				<li><b>Asynchronous transfer mode (ATM)</b>: Virtual-circuit mode of packet switching.  Each switch maintains state about the source-to-destination VC.  Allows switch to track behavior of individual senders and take source-specific congestion-control actions.  Useful for network assisted.</li>
+				<li><b>Available bit-rate (ABR)</b>: Elastic data transfer service, similar to TCP.  Takes advantage of spare bandwith when network is underloaded, but throttles transmission when network is congested.</li>
+				<li><b>Resource Management cell</b>: A type of packet, used to convey congestion related infomration among hosts and switches.  When recieved at destination it is sent back to sender.  Some switches can generate RM cells.</li>
+				<li><b>Explicit forward congestion indication bit (EFCI bit)</b>: Every data cell/packet has one.  Congested network switches can set the bit to 1 to signal congestion to the destination host.  If the bit is set to 1 then destination host sets the congestion indication bit to 1 in the RM cell.</li>
+				<li><b>Congestion indication bit (CI bit)</b>: In RM cells.  Set by a congested network switch(or destination host if EFCI bit is 1).  Set under severe congestion conditions.</li>
+				<li><b>No increase bit (NI bit)</b>: In RM cells.  Set by a congested network switch.  Set under mild congestion in a network.</li>
+				<li><b>Explicit rate (ER)</b>: A 2-byte field in RM cells.  Congested switch can lower the value in passing.  ER field is equal to minimum supportable rate of all switches on source-to-destination path.</li>
+				<li>TCP must use end-to-end network congestion control, rather than network assisted.  Has each sender limit transmission rate as part of precieved traffic.</li>
+				<li><b>Congestion window (cwnd)</b>: Imposes constraint on tate a TCP sender can send traffic.  The amount of unacknowleged data at a sender cannot exceed minimum of cwnd and rwnd (reciever window).</br> LastByteSent - LastByteAcked <= min{cwnd, rwnd}</br> Sender's send rate is roughly cwnd/RTT bytes/sec.</li>
+			</ul>
+		<h2>Lecture</h2>
+			<ul>
+			</ul>
+		<h2>Lab</h2>
+			<ul>
+			</ul>
+		<a href="hello.html"> Home </a>
+	</body>
+</html>
