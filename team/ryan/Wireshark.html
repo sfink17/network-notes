@@ -125,35 +125,35 @@
 					</ul>
 			</ol>
 		<h2>Lab 5: UDP</h2>
-			<p></p>
+			<p>One of the easier labs, did require to look up in the text for a couple of the problems.</p>
 			<ol>
 				<li>Select one UDP packet from your trace. From this packet, determine how many fields there are in the UDP header. (You shouldn’t look in the textbook! Answer these questions directly from what you observe in the packet trace.) Name these fields.</li>
 					<ul>
-						<li>5 fields.  source port, destination port, length, checksum, Stream index.</li>
+						<li>5 fields.  source port, destination port, length, checksum.</li>
 					</ul>
 				<li>By consulting the displayed information in Wireshark’s packet content field for this packet, determine the length (in bytes) of each of the UDP header fields.</li>
 					<ul>
-						<li>58</li>
+						<li>8 total, 2 each.</li>
 					</ul>
 				<li>The value in the Length field is the length of what? (You can consult the text for this answer). Verify your claim with your captured UDP packet. </li>
 					<ul>
-						<li>length of the...</li>
+						<li>length of the UDP header and data in bytes.  The data is 50, and the header is 8.</li>
 					</ul>
 				<li>What is the maximum number of bytes that can be included in a UDP payload? (Hint: the answer to this question can be determined by your answer to 2. above)</li>
 					<ul>
-						<li></li>
+						<li>65,527 bytes of data, plus the 8 byte header. 2^16-1 plus the header.</li>
 					</ul>
 				<li>What is the largest possible source port number? (Hint: see the hint in 4.)</li>
 					<ul>
-						<li></li>
+						<li>The largest possible port is 65,535 or 2^16-1.</li>
 					</ul>
 				<li>What is the protocol number for UDP? Give your answer in both hexadecimal and decimal notation. To answer this question, you’ll need to look into the Protocol field of the IP datagram containing this UDP segment (see Figure 4.13 in the text, and the discussion of IP header fields). </li>
 					<ul>
-						<li></li>
+						<li>The protocol number is 17. Which is 0x11 in hex.</li>
 					</ul>
 				<li>Examine a pair of UDP packets in which your host sends the first UDP packet and the second UDP packet is a reply to this first UDP packet. (Hint: for a second packet to be sent in response to a first packet, the sender of the first packet should be the destination of the second packet). Describe the relationship between the port numbers in the two packets. </li>
 					<ul>
-						<li></li>
+						<li>The source port and destination port are the reverse of eachother.  (ie. the port for A is the destination for B, and the port for B is the destination for A)</li>
 					</ul>
 			</ol>
 		<a href="hello.html"> Home </a>
