@@ -1,59 +1,64 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>
-    Graded Assignment 0
-</title>
- <link href="css/styles.css" rel="stylesheet">
-</head>
-<body>
-  <img src="collegelogo.png" style="float:right;margin-left:2000px;width:18%;">
-    <h1>
-       <u> Clock Synchronization</u>
-    </h1>
-    <h2>
-      A Problem in Packet Switching Delays
-    </h2>
 
-    <p style="margin-left:200px;margin-right:200px;">
-      This past Summer, I worked on a project for the Physics department 
-      involving audio phased arrays, a technology that requires extremely 
-      precise synchronization between multiple devices. Researching solutions, 
-      I discovered that there are inherent issues with packet based networking 
-      that make precise synchronization impossible. These problems are explainable 
-	  <img src="NTP-Algorithm.png" align="right" style="padding:20px;">
-      using concepts in section 1.3 of the textbook. <br><br>
+$(document).ready(function(){
 
-      For the sake of this exercise, Processing, queuing, transmission, and propagation
-      delays will be labeled P, Q, T, and L, respectively. To make the exercise less
-      infuriating, you may use D as the sum of these delays. To label delays pertaining
-      to an outgoing message, type D1 and to label incoming delays, type D2. <br><br><br>
+$("#home").click(function(){
+$("#subcontent").children().filter(":visible").fadeOut("slow", function(){
+$("#welcome").fadeIn("slow");});
+});
+$("#assignmentLink").click(function(){
+$("#welcome").fadeOut("slow", function(){
+$("#assignment").fadeIn("slow");});
+});
+$("#notesLink").click(function(){
+$("#welcome").fadeOut("slow", function(){
+$("#notes").fadeIn("slow");});
+});
+$("#oct10Link").click(function(){
+$("#welcome").fadeOut("slow", function(){
+$("#oct10").fadeIn("slow");});
+});
+$("#oct11Link").click(function(){
+$("#welcome").fadeOut("slow", function(){
+$("#oct11").fadeIn("slow");});
+});
+$("#synchLink").click(function(){
+$("#assignment").fadeOut("slow", function(){
+$("#synch").fadeIn("slow");});
+});
+$("#daviesLink").click(function(){
+$("#assignment").fadeOut("slow", function(){
+$("#davies").fadeIn("slow");});
+});
+$("#tutorialLink").click(function(){
+$("#assignment").fadeOut("slow", function(){
+$("#tutorial").fadeIn("slow");});
+});
+});
 
-      
-    </p>
 
-    
-  <p id="ans0"></p>
-  <p id="ans1"></p>
-  <p id="ans2"></p>
-  <p id="ans3"></p>
-  <p id="ans4"></p>
-  <p id="ans5"></p>
-  <p id="ans6"></p>
-  <p id="ans7"></p>
-  <p id="ans8"></p>
-  
+  function openMenu() {
+    document.getElementById("menu").classList.toggle("show");
+  }
 
-    <p>Answer:
-    <input type="text" id="input" name="answer"></input></p>
-    <button onclick='Answer(document.getElementById("input").value)'>
-      Submit
-    </button>
-    <br>
+  function openMenu1() {
+    document.getElementById("menu1").classList.toggle("show");
+  }
 
-  <p id="res"><p>
-    
-     <script>
+ 
+
+  //Closes menu when clicked outside
+  window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+
+  if (document.getElementById("menu").classList.contains("show")) {
+    document.getElementById("menu").classList.toggle("show");
+    }
+  if (document.getElementById("menu1").classList.contains("show")) {
+    document.getElementById("menu1").classList.toggle("show");
+    }
+  }
+}
+
        var question = 0;
        var right = 0;
        var chars = ["a1", "a2", "b1", "b2", "d1", "d2"];
@@ -79,7 +84,7 @@
        right++;
       }
       else {
-      document.getElementById("res").innerHTML = finalAns;
+      document.getElementById("res").innerHTML = "Incorrect.";
       }
       break;
 
@@ -91,7 +96,7 @@
        right++;
       }
       else {
-      document.getElementById("res").innerHTML = finalAns;
+      document.getElementById("res").innerHTML = "Incorrect.";
       }
       break;
 
@@ -211,7 +216,3 @@
       return newtext;
     }
 
-    </script>
-    
-</body>
-</html>
