@@ -2,7 +2,29 @@
 <html>
 <head>
   <style>
-
+    body
+    {
+    background-color:LightGrey;
+    }
+    
+    h1
+    {
+    font-family: Impact, Charcoal, sans-serif;
+    text-align: center;
+    text-size:150%;
+    }
+    
+    h3{
+    font-family: Impact, Charcoal, sans-serif;
+    color:maroon;
+    text-align: center;
+    }
+    
+    h4{
+    color:magenta;
+    text-align: center;
+    }
+    
 button.accordion {
     background-color: #eee;
     color: #444;
@@ -10,7 +32,7 @@ button.accordion {
     padding: 18px;
     width: 100%;
     border: none;
-    text-align: left;
+    text-align: center;
     outline: none;
     font-size: 24px;
     transition: 0.4s;
@@ -74,6 +96,75 @@ ul.tab li a:focus, .active {background-color: #ccc;}
     border-top: none;
 }
 
+ /* The Overlay (background) */
+.overlay {
+    /* Height & width depends on how you want to reveal the overlay (see JS below) */   
+    height: 100%;
+    width: 0;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    background-color: rgb(0,0,0); /* Black fallback color */
+    background-color: rgba(0,0,0, 0.9); /* Black w/opacity */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+}
+
+/* Position the content inside the overlay */
+.overlay-content1, .overlay-content2 {
+    position: relative;
+    top: 25%; /* 25% from the top */
+    width: 100%; /* 100% width */
+    text-align: center; /* Centered text/links */
+    margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+    text-color:white;
+    }
+
+.oltext
+ {
+    color: white;
+    text-align: center;
+ }
+    
+
+/* The navigation links inside the overlay */
+.overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block; /* Display block instead of inline */
+    transition: 0.3s; /* Transition effects on hover (color) */
+}
+
+/* When you mouse over the navigation links, change their color */
+.overlay a:hover, .overlay a:focus {
+    color: #f1f1f1;
+}
+
+/* Position the close button (top right corner) */
+.overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+}
+
+/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+@media screen and (max-height: 450px) {
+    .overlay a {font-size: 20px}
+    .overlay .closebtn {
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+    }
+    }
+
+    span
+    {
+    text-align: center;
+    }    
 </style>
 </head>
 <body>
@@ -138,12 +229,9 @@ ul.tab li a:focus, .active {background-color: #ccc;}
 </div>
 </div>
 
-<div id="WireShark" class="tabcontent">
-
-  <button class="accordion"></button>
-
-  
+<div id="WireShark" class="tabcontent">  
   <h3>Wireshark Lab: DNS</h3>
+  <p style="color:red; text-align:center;"> This portion of the lab can be completed via the terminal</p>
     <button class="accordion"> Run <i>nslookup</i> to obtain the IP address of a Web server in Asia. What is its IP address?</button>
 <div class="panel">
   <p> I performed <i>nslookup</i> for popzone.asia. Its IP address is 66.96.162.196.</p>
@@ -152,6 +240,7 @@ ul.tab li a:focus, .active {background-color: #ccc;}
 <div class="panel">
   <p>I performed <i>nslookup</i> for a European University in Ioannina Greece. Its IP address is 128.238.29.22</p>
 </div>
+<p style="color:red; text-align:center;"> This portion of the lab can be completed via Wireshark</p>
 <button class="accordion">Locate the DNS query and response messages. Are they sent over UDP or TCP? </button>
 <div class="panel">
      <p> They are sent over <b>UDP</b></p>
@@ -172,14 +261,49 @@ ul.tab li a:focus, .active {background-color: #ccc;}
 <div class="panel">
   <p>It does not contain any answers.</p>
   </div>
-</div>
 <button class="accordion">This web page that I am visiting contains images. Before retrieving each image, does your host issue a new DNS query?</button>
 <div class="panel">
   <p>No, The host does not issue a new DNS query for each individual image</p>
 </div>
+</div>
 
 
 <div id="Problem" class="tabcontent">
+  <h3>These are questions from the books. Click on the question to see the answer.</h3><br>
+  <h4>This section uses Full Screen Overlays.</h4>
+  <br>
+  <div id="myNav1" class="overlay">
+    <!-- Button to close the overlay nav -->
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav1()">&times</a>
+
+    <!-- Overlay Answers -->
+    <div class="overlay-content1">
+      <p class="oltext">The <b>MAIL FROM:</b> is part of the SMTP handshaking protocol, it identifies the <i>sender</i> of the message to the SMTP server.</p>
+      <p class="oltext">The header field <b>From:</b> is simply part of the body of the message.
+      </p>
+      <br>
+      <p class="oltext">  (Chapter 2, P13, Page 174) </p>
+    </div>
+  </div>
+  <!-- Use any element to open/show the overlay navigation menu -->
+  <span onclick="openNav1()">1) What is the difference between <b>MAIL FROM:</b> in SMTP and <b>FROM:</b> in the mail message itself?</span>
+  <br>
+  <br>
+  <div id="myNav2" class="overlay">
+    <!-- Button to close the overlay nav -->
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav2()">&times</a>
+
+    <!-- Overlay Answers -->
+    <div class="overlay-content2">
+      <p class="oltext">When the ACK retransmission is received, it is impossible to determine whether the ACK is from the first transmission, or for a later retransmission. Due to this, it is not possible to calculate the RTT for the segment. 
+      </p>
+      <br>
+      <p class="oltext">  (Chapter 3, P33, Page 295) </p>
+    </div>
+  </div>
+  <!-- Use any element to open/show the overlay navigation menu -->
+<span onclick="openNav2()">2) Why do you think TCP avoids measuring the SampleRTT for transmitted segments?</span>
+    
 </div>
 
 
@@ -216,8 +340,32 @@ for (i = 0; i < acc.length; i++) {
     // Show the current tab, and add an "active" class to the link that opened the tab
     document.getElementById(cityName).style.display = "block";
     evt.currentTarget.className += " active";
-}	
+     }
+
+
+ /* Open when someone clicks on the span element */
+function openNav1() {
+    document.getElementById("myNav1").style.width = "100%";
+}
+
+/* Close when someone clicks on the "x" symbol inside the overlay */
+function closeNav1() {
+    document.getElementById("myNav1").style.width = "0%";
+}
+
+/* Open when someone clicks on the span element */
+function openNav2() {
+    document.getElementById("myNav2").style.width = "100%";
+}
+
+/* Close when someone clicks on the "x" symbol inside the overlay */
+function closeNav2() {
+    document.getElementById("myNav2").style.width = "0%";
+}
 </script>
 
 </body>
+<footer>
+  <p style="text-align:center;"> <a href="./hello.html">Return to Home Page</a>
+  </p>
 </html>
