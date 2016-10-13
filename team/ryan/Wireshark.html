@@ -65,7 +65,7 @@
 					<ul>
 						<li>Yes, under the ASCII text</li>
 					</ul>
-				<li>Now inspect the contents of the second HTTP GET request from your browser to the server. Do you see an “IF-MODIFIED-SINCE:” line in the HTTP GET? If so, what information follows the “IF-MODIFIED-SINCE:” header?</li>
+				<li>Now inspect the contents of the second HTTP GET request from your browser to the server. Do you see an "IF-MODIFIED-SINCE:" line in the HTTP GET? If so, what information follows the "IF-MODIFIED-SINCE:" header?</li>
 					<ul>
 						<li>Yes, <i>if-modified since: Mon, 10 Oct 2016 5:59:01 GMT</i></li>
 					</ul>
@@ -115,7 +115,7 @@
 					<ul>
 						<li>Sequence number is 0. Value of the acknowlegement field is 1. Flag identifies as SYN, ACK.  000000010010.</li>
 					</ul>
-				<li>What is the sequence number of the TCP segment containing the HTTP POST command? Note that in order to find the POST command, you’ll need to dig into the packet content field at the bottom of the Wireshark window, looking for a segment with a “POST” within its DATA field.</li>
+				<li>What is the sequence number of the TCP segment containing the HTTP POST command? Note that in order to find the POST command, you’ll need to dig into the packet content field at the bottom of the Wireshark window, looking for a segment with a "POST" within its DATA field.</li>
 					<ul>
 						<li>Sequence number: 164041. (No. 199)</li>
 					</ul>
@@ -127,11 +127,11 @@
 		<h2>Lab 5: UDP</h2>
 			<p>One of the easier labs, did require to look up in the text for a couple of the problems.</p>
 			<ol>
-				<li>Select one UDP packet from your trace. From this packet, determine how many fields there are in the UDP header. (You shouldn’t look in the textbook! Answer these questions directly from what you observe in the packet trace.) Name these fields.</li>
+				<li>Select one UDP packet from your trace. From this packet, determine how many fields there are in the UDP header. (You shouldn't look in the textbook! Answer these questions directly from what you observe in the packet trace.) Name these fields.</li>
 					<ul>
 						<li>5 fields.  source port, destination port, length, checksum.</li>
 					</ul>
-				<li>By consulting the displayed information in Wireshark’s packet content field for this packet, determine the length (in bytes) of each of the UDP header fields.</li>
+				<li>By consulting the displayed information in Wireshark's packet content field for this packet, determine the length (in bytes) of each of the UDP header fields.</li>
 					<ul>
 						<li>8 total, 2 each.</li>
 					</ul>
