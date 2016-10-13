@@ -37,6 +37,17 @@
 				<li><b>Explicit rate (ER)</b>: A 2-byte field in RM cells.  Congested switch can lower the value in passing.  ER field is equal to minimum supportable rate of all switches on source-to-destination path.</li>
 				<li>TCP must use end-to-end network congestion control, rather than network assisted.  Has each sender limit transmission rate as part of precieved traffic.</li>
 				<li><b>Congestion window (cwnd)</b>: Imposes constraint on tate a TCP sender can send traffic.  The amount of unacknowleged data at a sender cannot exceed minimum of cwnd and rwnd (reciever window).</br> LastByteSent - LastByteAcked <= min{cwnd, rwnd}</br> Sender's send rate is roughly cwnd/RTT bytes/sec.</li>
+				<li>TCP looks for lost packets as an indication of congestion: Either timeout or duplicate ACKs.</li>
+				<li><b>Self-Clocking</b>: Uses acknowlegements or lack of to trigger increase in congestion window size, or decreases congestion window size.</li>
+				<li><b>TCP congestion-control algorithm</b> -- Three parts. Slow start, congestion avoidance, fast recovery.</li>
+					<ol>
+						<li><b>Slow start</b>: Value of cwnd begins at 1 MSS (20kbs) and increases by 1 MSS everytime a transmitted segment is acknowleged.  Doubles sending rate every RTT.  When loss occurs ssthresh variable is set at half of the length of the cwnd at the time, and slow start begins anew at 1.  When it reaches the ssthresh it begins congestion avoidance mode.  If three ACK duplicates are recieved then it enteres the fast recovery state.</li>
+						<li><b>Congestion avoidance</b>: Increases value of cwnd by just 1 MSS every RTT.  When timeout occurs then  value of cwnd is set to 1 MSS and ssthresh is set to half the value of cwnd when loss occured.  If triple duplicate ACK is recieved then cwnd is set half (plus 3 MSS) and sets the value of ssthresh to half the value of cwnd when triple duplicate ACKs occured, then it enteres the fast-recovery state.</li>
+						<li><b>Fast recovery</b>: cwnd is increased by 1 MSS for every duplicate ACK recieved.  If ACK for missing segment arrives then it enters congestion avoidance state and deflates cwnd.  If timeout occurs then it gotes to slow-start state, setting ssthresh to half the value of cwnd at timeout occurance.  Recommended, but not required.</li>
+					</ol>
+				<li><b>Additive-increase, multiplicative-decrease (AIMD)</b>: linear increase in cwnd, then a halvind decrease of cwnd.  (all, but slow start)</li>
+				<li><b>TCP Tahoe</b>: Doesn't use fast recovery</li>
+				<li><b>TCP Reno</b>: Uses fast recovery</li>
 			</ul>
 		<h2>Lecture</h2>
 			<ul>
