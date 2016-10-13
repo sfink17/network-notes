@@ -50,7 +50,66 @@
 				<li><b>TCP Reno</b>: Uses fast recovery</li>
 			</ul>
 		<h2>Lecture</h2>
+		<h3>Chapter 4 notes</h3>
 			<ul>
+				<li>Forwarding vs Routing</li>
+					<ul>
+						<li><b>Fowarding</b>: PAcket transfer in a single router. (Getting though a single interesction)</li>
+						<li><b>Routing</b>: packets movements though all routers in a network (Plan to get from home to vacation destination_</li>
+					</ul>
+				<li>2 principal states of routing algorithms</li>
+					<ol>
+						<li>Link-state</li>
+						<li>distance-vector</li>
+					</ol>
+				<li>Hierarchical routing algorithms</li>
+					<ul>
+						<li>Intra-autonomous: RIP, OSPF, IS-IS</li>
+						<li>Inter-autonomous: BGP</li>
+					</ul>
+				<li>Routers do not run application or transport layer protocols</li>
+				<li>Routers run netowrk (and link) layer protocols</li>
+				<li>Centralized vs distributed routing algorithms</li>
+					<ul>
+						<li>centralized--all in one area</li>
+						<li>distributed--over several routers</li>
+					</ul>
+				<li>Interaction between frwarding and routing</li>
+					<ul>
+						<li>routing protocol produces messages</li>
+						<li>messages used to configue forwarding tables</li>
+					</ul>
+				<li>Packet switches</li>
+					<ul>
+						<li>routers, switches, hubs</li>
+						<li>router--forward using addresses in a network-layer datagram</li>
+						<li>link-layer switch--forward using addresses in link-layer frame</li>
+					</ul>
+				<li>organization/construcion of a router</li>
+					<ul>
+						<li>input ports</li>
+						<li>output ports</li>
+						<li>switching fabric</li>
+						<li>routing processor</li>
+					</ul>
+				<li>strucsure of IPv4 datagram</li>
+					<ul>
+						<li>version (4 bits)</li>
+						<li>header length (4 bits)</li>
+						<li>type of service (8 bits)</li>
+						<li>datagram length (16 bits, max is 65,535)</li>
+						<li>*</li>
+						<li>identifier (16 bit)(for fragmentations)</li>
+						<li>flags (3 bits)(for fragmentation)</li>
+						<li>fragmentation offset (13 bits) (for fragmetation)</li>
+						<li>*</li>
+						<li>time-to-live (8 bits)(prevent endless circulation)</li>
+						<li>upper-layer protocol(8 bits)</li>
+						<li>header checksum (16 bits)</li>
+						<li>*</li>
+						<li>source IP address (32 bits)</li>
+					</ul>
+				<li></li>
 			</ul>
 		<h2>Lab</h2>
 			<ul>
