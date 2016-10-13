@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+    10/12/2016
+</title>
+<link rel="stylesheet" type="text/css" href="default.css">
+<script src="sparkles.js"></script>
+</head>
+<body>
+    <h1>
+        Notes for October 12th
+    </h1>
+<ul>
+    <li>Congestion scenario 1</li>
+    </ul>
+    <!--
+Congestion and its costs
+scenario 1: two hosts sending through the same router
+-assume router has an infinite buffer capacity
+-assume hosts A and B each have an identical sending rate
+-each can increase sending rate constantly until the router's limit is reached, at which point each one will have a throuput of (router capacity/2)
+-for sending rate between 0 and r/2, sending rate is equal to throughput
+-for sending rate above r/2, throughput remains at r/2
+-this seems fine, since the router is being fully utilized, BUT
+-as sending rate increases between 0 and r/2, average packet delay increases (which makes sense)
+-as sending rate increases after r/2, average packet delay approaches infinity
+-COST 1: delay
+
+scenario 2: two hosts sending through the same router
+-assume router has a finite buffer capacity
+-this means packets arriving at a full router will just be dropped
+-now we have to deal with retransmission
+-hosts cannot magically determine whether or not the buffer is full before deciding whether or not to send a packet
+-if they COULD, then throughput performance would be ideal (everything sent is received) and average sending rate cannot exceed r/2
+-hosts realistically only retransmit when a packet is known FOR CERTAIN to be lost
+-this is unlikely, but possible with a large timeout
+-example case: offered load r/2, data delivered at rate r/3, so 1/6 of packets are retransmissions
+-COST 2: retransmissions required
+-example case: sender times out prematurely and resends a packet which did arrive properly
+-retransmission will be discarded upon arrival, and router capacity will have been wasted
+-COST 3: unneded retransmissions in the face of large delays use up bandwith
+
+scenario 3: four hosts sending through overlapping two-hop paths
+-(assume finite buffer capacity)
+-example case: low traffic, everything is basically cool
+-example case: high traffic
+-high traffic from A to C arrives to router 2 from router 1 at up to maximum throughput of R
+-high traffic from B to D also arrives to router 2 (from B) at up to maximum throughput of R
+-A-C and B-D traffic compete at router 2, but B-D packets arrive first since they're closer
+-as B-D sending rate increases, more and more A-C packets are lost
+-(if C-A traffic is high, B-D packets will suffer the same fate at router 3)
+-if a packet is dropped by the second router in a route, the work done by the first router is wasted
+-COST 4: when a packet is dropped along a path, transmission capacity was wasted at each of the upstream links which forwarded that packet-->
+<p style="font-size:5px; color:white">There are no hugs in computer science</p>
+<a href="./hello.html">Home</a>
+</body>
+</html>
