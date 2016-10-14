@@ -57,10 +57,29 @@
         status code was. We can actually tell this directly from the info line. If you look at the response message, you'll
         see '304 Not Modified'. This is the status code it returned to us. If you ever see a code you aren't familiar with,
         googling the three numbers and the words following it will almost certainly bring you to what the code means.
-            Next, we're going to move on to part of the lab. For this one, rebegin packet capture by clicking the fin in the
-        top left corner of wireshark (or, if for some reason this doesn't work, just reset wireshark and rebegin capturing
-        as talked about above). Follow the new link in the second part of the lab, and then refresh your browser once again
-        to capture it again. Then, stop capturing packets.
+        Finally, if you look at both the GET and response messages, you can see that the last time they were modified was
+        the time you captured them. That's because the server is setting the 'last modified' time to be the current time.
+            Next, we're going to be moving on to part 3 of the lab. We're skipping part two, as it mostly just goes over what
+        was mentioned above. Part three, however, is supposed to show what happens when you retrieve a very long HTML file. So, close
+        Wireshark and reopen it as before. Begin capturing packets, and then follow the new link in the lab. Stop capture, and
+        filter for HTTP as before. Once again, we see a Get and Response message. Now this is where things get a little strange
+        for me, as supposedly you're supposed to get multiple packets back, but I only ever receive one, no matter how many
+        times I've attempted this section of the lab. Regardless, if it runs smoothly for you, you should receive many packets.
+        TCP packets can only handle so many bytes at one time, and so it breaks it down into many packets. In Wireshark, only
+        one of those packets should give you the status code and phrase to the request.
+            Lets move on to part four, where we deal with downloading embedded objects. These are things like pictures or
+        videos that are stored on another server. Start up wireshark and start sniffing, then follow the link in the lab. It
+        brings us to a page with two images. If you stop packet capture, and once again filter for HTTP, you'll notice that this
+        time you sent several Get requests and got an equal number of response messages. One should be for the HTML page itself,
+        the others for the images on the page (when I ran this lab the first time, I actually sent two Get requests and received
+        two response messages for the kurose cover. I'm unsure why this is, but the two pairs are identical.). If you look at the
+        Get requests, you'll see that their destination IP's are different, each being where that image originates. If I'm not
+        mistaken, I believe the images were downloaded from the two websites in parralel. We can tell this because we send out both
+        GET requests before we get either response message. Had they been serially found, we would have likely seen one Get request
+        and one response message before seeing the other pair. Instead, we see two Get requeests, followed by two response messages.
+            Moving on to the final part of the lab, we're going to see a site thats password protected. The lab itself will give you
+        the password and username for the site it has listed (which I will not reproduce here, again, see the lab). As always,
+        begin sniffing and follow to the site. Enter the log in information, and stop packet capture.
         
         
         
