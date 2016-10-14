@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<body style="background-color:#E51616;">
+		<text style="color:#00EADC;">
+		<style>
+		body{ cursor: url('alsobestcursor.cur'), auto;}
+		</style>
+		<title>
+			October 14th
+		</title>
+	</head>
+	<body>
+		<h1>October 14th</h1>
+		<!--<h2>Reading<h2>-->
+		<h2>Lecture</h2>
+		<h3>Student talks</h3>
+			<ul>
+				<li><b>Tyler</b>(4.2 virtual circuits)</li>
+				<li>Network-layer services are host-to-host while transport layer is process-to-process</li>
+				<li>In computer network architecture is either host-to-host connection or host-to-host connectionless.  Networks that provide only connections are virtual circuit networks.</li>
+				<li>Virtual circuit is a path between source and destination host, VS numbers (one for each link along the path), and entries in a forwarding table in each router.</li>
+				<li>Packets have VC numbers in header, when they got though a link the router replaces the VC number with a new VC number.</li>
+				<li>Each router has a forwarding table where VC numbers are stored.</li>
+				<li>Eliminates need for communication between routers</li>
+				<li>Routers must maintain connection state information, so they must update forwarding table</li>
+				<li><b>Salem</b>(4.1 switches)</li>
+				<li>Router forwarding--refers to the router-local action of transferring a packet from input link interface to appropritate output link interface.</li>
+				<li>Switching via memory: Takes imput, stores in memeory, finds matching output, sends it though.  Only one at a time.</li>
+				<li>Switching via bus: Has an imput pre-pend (assigned spot), enters bus, transferred, sends though to destination.  One at a time.</li>
+				<li>Switching via interconnected network: netowrk consisting of 2N bueses that connect N imput ports to N output.  Each vertical bus intersects each horizontal at cross point.  Opened or closed at any time.  Can send multipule if the route is clear (?)</li>
+				<li>Output processing: takes packets that have been stored in the output port's memory nad transmits them over the output link.</li>
+				<li>Routing processor: maintains routing tables and attached link state information and computes the forwarding table for the router.</li>
+				<li>Head of line: Have to wait for packets in front to be sent, before later packets can be sent to their destination. (Red and blue example Jeremy did).</li>
+			</ul>
+		<h2>Lab</h2>
+		<div style="text-align:left">
+			<a href="Oct13.html">Previous</a>
+		</div>
+		<div style="text-align:center">
+			<a href="hello.html"> Home </a>
+		</div>
+		<div style="text-align:right">
+			<a href="hello.html">Next</a>
+		</div>
+	</body>
+</html>
