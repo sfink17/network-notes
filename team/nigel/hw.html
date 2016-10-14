@@ -1,0 +1,10 @@
+<html>
+<head>
+<title>Homework Questions</title>
+</head>
+<body>
+<h4>Page 294 - P29</h4>
+<b>a.</b> 
+Because the server does not want to leave itself vulnerable to SYN-flood attacks, it closes each connection after sending an initial SYNACK. In order to validate the final ACK, it must encode a secret number, using the sequence number N as a seed, in a cookie to that client. The client then returns an ACK with a sequence number N+1 and the secret number, so the server subtracts 1 from the sequence number and recalculates the hash to make sure it is the same as the secret number. This makes sure that the client is valid, and not an impostor. 
+</body>
+</html>
