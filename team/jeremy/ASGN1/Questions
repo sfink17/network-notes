@@ -35,7 +35,7 @@
 		<li>What kind of growth does a Slow Start congestion control system use?</li>
 			<ul><li>Exponential growth, specifically quadratic growth. </li></ul>
 <!-- Q6 --><br>
-		&ensp;Using the diagram provided answers the following 2 questions: <br>
+		&ensp;Using the diagram provided answer the following 2 questions: <br>
 		<img src="http://www.networkinginfoblog.com/contentsimages/UDP%20segment%20structure.JPG" alt="UDP diagram" style="width:351px;height:327px;">
 		<img src="http://www.networkinginfoblog.com/contentsimages/TCP%20segment%20structure.JPG" alt="TCP diagram" style="width:355px;height:347px;">
 <br><br>
