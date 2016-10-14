@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ASGN1 Questions</title>
+</head>
+
+<body>
+<h3>ASGN1 Questions</h3>
+<h4>By Jeremy Novak</h4>
+
+	<ol>
+<!-- Q1 -->
+		<li>Describe the path that a DNS request might follow from your compter to reach a website: example.org, that you have never been to before.</li>
+			<ul><li>The DNS request could go from your computer to your router. Your router would send the request up the chain of command, because you have never been to that website. The request would go from your router to other DNS servers until one of them posibly the &ldquo;ORG&rdquo; server, recogonizes the website that you requested and would send back the IP address of the website. Your local router would then cach the IP address for later use.</li></ul>
+<!-- Q2 --><br>
+		<li>In Go-Back-N protocol what condition(s) needs to be met before the system knows a packet was lost?</li>
+			<ol type="a"><li>Receving 3 identical and consectiuve ACKs (Correct)</li>
+				<li>Receving an ACK out of order (Correct) </li>
+				<li>Receving a NACK</li>
+				<li>Receving a &ldquo;404 packet not found&rdquo; message</li></ol>
+<!-- Q3 --><br>
+<!--&#x03B1 is alpha -->
+		<li>In the Round-Trip Time formula: <b>EstimatedRTT = (1 - &#x03B1 ) x EstimatedRTT + &#x03B1 x SampleRTT</b>. What will changing the value of &#x03B1 do to the equasion?</li>
+			<ul><li>Changing values of &#x03B1 allow the equation to better represent current conditions, with values closer to 0, or to represent conditions without much short term variance, with values closer to 1.</li></ul>
+<!-- Q4 --><br>
+		<li>What is the Timeout Interval used for?</li>
+			<ul><li>The Timeout Interval is used to determine if a packet or ACK was lost in transit.</li></ul>
+<!-- Q5 --><br>
+		<li>What kind of growth does a Slow Start congestion control system use?</li>
+			<ul><li>Exponetial growth, specificly quadratic growth. </li></ul>
+<!-- Q6 --><br>
+		&ensp;Using the diagram provieded anwser the following 2 questions: <br>
+		<img src="http://www.networkinginfoblog.com/contentsimages/UDP%20segment%20structure.JPG" alt="UDP diagram" style="width:351px;height:327px;">
+		<img src="http://www.networkinginfoblog.com/contentsimages/TCP%20segment%20structure.JPG" alt="TCP diagram" style="width:355px;height:347px;">
+<br><br>
+		<li>How many bits are used for Checkum in a UDP segment? Does this differ from a TCP Checksum?</li>
+			<ul><li>A UDP checksum uses 16 bits and so does a TCP Checksum.</li></ul>
+<!-- Q7 --><br>
+		<li>Describe the use of TCPs sequence and acknowledgment numbers in the process of sending information too large to be sent in just one packet.</li>
+			<ul><li> The first packet sent with have a sequence number and acknowledgment number set by the sender. When the reciver gets the massage it will acknowled the message by fliping the sequence and acknowledgment numbers. The second packet sent will have the sequence and acknowledgment numbers incremented by 1. This will continue in this pattern untill the message is complete.</li></ul>
+<!-- Q8 --><br>
+		<li></li>
+			<ul><li></li></ul>
+<!-- Q9 --><br>
+		<li></li>
+			<ul><li></li></ul>
+<!-- Q10 --><br>
+		<li></li>
+			<ul><li></li></ul>
+	</ol>
+</body>
+</html>

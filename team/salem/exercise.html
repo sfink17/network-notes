@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+    Exercise 1
+</title>
+</head>
+<body>
+<style>
+.answer{color:red;}
+
+a:visited{
+text-decoration:underline;
+color:black;
+}
+
+a:link{
+text-decoration:underline;
+color:black;
+}
+
+a:hover{color:#73e600}
+</style>
+
+<button onclick = oc('ex0')>Exercise 0</button>
+<button onclick = oc('ex1')>Exercise 1</button>
+<div id = "ex0" style = "display:none">
+<h1>Exercise  0</h1>
+<button onclick = "oc(123)">Q&A </button>
+<button onclick =  "oc(234)">About Tim Berners-Lee</button>
+<button onclick = "oc(345)">Git remote fetch</button>
+<div id = "123" style = "display:none">
+<h1>Q&A
+</h1>
+<ul>
+	<li><h2>Give a brief definition of a protocol?</h2></li>
+			<ul>
+				<li class = "answer"><u>Answer: The format and the order of messages exchanged between two or more communicating entities, as well as the actions taken on the transmission and/or receipt of a message or other event.</u></li>
+			</ul>
+	<li><h2>Who were the two people who built on Adramson's multiple-access protocal work when they developed the Ethernet protocol work when they developed the Ethernet protocol for wire-based shared broadcast networks?</h2></li>
+			<li>Robert Metcalfe and David Boggs</li>
+			<li>Norman Abramson and Minitel</li>
+			<li>Tim Berners-Lee and Ted Nelson</li>
+			<li>Donald Davies and Roger Scantlebury</li>
+		<ul>
+			<li class = "answer"><u>Answer: Robert Metcalfe and David Boggs</u></li>
+		</ul>
+	<li><h2>What is the difference between a virus and a worm</h2></li>
+		<ul>
+			<li class = "answer">Answer: Require some form of user interaction to infect the user's device, but a worm can enter a device without any explicit user interaction.</li>
+		</ul>
+	<li><h2>Match the Layers with the correct packet names.</h2></li>
+	
+		<ul class  = "answer">
+			<li>Answer:
+			<ul>
+				<li>Application : message</li>
+				<li>Transport : segment</li>
+				<li>Network : datagrams</li>
+				<li>Link : frames</li>
+				<li>Physical : none</li>
+			</ul>
+		</ul>
+	</li>
+	<li><h2>What are cookies?  Where are they stored?</h2></li>
+		<ul>
+			<li class = "answer">Answer: They allow sites to keep track of users.  They are stored in the user's end system.</li>
+		</ul>
+	<li><h2>What are the major difference between time-division multiplexing(TDM) and frequency-division multiplexing(FDM)?</h2></li>
+		<ul>
+			<li class = "answer">Answer: FDMs are frequency spectrum of a link that is divided up among the connections established across the link, whereas; TDMs are based on time that are divided into frames of fixed duration which are divided into time slots.</li>
+		</ul>
+	<li><h2>What are the two fundamental approaches to moving data through a network of links and switches?  Why would you use one over the other?</h2></li>
+		<ul>
+			<li class = "answer">Answer: Circuit switching and packet switching.  Packet over circuit because dedicated circuits are idle while nothing is going through.</li>
+		</ul>
+	<li><h2>What are the criterias for whether you want to use a TCP or UDP?</h2></li>
+		<ul>
+			<li class = "answer">Reliable data transfer, throughput, timing, and security.</li>
+		</ul>
+</ul>
+<hr style = "height:3px;border:none;color:#333;background-color:#333;">
+</div>
+<div id = "234" style = "display:none">
+<h1>About Tim Berners-Lee</h1>
+<div>Tim Berners-Lee&#39s is a prominent and respected member of the development of data communications.  He was the inventor of the World Wide Web.  In addition, he also has some titles and accomplishments:</div>
+<ul>
+	<li>The inventor of the World Wide Web (2).</li>
+	<li>Successfully started the connection between a HTTP client and server (2).</li>
+	<li>Founded and currently directs the World Wide Web Consortium (W3C), which is the main international standards organization for the World Wide Web (2)(3).</li>
+	<li>Is a senior researcher and holder of the founders chair at MIT Computer Science and Artificial Intelligence Laboratory (CSAIL) (2).  In addition to Artificial Intelligence, they also do research on computational biology, graphics and vision, language and learning, theory of computation, robotics, and others (4).</li>
+	<li>The director of the Web Science Research Initiative (WSRI) (2).</li>
+</ul>
+<div>He had an interview at the Web 2.0 summit.  There was a cover done by cnet.  One of topics was about law and whether technology should handle law.  He beleives policemen and courts should decide right from wrong, not technology.  He also gave advise on how &#34If you want it everywhere, give it away.&#34  This was the idea that if you want it everywhere, you do not charge for the service.  He warned that large companies are a threat.  Social networks, like Facebook, might monopolize communication because they are not open to other systems.  However, he gave hope.  If small companies connection their network on a standard connection, then they could topple large companies.  Trust was one of the last subject he talked about.  He says that in order for the world of web apps to take off is trust.  Unfortunately, he did not have the answer to this. (1)</div>
+
+<h4>Reference</h4>
+<ol>
+	<li><a href = "https://www.cnet.com/news/tech-advice-from-tim-berners-lee/">https://www.cnet.com/news/tech-advice-from-tim-berners-lee/</a></li>
+	<li><a href = "https://en.wikipedia.org/wiki/Tim_Berners-Lee">https://en.wikipedia.org/wiki/Tim_Berners-Lee</a></li>
+	<li><a href = "https://en.wikipedia.org/wiki/World_Wide_Web_Consortium">https://en.wikipedia.org/wiki/World_Wide_Web_Consortium</a></li>
+	<li><a href = "https://en.wikipedia.org/wiki/MIT_Computer_Science_and_Artificial_Intelligence_Laboratory">https://en.wikipedia.org/wiki/MIT_Computer_Science_and_Artificial_Intelligence_Laboratory</a></li>
+</ol>
+<hr style = "height:3px;border:none;color:#333;background-color:#333;">
+</div>
+<div id = "345" style = "display:none">
+<h1>Git Remote, Fetch, Upstream</h1>
+	<ul>
+		<li>After you make changes to your repo and finished merging it to the the repo that you forked from.  You can take these steps to grab the repo that you forked from and add it to your local computer, then push that to your repository in your github account.</li>
+		<li>First you need to have pulled the deposit that you have in your github account.  I would also recommend using ubuntu.</li>
+		<ol>
+			<li>Open to the command prompt.</li>
+			<li>Type: git remote add upstream “url of the repo you forked from”</li>
+			<ul>
+				<li>This will add the original repo to your list of upstreams you may or may not have.</li>
+			</ul>
+			<li>Type: git pull upstream master</li>
+			<ul>
+				<li>This will fetch the original repository and add to your local deposit.</li>
+			</ul>
+			<li>Type: git push origin master</li>
+			<ul>
+				<li>This will add the deposit on your local to the repository that is located on your github account.</li>
+			</ul>
+		</ol>
+	</ul>
+	<h4>These are other resources to help with fetch and upstream
+		<ul>
+			<li><a href = "https://help.github.com/articles/merging-an-upstream-repository-into-your-fork/">Merging an upstream repository into your fork</a></li>
+			<li><a href = "https://help.github.com/articles/fork-a-repo/">Fork A Repo</a></li>
+			<li><a href = "https://help.github.com/articles/syncing-a-fork/">Syncing a fork</a></li>
+			<li><a href = "https://2buntu.com/articles/1459/keeping-your-forked-repo-synced-with-the-upstream-source/">Provided by my teacher</a></li>
+		</ul>
+	<h4>
+<hr style = "height:3px;border:none;color:#333;background-color:#333;">
+</div>
+</div>
+
+<div id = "ex1" style = "display:block">
+<h1>Exercise 1</h1>
+<button onclick = "oc(456)">Q&A</button>
+<button onclick =  "oc(567)">Two Problems</button>
+<button onclick = "oc(678)">Wireshark</button>
+
+<div id = "456" style = "display:block">
+	<h1>Q&A</h1>
+	<ol>
+		<li>What are the two requirements for transport-layer multiplexing?</li>
+			<ol>
+				<li>Sockets have unique identifiers.</li>
+				<li>Each segment has special fields that indicate the socket to which the segment is to be delivered.
+		</li>
+			</ol>
+
+		<li>What is the well-known port numbers.  And, what are they used for?</li>
+			<ul>
+				<li>0 to 1023.</li>
+				<li>Those ports are used for things such as HTTP (port number 80) and FTP (port number 21).</li>
+			</ul>
+
+		<li>Give a quick definition for demultiplexing and multiplexing.</li>
+			<ul>
+				<li>Demultiplexing: The receiving end, the transport layer examines these fields to identify the receiving socket and then directs the segment to that socket.</li>
+				<li>Multiplexing: Gathering data chunks at the source host from different sockets, encapsulating each data chunk with header information</li>
+			</ul>
+
+		<li>Why would you chose UDP over TCP</li>
+			<ul>
+				<li>as soon as an application process passes data to UDP, UDP will package the data inside a UDP segment and immediately pass the segment to the network layer.</li>
+				<li>UDP just blasts away without any formal preliminaries.</li>
+				<li>TCP segment has 20 bytes of header overhead in every segment, but UDP only has 8 bytes of overhead.</li>
+			</ul>
+
+		<li>What is checksums and how is it used?</li>
+			<ul>
+				<li>It is 16-bits that is added to a packet and is used to prevent corruption.</li>
+				<li>By converting all the 0s to 1s and converting all 1s to 0s.  When added it should produce 1111111111111111.  If there is a 0 in the sum, then there is an error in that packet.</li>
+			</ul>
+
+		<li>Match the correct rdt with the correct added feature or basic feature.</li>
+			<ul><li>Answer:</li>
+			<ul>
+				<li>rdt 1.0</li>
+				<ul>
+					<li>sender and receiver.</li>
+					<li>Just one state.</li>
+					<li>Perfectly reliable.</li>
+				</ul>
+
+				<li>rdt 2.0</li>
+				<ul>
+					<li>Positive acknowledgments and negative acknowledgments.</li>
+					<li>Reliable data transfer protocols based on such retransmission are known as ARQ (Automatic Repeat reQuest) protocols.</li>
+					<ul><li>Error detection</li><li>Receiver feedback</li><li>Retransmission</li></ul>
+				<li>This deals with the problem of corrupt packets.</li>
+				</ul>
+
+				<li>rdt 2.1</li>
+				<ul>
+					<li>Field that has a sequence number into the field, which is 1-bit sequence number. It will allow the receiver to know whether the sender is resending the previously transmitted packet.  This is to deal with the problem of ACK or NAK packets being corrupt.</li>
+				</ul>
+
+				<li>rdt 2.2</li>
+				<ul>
+					<li>The receiver must now include the sequence number of the packet being acknowledged by an ACK message</li>
+					<li>The sender must now check the sequence number of the packet being acknowledged by a received ACK message.</li>
+				</ul>
+				<li>rdt 3.0</li>
+			</ul>
+				<ul>
+					<li>Countdown Timer, which needs to be able to:</li>
+					<ul>
+						<li>Start the timer each time a packet is sent.</li>
+						<li>Respond to a timer interruption.</li>
+						<li>Stop the timer.</li>
+					</ul>
+					<li>This is to deal with lost packets.</li>
+				</ul>
+			</ul>
+
+		<li>Name the three major components of a TCP congestion-control algorithm?</li>
+			<ul><li>Answer:</li></ul>
+			<ul>
+				<li>Slow Start</li>
+				<li>Congestion Avoidence</li>
+				<li>Fast Recovery</li>
+			</ul>
+
+		<li>How does sequential number help with rdt?</li>
+			<ul>
+				<li>It helps distinguish between packets and to keep track of which ACK or NAK responded to which packet.</li>
+			</ul>
+
+		<li>What is a three-way handshake?</li>
+			<ol>
+				<li>The client first sends a special TCP segment.</li>
+				<li>The server responds with a second special TCP segment</li>
+				<li>The client responds again with a third special segment, confirming their connection.</li>
+			</ol>
+
+		<li>What is a congestion window?</li>
+			<ul>
+				<li>Imposes a constraint on the rate at which a TCP sender can send traffic into the network, denoted cwnd.</li>
+			</ul>
+	</ol>
+
+</div>
+<div id = "567" style = "display:block">
+	<h1>Two Problems</h1>
+
+</div>
+<div id = "678" style = "display:block">
+	<h1>Wireshark</h1>
+	<div>One of the exercise that was about authorization.  We tried typing http://gaia.cs.umass.edu/wireshark-labs/protected_pages/HTTP-wireshark-file5.html into the url.  Then the website pops a prompt that asked for a username and password.  Meanwhile on Wireshark, the client sent a GET HTTP and the server responded with a 401 Unauthorized.</div>
+	<img src = "pic/401.png" style = "margin:20px">
+	<div>However, after you type in the username and password (correctly), the client sends another GET HTTP, except with a new field called Authorization with the credentials.</div>
+	<img src = "pic/authorization.png" style = "margin:20px">
+	<div>After, the server returns the packet that contains the website.</div>
+</div>
+</div>
+<script>
+function oc(id){
+	if(document.getElementById(id).style.display == "none"){
+		document.getElementById(id).style.display = "block";
+	} else {
+		document.getElementById(id).style.display = "none";
+	}
+}
+</script>
+<!-- style="height:3px;border:none;color:#333;background-color:#333;" was taken from http://stackoverflow.com/questions/4151743/how-i-change-the-thickness-of-my-hr-tag  and I take no credit!
+-->
+</body>
+</html>
