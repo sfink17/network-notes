@@ -146,39 +146,33 @@ body{background:#7FFFD4}
 <div id = "456" style = "display:block">
 	<h1 style = "text-align:center">Q&A</h1>
 	<ol>
-		<li>What are the two requirements for transport-layer multiplexing?</li>
+		<li>What are the two requirements for transport-layer multiplexing? (page 192)</li>
 			<ol class = "answer">
 				<li>Sockets have unique identifiers.</li>
 				<li>Each segment has special fields that indicate the socket to which the segment is to be delivered.
 		</li>
 			</ol>
 
-		<li>What is the well-known port numbers.  And, what are they used for?</li>
-			<ul class = "answer">
-				<li>0 to 1023.</li>
-				<li>Those ports are used for things such as HTTP (port number 80) and FTP (port number 21).</li>
-			</ul>
-
-		<li>Give a quick definition for demultiplexing and multiplexing.</li>
+		<li>Give a quick definition for demultiplexing and multiplexing. (page 191)</li>
 			<ul class = "answer">
 				<li>Demultiplexing: The receiving end, the transport layer examines these fields to identify the receiving socket and then directs the segment to that socket.</li>
 				<li>Multiplexing: Gathering data chunks at the source host from different sockets, encapsulating each data chunk with header information</li>
 			</ul>
 
-		<li>Why would you chose UDP over TCP?</li>
+		<li>Why would you chose UDP over TCP? (page 199)</li>
 			<ul class = "answer">
 				<li>as soon as an application process passes data to UDP, UDP will package the data inside a UDP segment and immediately pass the segment to the network layer.</li>
 				<li>UDP just blasts away without any formal preliminaries.</li>
 				<li>TCP segment has 20 bytes of header overhead in every segment, but UDP only has 8 bytes of overhead.</li>
 			</ul>
 
-		<li>What is checksums and how is it used?</li>
+		<li>What is checksums and how is it used? (page 202 to page 204)</li>
 			<ul class = "answer">
 				<li>It is 16-bits that is added to a packet and is used to prevent corruption.</li>
 				<li>By converting all the 0s to 1s and converting all 1s to 0s.  When added it should produce 1111111111111111.  If there is a 0 in the sum, then there is an error in that packet.</li>
 			</ul>
 
-		<li>Match the correct rdt with the correct added feature or basic feature.</li>
+		<li>Match the correct rdt with the correct added feature or basic feature. (page 206 to page 215)</li>
 			<ul class = "answer"><li>Answer:</li>
 			<ul class = "answer">
 				<li>rdt 1.0</li>
@@ -219,7 +213,7 @@ body{background:#7FFFD4}
 				</ul>
 			</ul>
 
-		<li>What are the names of the three major components of a TCP congestion-control algorithm?</li>
+		<li>What are the names of the three major components of a TCP congestion-control algorithm? (page 272 to page 277)</li>
 			<ul class = "answer"><li>Answer:</li></ul>
 			<ul class = "answer">
 				<li>Slow Start</li>
@@ -227,19 +221,25 @@ body{background:#7FFFD4}
 				<li>Fast Recovery</li>
 			</ul>
 
-		<li>How does sequential number help with rdt?</li>
+			<li>What is the well-known port numbers.  And, what are they used for? (page 192)</li>
+			<ul class = "answer">
+				<li>0 to 1023.</li>
+				<li>Those ports are used for things such as HTTP (port number 80) and FTP (port number 21).</li>
+			</ul>
+
+		<li>How does sequential number help with rdt? (page 210)</li>
 			<ul class = "answer">
 				<li>It helps distinguish between packets and to keep track of which ACK or NAK responded to which packet.</li>
 			</ul>
 
-		<li>What is a three-way handshake?</li>
+		<li>What is a three-way handshake? (page 232)</li>
 			<ol class = "answer">
 				<li>The client first sends a special TCP segment.</li>
 				<li>The server responds with a second special TCP segment</li>
 				<li>The client responds again with a third special segment, confirming their connection.</li>
 			</ol>
 
-		<li>What is a congestion window?</li>
+		<li>What is a congestion window? (page 269)</li>
 			<ul class = "answer">
 				<li>Imposes a constraint on the rate at which a TCP sender can send traffic into the network, denoted cwnd.</li>
 			</ul>
