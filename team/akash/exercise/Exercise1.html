@@ -128,22 +128,27 @@
 
 <div id="WireShark" class="tabcontent">
     <img src="../images/exercise/wireshark.png" alt="WireShark Logo" style="width:244px;height:66px;">
-    <p>
+    <h3>Lab 5: IP Protocol</h3>
+    <p>All pertinent labs can be found <a href="http://www-net.cs.umass.edu/wireshark-labs/">here</a></p>
+
+    <h4>Description</h4>
+    <p>This lab focuses on the IP datagram. This can be done by analyzing the trace of IP datagrams as they are sent and received by the execution of taceroute.</p>
+
+    <h4>How does traceroute work?</h4>
+    <p>Traceroute as the name suggests is a tool to display the route/path and measure transit delays of packets across an IP network.
+    It operates by sending one or more datagrams with the time-to-live (TTL) field in the IP header set to 1. It carries on doing so incrementing the value by 1 each time.<br/>
+
+    <br/>On the other hand every time a router recieves a datagram, it decrements the value by 1. Thus, for each instance where the TTL reaches 0, the router returns an ICMP (Internet Control Message Protocol) message to the host.
+    In this way datagrams will hop between routers based upon their closeness and identify the routers between the host and its destination by looking at the IP addresses in the datagrams containing the ICMP TTL-exceeded messages.
+
     </p>
+      <ul>
+        <li><b>Capturing packets:<b> Traceroute operates by first</li>
+      </ul>
 </div>
 
 <div id="Textbook" class="tabcontent">
     <h3>Textbook Questions</h3>
-
-        <br/>The following are the basic commandline inputs you can use to navigate through and use Git:</p>
-        <ul>
-            <li><b>git init :</b> creates a new git repository</li>
-            <li><b>git clone /path/to/repository :</b> creates a working copy of a local repository by running the command</li>
-            <li><b>git add (filename) or git add * :</b> can be used to propose changes</li>
-            <li><b>git commit -m "Commit message" :</b> actually confirms and commits the changes</li>
-            <li><b>git push origin master :</b> sends the changes to your remote repository. It is possible to select other branches by replacing the word master with the branch name.</li>
-            <li><b>git pull :</b> updates your local repository to the newest commit</li>
-        </ul>
 </div>
 
 
