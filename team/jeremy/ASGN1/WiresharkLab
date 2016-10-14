@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+    Wireshark Lab
+</title>
+<style>
+	p {
+    	padding-left: 50px;
+    	padding-right: 150px;
+	}
+	h4 {
+		padding-left: 100px;
+    	padding-right: 150px;
+	}
+</style>
+</head>
+<body>
+    <h3>
+	Wireshark Lab DNS
+    </h3>
+    <h4>
+        By: Jeremy Novak
+    </h4>
+	<p>
+		<b>DNS part 1: nslookup</b><br>
+		Questions: <ol>
+		<li>Run <i>nslookup</i> to obtain the IP address of a Web server in Asia. What is the IP address of that server?</li>
+		&emsp;Answer: The IP adress of www.korea.net is 104.118.104.19 and 104.118.104.18. <br><br>
+
+		<li>Run <i>nslookup</i> to determine the authoritative DNS servers for a university in Europe.</li>
+		&emsp;Answer: The athoriative DNS server for University College Dublin is 205.251.198.147. <br><br>
+
+		<li>Run <i>nslookup</i> so that one of the DNS servers obtained in Question 2 is queried for the mail servers for Yahoo! mail. What is its IP address?</li>
+		&emsp;Answer: The server couldn't find find mail.yahoo.com and retunred REFUSED. <br><br>
+		</ol>
+		</p><p>
+		<b>DNS part 3: Tracing DNS with Wireshark</b><br>
+			Questions: <ol>
+			<li>Locate the DNS query and response messages. Are then sent over UDP or TCP?</li>
+		&emsp;Answer: The DNS messages are sent using UDP.<br><br>
+			<li>What is the destination port for the DNS query message? What is the source port of DNS response message?</li>
+		&emsp;Answer: DNSmessages are sent to their destination using port 53, and come from the source port 3163.<br><br>
+			<li>To what IP address is the DNS query message sent? Use ipconfig to determine the IP address of your local DNS server. Are these two IP addresses the same? </li>
+		&emsp;Answer: Not Answered due to Cornell network limitations.<br><br>
+			<li>Examine the DNS query message. What &ldquo;Type&rdquo; of DNS query is it? Does the query message contain any &ldquo;answers&rdquo;?</li>
+		&emsp;Answer: The DNS query message is of Standard &ldquo;Type&rdquo;, the querry message does not contain any &ldquo;answers&rdquo;.<br><br>
+			<li>Examine the DNS response message. How many &ldquo;answers&rdquo; are provided? What do each of these answers contain?</li>
+		&emsp;Answer: The DNS resopnse message contains 2 &ldquo;answers&rdquo;, the answers are the IP addresses information for the website www.ietf.org.<br><br>
+			<li>Consider the subsequent TCP SYN packet sent by your host. Does the destination IP address of the SYN packet correspond to any of the IP addresses provided in the DNS response message?</li>
+		&emsp;Answer: The TCP SYN packet&lsquo;s destination IP does not match thes destination, however it does match the first IP address in the answer from the DNS resopnse.<br><br>
+			<li>This web page contains images. Before retrieving each image, does your host issue new DNS queries? </li>
+		&emsp;Answer: Yes the page contains images and there is no second DNS request.<br><br>
+			</ol>
+	</p>
+</body>
+</html>

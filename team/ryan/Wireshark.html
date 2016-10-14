@@ -65,7 +65,7 @@
 					<ul>
 						<li>Yes, under the ASCII text</li>
 					</ul>
-				<li>Now inspect the contents of the second HTTP GET request from your browser to the server. Do you see an “IF-MODIFIED-SINCE:” line in the HTTP GET? If so, what information follows the “IF-MODIFIED-SINCE:” header?</li>
+				<li>Now inspect the contents of the second HTTP GET request from your browser to the server. Do you see an "IF-MODIFIED-SINCE:" line in the HTTP GET? If so, what information follows the "IF-MODIFIED-SINCE:" header?</li>
 					<ul>
 						<li>Yes, <i>if-modified since: Mon, 10 Oct 2016 5:59:01 GMT</i></li>
 					</ul>
@@ -74,7 +74,9 @@
 						<li>Status code: 304, it did not.</li>
 					</ul>
 			</ol>
-		<h2>Lab 3: DNS (incomplete)</h2>
+		<h2>Lab 3: DNS (Incomplete)</h2>
+			<p>This lab was incomplete due to a couple reasons.  One whenever I tried to run a DNS lookup through another webserver then I would get a timeout error.  Second I could not find a DNS catche clear command that worked on the unix machines in the lab, the few commands that I did find didn't run.</br>
+			Thus I instead read though the lab to get the general idea, but did not finish any questions beyond number 3.</p>
 			<ol>
 				<li>Run nslookup to obtain the IP address of a Web server in Asia. What is the IP address of that server?</li>
 					<ul>
@@ -89,8 +91,9 @@
 						<li><i>nslookup www.usc.cam.ac.uk pop.mail.yahoo.com</i></br> CONNECTION TIMED OUT</li>
 					</ul>
 			</ol>
-		<h2>Lab 4: TCP</h2>
-			<p>No such thing as HTTP continuation, it indicates multipul TCP segments that hold a single HTTP message</p>
+		<h2>Lab 4: TCP (Incomplete)</h2>
+			<p>No such thing as HTTP continuation, it indicates multipul TCP segments that hold a single HTTP message.</br>
+			Had difficulty with question 7, the question was confusing and asked for several sequence numbers that were listed as redundant by wireshark in the provided file.</p>
 			<ol>
 				<li>What is the IP address and TCP port number used by the client computer (source) that is transferring the file to gaia.cs.umass.edu? </li>
 					<ul>
@@ -112,9 +115,45 @@
 					<ul>
 						<li>Sequence number is 0. Value of the acknowlegement field is 1. Flag identifies as SYN, ACK.  000000010010.</li>
 					</ul>
-				<li>What is the sequence number of the TCP segment containing the HTTP POST command? Note that in order to find the POST command, you’ll need to dig into the packet content field at the bottom of the Wireshark window, looking for a segment with a “POST” within its DATA field.</li>
+				<li>What is the sequence number of the TCP segment containing the HTTP POST command? Note that in order to find the POST command, you’ll need to dig into the packet content field at the bottom of the Wireshark window, looking for a segment with a "POST" within its DATA field.</li>
 					<ul>
 						<li>Sequence number: 164041. (No. 199)</li>
+					</ul>
+				<li>Consider the TCP segment containing the HTTP POST as the first segment in the TCP connection. What are the sequence numbers of the first six segments in the TCP connection (including the segment containing the HTTP POST)? At what time was each segment sent? When was the ACK for each segment received? Given the difference between when each TCP segment was sent, and when its acknowledgement was received, what is the RTT value for each of the six segments? What is the EstimatedRTT value after the receipt of each ACK?</li>
+					<ul>
+						<li>Sequence number: 164041, 1, 1, 1, 1, 164091.  </li>
+					</ul>
+			</ol>
+		<h2>Lab 5: UDP</h2>
+			<p>One of the easier labs, did require to look up in the text for a couple of the problems.</p>
+			<ol>
+				<li>Select one UDP packet from your trace. From this packet, determine how many fields there are in the UDP header. (You shouldn't look in the textbook! Answer these questions directly from what you observe in the packet trace.) Name these fields.</li>
+					<ul>
+						<li>5 fields.  source port, destination port, length, checksum.</li>
+					</ul>
+				<li>By consulting the displayed information in Wireshark's packet content field for this packet, determine the length (in bytes) of each of the UDP header fields.</li>
+					<ul>
+						<li>8 total, 2 each.</li>
+					</ul>
+				<li>The value in the Length field is the length of what? (You can consult the text for this answer). Verify your claim with your captured UDP packet. </li>
+					<ul>
+						<li>length of the UDP header and data in bytes.  The data is 50, and the header is 8.</li>
+					</ul>
+				<li>What is the maximum number of bytes that can be included in a UDP payload? (Hint: the answer to this question can be determined by your answer to 2. above)</li>
+					<ul>
+						<li>65,527 bytes of data, plus the 8 byte header. 2^16-1 plus the header.</li>
+					</ul>
+				<li>What is the largest possible source port number? (Hint: see the hint in 4.)</li>
+					<ul>
+						<li>The largest possible port is 65,535 or 2^16-1.</li>
+					</ul>
+				<li>What is the protocol number for UDP? Give your answer in both hexadecimal and decimal notation. To answer this question, you’ll need to look into the Protocol field of the IP datagram containing this UDP segment (see Figure 4.13 in the text, and the discussion of IP header fields). </li>
+					<ul>
+						<li>The protocol number is 17. Which is 0x11 in hex.</li>
+					</ul>
+				<li>Examine a pair of UDP packets in which your host sends the first UDP packet and the second UDP packet is a reply to this first UDP packet. (Hint: for a second packet to be sent in response to a first packet, the sender of the first packet should be the destination of the second packet). Describe the relationship between the port numbers in the two packets. </li>
+					<ul>
+						<li>The source port and destination port are the reverse of eachother.  (ie. the port for A is the destination for B, and the port for B is the destination for A)</li>
 					</ul>
 			</ol>
 		<a href="hello.html"> Home </a>

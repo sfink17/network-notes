@@ -12,6 +12,10 @@ CSC-317 Notes
 <button onclick = "oc(825)">8.2.5 Notes</button>
 <button onclick = "oc(826)">8.2.6 Notes</button>
 <button onclick = "oc(827)">8.2.7 Notes</button>
+<button onclick = "oc(828)">8.2.8 Notes</button>
+<style>
+body{background-color:#7FFFD4}
+</style>
 <div id = "822" style = "display:none">
     <h1>8.2.2 Notes</h1>
 	<ul>
@@ -532,6 +536,68 @@ rdt3.0 is sometimes known as the <b>alternating-bit protocol</b>.</div></li><li>
 <hr style="height:3px;border:none;color:#333;background-color:#333;">
 		
 </div>
+
+
+<div id = "828" style  ="display:none">
+	<h1>8.2.8 Notes</h1>
+<h2>Congestion-Control Algorithms</h2>
+
+<ul><li><h3>Slow Start</h3></li>
+<ul>
+	<li>cwnd (The congestion window, which imposes a constraint on the rate at which a TCP sender can send traffic into the network.) begins at 1 MSS and increases by 1 MSS every time a transmitted segment is first acknowledged.
+</li>
+	<li>TCP sends the first segment into the network and waits for an acknowledgment. When this acknowledgment arrives, the TCP sender increases the congestion window by one MSS and sends out two maximum-sized segments.</li>
+</ul>
+<div style = "margin-top:10px;margin-bottom:10px;"><i>When should this exponential growth end? Slow start provides several answers to this question</i>.</div>
+
+<ol>
+	<li>If there is a loss event (i.e., congestion) indicated by a timeout</li>
+	<li>When slow start hits the ssthresh, then it stops doubling and transitions into congestion avoidance mode (TCP increases cwnd more cautiously when in congestion-avoidance mode).</li>
+	<li>When three duplicate ACKs are detected, in which case TCP performs fast retransmit and enters the fast recovery state.</li>
+</ol>
+
+<img src = "ss.png" style = "border:2px solid black;margin-top:20px;">
+
+<li><h3>Congestion Avoidance</h3></li>
+
+<ul>
+	<li>Increases the value of cwnd by just a single MSS every RTT</li>
+	<li>Example:</li>
+	<ul><li>if MSS (Maximum Segment Size) is 1,460 bytes and cwnd is 14,600 bytes, then 10 segments are being sent within an RTT (Round-Trip Time). Each arriving ACK (assuming one ACK per segment) increases the congestion window size by 1/10 MSS, and thus, the value of the congestion window will</li></ul>
+	<li>triple duplicate ACKs received</li>
+	<ul>
+		<li>value of ssthresh to be half the value of cwnd when the triple duplicate ACKs were received.  Then fast-recovery state is then entered.</li>
+	</ul>
+</ul>
+
+<img src = "fast.png" style = "border:2px solid black;margin-top:20px;">
+
+<li><h3>Fast Recovery</h3></li>
+<ul>
+	<li>TCP Tahoe</li>
+	<ul><li>cut its congestion window to 1 MSS and entered the slow-start phase after either a timeout-indicated or triple-duplicate-ACK-indicated loss event.</li></ul>
+	<li>TCP Reno</li>
+	<ul><li>Incorported fast recovery</li>
+		<li>newer version of TCP</li>
+		<li>threshold is initially equal to 8 MSS.</li></ul>
+	<li>Example</li>
+	<ul>
+		<li>For the first eigth transmission reounds, Tahoe and Reno take identical actions.</li>
+		<li>The congestion window then climbs linearly until a triple duplicateACK event occurs, just after transmission round 8.</li>
+		<li>Triple duplicate ACK is detected</li>
+		<li>Under TCP Reno, the congestion window is set to cwnd = 6 X MSS and then grows linearly.</li>
+		<li>Under TCP Tahoe, the congestion window is set to 1 MSS and grows exponentially until it reaches the value of ssthresh, at which point it grows linearly.</li></ul>
+</ul>
+
+<img src = "congestion.png" style = "border:2px solid black;margin-top:20px;">
+
+
+</ul>
+
+<hr style="height:3px;border:none;color:#333;background-color:#333;">
+		
+</div>
+
 
 
 <script>
