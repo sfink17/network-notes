@@ -93,7 +93,7 @@ as happens to be available</li>
 <li> an <b>unchoked</b>: is four neighbors that are quicky sending the most information and it is going both ways with the information.</li>
 <li> an <b>optimistically unchoked</b> person: is chosen every 30 seconds and for a peer in hopes that you will become one of the top 4 for them and they start sending you information.</li>
 <li> an <b>unchoked</b>: is four neighbors that are quicky sending the most information and it is going both ways with the information.</li>
-
+</ul>
 </body>
 <body>
 	<h1>
@@ -109,7 +109,7 @@ as happens to be available</li>
 <li>note that Tansport layer does it all on the ends where as the network layer move the messages throughout the networks</li>
 <li>the level of service that the transport layer is directly dependent on the network layer. servies of the transport layer then cannot really give a max time. </li>
 <li>transport prrotocal can give reliable data transfer serives and can encrypt to make sure not read by intruders. </li>
-<ul> 
+</ul> 
 
 </body>
 <body>
@@ -125,9 +125,10 @@ as happens to be available</li>
 (when available) without waiting for an acknowledgment, but is constrained to have no
 more than some maximum allowable number,N,of unacknowledged packets in the pipeline.</li>
 
-<ul> 
+</ul> 
 
 </body>
+<h1>
  <b>(Oct 12) Transport Layer pages 269-272</b>
     	</h1>
 	<h2>3.7 TCP Congestion Control</h2>
@@ -137,24 +138,46 @@ more than some maximum allowable number,N,of unacknowledged packets in the pipel
 sends traffic into its connection as a function of perceived network congestion. This basically means that TCP sender perceives the level of use and sends the approprate amount.</li>
 <li>how a TCP sender limits the rate at which it sends traffic
 into its connection? well TCP congestion-control mechanism operating at the sender keeps
-track  of  an  additional  variable,  the congestion  window. (whats a congestion window you ask? well it is a denoted cwnd) what does this congestion window do you ask? whell it imposes a constrant on the rate at which a TCP sender can send traffic into the network. <b>let us hence-forth assume that the TCP receive buffer is so large that the receive-window constraint can be ignored; thus, the amount of unacknowledged data at the sender is solely limited by cwnd.<\b>let us hence-forth assume that the TCP receive buffer is so large that the receive-window constraint can be ignored; thus, the amount of unacknowledged data at the sender is solely limited by cwnd.</b></li>
+track  of  an  additional  variable,  the congestion  window. (whats a congestion window you ask? well it is a denoted cwnd) what does this congestion window do you ask? whell it imposes a constrant on the rate at which a TCP sender can send traffic into the network. <b>let us hence-forth assume that the TCP receive buffer is so large that the receive-window constraint can be ignored; thus, the amount of unacknowledged data at the sender is solely limited by cwnd.</b></li>
 <li>onstraint above limits the amount of unacknowledged data at the sender
-and therefore indirectly limits the sender’s send rate. Thus the sender’s send rate is roughly cwnd/RTT bytes/sec. By adjusting the value of cwnd, the sender can therefore adjust the rate at which it sends data into its connection.</li>
-<li>how a TCP sender perceives that there is congestion on the path between itself and the destination?The dropped datagram, in turn, results in a  loss  event  at  the  sender—either  a  timeout  or  the  receipt  of  three  duplicate ACKs—which is taken by the sender to be an indication of congestion on the sender-to-receiver path.. On the other hand, if acknowledgments arrive at a high rate, then the congestion   window   will   be   increased   more   quickly.   Because   TCP   uses acknowledgments to trigger (or clock) its increase in congestion window size, TCP is said to be self-clocking</li>
+and therefore indirectly limits the sender&lsquo;s send rate. Thus the sender’s send rate is roughly cwnd/RTT bytes/sec. By adjusting the value of cwnd, the sender can therefore adjust the rate at which it sends data into its connection.</li>
+<li>how a TCP sender perceives that there is congestion on the path between itself and the destination? The dropped datagram, in turn, results in a  loss  event  at  the  sender—either  a  timeout  or  the  receipt  of  three  duplicate ACKs—which is taken by the sender to be an indication of congestion on the sender-to-receiver path.. On the other hand, if acknowledgments arrive at a high rate, then the congestion   window   will   be   increased   more   quickly.   Because   TCP   uses acknowledgments to trigger (or clock) its increase in congestion window size, TCP is said to be self-clocking</li>
 <ul>
 <li>A lost segment implies congestion, and hence, the TCP sender’s rate should be
 decreased when a segment is lost.</li>
 <li>An acknowledged segment indicates that the network is delivering the sender’s
-segments to the receiver, and hence, the sender’s rate can be increased when an
+segments to the receiver, and hence, the sender&lsquo;s rate can be increased when an
 ACK arrives for a previously unacknowledged segment </li>
 <li>Bandwidth probing </li>
 </ul>
-<li>Given this overview of TCP congestion control, we’re now in a position to consider the details of the celebrated TCP congestion-control algorithm: The algorithm has three major components: (1) slow start, (2) congestion avoidance, and (3) fast recovery.</li>
-<li> </li>
+<li>Given this overview of TCP congestion control, we&lsquo;re now in a position to consider the details of the celebrated TCP congestion-control algorithm: The algorithm has three major components: (1) slow start, (2) congestion avoidance, and (3) fast recovery.</li>
+<h3>Fun facts I learned online about congestion control in use </h3>
+
+
+
 </ul> 
 
 </body>
+<body>
+	<h1>
+         <b>(Oct 11) Network Layer pages 308-310</b>
+    	</h1>
+	<h2>4.1.1 Forwarding and Routing</h2>
+	<ul> 
+<li> <i>The terms forwarding and routing are often used interchangeably by authors discussing the network layer but the book uses speific meanings:</i></li>
+<ul>
+<li>Forwarding: refers to the router-local action of transferring a packet from an input link -- interface to the appropriate output link interface When a packet arrives at a router&lsquo;s input link, the router must move the packet to the appropriate output link</li>
+<li>Routing:refers to the network-wide process that determines the end-to-end paths that packets take from source to destination.--The network layer must determine the route or path taken by packets as they flow from a sender to a receiver. The algorithms that calculate these paths are referred to as routing algorithms</li>
+</ul>
+<li> Every router has a <b>forwarding table</b> meaning that the router forwards by examining the value of a field in the arriving packet&lsquo;s header, and then using this header value to index into the router&lsquo;s forwarding table. The value stored in the forwarding table entry for that header indicates the router&lsquo;s outgoing link interface to which that packet is to be forwarded</li>
+<li>Two other terms that are often used interchangeably but wont be here are:packet switch(to  mean  a  general  packet-switching  device  that  transfers  a packet from input link interface to output link interface, according to the value in a field in the header of the packet) and routers( base their forwarding decision on the value in the network-layer field)</li>
+<li>third important network-layer function <b>connection setup</b> three-way handshake this allows the sender and receiver to set up the needed state information</li>
 
+
+ <!--<img src="http://weknowyourdreams.com/images/smile/smile-02.jpg" alt="Smiley face" height="325" width="325"> -->
+</ul> 
+
+</body>
 </html>
 
 
