@@ -250,7 +250,11 @@ a:hover{color:#73e600}
 </div>
 <div id = "678" style = "display:block">
 	<h1>Wireshark</h1>
-
+	<div>One of the exercise that was about authorization.  We tried typing http://gaia.cs.umass.edu/wireshark-labs/protected_pages/HTTP-wireshark-file5.html into the url.  Then the website pops a prompt that asked for a username and password.  Meanwhile on Wireshark, the client sent a GET HTTP and the server responded with a 401 Unauthorized.</div>
+	<img src = "pic/401.png" style = "margin:20px">
+	<div>However, after you type in the username and password (correctly), the client sends another GET HTTP, except with a new field called Authorization with the credentials.</div>
+	<img src = "pic/authorization.png" style = "margin:20px">
+	<div>After, the server returns the packet that contains the website.</div>
 </div>
 </div>
 <script>
