@@ -9,9 +9,61 @@
 <body>
     <h1>
         Write a report on an exercise with Wireshark (choose one of the exercises that was given to you).
+        In these exercises, take the role of a teacher. For all parts of this exercise, write for a student who is visiting
+        our class for the first time. You may presume that the visitor has completed courses that are prerequisites for
+        CSC317 Computer Networks. 
     </h1>
     <p>
-
+            Hello! I'm here to show you how to use an interesting tool we've been working with in Computer Networks, Wireshark.
+        Wireshark is whats called a 'packet sniffer'. Packet sniffers are a tool that can read, copy, and then show us those
+        copies, of 'packets' of data being sent through a network. Packets are basically little bundles of data that can
+        contain all sorts of information. While packet sniffers can be extremely useful tools, I'm sure you can guess that they
+        can be used for fairly awful things. The data they copy and display could contain passwords, Social Security Numbers,
+        that sort of thing. And since packet sniffers don't directly interact with any of the packets, but merely make copies
+        of them, they can be extremely difficult to detect. While that data is still normally safe (things of that nature are
+        almost always encrypted), its still important that we understand how packet sniffers work, so we can use them for their
+        intended purpose and stop those from using it for nefarious ones.
+            Lets get started. To begin, if you are currently using Windows, you'll need to log in as a computer science student
+        using Ubutu. To do that,  restart the system on one of the computers in the computer science lab, and before windows
+        boots you should see a black screen with a few options. One is Windows, the second one down is Ubutu. Select Ubuntu
+        using the arrow keys and Enter. Once Ubuntu boots, log in with username: compsci and the password (which I won't
+        reproduce here. Ask your professor.). We have to log in with this account instead of our own, because using
+        Wireshark requires certain permissions that the compsci user has, and students do not.
+            Once you have logged in, you should see the desktop. The first thing we're going to want to do is open up
+        Wireshark. To do this, click the search button. Its the strange looking icon in the top left of your screen. Search
+        for Wireshark, and click the fin icon. Once the program is open, search again for your internet browser of choice,
+        enter moodle, and follow the forum link to the Wireshark labs. Over the past week or so I've been through several of
+        these, including the DNS,TCP, and UDP ones, but I think the HTTP one is probably the best way to get started (well,
+        perhaps excluding the 'Getting Started' lab, but I went over that one last week, so...).
+            Look at the lab, and notice the link to a webpage. We'll be using that link in just a second. So to start, we'll
+        begin capturing packets. Double click 'eno1' to start capturing. Once we start capturing, you'll start seeing lines
+        coming in. These lines are packets, and any of them can be clicked to get a closer look at them. For the time being
+        though, look at the box above that says 'Apply a display filter...'. This box lets us filter which packets we see.
+        Since we're only interested in HTTP packets right now, type in 'http' into the box, without the quotations.
+            Once we only see http packets, click on the link in the lab. This will cause two packets to appear in Wireshark,
+        one with the Info 'Get' (This is the GET message) and one with the info 'HTTP' (this is the RESPONSE message).
+        Once you see those two lines, stop packet capture by hitting the red square in the top left corner. If you click on
+        either one, you'll be able to see more information about that particular packet near the bottom of the screen.
+        (You'll also notice a screen containing ASCII and a bunch of seemingly random numbers. Just shrink that down to nothing
+        for now). You can get more info on any of the lines with an arrow by simply clicking the arrow. This will cause a drop-
+        down list to appear, with more info on that subject. Since we're doing the HTTP lab, click on the arrow next to 'HTTP'.
+            Lets take a look at this info to answer some of the lab questiosn. First, lets see what version of HTTP ourselves
+        and the server are running. If you've displayed additonal HTTP info in wireshark, you'll be able to see in the very
+        next line which version they're running. Clicking through both the GET and RESPONSE messages show the same thing,
+        HTTP/1.1. This tells us that both the server and the ourselves are using HTTP 1.1, not 1.0. Next, lets look at our IP
+        address and the IP address of the server. If you look at the GET message, and take a look at the Internet Protocol
+        line, you should see two IP adresses, one from src (source) and another from dst (destination). Since this is the GET
+        message, the source is our IP address, and the destination is the servers. Finally, lets take a look at what the
+        status code was. We can actually tell this directly from the info line. If you look at the response message, you'll
+        see '304 Not Modified'. This is the status code it returned to us. If you ever see a code you aren't familiar with,
+        googling the three numbers and the words following it will almost certainly bring you to what the code means.
+            Next, we're going to move on to part of the lab. For this one, rebegin packet capture by clicking the fin in the
+        top left corner of wireshark (or, if for some reason this doesn't work, just reset wireshark and rebegin capturing
+        as talked about above). Follow the new link in the second part of the lab, and then refresh your browser once again
+        to capture it again. Then, stop capturing packets.
+        
+        
+        
     </p>
 </body>
 </html>
