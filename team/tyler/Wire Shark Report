@@ -79,7 +79,20 @@
         and one response message before seeing the other pair. Instead, we see two Get requeests, followed by two response messages.
             Moving on to the final part of the lab, we're going to see a site thats password protected. The lab itself will give you
         the password and username for the site it has listed (which I will not reproduce here, again, see the lab). As always,
-        begin sniffing and follow to the site. Enter the log in information, and stop packet capture.
+        begin sniffing and follow to the site. Enter the log in information, and stop packet capture. If we take a look at the
+        resulting packets, we see that we made two Get requests, and received two responses. The first response we got is a 401
+        Unathorized status code, meaning we don't have permission to access the page. However, once we enter the information, we make
+        another request code. This time, the site allows entry, but we instead get a 404 Not Found response (I am unsure if the site
+        simply isn't there anymore, or the 404 was intentional, but either way this shows that we were accepted and granted entry.)
+            Take a look and compare the second Get request to the first. You should notice theres a new field, 'Authorization: Basic',
+        followed by gibberish. This gibberish is actually your username and password in base-64. If you were to take that line and
+        enter it on a converter site, you could easily see it as your username and password. So, were you looking to cause trouble,
+        you could easily do this with any www site and get users log-in information this way, so long as they hadn't taken additional
+        security measures to encrypt that info. This is why its so important to understand how packet sniffers like wireshark work,
+        so that we can better defend against people who would try to abuse it.
+            And that covers the lab. Despite a couple of hiccups with it due to varying versions of Wireshark, I still feel as though
+        makes for a solid introductory lab to introduce how to use the software, and shows how much of it can be useful. I hope you
+        found it interesting.
         
         
         
