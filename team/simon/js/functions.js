@@ -59,10 +59,7 @@ $("#tutorial").fadeIn("slow");});
   }
 }
 
-       var question = 0;
-       var right = 0;
-       var chars = ["a1", "a2", "b1", "b2", "d1", "d2"];
-      Answer("");
+       
       function Answer(text){
         var finalAns = trimEq(text);
 
