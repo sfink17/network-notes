@@ -6,5 +6,13 @@
 <h4>Page 294 - P29</h4>
 <b>a.</b> 
 Because the server does not want to leave itself vulnerable to SYN-flood attacks, it closes each connection after sending an initial SYNACK. In order to validate the final ACK, it must encode a secret number, using the sequence number N as a seed, in a cookie to that client. The client then returns an ACK with a sequence number N+1 and the secret number, so the server subtracts 1 from the sequence number and recalculates the hash to make sure it is the same as the secret number. This makes sure that the client is valid, and not an impostor. 
+<br>
+<b>b.</b>
+An attacker would be able to create a fully open connection with a single ACK if it had knowledge of other SYN requests. If a client on a network that an attacker had access to recieved a SYNACK from a server, the attacker could sniff the packet and send an ACK to the server spoofing its IP and sequence number to initiate a TCP connection. The attacker would not be able to create a half-open connection, because the server drops all SYN request connections immediately after sending a SYNACK.
+<br>
+<b>c.</b>
+Yes, if an attacker was able to collect all the initial SYNACK responses, he would be able to spoof all the clients attempting to connect.
+<br>
+<h4>Page XXX - PXX</h4>
 </body>
 </html>
