@@ -2,9 +2,16 @@
 <html>
 	<head>
 	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="main.css"/>
 	</head>
 	<body>
-		<h1>CHAPTER 2.3: File Transfer: FTP</h1>
+		<script src="jquery-3.1.1.min.js"></script>
+		<div class="nav-bar"><a class="home" href="../hello.html"><h4 class="home">HOME</h4></a></div>
+      	<div class="col-1"></div>
+      	<div class="col-2">
+      	<div class="title">
+		<h1 class="section">CHAPTER 2.3: File Transfer: FTP</h1>
+		</div>
 		<h4>In a typical FTP session:</h4>
 		<ol>
 			<li>The user interacts with FTP through an FTP user agent.</li>
@@ -17,10 +24,10 @@
 				<li>The control connection (port 21) is used for sending control information between the two hosts - information such as user indetification, password, commands to change remote directory, and commands to "put" and "get" files.</li>
 				<li>The data connection (port 20) is used to actually send a file</li>
 			</ul>
-			<p>Because FTP uses a separate control connection, FTP is said to send its control information <b>out-of-band</b>. HTTP sends request and response header lines into the same TCP connection that carries the transferred file itself. For this reason, HTTP is said to send its control information in-band.</p>
+			<p>Because FTP uses a separate control connection, FTP is said to send its control information <b>out-of-band</b>. Unlike FTP,	 HTTP sends request and response header lines into the same TCP connection that carries the transferred file itself. For this reason, HTTP is said to send its control information in-band.</p>
 			<p>The control connection remains open throughout the duration of the user session, but a new data connection is created for each file transferred within a session.</p>
 			<p>Throughout a session, the FTP server must maintain state about the user. Keeping track of this state information for each ongoing user session significantly constrains the total number of sessions that FTP can maintain simultaneously.</p>
-			<p>The commands, from client to server, and replies, from server to client, are sent across the control connection in 7-bit ASCII format.vSome of the more common commands are given below:</p>
+			<p>The commands, from client to server, and replies, from server to client, are sent across the control connection in 7-bit ASCII format. Some of the more common commands are given below:</p>
 			<ul>
 				<li>USER username: Used to send the user identification to the server.</li>
 				<li>PASS password: Used to send the user password to the server.</li>
@@ -35,6 +42,8 @@
 				<li>425 Can’t open data connection</li>
 				<li>452 Error writing file</li>
 			</ul>
-
+		</div>
+      	<script src="script.js"></script>
+      	<div class="col-3"></div>
 	</body>
 </html>

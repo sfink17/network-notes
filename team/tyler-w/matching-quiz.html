@@ -13,22 +13,29 @@ Matching Quiz
 <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.0/knockout-min.js">
 </script>
 <style>
-
+  body { background-color: #457263; text-align: center; font-family: Verdana, sans-serif; }
+  a { color: #FFFFFF; }
 .matched {
-    background: #FF8888;
+    background: #000000; color: #457263;
 }
 
 .unmatched {
-    background: #8888FF;
-}
+    background: #457263;
+  }
+ 
 
 </style>
 </head>
 <body>
 
-<h1>OSI Model Matching Quiz</h1>
+    <h1 id="desc"> Tyler Wians </h1>
+    <h5 id="desc"> CSC 317: Computer Networks</h5>
+    <p id="desc"><a href="./hello.html">Home</a> &rarr; <a href="./matching-quiz.html">OSI Model Matching Quiz</a></p>
+      
+    <h3>OSI Model Matching Quiz</h3>
+    <p>Match the layer with the corresponding number by clicking the boxes in the table.</p>
 
-<table>
+<table border="1" align="center" cellpadding="10px">
 
 <tr>
 <th>Level</th>
@@ -195,5 +202,5 @@ ko.applyBindings( vm );
 
 </script>
 
-</body
+</body>
 </html>

@@ -2,12 +2,19 @@
 <html>
 	<head>
 	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="main.css"/>
 	</head>
 	<body>
-		<h1>CHAPTER 2.2: The Web and HTTP</h1>
+		<script src="jquery-3.1.1.min.js"></script>
+		<div class="nav-bar"><a class="home" href="../hello.html"><h4 class="home">HOME</h4></a></div>
+      	<div class="col-1"></div>
+      	<div class="col-2">
+		<div class="title">
+		<h1 class="section">CHAPTER 2.2: The Web and HTTP</h1>
+		</div>
 		<ol>
 			<li>
-				<h3>Overview</h3>
+				<h3 class="section">Overview</h3>
 				<ul>
 					<li><p>HTTP, standing for HyperText Transfer Protocol, is a Web's application protocol.</p></li>
 					<li>HTTP is implemented in two programs: a client program and a server program, talking to each other by exchanging HTTP message.</li>
@@ -18,7 +25,7 @@
 				</ul>
 			</li>
 			<li>
-				<h3>Non-Persistent and Persistent Connections</h3>
+				<h3 class="section">Non-Persistent and Persistent Connections</h3>
 				<ol>
 					<li>
 						<h4>Non-Persistent Connections</h4>
@@ -38,7 +45,7 @@
 				</ol>
 			</li>
 			<li>
-				<h3>HTTP Message Format</h3>
+				<h3 class="section">HTTP Message Format</h3>
 				<ol>
 					<li>
 						<h4>HTTP Request Message</h4>
@@ -56,13 +63,13 @@
 				</ol>
 			</li>
 			<li>
-				<h3>User-Server Interaction: Cookies</h3>
+				<h3 class="section">User-Server Interaction: Cookies</h3>
 				<p>Cookies allow sites to keep track of users.</p>
 				<p>4 components: (1) a cookie header line in the HTTP response message; (2) a cookie header line in the HTTP request message; (3) a cookie file kept on the user’s end system and managed by the user’s browser; and (4) a back-end database at the Web site.</p>
 				<p>Cookies can be used to identify a user.</p>
 			</li>
 			<li>
-				<h3>Web Caching</h3>
+				<h3 class="section">Web Caching</h3>
 				<p>A <b>Web cache</b> - also called a <b>proxy server</b> - is a network entity that satisfies HTTP request on behalf of an origin Web Server.</p>
 				<p>A cache is both a server and a client at the same time.</p>
 				<p><b>Web cache processing</b></p>
@@ -76,10 +83,13 @@
 				<p>A Web cache can also substantially reduce the Web traffic in the Internet as a whole, thereby improving the performance for all applications.</p>
 			</li>
 			<li>
-				<h3>The Conditional GET</h3>
+				<h3 class="section">The Conditional GET</h3>
 				<p>The <b>conditional GET</b> is a mechanism of HTTP that allows a cache to verify that its object is up-to-date</p>
 				<p>The request message (1) uses the GET method and (2) includes an If-Modified-Since: header line</p>
 			</li>
 		</ol>
+		</div>
+      <script src="script.js"></script>
+      <div class="col-3"></div>
 	</body>
 </html>
