@@ -57,7 +57,9 @@
     Question 2. Page 289. P5. Suppose that the UDP receiver computes the Internet checksum for the received
     UDP segment and finds that it matches the value carried in the checksum field.
     Can the receiver be absolutely certain that no bit errors have occurred? Explain.
-    
+            No. Checksum is very limited in that it can easily make a mistake. All checksum does is check that the final binary is
+            all 1's. Because of this, it will always notice if one bit is incorrect, but if multiple digits are incorrect, its possible
+            they will still lead to a result of all 1's, even if they have changed drastically.
             
             
     </p>
