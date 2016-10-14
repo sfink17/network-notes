@@ -12,7 +12,8 @@
 	</head>
 	<body>
 		<h1>Wireshark Lab</h1>
-			<p>For all labs followed the PDF protocol.  For some used own generated captures (1,2,4) along with provided captures, for others used only provided captures.</p>
+		<img src="Wiresharklogo.png" alt="wireshark logo">
+			<p>Wireshark is a packetsniffer, this means that it is a application that sits and captures packets as they come into the computer.</br>For all labs followed the PDF protocol.  For some used own generated captures (1,2,4) along with provided captures, for others used only provided captures.</p>
 		<h2>Accessing Wireshark</h2>
 			<ul>
 				<li><i>su compsci</i></li>
@@ -27,9 +28,11 @@
 				<li>Double click on desired interface when started</li>
 			</ul>
 		<h2>Lab 1: Intro</h2>
-			<p>General overview of how to open and use wireshark</p>
+			<p>General overview of how to open and use wireshark.  Wireshark is a packetsniffer application, it captures packets that the host computer either transmits or receives.  It displays them in an easy to view format with a list of packets at the top in the <b>packet-listing window</b>, along with their name, type, source, and destination.  Then there is the <b>packet-header details window</b> that contains information on header fields and data.  Including size and contents.  Finally there is the <b>packet-contents window</b> that displays the raw data of the packet in both hexadecimal and ASCII code.  Wireshark can also be filetered using the bar at the top.  Entries into the filter bar should be lowercase.</p>
+			<h3>Structure of Wireshark</h3>
+			<img src="wireshark diagram.png" alt="Wireshark diagram">
 		<h2>Lab 2: HTTP</h2>
-			<p>Used both provided wireshark files, as well as generated my own.  Mainly examined the header properties of HTTP packets that were captured.  </p>
+			<p>Used both provided wireshark files, as well as generated my own.  Mainly examined the header properties of HTTP packets that were captured.  </br>Notes: </br>Your host computer sends a GET message to the destination address to request the information.  The destination host should reply with the requested information.</br>HTTP messages are often carried inside multipul TCP messages.</br>Browsers often catche requested objects, so the catche must often be cleared to resend/recieve packets.</br>Long/large documents are submitted over serveral packets that are recieved and reassembeled</br>Usernames and passwords are encoded in Base64 when transmitted so that they are more secure, they are not encrypted.</p>
 			<ol>
 				<li>Is your browser running HTTP version 1.0 or 1.1? What version of HTTP is the server running?</li>
 					<ul>
@@ -74,6 +77,38 @@
 				<li>What is the HTTP status code and phrase returned from the server in response to this second HTTP GET? Did the server explicitly return the contents of the file? Explain.</li>
 					<ul>
 						<li>Status code: 304, it did not.</li>
+					</ul>
+				<li>. How many HTTP GET request messages did your browser send? Which packet number in the trace contains the GET message for the Bill of Rights?</li>
+					<ul>
+						<li>There were two GET messages.  The first one requests the bill of rights.  </li>
+					</ul>
+				<li>Which packet number in the trace contains the status code and phrase associated with the response to the HTTP GET request?</li>
+					<ul>
+						<li>Packet 30 (self taken) has the status code.  It returns a 200 OK message.  Packet 33 returns a 404 Page not found error.</li>
+					</ul>
+				<li>What is the status code and phrase in the response?</li>
+					<ul>
+						<li>The status code is 200 OK.  </li>
+					</ul>
+				<li>How many data-containing TCP segments were needed to carry the single HTTP response and the text of the Bill of Rights?</li>
+					<ul>
+						<li>There are 2 reassembled TCP Segments. Listed in the packet-header window.</li>
+					</ul>
+				<li>How many HTTP GET request messages did your browser send? To which Internet addresses were these GET requests sent?</li>
+					<ul>
+						<li>It sent 4 GET request messages.  It sent them to 128.119.245.12, 128.119.245.12, 128.119.245.90, and 129.119.240.90 respectivly.  The thrid GET request gave a 302 Found error, because the image had been moved.  That is why there are four requests instead of three.</li>
+					</ul>
+				<li>Can you tell whether your browser downloaded the two images serially, or whether they were downloaded from the two web sites in parallel? Explain.</li>
+					<ul>
+						<li>The images had been downloaded serially.  This can be observed just by looking at the time the GET messages were sent.  They were sent one after the other, rather than at the same time.</li>
+					</ul>
+				<li>What is the server's response (status code and phrase) in response to the initial HTTP GET message from your browser?</li>
+					<ul>
+						<li>The server's initial response is a 401 Unauthorized message.  </li>
+					</ul>
+				<li>When your browser's sends the HTTP GET message for the second time, what new field is included in the HTTP GET message?</li>
+					<ul>
+						<li>Authorization: Basic field.  The contents of which are the Credentials which holds the username and password seperated by a colon.  </li>
 					</ul>
 			</ol>
 		<h2>Lab 3: DNS (Incomplete)</h2>
