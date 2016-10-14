@@ -6,18 +6,19 @@ CSC-317 Notes
 </title>
 </head>
 <body>
-<button onclick = "oc(822)">8.2.2 Notes</button>
-<button onclick = "oc(823)">8.2.3 Notes</button>
-<button onclick = "oc(824)">8.2.4 Notes</button>
-<button onclick = "oc(825)">8.2.5 Notes</button>
-<button onclick = "oc(826)">8.2.6 Notes</button>
-<button onclick = "oc(827)">8.2.7 Notes</button>
-<button onclick = "oc(828)">8.2.8 Notes</button>
+<button onclick = "oc(822)">1.5-1.8 Notes</button>
+<button onclick = "oc(823)">2.1-2.2 Notes</button>
+<button onclick = "oc(824)">2.37-2.5 Notes</button>
+<button onclick = "oc(825)">2.6-2.8 Notes</button>
+<button onclick = "oc(826)">3.1-3.3 Notes</button>
+<button onclick = "oc(827)">3.4-3.5 Notes</button>
+<button onclick = "oc(828)">3.6-3.8 Notes</button>
+<button onclick = "oc(829)">4.1-4.3 Notes</button>
 <style>
 body{background-color:#7FFFD4}
 </style>
 <div id = "822" style = "display:none">
-    <h1>8.2.2 Notes</h1>
+    <h1>1.5-1.8 Notes</h1>
 	<ul>
 		<li>1961 to 1972</li>
 			<ul>
@@ -77,7 +78,7 @@ body{background-color:#7FFFD4}
 
 
 <div id = "823" style  ="display:none">
-	<h1>8.2.3 Notes</h1>
+	<h1>2.1-2.2 Notes</h1>
 		<ul>
 			<li><h2>P2P(Peer To Peer)</h2></li>
 			<li>future challenges:
@@ -147,7 +148,7 @@ body{background-color:#7FFFD4}
 </div>
 
 <div id = "824" style  ="display:none">
-	<h1>8.2.4 Notes</h1>
+	<h1>2.37-2.5 Notes</h1>
 		<ul>
 			<li><h2>SMTP</h2></li>
 			<ul>
@@ -193,7 +194,7 @@ body{background-color:#7FFFD4}
 
 
 <div id = "825" style  ="display:none">
-	<h1>8.2.5 Notes</h1>
+	<h1>2.6-2.8 Notes</h1>
 		<h2>TCP vs UDP</h2>
 		<h3>UDP client</h3>
 		<div>from socket import *<br>serverName = &#39hostname&#39<br>serverPort = 12000<br>clientSocket = socket(socket.AF_INET, socket.SOCK_DGRAM)<br>message = raw_input(&#39Input lowercase sentence:&#39)<br>clientSocket.sendto(message,(serverName, serverPort))<br>modifiedMessage, serverAddress = clientSocket.recvfrom(2048)<br>print modifiedMessage<br>clientSocket.close()<br></div>
@@ -437,7 +438,7 @@ knock on the door and send the server a sentence to modify</li>
 -->
 
 <div id = "826" style = "display:none">
-    <h1>8.2.6 Notes</h1>
+    <h1>3.1-3.3 Notes</h1>
 <h2>Demultiplexing</h2>
 <ul><li>At the receiving end, the transport layer examines these fields to identify the receiving socket and then directs the segment to that socket. This job of delivering the data in a transport&#45layer segment to the correct socket is called demultiplexing.
 </li></ul>
@@ -460,7 +461,7 @@ knock on the door and send the server a sentence to modify</li>
 
 
 <div id = "827" style  ="display:none">
-	<h1>8.2.7 Notes</h1>
+	<h1>3.4-3.5 Notes</h1>
 <h2>Reliable Data Transfer over a Perfectly Reliable Channel</h2>
 <h4>finite-state machine (FSM):</h4> <ul><li>is a mathematical model of computation used to design both computer programs and sequential logic circuits.</li></ul>
 <h2>The different FSM</h2>
@@ -482,8 +483,8 @@ have the sender number its data packets by putting a sequence number into this
 field.  1-bit sequence number will suffice, since it will allow the receiver
 to know whether the sender is resending the previously transmitted packet</li></ul>
 		</ul>
-<img src = "rdt21.png" style = "border:3px solid black;">
-<img src = "rdt21r.png" style = "border:3px solid black;">
+<img src = "pic/rdt21.png" style = "border:3px solid black;">
+<img src = "pic/rdt21r.png" style = "border:3px solid black;">
 		<ul>
 			<li><h3>rdt2.2</h3></li>
 				<ul><li>is that the receiver must
@@ -505,8 +506,8 @@ packet being acknowledged by a received ACK message.</li></ul>
 
 
 
-<img src = "rdt22r.png" style = "border:3px solid black;">
-<img src = "rdt30.png" style = "border:3px solid black;">
+<img src = "pic/rdt22r.png" style = "border:3px solid black;">
+<img src = "pic/rdt30.png" style = "border:3px solid black;">
 
 
 <!--put the burden of detecting and recovering from lost packets on the sender.
@@ -539,7 +540,7 @@ rdt3.0 is sometimes known as the <b>alternating-bit protocol</b>.</div></li><li>
 
 
 <div id = "828" style  ="display:none">
-	<h1>8.2.8 Notes</h1>
+	<h1>3.6-3.8 Notes</h1>
 <h2>Congestion-Control Algorithms</h2>
 
 <ul><li><h3>Slow Start</h3></li>
@@ -556,7 +557,7 @@ rdt3.0 is sometimes known as the <b>alternating-bit protocol</b>.</div></li><li>
 	<li>When three duplicate ACKs are detected, in which case TCP performs fast retransmit and enters the fast recovery state.</li>
 </ol>
 
-<img src = "ss.png" style = "border:2px solid black;margin-top:20px;">
+<img src = "pic/ss.png" style = "border:2px solid black;margin-top:20px;">
 
 <li><h3>Congestion Avoidance</h3></li>
 
@@ -570,7 +571,7 @@ rdt3.0 is sometimes known as the <b>alternating-bit protocol</b>.</div></li><li>
 	</ul>
 </ul>
 
-<img src = "fast.png" style = "border:2px solid black;margin-top:20px;">
+<img src = "pic/fast.png" style = "border:2px solid black;margin-top:20px;">
 
 <li><h3>Fast Recovery</h3></li>
 <ul>
@@ -589,7 +590,7 @@ rdt3.0 is sometimes known as the <b>alternating-bit protocol</b>.</div></li><li>
 		<li>Under TCP Tahoe, the congestion window is set to 1 MSS and grows exponentially until it reaches the value of ssthresh, at which point it grows linearly.</li></ul>
 </ul>
 
-<img src = "congestion.png" style = "border:2px solid black;margin-top:20px;">
+<img src = "pic/congestion.png" style = "border:2px solid black;margin-top:20px;">
 
 
 </ul>
@@ -597,6 +598,68 @@ rdt3.0 is sometimes known as the <b>alternating-bit protocol</b>.</div></li><li>
 <hr style="height:3px;border:none;color:#333;background-color:#333;">
 		
 </div>
+
+
+
+<div id = "829" style  ="display:none">
+	<h1>4.1-4.3 Notes</h1>
+<h2>Router</h2>
+<ul>
+	<li>Forwarding: refers to the router-local action of transferring a packet from an input link interface to the appropriate output link interface.</li>
+	<li>Routing: refers to the network-wide process that determines the end-to-end paths that packets take from source to destination.</li>
+	<li>forwarding table: examine the packet header, get an index for that and pushes it to the outgoing link interface to shich the packet is to be forwarded.</li>
+	<li><h3>Input Processing</h3></li>
+		<ul>
+			<li>The forwarding table is computed and updated
+by the routing processor, with a shadow copy typically stored at each input port.</li>
+			<li>And if the switch fabric is not used, then it will be passed onto the switch fabric.</li>
+		</ul>
+	<li><h3>Switch fabric</h3></li>
+		<ul>
+			<li><h4>Switching via memory:</h4></li>
+			<ul>
+				<li>switching between input and output ports being done under direct control of the CPU (routing processor).</li>
+				<li> Input and output ports functioned as traditional I/O
+devices in a traditional operating system.</li>
+				<li>The packet was then copied
+from the input port into processor memory.</li>
+				<li>the router extracts the destination address and then looks up the direction from the forwarding table.  After that, it sends the packet to the output's port buffer.</li>
+				<li>And if the switch fabric is not used, then it will be passed onto the switch fabric.</li>
+
+			</ul>
+			<li><h4>Swithcing via a bus</h4></li>
+			<ul>
+				<li>an input port transfers a packet directly to the
+output port over a shared bus, without intervention by the routing processor.</li>
+				<li>by having the input port pre-pend a switch-internal label (header) to the packet indicating the local output port to which this packet is being transferred and transmitting the packet onto the bus.</li>
+				<li>The packet is received by all output ports, but only the port that matches the label will keep the packet.</li>
+				<li>label is then removed at the output port</li>
+				<li>If there are multiplies arriving at the same time, then they go one at a time because each packet can cross the bus one at a time.</li>
+				<li>bus is often sufficient for
+routers that operate in small local area and enterprise networks</li>
+
+
+			</ul>
+			<li><h4>Switching via an interconnection network.</h4></li>
+				<ul>
+					<li>A crossbar switch is an interconnection network consisting of 2N buses that connect N input ports to N output ports</li>
+					<li>Each vertical bus intersects each horizontal bus at a crosspoint, which can be opened or closed at any time by the switch fabric controller</li>
+				</ul>
+		</ul>
+<img src = "pic/switch.png" style = "border:3px solid black; margin:15px">
+	<li><h3>Output Processing</h3></li>
+		<ul>
+			<li>takes packets that have been stored in the output port’s memory and transmits them over the output link.</li>
+		</ul>
+		<li><h3>Routing Processor</h3></li>
+<ul><li>maintains routing tables and attached link state information,
+and computes the forwarding table for the router</li></ul>
+</ul>
+
+<hr style="height:3px;border:none;color:#333;background-color:#333;">
+		
+</div>
+
 
 
 
