@@ -10,6 +10,25 @@
         Write 10 questions and answers on the readings.
     </h1>
     <p>
+    Q1. The World Wide Web was created between 1989 and 1991 by Tim Berners-Lee. In particular, Berners-Lee and his group developed
+        early versions of four 'key components' of the web. What are those components? (Answer on page 64).
+        
+        A. HTML, HTTP, a Web Server, and a Browser.
+    
+    Q2. Almost every major internet application uses TCP over UDP, for a huge multitude of reasons. Many firewalls even block the majority
+        of UDP traffic. However, Skype (and some other online application services) still prefers to use UDP over TCP, and will only use TCP
+        if UDP communication fails. Given all of TCP's benefits, why would they ever choose to use UDP at all? (Answer on page 96)
+        
+        A. TCP suffers from header overheads. In addition, TCP has congestion control. While congestion control is great, Skype requires a
+           minimal rate, and if congestion control forces it to be slower, that could seriously impact the applications useability. Since
+           Skype calls can tolerate some loss, they would prefer using UDP instead of TCP in most cases.
+           
+    Q3. DNS is hierachical by design, but theoretically could work on just a single server. What are three of the four primary reasons
+        a single server design isn't used? (Answers on pages 133 -134)
+        
+        A. Maintenance (one server would have to be updated every single time theres a new host), Single Point of Failure (if the server
+           goes down, the whole internet goes down with it), Traffic Volume (this one single server would have to handle millions of users),
+           and a Distant Centralized Database (Distance from the server means more users traveling through slow, congested links).
 
     </p>
 </body>
