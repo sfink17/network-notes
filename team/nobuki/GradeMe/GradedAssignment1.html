@@ -20,31 +20,35 @@
                     <li>It will not fix the error. Instead, it will either delete the segment, or simply forward it with a warning</li>
                     
                 </ul>
-            <li></li>
+            <li>What are two reasons why "purists" are against NAT?</li>
                 <ul>
-                    <li></li>
+                    <li>port numbers were meant for addressing processes and not for addressing hosts (servers processes wait for incoming requests at well-known port numbers)</li>
+                    <li>NAT protocol violates the end-to-end argument (hosts should talk to each other.)</li>
+                    <li>Routers are supposed to process packets only up to layer 3.</li>
+                    <li>We should use IPv6 to fix the shortage of IP addresses. They think using NAT to fix it is a wreckless patch.</li>
+                    <li>NAT interferes with P2P applications</li>
                 </ul>
-            <li></li>
+            <li>When would you use Switching via a bus over Switching via an interconnection network?</li>
                 <ul>
-                    <li></li>
+                    <li>Switching via a bus is good for most applications. However, it can have bandwidth limitations because there is a single shared bus. When those limitations need to be surpassed, a Switching va an interconnection network should be used.</li>
                 </ul>
-            <li></li>
+            <li>How are routing and forwarding different?</li>
                 <ul>
-                    <li></li>
+                    <li>Routing is the actual rout the data will take, while forwarding is physically sending the data</li>
                 </ul>
-            <li></li>
+            <li>How much bigger is IPv6 compared to IPv4?</li>
                 <ul>
-                    <li></li>
+                    <li>IPv4 has a 32bit address while an IPv6 has a 128bit address. This means that IPv4 has less than 5 billion different addresses, while IPv6 has 2^128 addresses, which is much much bigger to the point where humans probably will never run out of those IP addresses.</li>
                     
                 </ul>
-            <li></li>
+            <li>in reliable data transfer, why aren't timers used for every individual transmission? What do they do instead?</li>
                 <ul>
-                    <li></li>
+                    <li>They don't do it because it will require a lot of overhead. Instead, they will use only one retransmission timer.</li>
                     
                 </ul>
-            <li></li>
+            <li>Explain the parts of a three part SynAck handshake.</li>
                 <ul>
-                    <li></li>
+                    <li>Host A will send a SYN message to the other. Host B will respond with both a SYN and an ACK message. Then host A will respond to the SYN message host B sent. Then these two hosts will be able to connect to each other. </li>
                     
                 </ul>
             <li>In flow control, how does a sender continue to send data when the rwnd = 0?</li>
