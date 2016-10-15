@@ -35,7 +35,7 @@
 				</ul>
 				<h4 class="section">2. Reliable Data Transfer over a Channel with Bit Errors: rdt2.0</h4>
 				<p>A more realistic model of the underlying channel is one in which bits in a packet may be corrupted.</p>
-				<img src="../img/rdt1.PNG"/>
+				<img class="display" src="../img/rdt1.PNG"/>
 				<ul>
 					<li>This message-dictation protocol uses both positive acknowledgments (“OK”) and negative acknowledgments (“Please repeat that.”).</li>
 					<li>In a computer networksetting, reliable data transfer protocols based on such retransmission are known as <b>ARQ (Automatic Repeat reQuest)</b> protocols.</li>
@@ -49,6 +49,17 @@
 					</li>
 					<li>The sender will not send a new piece of data until it is sure that the receiver has correctly received the current packet. Because of this behavior, protocols such as rdt2.0 are known as stop-and-wait protocols.</li>
 					<li>In particular, we haven’t accounted for the possibility that the ACK or NAK packet could be corrupted!</li>
+				</ul>
+				<p>Protocol rdt2.1 uses both positive and negative acknowledgments from the receiver to the sender.</p>
+				<img class="display" src="../img/rdt2-1.PNG"/>
+				<ul>
+					<li>We add a new field to the data packet and have the sender number its data packets by putting a sequence number into this field.</li>
+					<li>The receiver then need only check this sequence number to determine whether or not the received packet is a retransmission.</li>
+					<li>The sender knows that a received ACK or NAK packet (whether garbled or not) was generated in response to its most recently transmitted data packet.</li>
+					<li>The rdt2.1 sender and receiver FSMs each now have twice as many states as before.</li>
+					<li>When an out-of-order packet is received, the receiver sends a positive acknowledgment for the packet it has received.</li>
+					<li>When a corrupted packet is received, the receiver sends a negative acknowledgment.</li>
+
 				</ul>
 		</div>
 		<script src="script.js"></script>
