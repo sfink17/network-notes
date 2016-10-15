@@ -10,6 +10,13 @@ h3 { font-size: 1 em; color: #353535; }
 
 ul { text-align: left; margin-left: 10%;}
 ol { text-align: left; margin-left: 10%;}
+mark{
+	 background-color: black;
+}
+
+mark:hover{
+	background-color: white;
+}
 
 .content {
     font-family: "Computer Modern";

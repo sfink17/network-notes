@@ -114,36 +114,36 @@ This is the correct value as indicated by the book. But if we want to use this v
 	<h2>Chapter 1</h2>
 	<br>
 	<em>True or False: Transmission delay is the time taken for a packet to transmit across the physical medium</em>
-	<p><mark>False: This descripes the propagation delay. Transmission delay describes the time it takes the data to be pushed into the network.</mark></p>
+	<p><mark style="color:black;">False: This descripes the propagation delay. Transmission delay describes the time it takes the data to be pushed into the network.</mark></p>
 	<br><br> 
 	<em>Name all five layers in the IP stack, in descending order.</em>
-	<p><mark>Application, transport, network, link, and physical.</mark></p>
+	<p><mark style="color:black;">Application, transport, network, link, and physical.</mark></p>
 	<br><br> 
 	<h2>Chapter 2</h2>
 	<em>Name 3 of the 4 error codes noted in the book, and their meanings (404 not included).</em>
-	<p><mark>200: OK. 301: Moved Permanently. 400: Bad request. 505: HTTP Version not supported.</mark></p>
+	<p><mark style="color:black;">200: OK. 301: Moved Permanently. 400: Bad request. 505: HTTP Version not supported.</mark></p>
 	<br><br> 
 	<em>Define the term "DNS Caching."</em>
-	<p><mark>After a DNS request is made, the domain-name/IP information is stored locally at the client. The next time a request is made to the corresponding server, this information is used instead of making a new DNS request.</mark></p>
+	<p><mark style="color:black;">After a DNS request is made, the domain-name/IP information is stored locally at the client. The next time a request is made to the corresponding server, this information is used instead of making a new DNS request.</mark></p>
 	<br><br> 
 	<em>True or False: P2P networking requires no external server whatsoever.</em>
-	<p><mark>False (sort of): P2P requires a tracking server to keep track of peers. However, the storage and congestion control required is miniscule, since that load is passed to the networked peers.</mark></p>
+	<p><mark style="color:black;">False (sort of): P2P requires a tracking server to keep track of peers. However, the storage and congestion control required is miniscule, since that load is passed to the networked peers.</mark></p>
 	<br><br> 
 	<h2>Chapter 3</h2>
 	<em>Briefly describe UDP checksum protocol.</em>
-	<p><mark>Three random 16 bit numbers are summed, and this sums 1's compliment is taken. These four numbers are sent in the UDP header. if all of these numbers sum to 1111111111111111 at the receiver, the checksum is successful.</mark></p>
+	<p><mark style="color:black;">Three random 16 bit numbers are summed, and this sums 1's compliment is taken. These four numbers are sent in the UDP header. if all of these numbers sum to 1111111111111111 at the receiver, the checksum is successful.</mark></p>
 	<br><br> 
 	<em>Name two advantages of UDP over TCP.</em>
-	<p><mark>UDP does not throttle bandwidth, can support more simultaneous connections, and does not require a handshake to send data.</mark></p>
+	<p><mark style="color:black;">UDP does not throttle bandwidth, can support more simultaneous connections, and does not require a handshake to send data.</mark></p>
 	<br><br> 
 	<em>What are the two main transport layer error recovery protocols? Which of these methods does TCP use?</em>
-	<p><mark>Go-Back-N, and Selective Repeat. GBN utilizes a timeout for each acknowledgement, after which it retransmits all unacknowledged segments. SR utilizes a timeout for all segments and sends acknowledgements even after a segment has been lost. TCP uses a combination of these, using cumulative acknowledgement like GBN, but also only retransmitting segments selectively, like SR.</mark></p>
+	<p><mark style="color:black;">Go-Back-N, and Selective Repeat. GBN utilizes a timeout for each acknowledgement, after which it retransmits all unacknowledged segments. SR utilizes a timeout for all segments and sends acknowledgements even after a segment has been lost. TCP uses a combination of these, using cumulative acknowledgement like GBN, but also only retransmitting segments selectively, like SR.</mark></p>
 	<br><br> 
 	<em>What are the two ways that TCP recognizes a dropped packet?</em>
-	<p><mark>Through either a timeout, or after three duplicate acknowledgements for a segment.</mark></p>
+	<p><mark style="color:black;">Through either a timeout, or after three duplicate acknowledgements for a segment.</mark></p>
 	<br><br> 
 	<em>In what manner does the TCP congestion window grow? Linearly, exponentially, or some combination of the two?</em>
-	<p><mark>A combination. The congestion window intitially grows exponentially, but begins to grow linearly after reaching the halfway point from where the last packet was lost.</mark></p>
+	<p><mark style="color:black;">A combination. The congestion window intitially grows exponentially, but begins to grow linearly after reaching the halfway point from where the last packet was lost.</mark></p>
 	<br><br>
 
 </div>
