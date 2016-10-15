@@ -59,27 +59,51 @@
         <a href="http://gaia.cs.umass.edu/wireshark-labs/wireshark-traces.zip">Link to download example</a>
         <p>Questions 1-5 use the file NAT_home_side while 6-10 use NAT_ISP_side</p>
         <ol>
-          <li></li>
-            <ul><li></li></ul>
-          <li></li>
-            <ul><li></li></ul>
-          <li></li>
-            <ul><li></li></ul>
-          <li></li>
-            <ul><li></li></ul>
-          <li></li>
-            <ul><li></li></ul>
-          <li></li>
-            <ul><li></li></ul>
-          <li></li>
-            <ul><li></li></ul>
-          <li></li>
-            <ul><li></li></ul>
-          <li></li>
-            <ul><li></li></ul>
-          <li></li>
-            <ul><li></li></ul>
-
+          <li>What is the IP address of the client?</li>
+            <ul><li>192.168.1.100</li></ul>
+          <li>This one is only directions. It tells us to type in “http&&ip.addr==64.233.169.104” without the quotation marks in the filter to only the communication with the main Google server.</li>
+          <li>Consider now the HTTP GET sent from the client to the Google server (whose IP address is IP address 64.233.169.104) at time 7.109267. What are the source and destination IP addresses and TCP source and destination ports on the IP datagram carrying this HTTP GET?</li>
+            <ul>
+                <li>Source/destination IP: 192.168.1.100 / 64.233.169.104</li>
+                <li>TCP source/destination ports: 4335 / 80</li>
+            </ul>
+          <li>At what time is the corresponding 200 OK HTTP message received from the GOogle server? What are the source and destination IP addresses and TCP source and destination ports on the IP datagram carrying this HTTP 200 OK message?</li>
+            <ul>
+                <li>Time: 7.158797</li>
+                <li>Source/destination IP: 64.233.169.104 / 192.168.1.100</li>
+                <li>TCP source/destination ports: 80 / 4335</li>
+            </ul>
+          <li>Find the SYN/ACK handshake that corresponds with the previous request. Type in tcp in to the filter. There are three tcp before the GET HTTP. What is the time, source/destination IP/Ports?</li>
+            <ul>
+                <li>It is at time 7.075657</li>
+                <li>Source/destination IP: 192.168.1.100 / 64.233.169.104</li>
+                <li>TCP source/destination ports: 4335 / 80</li>
+                <li>Time for the responding ack is 7.108986 with the opposite IP and ports</li>
+            </ul>
+          <li>In the NAT_ISP_sidetrace file, find the HTTP GET message was sent from the client to the Google server at time 7.109267 (where t=7.109267 is time at which this was sent as recorded in the NAT_home_side trace file). At what time does this message appear in the NAT_ISP_sidetrace file?  What are the source and destination IP addresses and TCP source and destination ports on the IP datagram carrying this HTTP GET (as recording in the NAT_ISP_side trace file)?  Which of these fields are the same, and which are different, than in your answer to question 3 above?</li>
+            <ul>
+                <li>Time: 6.069168</li>
+                <li>Source IP:71.192.34.104 Port: 4335</li>
+                <li>Destination IP: 64.233.169.104 Port 80</li>
+                <li>The IP address for the source is different</li>
+            </ul>
+          <li>	The IP address for the source is different. 
+Are any fields in the HTTP GET message changed? Which of the following fields in the IP datagram carrying the HTTP GET are changed: Version, Header Length, Flags, Checksum.  If any of these fields have changed, give a reason (in one sentence) stating why this field needed to change.</li>
+            <ul><li>The checksum changed, because the checksum has part of it based off the IP address, and since that changed, the checksum changed too.</li></ul>
+          <li>In the NAT_ISP_sidetrace file, at what time is the first 200 OK HTTP message received from the Google server?  What are the source and destination IP addresses and TCP source and destination ports on the IP datagram carrying this HTTP 200 OK message? Which of these fields are the same, and which are different than your answer to question 4 above?</li>
+            <ul>
+                <li>Time: 6.308118</li>
+                <li>Source IP: 64.233.169.104 Port: 80</li>
+                <li>Destination IP: IP:71.192.34.104 Port: 4335</li>
+                <li>The destination IP is different than in question 4</li>
+            </ul>
+          <li>In the NAT_ISP_sidetracefile, at what time were the client-to-server TCP SYN segment and the server-to-client TCP ACK segment corresponding to the segments in question 5 above captured?What are the source and destination IP addresses and source and destination ports for these two segments?Which of these fields are the same, and which are different than your answer to question 5 above?</li>
+            <ul>
+                <li>Time: SYN: 6.035475 ACK: 6.06775</li>
+                <li>Source: SYN IP: 71.192.34.104 Port: 4335 ACK IP: 64.233.169.104 Port: 80Destination: SYN IP: 64.233.169.104 Port: 80 ACK IP: 71.192.34.104 Port: 4335 </li>
+                <li>Destination: SYN IP: 64.233.169.104 Port: 80 ACK IP: 71.192.34.104 Port: 4335 </li>
+                <li>The port numbers are the same, but the SYN source IP and the ACK destination IP are different.</li>
+            </ul>
         </ol>
         
     </body>
