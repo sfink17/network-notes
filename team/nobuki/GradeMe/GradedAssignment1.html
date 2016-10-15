@@ -7,39 +7,39 @@
         <h1>Graded Assignment 1</h1>
         <h3>Questions on Reading</h3>
         <ol>
-            <li>What is the difference between a DDoS attack and a DoS attack, and why is it harder to protect against?</li>
+            <li></li>
                 <ul>
-                    <li>The source of the attack is distributed in a DDoS, so instead of blocking just one source, you must block multiple, which is much harder to do. </li>
+                    <li></li>
                 </ul>
-            <li>What year (give or take 6 years) was the first packet switch installed?</li>
+            <li></li>
                 <ul>
-                    <li>1969</li>
+                    <li></li>
                 </ul>
-            <li>What is the equation for the end-to-end Delay for one packet and what does each constant/variable stand for?</li>
+            <li></li>
                 <ul>
-                    <li>a.	dend-to-end=N(L/R)</li>
-                    <li>b.	N is the number of links. L is the number of bits and R is the transmission rate (bits/second)</li>
+                    <li></li>
+                    
                 </ul>
-            <li>3.	What are 4 of the 5 layers of a 5 layer internet protocol stack?</li>
+            <li></li>
                 <ul>
-                    <li>Application, Transport, Network, Link, Physical</li>
+                    <li></li>
                 </ul>
-            <li>What is the main difference between a client-server architecture and a p2p architecture?</li>
+            <li></li>
                 <ul>
-                    <li>A client-server has a server that connects between the clients. In a p2p architecture, the clients connect to each other directly. Those clients are called peers.</li>
+                    <li></li>
                 </ul>
-            <li>What is the main purpose of cookies?</li>
+            <li></li>
                 <ul>
-                    <li>To allow sites to keep track of its users</li>
+                    <li></li>
                 </ul>
-            <li>What protocols do HTTP and SMTP use? How are they different?</li>
+            <li></li>
                 <ul>
-                    <li>a.	HTTP uses a pull protocol and SMTP uses push protocol.</li>
-                    <li>b.	A push protocol will push the information to the receiver, while a pull protocol will load the information on a web server and the client can pull the information at any time. </li>
+                    <li></li>
+                    
                 </ul>
-            <li>Describe the rarest first technique.</li>
+            <li></li>
                 <ul>
-                    <li>When torrenting, out of the chunks you don't have, you request to rarest (least amount of uploaders have the chunk) chunk first.</li>
+                    <li></li>
                 </ul>
 
         </ol>
@@ -47,9 +47,9 @@
         
         <h3>Answering Questions from the Book</h3>
         <ol>
-          <li></li>
-          <p></p>
-          <li></li>
+          <li>Chapter 3 question 8: Suppose that a Web server runs in Host C on port 80. Suppose this Web server uses persistent connections, and is currently receiving requests from two different Hosts, A and B. Are all of the requests being sent through the same socket at Host C? If they are being passed through different sockets, do both of the sockets have port 80? Discuss and explain.</li>
+          <p>The requests are not being sent through the same socket at Host C because the a different socket is created when there is a connection. However, they do use the same port</p>
+          <li>Chapter 4 question </li>
         </ol>
         
         
@@ -57,6 +57,7 @@
         <p>NAT or Network Address translation is a way of dealing with the limited IPv4 addresses. A device with NAT will allow multiple devices to connect to it and that device itself will connect to the WAN by taking the requests of the other devices and using it’s own IP address to relay the request to the desired destination. Wireshark will help us understand how this is happening a little better. </p> 
         <p>This lab requires capturing packets from two locations (a NAT device and a computer), so they just gave us a sample capture to work with. The example uses a home network connecting to Google. The home network router provides a NAT service.</p>
         <a href="http://gaia.cs.umass.edu/wireshark-labs/wireshark-traces.zip">Link to download example</a>
+        <p>To learn more about how NAT works, click <a href="NAT.html">here</a></p>
         <p>Questions 1-5 use the file NAT_home_side while 6-10 use NAT_ISP_side</p>
         <ol>
           <li>What is the IP address of the client?</li>
