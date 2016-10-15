@@ -7,17 +7,17 @@
         <h1>Graded Assignment 1</h1>
         <h3>Questions on Reading</h3>
         <ol>
-            <li></li>
+            <li>Which of P2P and client-server architectures have better Scalability? Explain why</li>
                 <ul>
-                    <li></li>
+                    <li>P2P servers have better Scalability. P2P servers connect directly to other peers, so it can expand indefinitely by adding more peers. However, the speed is limited to the upload and download speeds of the peers.</li>
                 </ul>
-            <li></li>
+            <li>What is the purpose of a receive buffer in Flow Control?</li>
                 <ul>
-                    <li></li>
+                    <li>A receive buffer will prevent a sender from sending too much information, which can lead to packet loss. A recieve buffer is used to show the sender how much can be sent to the receiver without overflowing it with data. It does this by maintaining a variable called receive window which shows how much space is available. </li>
                 </ul>
-            <li></li>
+            <li>Once a UDP checksum finds an error, will it fix the error? If not, what will it do?</li>
                 <ul>
-                    <li></li>
+                    <li>It will not fix the error. Instead, it will either delete the segment, or simply forward it with a warning</li>
                     
                 </ul>
             <li></li>
@@ -40,6 +40,16 @@
             <li></li>
                 <ul>
                     <li></li>
+                    
+                </ul>
+            <li></li>
+                <ul>
+                    <li></li>
+                    
+                </ul>
+            <li>In flow control, how does a sender continue to send data when the rwnd = 0?</li>
+                <ul>
+                    <li>since rwnd = 0, the sender will stop sending. To keep udating rwnd so that it will be >0 at some point when the space in the buffer frees up, the sender will send a small amout of data to the receiver which will in turn send an updated value of rwnd, which will have the sender start sending again (if rwnd >0)</li>
                 </ul>
 
         </ol>
