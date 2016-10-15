@@ -90,10 +90,24 @@ Packet sniffers operate over link layer transactions, and unfortunately, 802.11 
 	<li>Looking at the SYN ACK packet tells us a bit more about the addresses. When the parent router is involved, whether it be the source or the destination, it will always be indicated in those fields; in fact, these two fields are actually different names for the same field. Notice here that the source address is now occupied by the router.</li><br>
 	<li>Finally, let's look at protocol for authentication. At t=49.58, the host requests to disassociate from the AP. It sends two messages: the first is an IP layer message to the parent router which removes it from the subnet, and the second is a frame directly to the AP to deauthenticate the host.</li><br>
 	<li>After this, the host attempts to associate and authenticate with a linksys AP (Cisco-Li_f5). You can look through these attempts if you want; for whatever reason, there is never a reply from this AP. The host then authenticates once more with the previous AP. This process is much shorter and sweeter, consisting of only two exchanges at around t=63. It also includes another IP layer message to the router, requesting to be placed on the subnet again.</li><br>
-	<li>Hosts can elect to actively scan instead of passively scan. These attempts are denotes by the probe requests you may have seen while scrolling through the trace. These play out in the opposite manner of passive scanning: the host broadcasts a request over several 802.11 channels and waits for a direct response from nearby APs.</li><br>
+	<li>Hosts can elect to actively scan instead of passively scan. These attempts are denoted by the probe requests you may have seen while scrolling through the trace. These play out in the opposite manner of passive scanning: the host broadcasts a request over several 802.11 channels and waits for a direct response from nearby APs.</li><br>
 </div>
 <div id="textQA" style="display:none;">
 	<h1>Problems from the Text</h1>
+	<h2>C1.P24</h2>
+	<p>This problem explores the comparisons between transmission delay and propagation delay. The transmission delay of a physical package is representative of the time taken to load the data onto the truck; this is likely negligible. The propagation delay of the truck, on the other hand, will be about a day. The propagation delay of a data link will be a number of milliseconds, but the transmission delay will be far longer. This amount of time will be equal to:<br><br>
+	T = ( 40 TB / (( 100 Mb/s / 8 B/b) / 1,000,000 MB/TB )) x 86400 s/day = 37 days<br><br>
+	Obviously, in this case, the time cost of a slow transmission delay far outweighs the cost of slow propagation.<br><br>
+<h2>C3.P45</h2>
+<p>The following overview will walk you through the steps to derive the average throughput of a TCP connection. The following notation will be used:<br><br>
+W: max congestion window size in number of segments<br>
+RTT: Round trip time of a segment in seconds<br>
+MSS: Maximum Segment Size in bits<br>
+L: Loss rate<br><br>
+TCP throughput can be approximated by estimating that transmission rate will bounce between W/2RTT and W/RTT, increasing linearly and then halving when triplicate ACK segments are received. Because the change in the rate is constant, the average rate is the average of these two values, or &frac34;W/RTT. Over a single cycle, a single segment will be lost (indicated by the triplicate ACKs). Considering this, the loss rate will be <br><br>1/(segments sent per cycle) = 
+1/(average rate)(time per cycle).<br><br> To find the time per cycle, consider that the rate increases by 1 segment every RTT, and that the difference between max and min rates is W/2 packets, yielding a time per cycle of RTT x W/2. But this isn't quite right, as the rate holds at the maximum value for another RTT before dropping, raising time per cycle to RTT x (W/2+1). Plugging this into our loss rate formula, we get <br><br>L = 1/(&frac34;W/RTT)(RTT x (W/2+1)) = 1/(&#8540;W^2 + &frac34;W)<br><br>
+This is the correct value as indicated by the book. But if we want to use this value to calculate the average throughput, we need to note a tricky little detail. When W becomes sufficiently large, the second term in the denominator of L will become negligible. To illustrate this, assume a W of 1000 segments. 3W^2/8 = 375,000, and 3W/4 = 750. The second term changes our value of L by only 2 tenths of one percent. Knowing this, we can safely estimate that L = 1/&#8540;W^2, and by the same logic, time per cycle = W/2. Solving for W yields <br><br>W = (8/3L)<sup>&frac12;</sup><br><br>Average throughput will be equal to:<br><br>(Bits per segment)(Segments sent per cycle)/(Average segment transmission rate)<br><br>Plugging in all our values, we get:<br><br>MSS*(1/2L)/(RTT*(8/3L)<sup>&frac12;</sup>) = MSS/RTT x (1/L)/(2/3L)<sup>&frac12;</sup> = MSS/RTT x (3/2L)<sup>&frac12;</sup>
+
 </div>
 <div id="myQA" style="display:none;">
 	<h1>Quiz: Sections 1-3</h1>
