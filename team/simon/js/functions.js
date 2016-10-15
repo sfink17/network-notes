@@ -4,10 +4,26 @@ $(document).ready(function(){
 $("#home").click(function(){
 $("#subcontent").children().filter(":visible").fadeOut("slow", function(){
 $("#welcome").fadeIn("slow");});
+$("#asn0").fadeOut("slow");
+$("#asn1").fadeOut("slow");
+});
+$("#asn0").click(function(){
+$("#subcontent").children().filter(":visible").fadeOut("slow", function(){
+$("#assignment").fadeIn("slow");});
+$("#asn0").fadeOut("slow");
+});
+$("#asn1").click(function(){
+$("#subcontent").children().filter(":visible").fadeOut("slow", function(){
+$("#assignment1").fadeIn("slow");});
+$("#asn1").fadeOut("slow");
 });
 $("#assignmentLink").click(function(){
 $("#welcome").fadeOut("slow", function(){
 $("#assignment").fadeIn("slow");});
+});
+$("#assignmentLink1").click(function(){
+$("#welcome").fadeOut("slow", function(){
+$("#assignment1").fadeIn("slow");});
 });
 $("#notesLink").click(function(){
 $("#welcome").fadeOut("slow", function(){
@@ -24,14 +40,32 @@ $("#oct11").fadeIn("slow");});
 $("#synchLink").click(function(){
 $("#assignment").fadeOut("slow", function(){
 $("#synch").fadeIn("slow");});
+$("#asn0").fadeIn("slow");
 });
 $("#daviesLink").click(function(){
 $("#assignment").fadeOut("slow", function(){
 $("#davies").fadeIn("slow");});
+$("#asn0").fadeIn("slow");
 });
 $("#tutorialLink").click(function(){
 $("#assignment").fadeOut("slow", function(){
 $("#tutorial").fadeIn("slow");});
+$("#asn0").fadeIn("slow");
+});
+$("#wsLabLink").click(function(){
+$("#assignment1").fadeOut("slow", function(){
+$("#wsLab").fadeIn("slow");});
+$("#asn1").fadeIn("slow");
+});
+$("#myQALink").click(function(){
+$("#assignment1").fadeOut("slow", function(){
+$("#myQA").fadeIn("slow");});
+$("#asn1").fadeIn("slow");
+});
+$("#textQALink").click(function(){
+$("#assignment1").fadeOut("slow", function(){
+$("#textQA").fadeIn("slow");});
+$("#asn1").fadeIn("slow");
 });
 });
 
@@ -42,6 +76,10 @@ $("#tutorial").fadeIn("slow");});
 
   function openMenu1() {
     document.getElementById("menu1").classList.toggle("show");
+  }
+
+  function openMenu2() {
+    document.getElementById("menu2").classList.toggle("show");
   }
 
  
@@ -56,29 +94,36 @@ $("#tutorial").fadeIn("slow");});
   if (document.getElementById("menu1").classList.contains("show")) {
     document.getElementById("menu1").classList.toggle("show");
     }
+  if (document.getElementById("menu2").classList.contains("show")) {
+    document.getElementById("menu2").classList.toggle("show");
+    }
   }
 }
 
        
       function Answer(text){
         var finalAns = trimEq(text);
+	if ( typeof Answer.question == 'undefined' ) {
+	        Answer.question = 0;
+		Answer.right = 0;
+		document.getElementById("ans0").innerHTML = "Assume that upon sending or receiving a message, each router takes a timestamp. The first router's clock will be labeled A, and the second router's will be labeled B. The first time measured by a router will be labeled by a 1, the second time a 2, and so on. Our challenge is to synchronize the clocks at both routers, so that at any given time, A = B. A router sends a message at A1. What time, according to A, will<br> the message be received at B?";
+      document.getElementById("input").value = "";
+
+	      }
 
 
       if (text != "") {
-      question++;
+      Answer.question++;
       }
-      switch (question) {
 
-      case 0:
-      document.getElementById("ans0").innerHTML = "Assume that upon sending or receiving a message, each router takes a timestamp. The first router's clock will be labeled A, and the second router's<br> will be labeled B. The first time measured by a router will be labeled by a 1, the second time a 2, and so on. Our challenge is to<br> synchronize the clocks at both routers, so that at any given time, A = B. A router sends a message at A1. What time, according to A, will<br> the message be received at B?";
-      document.getElementById("input").value = "";
-      break;
+      switch (Answer.question) {
+
        case 1:
-      document.getElementById("ans1").innerHTML = "The answer is A1 + D1.<br><br>Let's assume that we can measure this time with 100% accuracy. Note that if you know the difference, or offset, between the clocks, you can<br> synchronize with little effort. What is the difference between B and A?";
+      document.getElementById("ans1").innerHTML = "The answer is A1 + D1.<br><br>Let's assume that we can measure this time with 100% accuracy. Note that if you know the difference, or offset, between the clocks, you can synchronize with little effort. What is the difference between B and A?";
       document.getElementById("input").value = "";
        if (finalAns === "a1+d1"){
        document.getElementById("res").innerHTML = "Correct!";
-       right++;
+       Answer.right++;
       }
       else {
       document.getElementById("res").innerHTML = "Incorrect.";
@@ -86,11 +131,11 @@ $("#tutorial").fadeIn("slow");});
       break;
 
        case 2:
-      document.getElementById("ans2").innerHTML = "The answer is B1 - (A1 + D1).<br><br>Unfortunately, we can only measure D1 on the clock at A. When B receives the message, it sees the timestamp (A1), but it doesn’t know what D1 <br>is, so the difference can't be calculated. Now, assume that a message is sent from A to B, is held for some time, and then sent back. What <br>formula would you use to get the total time delay (D1 + D2)?";
+      document.getElementById("ans2").innerHTML = "The answer is B1 - (A1 + D1).<br><br>Unfortunately, we can only measure D1 on the clock at A. When B receives the message, it sees the timestamp (A1), but it doesn't know what D1 is, so the difference can't be calculated. Now, assume that a message is sent from A to B, is held for some time, and then sent back. What formula would you use to get the total time delay (D1 + D2)?";
       document.getElementById("input").value = "";
        if (finalAns === "-a1+b1-d1"){
       document.getElementById("res").innerHTML = "Correct!";
-       right++;
+       Answer.right++;
       }
       else {
       document.getElementById("res").innerHTML = "Incorrect.";
@@ -102,18 +147,18 @@ $("#tutorial").fadeIn("slow");});
       document.getElementById("input").value = "";
        if (finalAns === "-a1+a2+b1-b2"){
       document.getElementById("res").innerHTML = "Correct!";
-       right++;
+       Answer.right++;
       }
       else {
       document.getElementById("res").innerHTML = "Incorrect.";
       }
       break;
        case 4:
-      document.getElementById("ans4").innerHTML = "The answer is (B1 + B2 - (A1 + A2))/2.<br><br>This method is actually used by GPS synch protocol and NTP (Network Time Protocol) to synchronize clocks. The fact that one way delay cannot be <br>measured makes perfect synchronization impossible. The accuracy of the previous formula depends on the assumption that the total delay <br>(D1 + D2), divided by two, is just about equal to the first delay, D1. Let's say a message takes 1 second to reach a distant router, and <br>then 3 seconds to return. What is the difference between the estimated one way delay and the true one way delay?";
+      document.getElementById("ans4").innerHTML = "The answer is (B1 + B2 - (A1 + A2))/2.<br><br>This method is actually used by GPS synch protocol and NTP (Network Time Protocol) to synchronize clocks. The fact that one way delay cannot be measured makes perfect synchronization impossible. The accuracy of the previous formula depends on the assumption that the total delay (D1 + D2), divided by two, is just about equal to the first delay, D1. Let's say a message takes 1 second to reach a distant router, and then 3 seconds to return. What is the difference between the estimated one way delay and the true one way delay?";
       document.getElementById("input").value = "";
        if (finalAns === "-a1-a2+b1+b2/2"){
       document.getElementById("res").innerHTML = "Correct!";
-       right++;
+       Answer.right++;
       }
       else {
       document.getElementById("res").innerHTML = "Incorrect.";
@@ -121,11 +166,11 @@ $("#tutorial").fadeIn("slow");});
       break;
 
        case 5:
-      document.getElementById("ans5").innerHTML = "The answer is 1 second.<br><br>Assume you have an extremely stable, but slow, connection. P1 and Q1 add to 9 ms, P2 and Q2 add to 11 ms, and the propagation delay is negligible. <br>T1 = 30 sec, and T2 = 31 sec. What is the difference between the estimated one way delay and the true one way delay in ms?";
+      document.getElementById("ans5").innerHTML = "The answer is 1 second.<br><br>Assume you have an extremely stable, but slow, connection. P1 and Q1 add to 9 ms, P2 and Q2 add to 11 ms, and the propagation delay is negligible. T1 = 30 sec, and T2 = 31 sec. What is the difference between the estimated one way delay and the true one way delay in ms?";
       document.getElementById("input").value = "";
-      if (newtext === "1"){
+      if (text === "1"){
       document.getElementById("res").innerHTML = "Correct!";
-       right++;
+       Answer.right++;
       }
       else {
       document.getElementById("res").innerHTML = "Incorrect.";
@@ -133,11 +178,11 @@ $("#tutorial").fadeIn("slow");});
       break;
 
        case 6:
-      document.getElementById("ans6").innerHTML = "The answer is 501 ms.<br><br>Now your connection is blazing fast, but your router is ancient and can barely handle the strain of a single user. P1 and Q1 add to 2 sec, P2 <br>and Q2 add to 10 ms, T1 = 150 ms, and T2 = 200 ms. What is the difference between the estimated one way delay and the true one way delay in ms?";
+      document.getElementById("ans6").innerHTML = "The answer is 501 ms.<br><br>Now your connection is blazing fast, but your router is ancient and can barely handle the strain of a single user. P1 and Q1 add to 2 sec, P2 and Q2 add to 10 ms, T1 = 150 ms, and T2 = 200 ms. What is the difference between the estimated one way delay and the true one way delay in ms?";
       document.getElementById("input").value = "";
-       if (newtext === "501"){
+       if (text === "501"){
       document.getElementById("res").innerHTML = "Correct!";
-       right++;
+       Answer.right++;
       }
       else {
       document.getElementById("res").innerHTML = "Incorrect.";
@@ -145,11 +190,11 @@ $("#tutorial").fadeIn("slow");});
       break;
 
        case 7:
-      document.getElementById("ans7").innerHTML = "The answer is 920 ms.<br><br>This should show that the biggest differences between components of the delay are the terms that dominate, creating a bottleneck for your <br>synchronization accuracy. If your transmission delay is low, but your queueing delay is high, Q will impact synch accuracy much more than T. <br>To achieve accurate synchronization, a network must have extremely fast, stable connections between all links, and will often take a large<br> number of measurements to reduce uncertainty further. Along a fast, stable connection, P1 and Q1 add to 5 ms, P2 and Q2 add to 6 ms, <br>T1 = 2 ms and T2 = 3 ms. What is the difference between the estimated one way delay and the true one way delay in ms?";
+      document.getElementById("ans7").innerHTML = "The answer is 920 ms.<br><br>This should show that the biggest differences between components of the delay are the terms that dominate, creating a bottleneck for your <br>synchronization accuracy. If your transmission delay is low, but your queueing delay is high, Q will impact synch accuracy much more than T. To achieve accurate synchronization, a network must have extremely fast, stable connections between all links, and will often take a large number of measurements to reduce uncertainty further. Along a fast, stable connection, P1 and Q1 add to 5 ms, P2 and Q2 add to 6 ms, T1 = 2 ms and T2 = 3 ms. What is the difference between the estimated one way delay and the true one way delay in ms?";
       document.getElementById("input").value = "";
-       if (newtext === "920"){
+       if (text === "920"){
       document.getElementById("res").innerHTML = "Correct!";
-       right++;
+       Answer.right++;
       }
       else {
       document.getElementById("res").innerHTML = "Incorrect.";
@@ -159,19 +204,21 @@ $("#tutorial").fadeIn("slow");});
       case 8:
       document.getElementById("ans8").innerHTML = "The answer is 1 ms."
       document.getElementById("input").value = "";
-       if (newtext === "1"){
-       right++;
-      document.getElementById("res").innerHTML = "Correct! You scored " + right + "/8.";
+       if (text === "1"){
+       Answer.right++;
+      document.getElementById("res").innerHTML = "Correct! You scored " + Answer.right + "/8.";
       }
       else {
-      document.getElementById("res").innerHTML = "Incorrect. You scored " + right + "/8.";
+      document.getElementById("res").innerHTML = "Incorrect. You scored " + Answer.right + "/8.";
       }
+		      break;
       }
       }
 
       function trimEq(text){
       var newtext = text.replace(/ /g, "").toLowerCase();
       var isPar = newtext.indexOf("(");
+      var chars = ["a1", "a2", "b1", "b2", "d1", "d2"];
       if (isPar != -1){
         var newPar = "";
         var inPar = newtext.substring(isPar + 1, newtext.indexOf(")"));
@@ -210,6 +257,6 @@ $("#tutorial").fadeIn("slow");});
       if (fAnswer.charAt(0) == "+"){
         fAnswer = fAnswer.substring(1);
       }
-      return newtext;
+      return fAnswer;
     }
 
