@@ -144,15 +144,32 @@
         This function, Flow Control, is not provided by UDP.
         
         
+        October 12th Textbook Notes
+        <u>TCP Congestion Control</u>
+        One of the key features of TCP is its congestion control. TCP uses an end to end congestion control as opposed to network-
+        assisted congestion control because the IP layer doesn't provide feedback to hosts about the state of the network. So, instead
+        TCP relies on the results of its sent messages to infer the state of the network.
+        
+        TCP has each of its senders limit their rate of transfer into the network, based on how badly it thinks the network is congested.
+        If the network has little congestion, then the sender can inscrease its send rate. If theres a lot of congestion, it slows down. 
+        
+        In addition to how TCP senders have a receive buffer, a send buffer, and a whole bunch of variables, TCP senders also have an
+        additional variable, the congestion window. The congestion window constrains the limit at which it can send things out into the
+        network. The exact rate is roughly the senders congestion window (cwnd) divided by RTT.
+        
+        Since TCP is using end to end congestion control, it has to determine if the network is clogged or not. To do this, TCP looks
+        for "Loss events". Loss events happen when a router buffer on the path overflows, which causes part of a TCP segment to be dropped.
+        Which, in turn, causes a timeout. When TCP gets a loss event, it uses them to determine how congested the network is. The more
+        loss events, the worse the congestion.
+        
+        Should there be no congestion in the network, then the sender will receive acknoledgements from the receiver, and it takes these
+        as a sign that all is well in the network. Depending on the ratio of data sent vs acknowledments received, the sender will use this
+        either increase or decrease its congestion window, and thus its rate of transfer. This is called <b>self clocking</b>.
         
         
         
         
-        QUICK NOTE: If you're looking at this Saturday morning/afternoon, just wanted to let you know that I'm a couple days behind here.
-        I've been keeping up with the readings, just haven't taken the extra time the past couple days to really dig into a topic in that
-        section. I have Saturday free, so I'll be playing a little bit of catch-up if you wouldn't mind waiting to grade these until Sunday.
-        If you can't though or feel it wouldn't be fair to the others, thats totally fine and more than fair. I just thought I'd give you
-        a heads up I'll be catching up on Saturday. Have a good weekend!
+        October 13th Textbook Notes
 
 
 
