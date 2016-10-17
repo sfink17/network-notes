@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<body style="background-color:#E51616;">
+		<text style="color:#00EADC;">
+		<style>
+		body{ cursor: url('alsobestcursor.cur'), auto;}
+		</style>
+		<title>
+			October 17th
+		</title>
+	</head>
+	<body>
+		<h1>October 17th</h1>
+		<h2>Reading</h2>
+			<ul>
+				<li>Datagram format IPv4</li>
+					<ul>
+						<li><b>Version number</b>: 4 bits. specifies the IP protocol version, tells the router how to interpret the rest of the datagram.</li>
+						<li><b>Header length</b>: 4 bits.  Determine where in the IP datagram the data begins.  Typical header length is 20-bytes.</li>
+						<li><b>Type of service</b>: Allow different types of IP datagrams.  Mainly to destinguish between <i>real-time datagrams</i> and <i>non-real-time datagrams</i>.<li>
+						<li><b>Datagram length</b>: Total length of the IP datagram (header and the data) in bytes.  16 bis long, maximum size is 65,535 bytes.</li>
+						<li><b>Identifier, flags, gragmentation offset</b>: IP fragmentation.  IPv6 does not allo for fragmentation.</li>
+						<li><b>Time-to-live</b>: Keeps datagrams from circulating forever.  Decremented each time it passes though a router, if it reaches 0 the datagram is dropped.</li>
+						<li><b>Protocol</b>: Indicates the specific transport-layer protocol that the datagram should be passed to.  Helps bring together the network and transport layers.</li>
+						<li><b>Header checksum</b>: Helps detect errors in the datagram.  Treats each 2 bytes in the header as a number and sums the numbers with 1s complements.  If there is a detected error the datagram is discarded.  The checksum is recomputerd and stored again at each router.</li>
+						<li><b>Source and destination IP address</b>: The IP address of the source of the datagram and its intended destination.</li>
+						<li><b>Options</b>: Allow an IP heade to be extended.  Dropped in IPv6.</li>
+						<li><b>Data</b>: The main contents of the datagram, the data that is being sent.</li>
+					</ul>
+				<li><b>Maximum Transmission Unit (MTU)</b>: Maximum amount of data a link-layer fram can carry.</li>
+				<li><b>Fragment</b>: To avoid having datagrams exceed the MTU they are ofen broken up into smaller datagrams called 'fragments'.  Fragments have incrmented id numbers to show the order.  Last fragment has flag set to 0, while rest set to 1.</li>
+				<li><b>Interface</b>: Boundry between a host and the physical link to the network.  Each has their own IP address.</li>
+				<li><b>Dotted-decimal notation</b>: How IP addresss are written.  Each IP address is 32 bits (4 bytes).  Each byte of the address is written in decimal form seperated by a dot (.).</li>
+				<li><b>Subnet</b>: Router connected multipul devices to the interent under IP address</li>
+				<li><b>Subnet mask</b>: IP address assigned to a subnet</li>
+				<li><b>Classless interdomain routing (CIDR)</b>: Internet addressing strategy.  Generalizes subnet addressing. IP address in form of a.b.c.d/x, with x being numbe of bits in first part of address.</li>
+				<li><b>Prefix</b>: x most significant bits of an address.</li>
+				<li><b>Classful addressing</b>: Before CIDR IP addresses were 8, 16, or 24 bits.  According to their class.</li>
+				<li><b>Dynamic Host Configuation Protocol (DHCP)</b>: Allows a host to obtain an IP addres automatically.  can be configured to regularly give same IP address, or a temporary one that changes each time.</li>
+				<li><b>DHCP server discover</b>: Sends a discover message to port 67 in a UDP packet.  It is a datagram with destination IP of 255.255.255.255 and a souce IP of 0.0.0.0.</li>
+				<li><b>DHCP server offers</b>: A DHCP server that receives a discover message (ACK) replies with a offer message.  It broadcasts with IP address 255.255.255.255.  Contains the transaction ID of the received discover message.  Also contains the IP address lease time.</li>
+				<li><b>IP address Lease time</b>: How long an IP address is valid.</li>
+				<li><b>Network address translation (NAT)</b>: An interface that acts as a filter between a home network LAN, and the outer WAN.  To the WAN it has a single IP address, while it actually connects multipule hosts on the LAN side.  Uses a NAT tanslation table to determine where to address outside WAN requests.</li>
+				<li><b>NAT translation table</b>: Allows the NAT router to direct incoming WAN requests/messages.  Includes port numbers as well as IP addresses.</li>
+				<li>Complaints about NAT:</li>
+					<ul>
+						<li>Port numbers are meant to be used for addressing processes, not for addressing hosts.</li>
+						<li>Routers are supposed to process packets only up to layer 3.</li>
+						<li>NAT protocol violates the end-to-end argument.</li>
+					</ul>
+			</ul>
+		<div style="text-align:left">
+			<a href="">Previous</a>
+		</div>
+		<div style="text-align:center">
+			<a href="hello.html"> Home </a>
+		</div>
+		<div style="text-align:right">
+			<a href="">Next</a>
+		</div>
+	</body>
+</html>
