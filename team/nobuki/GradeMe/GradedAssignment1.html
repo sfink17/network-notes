@@ -14,7 +14,7 @@
                 </ul><br>
             <li><b>What is the purpose of a receive buffer in Flow Control?</b></li>
                 <ul>
-                    <li>A receive buffer will prevent a sender from sending too much information, which can lead to packet loss. A recieve buffer is used to show the sender how much can be sent to the receiver without overflowing it with data. It does this by maintaining a variable called receive window which shows how much space is available. </li>
+                    <li>A receive buffer will prevent a sender from sending too much information, which can lead to packet loss. A receive buffer is used to show the sender how much can be sent to the receiver without overflowing it with data. It does this by maintaining a variable called receive window which shows how much space is available. </li>
                 </ul><br>
             <li><b>Once a UDP checksum finds an error, will it fix the error? If not, what will it do?</b></li>
                 <ul>
@@ -26,12 +26,12 @@
                     <li>port numbers were meant for addressing processes and not for addressing hosts (servers processes wait for incoming requests at well-known port numbers)</li>
                     <li>NAT protocol violates the end-to-end argument (hosts should talk to each other.)</li>
                     <li>Routers are supposed to process packets only up to layer 3.</li>
-                    <li>We should use IPv6 to fix the shortage of IP addresses. They think using NAT to fix it is a wreckless patch.</li>
+                    <li>We should use IPv6 to fix the shortage of IP addresses. They think using NAT to fix it is a reckless patch.</li>
                     <li>NAT interferes with P2P applications</li>
                 </ul><br>
             <li><b>When would you use Switching via a bus over Switching via an interconnection network?</b></li>
                 <ul>
-                    <li>Switching via a bus is good for most applications. However, it can have bandwidth limitations because there is a single shared bus. When those limitations need to be surpassed, a Switching va an interconnection network should be used.</li>
+                    <li>Switching via a bus is good for most applications. However, it can have bandwidth limitations because there is a single shared bus. When those limitations need to be surpassed, a Switching via an interconnection network should be used.</li>
                 </ul><br>
             <li><b>How are routing and forwarding different?</b></li>
                 <ul>
@@ -54,7 +54,7 @@
                 </ul><br>
             <li><b>In flow control, how does a sender continue to send data when the rwnd = 0?</b></li>
                 <ul>
-                    <li>since rwnd = 0, the sender will stop sending. To keep udating rwnd so that it will be >0 at some point when the space in the buffer frees up, the sender will send a small amout of data to the receiver which will in turn send an updated value of rwnd, which will have the sender start sending again (if rwnd >0)</li>
+                    <li>since rwnd = 0, the sender will stop sending. To keep updating rwnd so that it will be >0 at some point when the space in the buffer frees up, the sender will send a small amount of data to the receiver which will in turn send an updated value of rwnd, which will have the sender start sending again (if rwnd >0)</li>
                 </ul>
 
         </ol>
