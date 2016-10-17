@@ -1,8 +1,69 @@
 
-h1 { font-size: 2em; text-align: center; color: #353535; }
-h2 { font-size: 1.5em; text-align: center; color: #353535; }
-h3 { font-size: 1 em; text-align: center; color: #353535; }
-a {text-align: center;}
-p { text-align: center;}
-ul {margin-left: 30%;}
-ol {margin-left: 30%;}
+@font-face {
+  font-family: "Computer Modern";
+  src: url("cmunrm.woff");
+  }
+
+h1 { font-size: 2em; color: #353535; }
+h2 { font-size: 1.5em; color: #353535; }
+h3 { font-size: 1 em; color: #353535; }
+
+ul { text-align: left; margin-left: 10%;}
+ol { text-align: left; margin-left: 10%;}
+mark{
+	 background-color: black;
+}
+
+mark:hover{
+	background-color: white;
+}
+
+.content {
+    font-family: "Computer Modern";
+    text-align: center;
+    margin-left: 10%;
+    margin-right: 10%;
+    font-weight: 600;
+}
+
+
+.dropbtn {
+    position: relative;
+    background-color: #8b41a4;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #704080;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: relative;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    cursor: pointer;
+}
+
+.dropdown-content p {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+
+.dropdown p:hover {background-color: #f1f1f1}
+
+.show {display:block;}

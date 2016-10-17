@@ -9,8 +9,13 @@ Matching Quiz
 </script>
 <style>
 
+body{
+
+background:#ffff99;
+
+}
 .matched {
-    background: #FF8888;
+    background: #80ff80;
 }
 
 .unmatched {
@@ -21,19 +26,20 @@ Matching Quiz
 </head>
 <body>
 
-<h1>Matching Quiz</h1>
+<h1 style = "text-align:center;margin-bottom:30px">Matching Quiz</h1>
 
-<table>
+
+<table align="center">
 
 <tr>
-<th>State</th>
-<th>Capital City</th>
+<th>delay</th>
+<th>Definition</th>
 
 <tbody data-bind="foreach: rows()">
 <tr data-bind="css: matchStatus">
-<td data-bind="click: leftResponder, text: leftList.state">
+<td data-bind="click: leftResponder, text: leftList.delay">
 </td>
-<td data-bind="click: rightResponder, text: rightList().capital">
+<td data-bind="click: rightResponder, text: rightList().definition">
 </td>
 </tbody>
 
@@ -43,6 +49,9 @@ Matching Quiz
 </tr>
 
 </table>
+<div style = "text-align:center">
+	<img style="margin-top:30px;margin-bottom:30px;text-align:center" src="http://static1.squarespace.com/static/5687ae051c1210feadfd7fa4/5688af4c40667a3869192f29/579c92d8725e2570d04ec497/1469879045973/PrecisionFitness_YouCanDoIt_Success_Baby2.jpg?format=1000w" alt="Encouraging Image">
+</div>
 
 <script>
 var viewModel = function() {
@@ -121,7 +130,7 @@ var viewModel = function() {
             return function() {
 
                 if( prevRow >= 0 && prevCol >= 0 ) {
-                    if( that.rows()[prevRow]().leftList.state === that.rows()[row]().rightList().state ) {
+                    if( that.rows()[prevRow]().leftList.delay === that.rows()[row]().rightList().delay ) {
                         var temp = that.rows()[prevRow]().rightList();
                         that.rows()[prevRow]().rightList( that.rows()[row]().rightList() );
                         that.rows()[row]().rightList( temp );
@@ -144,7 +153,7 @@ var viewModel = function() {
                 nextTuple.rightResponder = responder( index, 1 );
 
                 nextTuple.matchStatus = ko.pureComputed( function() {
-                    if( nextTuple.leftList.state === nextTuple.rightList().state ) {
+                    if( nextTuple.leftList.delay === nextTuple.rightList().delay ) {
                         return "matched";
                     } // if
                     else {
@@ -165,13 +174,10 @@ var viewModel = function() {
 
 
     var questions = [];
-    questions.push( { "state": "Iowa", "capital": "Des Moines" } );
-    questions.push( { "state": "Minnesota", "capital": "Saint Paul" } );
-    questions.push( { "state": "Wisconsin", "capital": "Madison" } );
-    questions.push( { "state": "Illinois", "capital": "Springfield" } );
-    questions.push( { "state": "Missouri", "capital": "Jefferson City" } );
-    questions.push( { "state": "Nebraska", "capital": "Lincoln" } );
-    questions.push( { "state": "South Dakota", "capital": "Pierre" } );
+    questions.push( { "delay": "transmission", "definition": "amount of time required for the router to push out the packet." } );
+    questions.push( { "delay": "propagation", "definition": "the time it takes a bit to go from one router to the next." } );
+    questions.push( { "delay": "processing", "definition": "The time required to examine the packet’s header and determine where to direct the packet." } );
+    questions.push( { "delay": "queuing", "definition": "as it waits to be transmitted onto the link" } );
 
     var scrambledQuestions = shuffle( questions );
 
@@ -192,3 +198,4 @@ ko.applyBindings( vm );
 
 </body
 </html>
+
