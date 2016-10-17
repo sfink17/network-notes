@@ -2,11 +2,6 @@
 <html>
 <head>
   <style>
-    body
-    {
-    background-color:LightGrey;
-    }
-    
     h1
     {
     font-family: Impact, Charcoal, sans-serif;
@@ -44,12 +39,29 @@ button.accordion.active, button.accordion:hover {
 
 div.panel {
     padding: 0 18px;
-    display: none;
     background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: 1.0s ease-in-out;
+    opacity: 0;
 }
 
 div.panel.show {
     display: block;
+    opacity: 1;
+    max-height: 500px;
+    }
+
+ button.accordion:after {
+    content: '\02795'; /* Unicode character for "plus" sign (+) */
+    font-size: 13px;
+    color: #777;
+    float: right;
+    margin-left: 5px;
+}
+
+button.accordion.active:after {
+    content: "\2796"; /* Unicode character for "minus" sign (-) */
 }
 
 p {
@@ -177,13 +189,13 @@ ul.tab li a:focus, .active {background-color: #ccc;}
  </ul>
 <br>
 <div id="Questions" class="tabcontent"> 
-<button class="accordion">Describe the basic difference between GO-BACK-N and SLECETIVE REPEAT</button>
+<button class="accordion">Describe the basic difference between GO-BACK-N and SELECTIVE REPEAT</button>
 <div class="panel">
   <p> GO-BACK-N ->Retransmits all the frames that sent after the frame which suspects to be damaged or lost.</p>
   <p> Selective Repeat -> Retransmits only those frames that are suspected to lost or damaged.</p>
 </div>
 
-<button class="accordion">Is TCP's error-recovery Selective Repeat or Go-Back-N?</button>
+<button class="accordion">Is TCP's error-recovery mechanism Selective Repeat or Go-Back-N?</button>
 <div class="panel">
   <p> TCP's error-recovery mechanism is best described as a hybrid of GBN and SR protocols.</p>
 </div>
@@ -208,7 +220,7 @@ ul.tab li a:focus, .active {background-color: #ccc;}
   <p> 13 packets </p>
 </div>
 
-<button class="accordion">Using Selective Repeat, if 48 packets were sent but packet 21 was not recieved correctly.How many packets will be resent?</button>
+<button class="accordion">Using Selective Repeat, if 48 packets were sent but packet 21 was not recieved correctly. How many packets will be resent?</button>
 <div class="panel">
   <p> 1 packet </p>
 </div>
@@ -263,7 +275,7 @@ ul.tab li a:focus, .active {background-color: #ccc;}
   </div>
 <button class="accordion">This web page that I am visiting contains images. Before retrieving each image, does your host issue a new DNS query?</button>
 <div class="panel">
-  <p>No, The host does not issue a new DNS query for each individual image</p>
+  <p>No, the host does not issue a new DNS query for each individual image</p>
 </div>
 </div>
 
