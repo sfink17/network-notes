@@ -11,6 +11,14 @@
 		</title>
 	</head>
 	<body>
-		<a href="hello.html"> Home </a>
+		<div style="text-align:left">
+			<a href="">Previous</a>
+		</div>
+		<div style="text-align:center">
+			<a href="hello.html"> Home </a>
+		</div>
+		<div style="text-align:right">
+			<a href="">Next</a>
+		</div>
 	</body>
 </html>

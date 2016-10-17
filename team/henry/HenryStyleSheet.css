@@ -11,6 +11,12 @@
     border-radius: 14px;
     width: 600px;
 }
+table{
+    border: solid;
+}
+td{
+    border: solid;
+}
 p {
     text-align: left;
     padding: 15px;

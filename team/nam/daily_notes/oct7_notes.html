@@ -2,29 +2,18 @@
 <html>
 	<head>
 	<meta charset="UTF-8">
-	<style>
-	span.frac {
-	  display: inline-block;
-	  font-size: 100%;
-	  text-align: center;
-	}
-	span.frac > sup {
-	  display: block;
-	  border-bottom: 1px solid;
-	  font: inherit;
-	}
-	span.frac > span {
-	  display: none;
-	}
-	span.frac > sub {
-	  display: block;
-	  font: inherit;
-	}
+	<link rel="stylesheet" type="text/css" href="../css/notes.css"/>
 	</style>
 	</head>
 	<body>
-		<h1>CHAPTER 2.6.1: Peer-to-Peer File Distribution</h1>
-		<h3>Scalability of P2P architectures</h3>
+		<script src="jquery-3.1.1.min.js"></script>
+		<div class="nav-bar"><a class="home" href="../hello.html"><h4 class="home">HOME</h4></a></div>
+      	<div class="col-1"></div>
+      	<div class="col-2">
+      	<div class="title">
+		<h1 class="section">CHAPTER 2.6.1: Peer-to-Peer File Distribution</h1>
+		</div>
+		<h3 class="section">1. Scalability of P2P architectures</h3>
 		<p>Assume we have the server and the peers connected to the Internet with access links. Let say :</p>
 		<ul>
 			<li>The server’s access link is u<sub>s</sub></li>
@@ -38,7 +27,7 @@
 		<p>In P2P architecture, each peer can assist the server in distributing the file. In particular, when a peer receives some file data, it can use its own upload capacity to redistribute the data to other peers.</p>
 		<p>D<sub>P2P</sub> is greater than or equal to the maximum value among F/u<sub>s</sub>, F/d<sub>min</sub>, and NF/(u<sub>s</sub>+u<sub>1</sub>+u<sub>2</sub>+...+u<sub>N</sub>)</p>
 		<p>The client-server architecture, the distribution time increases linearly and without bound as the number of peers increases. However, for the P2P architecture, the minimal distribution time is not only always less than the distribution time of the client-server architecture; it is also less than one hour for any number of peers N.</p>
-		<h3>BitTorrent</h3>
+		<h3 class="section">2. BitTorrent</h3>
 		<p>A <b>torrent</b> is the collection of all peers participating in the distribution of a particular file.</p>
 		<p>Peers in a torrent download equal-size <p>chunks</p> of the file from one another, with a typical chunk size of 256 KBytes. While it downloads chunks it also uploads chunks to other peers.</p>
 		<p>Each torrent has an infrastructure node called a <b>tracker</b>. When a peer joins a torrent, it registers itself with the tracker and periodically informs the tracker that it is still in the torrent. In this manner, the tracker keeps track of the peers that are participating in the torrent.</p>
@@ -54,5 +43,8 @@
 			<li>The effect is that peers capable of uploading at compatible rates tend to find each other.</li>
 			<li><b>Unchoked</b>: feeding chunks to Alice; <b>Choked</b>: receiving no chunks from Alice.</li>
 		</ul>
+		</div>
+      	<script src="script.js"></script>
+		<div class="col-3"></div>
 	</body>
 </html>
