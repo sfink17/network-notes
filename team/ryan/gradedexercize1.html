@@ -8,24 +8,24 @@
 		h1{text-align: center;}
 		</style>
 		<title>
-			Graded Exercize 1
+			Graded Exercise 1
 		</title>
 	</head>
 	<body>
-		<h1>Graded Exercize 1</h1>
+		<h1>Graded Exercise 1</h1>
 		<h2>Questions</h2>
 			<ol>
-			<li>What version of TCP does not use Fast Recovery as part of it's congestion handeling?</li>
+			<li>What version of TCP does not use Fast Recovery as part of it's congestion handling?</li>
 				<ul>
 					<li>TCP Tahoe. (p. 276)</li>
 				</ul>
 			<li>During the Slow Start of TCP congestion control the MMS amount starts at what value?  How does it increment? When does it stop?</li>
 				<ul>
-					<li>Slow start begins with an MMS transfer rate of 1 MMS.  It adds 1 MMS each time a confirmation is recieved, this doubles the amout each RTT. It stops when either a packet is dropped, or when triple duplicate ACK messages are recieved.  If a packet is dropped it goes back to 1 MMS and sets the ssthresh to half of the cwnd when the drop occured.  Then it switches to congestion avoidance.  If triple duplicate ACKs are recieved then it also goes back to 1 MMS and sets the ssthresh to half the cwnd when the triple ACKs arrived.  However it switches over to fast recovery rather than congestion avoidance. (p. 272)</li>
+					<li>Slow start begins with an MMS transfer rate of 1 MMS.  It adds 1 MMS each time a confirmation is received, this doubles the amonut each RTT. It stops when either a packet is dropped, or when triple duplicate ACK messages are received. If a packet is dropped it goes back to 1 MMS and sets the ssthresh to half of the cwnd when the drop occurred. Then it switches to congestion avoidance.  If triple duplicate ACKs are received then it also goes back to 1 MMS and sets the ssthresh to half the cwnd when the triple ACKs arrived.  However it switches over to fast recovery rather than congestion avoidance. (p. 272)</li>
 				</ul>
 			<li>What is the main difference between go-back-n, and selective repeat?</li>
 				<ul>
-					<li>Go-back-n resends all packets after a missed packet, even ones that were recieved.  Selective repeat allows the reciever to buffer out of order packets and will resend only those packets that aren't acknowleged. (p. 218-225)</li>
+					<li>Go-back-n resends all packets after a missed packet, even ones that were received.  Selective repeat allows the receiver to buffer out of order packets and will resend only those packets that aren't acknowledged. (p. 218-225)</li>
 				</ul>
 			<li>Advantages of UDP over TCP, disadvantages?</li>
 				<ul>
@@ -53,7 +53,7 @@
 				</ul>
 			<li>Define load distribution.</li>
 				<ul>
-					<li>For large websites with multipul IP addresses DNS roates which address is used to avoid overloading one server. This balances the amount of users requesting each server. (p. 132)</li>
+					<li>For large websites with multiple IP addresses DNS rotates which address is used to avoid overloading one server. This balances the amount of users requesting each server. (p. 132)</li>
 				</ul>
 			<li>What is the amount of bytes in the UDP header? How many bytes per header field?</li>
 				<ul>
@@ -61,16 +61,16 @@
 				</ul>
 			<li>Define queuing delay.</li>
 				<ul>
-					<li>Delay that packet experiances when it waits to be transmitted onto the link/node. (p. 37)</li>
+					<li>Delay that packet experiences when it waits to be transmitted onto the link/node. (p. 37)</li>
 				</ul>
-			<li>What two formats does the packet-contents window distplay the data of the captured packet in Wireshark?</li>
+			<li>What two formats does the packet-contents window display the data of the captured packet in Wireshark?</li>
 				<ul>
 					<li>ASCII and hexadecimal. (Wireshark lab: Intro)</li>
 				</ul>
 			</ol>
 		<h2>Text Book Questions</h2>
 		<ol>
-			<li>Suppose that the UDP reveiver computer the internet checksum for the received UDP segment and finds that it matches the value carried in the checksum field.  Can the reveiver be absolutely certian that no bit errors have occured? Explain. (p. 289, problem 5)</li>
+			<li>Suppose that the UDP receiver computer the internet checksum for the received UDP segment and finds that it matches the value carried in the checksum field.  Can the receiver be absolutely certian that no bit errors have occurred? Explain. (p. 289, problem 5)</li>
 				<ul>
 					<li>No.  If the corresponding bits, that are normally added, for two of the 16-bit words are flipped when they are 0 and 1 or 1 and 0 then the sum is still the same.  And the 1s complement would also be the same.  The checksum would fail to realize that there is an error.</li>
 				</ul>
@@ -84,7 +84,7 @@
 						<ul>
 							<li>Yes, this is more or less the same as it is in question 1. (difference being that it may get intermediate ACKs (ie. 2 and 3) in time, but still timeout for a previous one (ie. 1) and thus would resend 1 and get a second ACK after the first ACK had arrived and the window had incremented)</li>
 						</ul>
-					<li>The alternating-bit protocol is the same as the SR protoocl with a sender and receiver window size of 1.</li>
+					<li>The alternating-bit protocol is the same as the SR protocol with a sender and receiver window size of 1.</li>
 						<ul>
 							<li>Yes.</li>
 						</ul>

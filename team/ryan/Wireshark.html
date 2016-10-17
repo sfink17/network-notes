@@ -13,7 +13,7 @@
 	<body>
 		<h1>Wireshark Lab</h1>
 		<img src="Wiresharklogo.png" alt="wireshark logo">
-			<p>Wireshark is a packetsniffer, this means that it is a application that sits and captures packets as they come into the computer.</br>For all labs followed the PDF protocol.  For some used own generated captures (1,2,4) along with provided captures, for others used only provided captures.</p>
+			<p>Wireshark is a packet sniffer, this means that it is a application that sits and captures packets as they come into the computer.</br>For all labs followed the PDF protocol.  For some used own generated captures (1,2,4) along with provided captures, for others used only provided captures.</p>
 		<h2>Accessing Wireshark</h2>
 			<ul>
 				<li><i>su compsci</i></li>
@@ -28,11 +28,11 @@
 				<li>Double click on desired interface when started</li>
 			</ul>
 		<h2>Lab 1: Intro</h2>
-			<p>General overview of how to open and use wireshark.  Wireshark is a packetsniffer application, it captures packets that the host computer either transmits or receives.  It displays them in an easy to view format with a list of packets at the top in the <b>packet-listing window</b>, along with their name, type, source, and destination.  Then there is the <b>packet-header details window</b> that contains information on header fields and data.  Including size and contents.  Finally there is the <b>packet-contents window</b> that displays the raw data of the packet in both hexadecimal and ASCII code.  Wireshark can also be filetered using the bar at the top.  Entries into the filter bar should be lowercase.</p>
+			<p>General overview of how to open and use wireshark.  Wireshark is a packet sniffer application, it captures packets that the host computer either transmits or receives.  It displays them in an easy to view format with a list of packets at the top in the <b>packet-listing window</b>, along with their name, type, source, and destination.  Then there is the <b>packet-header details window</b> that contains information on header fields and data.  Including size and contents.  Finally there is the <b>packet-contents window</b> that displays the raw data of the packet in both hexadecimal and ASCII code.  Wireshark can also be filtered using the bar at the top.  Entries into the filter bar should be lowercase.</p>
 			<h3>Structure of Wireshark</h3>
 			<img src="wireshark diagram.png" alt="Wireshark diagram">
 		<h2>Lab 2: HTTP</h2>
-			<p>Used both provided wireshark files, as well as generated my own.  Mainly examined the header properties of HTTP packets that were captured.  </br>Notes: </br>Your host computer sends a GET message to the destination address to request the information.  The destination host should reply with the requested information.</br>HTTP messages are often carried inside multipul TCP messages.</br>Browsers often catche requested objects, so the catche must often be cleared to resend/recieve packets.</br>Long/large documents are submitted over serveral packets that are recieved and reassembeled</br>Usernames and passwords are encoded in Base64 when transmitted so that they are more secure, they are not encrypted.</p>
+			<p>Used both provided wireshark files, as well as generated my own.  Mainly examined the header properties of HTTP packets that were captured.  </br>Notes: </br>Your host computer sends a GET message to the destination address to request the information.  The destination host should reply with the requested information.</br>HTTP messages are often carried inside multiple TCP messages.</br>Browsers often cache requested objects, so the catche must often be cleared to resend/receive packets.</br>Long/large documents are submitted over several packets that are received and reassembled</br>Usernames and passwords are encoded in Base64 when transmitted so that they are more secure, they are not encrypted.</p>
 			<ol>
 				<li>Is your browser running HTTP version 1.0 or 1.1? What version of HTTP is the server running?</li>
 					<ul>
@@ -62,7 +62,7 @@
 					<ul>
 						<li><i>Congradulations you've downloaded the file</i></li>
 					</ul>
-				<li>Inspect the contents of the first HTTP GET request from your browser to the server. Do you see an “IF-MODIFIED-SINCE” line in the HTTP GET?</li>
+				<li>Inspect the contents of the first HTTP GET request from your browser to the server. Do you see an "IF-MODIFIED-SINCE" line in the HTTP GET?</li>
 					<ul>
 						<li>No</li>
 					</ul>
@@ -96,7 +96,7 @@
 					</ul>
 				<li>How many HTTP GET request messages did your browser send? To which Internet addresses were these GET requests sent?</li>
 					<ul>
-						<li>It sent 4 GET request messages.  It sent them to 128.119.245.12, 128.119.245.12, 128.119.245.90, and 129.119.240.90 respectivly.  The thrid GET request gave a 302 Found error, because the image had been moved.  That is why there are four requests instead of three.</li>
+						<li>It sent 4 GET request messages.  It sent them to 128.119.245.12, 128.119.245.12, 128.119.245.90, and 129.119.240.90 respectivly.  The third GET request gave a 302 Found error, because the image had been moved.  That is why there are four requests instead of three.</li>
 					</ul>
 				<li>Can you tell whether your browser downloaded the two images serially, or whether they were downloaded from the two web sites in parallel? Explain.</li>
 					<ul>
@@ -108,11 +108,11 @@
 					</ul>
 				<li>When your browser's sends the HTTP GET message for the second time, what new field is included in the HTTP GET message?</li>
 					<ul>
-						<li>Authorization: Basic field.  The contents of which are the Credentials which holds the username and password seperated by a colon.  </li>
+						<li>Authorization: Basic field.  The contents of which are the Credentials which holds the username and password separated by a colon.  </li>
 					</ul>
 			</ol>
 		<h2>Lab 3: DNS (Incomplete)</h2>
-			<p>This lab was incomplete due to a couple reasons.  One whenever I tried to run a DNS lookup through another webserver then I would get a timeout error.  Second I could not find a DNS catche clear command that worked on the unix machines in the lab, the few commands that I did find didn't run.</br>
+			<p>This lab was incomplete due to a couple reasons.  One whenever I tried to run a DNS lookup through another webserver then I would get a timeout error.  Second I could not find a DNS cache clear command that worked on the unix machines in the lab, the few commands that I did find didn't run.</br>
 			Thus I instead read though the lab to get the general idea, but did not finish any questions beyond number 3.</p>
 			<ol>
 				<li>Run nslookup to obtain the IP address of a Web server in Asia. What is the IP address of that server?</li>
@@ -129,7 +129,7 @@
 					</ul>
 			</ol>
 		<h2>Lab 4: TCP (Incomplete)</h2>
-			<p>No such thing as HTTP continuation, it indicates multipul TCP segments that hold a single HTTP message.</br>
+			<p>No such thing as HTTP continuation, it indicates multiple TCP segments that hold a single HTTP message.</br>
 			Had difficulty with question 7, the question was confusing and asked for several sequence numbers that were listed as redundant by wireshark in the provided file.</p>
 			<ol>
 				<li>What is the IP address and TCP port number used by the client computer (source) that is transferring the file to gaia.cs.umass.edu? </li>
@@ -150,7 +150,7 @@
 					</ul>
 				<li>What is the sequence number of the SYNACK segment sent by gaia.cs.umass.edu to the client computer in reply to the SYN? What is the value of the Acknowledgement field in the SYNACK segment? How did gaia.cs.umass.edu determine that value? What is it in the segment that identifies the segment as a SYNACK segment?</li>
 					<ul>
-						<li>Sequence number is 0. Value of the acknowlegement field is 1. Flag identifies as SYN, ACK.  000000010010.</li>
+						<li>Sequence number is 0. Value of the acknowledgement field is 1. Flag identifies as SYN, ACK.  000000010010.</li>
 					</ul>
 				<li>What is the sequence number of the TCP segment containing the HTTP POST command? Note that in order to find the POST command, you’ll need to dig into the packet content field at the bottom of the Wireshark window, looking for a segment with a "POST" within its DATA field.</li>
 					<ul>
@@ -191,7 +191,7 @@
 					</ul>
 				<li>Examine a pair of UDP packets in which your host sends the first UDP packet and the second UDP packet is a reply to this first UDP packet. (Hint: for a second packet to be sent in response to a first packet, the sender of the first packet should be the destination of the second packet). Describe the relationship between the port numbers in the two packets. </li>
 					<ul>
-						<li>The source port and destination port are the reverse of eachother.  (ie. the port for A is the destination for B, and the port for B is the destination for A)</li>
+						<li>The source port and destination port are the reverse of each other.  (ie. the port for A is the destination for B, and the port for B is the destination for A)</li>
 					</ul>
 			</ol>
 		<div style="text-align:left">
