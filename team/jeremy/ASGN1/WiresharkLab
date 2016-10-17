@@ -28,12 +28,14 @@
     <h4>
         By: Jeremy Novak
     </h4>
-
+		<p>
+			&emsp;Before deciding to work write this lab report I worked on the Introduction Lab, the HTTP Lab and the DNS Lab.
+		</p>
 	<h4>
 		Lab Introduction
 	</h4>
 		<p>
-	&emsp; The DNS Wireshark lab from the University of Massachusetts provides information about the Domain Name System, and how the system send information to clients. As the lab recommends you should review section 2.4 of the text as a refresh of how DNS works. As with all the Wireshark labs if you don't have access to the administrator account (compsci, on the school computers) you can download data files to work with from: <br>&emsp;<a href="http://gaia.cs.umass.edu/wireshark-labs/wireshark-traces.zip">http://gaia.cs.umass.edu/wireshark-labs/wireshark-traces.zip</a>.
+	&emsp; The DNS Wireshark lab from the University of Massachusetts provides information about the Domain Name System, and how the system send information to clients. Before starting this lab you should have done the Introduction Lab and the HTTP labs to get a feel for the wireshark program. As the lab recommends you should review section 2.4 of the text as a refresh of how DNS works. As with all the Wireshark labs if you don't have access to the administrator account (compsci, on the school computers) you can download data files to work with from: <br>&emsp;<a href="http://gaia.cs.umass.edu/wireshark-labs/wireshark-traces.zip">http://gaia.cs.umass.edu/wireshark-labs/wireshark-traces.zip</a>.
 		</p>
 	<h4>
 		DNS part 1: <i>nslookup</i>

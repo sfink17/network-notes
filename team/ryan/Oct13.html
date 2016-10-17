@@ -14,13 +14,13 @@
 		<h1>October 13th</h1>
 		<h2>Reading Notes</h2>
 			<ul>
-				<li>Network ongestions caused by too many sources sending data at too high a rate.</li>
+				<li>Network congestions caused by too many sources sending data at too high a rate.</li>
 					<ol>
 						<li>Two hosts share single router with infinite buffer-->Delay increases.  Throughput ~= R/2.</li>
 						<li>Two hosts share single router with finite buffer-->Increase in retransmitted packages.  May have unneeded retransmissions.  Throughput ~= R/3 if sender does not waste retransmissions, and ~= R/4 if retransmissions are wasted due to multipule forwards.</li>
 						<li>Four hosts share four routers overlapping two-hop paths-->when a packet is dropped along a path, the transmission capacity that was used at each of the upstream links to forward that packet to the point at which it was dropped ends up having been wasted.</li>
 					</ol>
-				<li><b>Per-connection throughput</b>: Number of bytes er second at the receiver.</li>
+				<li><b>Per-connection throughput</b>: Number of bytes per second at the receiver.</li>
 				<li><b>Offered load</b>: Rate at which the transport layer sends segments into the network.</li>
 				<li>Congestion Control:</li>
 					<ol>
@@ -163,6 +163,14 @@
 		<h2>Lab</h2>
 			<ul>
 			</ul>
-		<a href="hello.html"> Home </a>
+		<div style="text-align:left">
+			<a href="Oct12.html">Previous</a>
+		</div>
+		<div style="text-align:center">
+			<a href="hello.html"> Home </a>
+		</div>
+		<div style="text-align:right">
+			<a href="Oct14.html">Next</a>
+		</div>
 	</body>
 </html>
