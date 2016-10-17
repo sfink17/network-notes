@@ -22,7 +22,7 @@
   </ul>
   <ol>
     <li>Both the server and client seem to be running HTTP 1.1</li>
-    <li>Nothing seems to indicate that the server functions in any language other than English</li>
+    <li>The lab asks what languages the server supports, but I could only find a language line in the client request, and it only allowed english (american or otherwise)</li>
     <li>The server returned the status code '200 OK'</li>
     <li>The file was last modified a few seconds before I accessed it</li>
   </ol>
@@ -36,16 +36,22 @@
   </ol>
   <li>Capture all HTTP packets when visiting <a href="http://gaia.cs.umass.edu/wireshark-labs/HTTP-wireshark-file3.html">this page</a></li>
   <ul>
-    <li><image src="./images/wireshark03.png" alt="Capture for Lab 1" style="width:####;height:###;"></li><!--http-ethereal-trace-3-->
+    <li><image src="./images/wireshark03.png" alt="Capture for Lab 1" style="width:1184;height:529;"></li>
   </ul>
   <ol>
-    <li>how many get messages were sent? which response packet contained the get message for the html page?</li>
-    <li>which packet number contained the status code and phrase? what is the status code?</li>
-    <li>how many data-contained segments were needed to carry the single response and text?</li>
+	  <li>Two HTTP messages were sent: a GET and a 200 OK response.</li>
+	  <li>However, the response was contained in 4 packets due to the length.</li>
+	  <li>Expanding the view to include TCP packets allowed me to see the contents of each packet</li>
+	  <ol>
+		  <li>Acknowledgement</li>
+		  <li>200 OK and start of HTML document</li>
+		  <li>Continuation of HTML document</li>
+		  <li>End of HTML document</li>
+	  </ol>
   </ol>
   <li>Capture all HTTP packets when visiting <a href="http://gaia.cs.umass.edu/wireshark-labs/HTTP-wireshark-file4.html">this page</a></li>
   <ul>
-    <li><image src="./images/wireshark04.png" alt="Capture for Lab 1" style="width:####;height:###;"></li>
+    <li><image src="./images/wireshark04.png" alt="Capture for Lab 1" style="width:1076;height:531;"></li>
   </ul>
   <ol>
     <li>The browser sent 4 HTTP GET messages:</li>
@@ -60,7 +66,7 @@
   </ol>
   <li>Capture all HTTP packets when visiting <a href="http://gaia.cs.umass.edu/wireshark-labs/protected_pages/HTTP-wireshark-file5.html">this page</a></li>
   <ul>
-    <li><img src="./images/wireshark05.png" alt="Capture for Lab 1" style="width:;height:;"></li>
+    <li><img src="./images/wireshark05.png" alt="Capture for Lab 1" style="width:1073;height:450;"></li>
   </ul>
   <ol>
     <li>What is the server's response (status code and phrase) in response to the initial HTTP GET message from your browser?</li>

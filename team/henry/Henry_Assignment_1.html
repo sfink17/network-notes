@@ -1,0 +1,295 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <link rel="stylesheet" type="text/css" href="HenryStyleSheet.css">
+    <meta charset="utf-8" />
+    <title>Henry Weeks Graded Assignment 0</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#questionsListShow").click(function () {
+                $("#questionsListDiv").animate({ height: 'show' }, 1000);
+            });
+            $("#questionsListHide").click(function () {
+                $("#questionsListDiv").animate({ height: 'hide' }, 1000);
+            });
+
+            $("#descriptionShow").click(function () {
+                $("#description").animate({ height: 'show' }, 1000);
+            });
+            $("#descriptionHide").click(function () {
+                $("#description").animate({ height: 'hide' }, 1000);
+            });
+
+            $("#instructionsShow").click(function () {
+                $("#instructionsDiv").animate({ height: 'show' }, 1000);
+            });
+            $("#instructionsHide").click(function () {
+                $("#instructionsDiv").animate({ height: 'hide' }, 1000);
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1 id="pageHeader">Henry Weeks: Graded Assignment 1</h1>
+
+    <h3 id="questionsHeader">10 Sample Questions About The Material With Answers</h3>
+    <div class="buttons">
+    <button type="button" id="questionsListShow">Show Questions</button>
+    <button type="button" id="questionsListHide">Hide Questions</button>
+    </div>
+    <div id="questionsListDiv">
+        <ol id="questionsList">
+            <li id="question1">
+                <p>
+                    Q:  What are the two overlaying protocols that control the sending and receiving
+                    of information on the internet?
+                </p>
+                <p>
+                    A:  TCP (Transmission Control Protocol) and IP (Internet Protocol)
+                </p>
+            </li>
+            <li id="question2">
+                <p>
+                    Q:  What are distributed applications and why are they considered distributed?
+                </p>
+                <p>
+                    A:  Distrubted applications are applications which run on end systems.  That is
+                    to say, these applications run on separate hosts and use the internet to send and
+                    receive data with applications running on other remote host machines.  They are
+                    therefore considered distributed because they communicate across a network as opposed
+                    to internally with applications on the same machine.
+                </p>
+            </li>
+            <li id="question3">
+                <p>
+                    Q:  In our context, what is a protocol?
+                </p>
+                <p>
+                    A:  A protocol defines the format and the order of messages exchanged between
+                    two or more communicating entities, as well as the actions taken on the transmission
+                    and/or receipt of a message or other event.
+                </p>
+            </li>
+            <li id="question4">
+                <p>
+                    Q:  Name three physical mediums for transmitting data on the internet.
+                </p>
+                <p>
+                    A:  Possibilities: Fiber Optic Cable, Coaxial Cable, Twisted Pair Copper Wire (Insulated
+                    and Unshielded), Satellite Radio Channels, Terrestrial Radio Channels.
+                </p>
+            </li>
+            <li id="question5">
+                <p>
+                    Q:  What is meant by the phrase "A Network of Networks"?
+                </p>
+                <p>
+                    A:  This is part of our theme of layers of abstraction.  There are routers and communication
+                    links which span the entire globe, and this in itself is a network.  However, there is not
+                    one single ISP which manages this entire global network.  Instead, ISPs charge and segment
+                    networks on an individual basis, or sometimes in small chunks of routers.  These are each networks
+                    as well, and we therefore call this system a network of interconnected networks.
+                </p>
+            </li>
+            <li id="question6">
+                <p>
+                    Q:  What are the different types of delay at a node in a packet-switch network?
+                </p>
+                <p>
+                    A:  A node in a packet-switch network may suffer from processing, queuing, transmission, and
+                    propogation delays together make up what is called total nodal delay.
+                </p>
+            </li>
+            <li id="question7">
+                <p>
+                    Q:  For what kind of application is it critical to have low delay, and for what kind is it not
+                    ciritical for low delays, but desirable for high throughput?
+                </p>
+                <p>
+                    A:  Internet telephony, video calling, and gaming requires low delay because the real-time information
+                    is critical.  For file transfering it is not critical to have low delays, but it is desirable
+                    to have high throughput to get the entire file quickly.
+                </p>
+            </li>
+            <li id="question8">
+                <p>
+                    Q:  Please name the two network application architectures and give one advantage of each.
+                </p>
+                <p>
+                    A:  The two architectures are client-server and peer to peer or P2P.  Client-server models
+                    have many advantages, the primary one being a simple structure which allows end users to
+                    access the entire network by connecting solely to the central server, providing ease of access
+                    as well as relative security.  Peer to peer has the advantage of a direct connection to other
+                    users, so that the network connections are not dependent on a single point of failure.
+                </p>
+            </li>
+        </ol>
+    </div>
+    
+    <h3 id="descriptionHeader">Two Problems From Chapters 1-3</h3>
+    <div class="buttons">
+    <button type="button" id="descriptionShow">Show Problems</button>
+    <button type="button" id="descriptionHide">Hide Problems</button>
+    </div>
+    <div id="description">
+        <p id="descriptionP">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Leonard Kleinrock is an important American computer 
+            scientist who, among other things, worked very closely with the development of the first 
+            pieces of hardware that comprised the internet in the early days.&nbsp;&nbsp;He graduated from 
+            MIT with a doctorate in computer science in 1963, and then joined the faculty at UCLA where he 
+            remains today.<br/><br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Kleirock's most recognized and significant work was 
+            done on queuing theory, which is instrumental to packet switching and in turn the concepts of 
+            computer networks that we are learning about in this class.&nbsp;&nbsp;In his PhD research 
+            Kleinrock describes his work as being to, "establish a mathematical theory of packet networks...".
+            &nbsp;&nbsp;This work would become critical not only in his work at MIT on the first ARPANET 
+            message, but also for the operation of the world wide web today.<br/><br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We saw in the movie "Lo and Behold" the machine that 
+            Charley Kline used to send the first message on October 29th, 1969.&nbsp;&nbsp;Kleinrock oversaw this 
+            operation and after the first system crash the system was recovered and a month later the first 
+            permanent ARPANET link between Stanford and MIT was established.<br/><br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Leonard Kleinrock has since made a number of contributions 
+            to the bureaucratic acceptance of the use of the internet for personal reasons, and was inducted into 
+            the Internet Hall of Fame in 2012, among receiving a number of other nationally significant awards.
+            &nbsp;&nbsp;These include the National Medal of Science, which he received in 2008, and an induction into IEEE-Eta 
+            Kappa Nu in 2011.  This man has lead an incredible life, and his work has undoubtedly help shape the 
+            landscape of modern society.
+        </p>
+    </div>
+    <h3 id="instructionsHeader">Wireshark Lab #3: TCP</h3>
+    <div class="buttons">
+    <button type="button" id="instructionsShow">Show Lab</button>
+    <button type="button" id="instructionsHide">Hide Lab</button>
+    </div>
+    <div id="instructionsDiv">
+        <p>The lab instructions simply ask us to answer the questions.</p>
+        <ol>
+            <li>
+                <p>
+                    Q: What is the IP address and TCP port number used by your client computer to transfer the
+                    file to gaia.cs.umass.edu?  What is the IP address and port number used by gaia.cs.umass.edu to 
+                    receive the file?
+                </p>
+                <p>
+                    A: The source computer's IP address is 10.128.6.4 and the TCP port number is 4444.  The destination 
+                    computer's IP address is 128.119.245.12 and it uses port 80.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Q:  What is the sequence number of the TCP SYN segment that is used to initiate the TCP connection 
+                    between the client computer and gaia.cs.umass.edu?  What is it in the segment that identifies the 
+                    segment as a SYN segment?
+                </p>
+                <p>
+                    A:  The sequence number of the TCP SYN segment is the value used to intitiate the TCP handshake between 
+                    the two computers.  The value is 0.  The SYN flag has a value of 1 which is what denotes that this 
+                    is a SYN segment.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Q:  What is the sequence number of the SYNACK segment sent by gaia.cs.umass.edu to the client computer 
+                    in reply to the SYN?  What is the value of the ACKnowledgement field in the SYNACK segment?  How did 
+                    gaia.cs.umass.edu determine that value? What is it in the segment that identifies the segment as a 
+                    SYNACK segment?
+                </p>
+                <p>
+                    A:  The sequence number in reply to the SYN is 0.  The ACK value in the SYNACK segment is 1.  The 
+                    gaia.cs.umass.edu computer adds 1 to the initial field in the SYNACK segment from the client computer 
+                    to achieve the SYNACK segment flags.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Q:  What is the sequence number of the TCP segment containing the HTTP POST command?  Note that 
+                    in order to find the POST command, you'll need to dig into the packet content field at the bottom 
+                    of the Wireshark window, looking for a segment with a "POST" within its DATA field.
+                </p>
+                <p>
+                    A:  The sequence number of the segment containing the HTTP POST command is 1.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Q:   Consider the TCP segment containing the HTTP POST as the first
+                    segment in the TCP connection. What are the sequence numbers of the first six
+                    segments in the TCP connection (including the segment containing the HTTP
+                    POST)? At what time was each segment sent? When was the ACK for each
+                    segment received? Given the difference between when each TCP segment was
+                    sent, and when its acknowledgement was received, what is the RTT value for each
+                    of the six segments? What is the EstimatedRTT value (see page 237 in text)
+                    after the receipt of each ACK? Assume that the value of the EstimatedRTT is
+                    equal to the measured RTT for the first segment, and then is computed using the
+                    EstimatedRTT equation on page 249 for all subsequent segments.<br/><br/>
+                    Note: Wireshark has a nice feature that allows you to plot the RTT for
+                    each of the TCP segments sent. Select a TCP segment in the “listing of
+                    captured packets” window that is being sent from the client to the
+                    gaia.cs.umass.edu server. Then select: Statistics->TCP Stream Graph-
+                    >Round Trip Time Graph.
+                </p>
+                <p>
+                    A:  The HTTP POST segment is the first segment.  The sequence numbers for segments 1-6 are 
+                    1, 566, 2026, 3486, 4946, and 6406, respectively.  The sending and receiving times can be listed as 
+                    follows:
+                </p>
+                <table>
+                    <tr>
+                        <td>Segment Number</td>
+                        <td>Sent Time</td>
+                        <td>ACK received time</td>
+                        <td>RTT</td>
+                    </TR>
+                    <tr>
+                        <td>Segment 1</td>
+                        <td>0.0274</td>
+                        <td>0.0538</td>
+                        <td>0.0254</td>
+                    </tr>
+                    <tr>
+                        <td>Segment 2</td>
+                        <td>0.0453</td>
+                        <td>0.0765</td>
+                        <td>0.0346</td>
+                    </tr>
+                    <tr>
+                        <td>Segment 3</td>
+                        <td>0.0497</td>
+                        <td>0.1352</td>
+                        <td>0.0691</td>
+                    </tr>
+                    <tr>
+                        <td>Segment 4</td>
+                        <td>0.0502</td>
+                        <td>0.1715</td>
+                        <td>0.1164</td>
+                    </tr>
+                    <tr>
+                        <td>Segment 5</td>
+                        <td>0.0762</td>
+                        <td>0.2159</td>
+                        <td>0.1421</td>
+                    </tr>
+                    <tr>
+                        <td>Segment 6</td>
+                        <td>0.0774</td>
+                        <td>0.2714</td>
+                        <td>0.1852</td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <p>
+                    Q:  What is the length of each of the first six TCP segments?
+                </p>
+                <p>
+                    A:  THe first segment is 565 bytes, this is the HTTP POST. The next five are all 1460 bytes, 
+                    these are MSS.
+                </p>
+            </li>
+        </ol>
+    </div>
+</body>
+</html>

@@ -14,6 +14,7 @@ CSC-317 Notes
 <button onclick = "oc(827)">3.4-3.5 Notes</button>
 <button onclick = "oc(828)">3.6-3.8 Notes</button>
 <button onclick = "oc(829)">4.1-4.3 Notes</button>
+<button onclick = "oc(8210)">4.4 Notes</button>
 <style>
 body{background-color:#7FFFD4}
 </style>
@@ -655,6 +656,68 @@ routers that operate in small local area and enterprise networks</li>
 <ul><li>maintains routing tables and attached link state information,
 and computes the forwarding table for the router</li></ul>
 </ul>
+
+<hr style="height:3px;border:none;color:#333;background-color:#333;">
+		
+</div>
+
+
+<div id = "8210" style  ="display:none">
+	<h1>4.4 Notes</h1>
+<h2>Comparing IPv4 and IPv6</h2>
+<h3>Structure of IPv4</h3>
+	<ul>
+		<li>Version number: These 4 bits specity the IP protocal version of the datagram.</li>
+		<li>Header length: these 4 bits are needed to dertermine where in the IP datagram the data actually begins.</li>
+		<li>Type of service: The type of service (TOS) bits were included in the IPv4 header to allow different types of IP datagrams (for example, datagrams particularly requiring low delay, high throughput, or reliability) to be distinguished from each other.</li>
+		<li>Datagram length: This is the total length of the IP datagram (header plus data), measured in bytes.</li>
+		<li>Identifier, flags, fragmentation offset: These three fields have to do with so-called IP fragmentation</li>
+		<li>Time-to-Live: The time-to-live (TTL) field is included to ensure that datagrams do not circulate forever (due to, for example, a long-lived routing loop) in the network.  If the TTL field reaches 0, the datagram must be dropped.</li>
+		<li>Protocal: The value of this field indicates the specific transport-layer protocol to which the data portion of this IP datagram should be passed. </li>
+		<li>Header checksum: The header checksum aids a router in detecting bit errors in a received IP datagram. </li>
+		<li>Source and destination IP addresses: When a source creates a datagram, it inserts its IP address into the source IP address field and inserts the address of the ultimate destination into the destination IP address field.</li>
+		<li>Options: The options fields allow an IP header to be extended</li>
+		<li>Data: contains the transport-layer segment (TCP or UDP) to be delivered to the destination. However, the data field can carry other types of data, such as ICMP (Internet Control Message Protocal) messages</li>
+	</ul>
+
+<img src = "pic/IPv4.png" style = "margin:10px">
+
+
+<h3>Differences</h3>
+	<ul>
+		<li>Expanded addressing capabilities: IPv6 increases the size of the IP address from 32 to 128 bits</li>
+		<li>A streamlined 40-byte header: a number of IPv4 fields have
+been dropped or made optional, allowing for faster processing of the IP datagram.</li>
+		<li>Flow labeling and priority: Like the TOS field in IPv4, can be used to give priority to certain datagrams within a flow, or it can be used to give priority to datagrams from certain applications.</li>
+	</ul>
+<h3>Structure of IPv6</h3>
+	<ul>
+		<li>Version: IPv6 carries a value of 6 in this field</li>
+		<li>Traffic class: 8-bit field is similar in spirit to the TOS field we saw in IPv4.</li>
+		<li>Flow label: 20-bit field is used to identify a flow of datagrams.</li>
+		<li>Payload length: 16-bit value is treated as an unsigned integer giving the number of bytes in the IPv6 datagram following the fixed-length, 40-byte datagram header.</li>
+		<li>Next header: Identifies the protocol to which the contents (data field) of this datagram will be delivered (for example, to TCP or UDP). The field uses
+the same values as the protocol field in the IPv4 header</li>
+		<li>Hop limit: The contents of this field are decremented by one by each router that forwards the datagram. If the hop limit count reaches zero, the datagram is
+discarded.</li>
+		<li>Source and destination addresses: Various formats of the IPv6 128-bit address.</li>
+		<li>Data: This is the payload portion of the IPv6 datagram. When the datagram reaches its destination, the payload will be removed from the IP datagram and
+passed on to the protocol specified in the next header field.</li>
+	</ul>
+
+
+<img src = "pic/IPv6.png" style = "margin:10px">
+
+
+<h3>IPv4, but no longer in IPv6</h3>
+	<ul>
+		<li>Fragmentation/Reassembly: IPv6 does not allow for fragmentation and reassembly at intermediate routers; these operations can be performed only by the source
+and destination. If an IPv6 datagram received by a router is too large to be forwarded over the outgoing link, the router simply drops the datagram and sends a &#34Packet Too Big&#34 ICMP error message back to the sender.</li>
+		<li>Header checksum: Because the transport-layer (for example, TCP and UDP) and link-layer (for example, Ethernet) protocols in the Internet layers perform checksumming, the designers of IP probably felt that this functionality was sufficiently
+redundant in the network layer that it could be removed. This allows for faster processing of IP packets.</li>
+		<li>Options: An options field is no longer a part of the standard IP header. However,it has not gone away. Instead, the options field is one of the possible  next headers pointed to from within the IPv6 header.</li>
+	</ul>
+
 
 <hr style="height:3px;border:none;color:#333;background-color:#333;">
 		
