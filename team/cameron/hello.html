@@ -1,0 +1,194 @@
+<!DOCTYPE html><html lang="en" ng-app><head><title>Cam's Network Notes</title><meta charset="UTF-8"><link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/default.min.css"><script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js"></script><script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script><script>hljs.initHighlightingOnLoad();</script><style>.center {
+  text-align: center;
+}</style></head><body><div class="jumbotron"><div class="container"><h1>Cam's Network Notes</h1></div></div><div class="container"><div class="row"><div class="col-xs-8"><h1 class="center">Graded Exercises</h1><div class="row"><div class="col-xs-3"><button class="btn-primary btn btn-block" ng-click="post = 'week0'">Week0</button></div><div class="col-xs-3"><button class="btn-primary btn btn-block" disabled>Week1</button></div><div class="col-xs-3"><button class="btn-primary btn btn-block" disabled>Week2</button></div><div class="col-xs-3"><button class="btn-primary btn btn-block" disabled>Week3</button></div></div></div><div class="col-xs-4"><h1 class="center">Notes</h1><h3>Chapter 3</h3><div class="row"><div class="col-xs-4"><button class="btn-primary btn btn-block" ng-click="post = '3.1'">3.1</button></div><div class="col-xs-4"><button class="btn-primary btn btn-block" ng-click="post = '3.2'">3.2</button></div><div class="col-xs-4"><button class="btn-primary btn btn-block" ng-click="post = '3.3'">3.3</button></div></div></div></div><div class="row"><div class="col-xs-12"><div class="post" ng-show="post == 'week0'"><h1>8 Review Questions</h1>
+<ol>
+<li>
+<p>Which kind of switching is this unfunny joke about?</p>
+<blockquote>
+<p>A man walks into a bar, and orders a beer. The bartender calls the
+wholesaler. The wholesaler calls the brewery. The brewery makes the beer.
+The brewery sells the beer to the wholesaler. The wholesaler sells the beer
+to the bar. The bartender serves the man, and the man starts drinking
+the beer.</p>
+<p>In the meantime, a second person walks into the bar. The bartender yells,
+&quot;Can't you see I'm busy!!&quot;</p>
+</blockquote>
+<p>Answer: circuit switching</p>
+</li>
+<li>
+<p>What kind of loss, suffered by a packet switching network, could be
+alleviated if infinite output buffer sizes were possible?</p>
+<p>Packet loss.</p>
+</li>
+<li>
+<p>What is 'distributed' about a DDoS attack?</p>
+<p>The attack comes from many computers that are geographically distinct, making
+it more difficult to figure out which computers are legitimate requests.</p>
+</li>
+<li>
+<p>Why don't we use two layers of the ISO OSI model?</p>
+<p>We do use them, but we leave the choices there to application developers.
+Most applications do make presentation and session choices.</p>
+</li>
+<li>
+<p>Fill in the network protocol in this joke:</p>
+<blockquote>
+<p>I would tell you a joke about ___, but you might not get it.</p>
+</blockquote>
+<p>Answer: UDP</p>
+</li>
+<li>
+<p>Which network protocol does this joke reflect?</p>
+<blockquote>
+<p>Hello, would you like to hear a joke?</p>
+<p>Yes, I'd like to hear a joke.</p>
+<p>OK, I'll tell you a joke.</p>
+<p>OK, I'll hear a joke.</p>
+<p>Are you ready to hear a joke?</p>
+<p>Yes, I am ready to hear a joke.</p>
+<p>OK, I'm about to send the joke. It will last 10 seconds, it has two
+characters, it does not have a setting, it ends with a punchline.</p>
+<p>OK, I'm ready to hear the joke that will last 10 seconds, has two
+characters, does not have a setting and will end with a punchline.</p>
+<p>I'm sorry, your connection has timed out...Hello, would you like to hear a
+joke?</p>
+</blockquote>
+<p>Answer: TCP</p>
+</li>
+<li>
+<p>Name two protocols that are involved in the sending and retrieval of e-mail.</p>
+<p>Pick two of: SMTP, POP3, IMAP, HTTP</p>
+</li>
+<li>
+<p>Why is the opening of a TCP connection called a &quot;three-way handshake&quot;?</p>
+<p>The opening part of a client's TCP connection goes to a &quot;welcoming socket&quot;,
+which is not unique to the client. Then, a unique socket for the connection
+is created.</p>
+</li>
+</ol>
+<h1>Influential person: Bob Taylor</h1>
+<p>This account was taken from the book, <em>Where Wizards Stay Up Late</em>, by Katie
+Hafner and Matthew Lyon.</p>
+<p>Bob Taylor was the leader of the ARPANET project at ARPA, where he lead the
+development of the Interface Message Processor units that were initially
+installed at each node of the fledgling network.</p>
+<p>ARPANET was one very early incarnation of the Internet that connected four nodes
+across the country at top-level universities. This network was established by
+December of 1969, and shortly thereafter Bob left the project to pursue other
+opportunities.</p>
+<p>He's not as well known as Cerf or Baran as he was the manager of the project
+through an office at the Pentagon known as the IPTO, instead of a direct
+engineering contributor.</p>
+<p>In 1994, when many of the original ARPANET contributors re-assembled to
+celebrate the 25th anniversary of their achievement, the press had already created the
+myth that ARPANET had been created partially to provide communication in the
+event of a nuclear attack on the US. Bob Taylor had attempted to remedy this
+false belief to no avail.</p>
+<p>ARPANET had been created as a scientific enterprise, to link universities
+together so that they could share computing resources. Mainframe computers at
+that time were very expensive, and it would be a time and expense savings if
+researchers from one university could avoid getting their own computer.</p>
+<p>One anecdote from his career I found interesting - the initial pitch for ARPANET
+was for one million dollars, and Taylor got this funding without a laid-out plan
+and in a twenty minute conversation with his boss, the leader of ARPA, Charlie
+Herzfeld.</p>
+<h1>Tutorial on ifdown and ifup, and a little ifconfig</h1>
+<p>If you ever, on Linux, need to change your network configuration, you'll need
+to know the network interface name.</p>
+<p>You can get this from <code>ifconfig</code> - the command without arguments prints all
+the interfaces installed on the computer. An ifconfig listing will have the name
+of the interface in the first line of each block, each block corresponding to
+one interface. Example for an interface named <code>eno1</code>.</p>
+<pre><code>eno1      Link encap:Ethernet  HWaddr 90:b1:1c:88:bc:1d  
+          inet addr:10.101.6.28  Bcast:10.101.6.255  Mask:255.255.255.0
+          inet6 addr: fe80::8c3d:d00f:c95:8a5a/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:73651 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:61284 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:60730681 (60.7 MB)  TX bytes:10256534 (10.2 MB)
+          Interrupt:20 Memory:f7c00000-f7c20000 
+</code></pre>
+<p>Say that you wanted to change your <code>eno1</code> to a static IP address - on Ubuntu
+you would make the necessary changes to <code>/etc/network/interfaces</code>. Then, you
+would run the following to apply those changes:</p>
+<pre><code class="highlight-bash">ifdown eno1
+ifup eno1
+</code></pre>
+</div><div class="post" ng-show="post == '3.1'"><h1>Chapter 3 Section 1</h1>
+<h3>Important Terms:</h3>
+<p><strong>logical communication</strong> - communication as if two processes were directly connected</p>
+<p><strong>segment</strong> - transport-layer packets, created usually by breaking application messages into chunks and adding transport-layer headers</p>
+<p><strong>UDP</strong> - the User Datagram Protocol, providing unreliable, connectionless service</p>
+<p><strong>TCP</strong> - the Transmission Control Protocol, providing reliable, connection-oriented service</p>
+<p><strong>IP</strong> - the network-layer protocol for the internet, Internet Protocol, in which each host has an IP address</p>
+<p><strong>best-effort delivery service</strong> - a service that makes an effort to deliver segments, but makes no guarantees</p>
+<p><strong>unreliable service</strong> - a service without guaranteed delivery, order, or integrity</p>
+<p><strong>transport-layer multiplexing and demultiplexing</strong> - extending host-to-host delivery to process-to-process delivery</p>
+<p><strong>reliable data transfer</strong> - a transfer that guarantees data arrives in order and correct</p>
+<p><strong>congestion control</strong> - preventing any one TCP connection from swamping the network layer with too much traffic</p>
+<h3>Big Ideas</h3>
+<p>There are two transport-layer protocols available on the internet - TCP and UDP.</p>
+<p>TCP has the advantage that it provides additional services on top of the unreliable IP
+protocol that guarantee order and correctness of data. UDP does not provide these
+guarantees, but suffers less additional per-segment overhead as a result. Both
+protocols provide error-checking capability.</p>
+<p>These transport-layer protocols are implemented in the network edge and not
+in the network core. Their job is to extend the network-layer communication
+into the application. We call a message at this level a 'segment', to be
+distinguished from the 'message' at the application level and the 'datagram'
+at the network level.</p>
+</div><div class="post" ng-show="post == '3.2'"><h1>Chapter 3 Section 2</h1>
+<h3>Important Terms:</h3>
+<p><strong>socket</strong> - an entity through which data passes between network and process</p>
+<p><strong>demultiplexing</strong>  - in a transport context, delivery of the data in a segment
+to the correct process</p>
+<p><strong>multiplexing</strong> - in a transport context, gathering data chunks from different
+sockets encapsulating those chunks, and passing them to the network</p>
+<p><strong>source/destination port number field</strong> - fields in a segment that indicate the socket to
+which data is to be delivered. a 16-bit integer.</p>
+<p><strong>well-known port numbers</strong> - the port numbers from 0 to 1023 that are reserved
+for use by well-known application protocols</p>
+<h3>Big Ideas</h3>
+<p>UDP Multiplexing is simpler than TCP multiplexing - a UDP segment contains two
+2-tuples identifying the source and destination. Each tuple contains an IP
+address and a port number. Two UDP segments with the same destination tuple
+will be routed to the same socket. A UDP program may use the source tuple to
+know where to send a reply.</p>
+<p>TCP Multiplexing is more complex. Each TCP socket is identified by a four-tuple,
+containing the same information as the source and delivered tuples from UDP,
+but simply concatenated together. Essentially, each socket is a private connection
+between two hosts. The host uses the entire four-tuple to figure out where to
+send an incoming TCP segment.</p>
+</div><div class="post" ng-show="post == '3.3'"><h1>Chapter 3 Section 3</h1>
+<h3>Important Terms:</h3>
+<p><strong>end-end principle</strong> - it may not be expensive to provide functions at a higher
+level, even if they are implemented at a lower level</p>
+<h3>Big Ideas:</h3>
+<p>UDP is connectionless, compared to TCP which has specific private entities per
+client-server connection. This is one advantage that UDP may have over TCP for
+certain kinds of applications. Other advantages include:</p>
+<ul>
+<li>Greater control over the transport layer from an application level</li>
+<li>Less delay on segment transmission</li>
+<li>No handshake delay (no handshake in general)</li>
+<li>Lower memory requirements (no state-per-connection)</li>
+<li>Smaller overhead</li>
+<li>No congestion control (not throttled as much, theoretically)</li>
+</ul>
+<p>Therefore, UDP is used when some loss is tolerable or when performance under
+stress is important. It used to be the case that streaming media was mostly a
+UDP affair - but TCP is increasingly used instead.</p>
+<p>UDP can be made reliable - but this requires a lot of work on the application
+developer's part.</p>
+<p>The segment structure of UDP is very simple. The header contains four fields,
+each 16 bits. Those fields are the source port number, the destination port
+number, the length of the data field, and a computed checksum. The data follows.</p>
+<p>The checksum is computed essentially by padding the segment to some multiple of
+16 bits, adding together all the 16 bit words, and taking their ones complement.
+At the recieving end, all the 16 bit words, with zero taking the place of the
+checksum, are added, along with the checksum.
+Overflow is thrown away. If the result is not all ones,
+the packet has been corrupted somehow and either a warning is emitted or the
+packet never reaches the application layer.</p>
+</div></div></div></div></body></html>
