@@ -115,10 +115,10 @@
         </li>
 
         <li><b>State two network layer services and their function</b><br/>
-            <ul class="answer">
+            <ol class="answer">
                 <li><b>Guaranteed delivery:</b> Makes sure that the packet arrives at its destination </li>
                 <li><b>Guaranteed delivery with bounded delay:</b> Makes sure a packet is delivered within a specified host-to-host delay bound</li>
-            </ul>
+            </ol>
         </li>
 
         <li><b>What purpose does a congestion window serve?</b><br/>
@@ -139,7 +139,7 @@
 
 <div id="WireShark" class="tabcontent">
     <img src="../images/exercise/wireshark.png" alt="WireShark Logo" style="width:244px;height:66px;">
-    <h3>Lab 5: IP Protocol</h3>
+    <h3><u>Lab 5: IP Protocol</u></h3>
     <p>All pertinent labs can be found <a href="http://www-net.cs.umass.edu/wireshark-labs/">here</a></p>
 
     <h4>Description</h4>
@@ -185,14 +185,14 @@
 </div>
 
 <div id="Textbook" class="tabcontent">
-    <h3>Textbook Questions</h3>
+    <h3><u>Textbook Questions</u></h3>
     <ul>
         <h4>P.5 (Pg 289)</h4>
         <li>Suppose that the UDP receiver computes the Internet checksum for the received UDP segment and finds that it matches the value carried in the checksum field. Can the receiver be absolutely certain that no bit errors have occurred? Explain</li>
         <p class="answer"> No, the receiver cannot be absolutely certain that no bit errors have occurred because of the way checksum is calculated. If two bits were flipped for instance from 1 and 0 to 0 and 1 the sum would still remain the same even though their is an error.</p>
         
         <h4>P24. (Pg 293)</h4>
-        <li>Answer true or false to the following questions:
+        <li>Answer true or false to the following questions:</li>
             <ol>
                 <li>With the SR protocol, it is possible for the sender to receive an ACK for a packet that falls outside of its current window.</li>
                 <p class="answer">True</p>
