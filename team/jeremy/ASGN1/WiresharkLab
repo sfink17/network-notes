@@ -46,12 +46,12 @@
 		DNS part 2: <i>ipconfig</i> and <i>ifconfig</i>
 	</h4>
 		<p>
-		If you are using a Linux system, please refer to the Manuel for information about ifconfig, as the Lab only covers the Windows version. The Manuel pages can be found using the command: <i>man ifconfig</i>.</p>
+		If you are using a Linux system, please refer to the Manual for information about ifconfig, as the Lab only covers the Windows version. The Manual pages can be found using the command: <i>man ifconfig</i>.</p>
 	<h4>
 		DNS part 3: Tracing DNS with Wireshark
 	</h4>
 		<p>
-		Follow the instruction in the lab. It is recommended to us the data files provided, as there are a large number of values you will need look up to answer the questions, and the data files have all the relevant data close together. You <b> do not</b> need to annotate the Wireshark outputs unless you find the information useful. After you are done with the lab, answer the questions and check your work with the guide below. <b>Note: </b>Not all the questions are answered in the guide.
+		Follow the instruction in the lab. It is recommended to use the data files provided, as there are a large number of values you will need look up to answer the questions, and the data files have all the relevant data close together. You <b> do not</b> need to annotate the Wireshark outputs unless you find the information useful. After you are done with the lab, answer the questions and check your work with the guide below. <b>Note: </b>Not all the questions are answered in the guide.
 			
 		</p><br><hr><br>
 
