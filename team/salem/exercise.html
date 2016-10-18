@@ -7,7 +7,7 @@
 </head>
 <body>
 <style>
-.answer{color:red;}
+.answer{color:#c10000;}
 
 a:visited{
 text-decoration:underline;
@@ -21,7 +21,7 @@ color:blue;
 
 a:hover{color:#EF4264}
 
-body{background:#7FFFD4}
+body{background:#a6ffe1}
 </style>
 
 <button onclick = oc('ex0')>Exercise 0</button>
@@ -171,7 +171,6 @@ body{background:#7FFFD4}
 				<li>It is 16-bits that is added to a packet and is used to prevent corruption.</li>
 				<li>By converting all the 0s to 1s and converting all 1s to 0s.  When added it should produce 1111111111111111.  If there is a 0 in the sum, then there is an error in that packet.</li>
 			</ul>
-
 		<li>Match the correct rdt with the correct added feature or basic feature. (page 206 to page 215)</li>
 			<ul class = "answer"><li>Answer:</li>
 			<ul class = "answer">
@@ -212,12 +211,11 @@ body{background:#7FFFD4}
 					<li>This is to deal with lost packets.</li>
 				</ul>
 			</ul>
-
 		<li>What are the names of the three major components of a TCP congestion-control algorithm? (page 272 to page 277)</li>
 			<ul class = "answer"><li>Answer:</li></ul>
 			<ul class = "answer">
 				<li>Slow Start</li>
-				<li>Congestion Avoidence</li>
+				<li>Congestion Avoidance</li>
 				<li>Fast Recovery</li>
 			</ul>
 
@@ -277,7 +275,7 @@ body{background:#7FFFD4}
 
 		<li><h4>P16 pg 290:</h4></li>
 			<ul>
-				<li>Question: Suppose an application uses rdt 3.0 as its transport layer protocol. As the stop-and-wait protocol has very low channel utilization (shown in the crosscountry example), the designers of this application let the receiver keep sending back a number (more than two) of alternating ACK 0 and ACK 1 even if the corresponding data have not arrived at the receiver. Would this application design increase the channel utilization? Why? Are there any potential problems with this approach? Explain.</li>
+				<li>Question: Suppose an application uses rdt 3.0 as its transport layer protocol. As the stop-and-wait protocol has very low channel utilization (shown in the cross country example), the designers of this application let the receiver keep sending back a number (more than two) of alternating ACK 0 and ACK 1 even if the corresponding data have not arrived at the receiver. Would this application design increase the channel utilization? Why? Are there any potential problems with this approach? Explain.</li>
 				<li class = "answer">Answer: Yes, it might increase the channel utilization, however; it would be at the risk of corruption because the ACK 0 and ACK 1 were made to keep track of which ACK went with which packet.  If there is a corrupted packet, then the server cannot ask for another transmission of that packet because it does not keep track of which packet needs to be resent.</li>
 			</ul>
 <div style = "margin-top:15px"><b><i>I did P16 with the knowledge I have on rdt.</i></b></div>
@@ -298,17 +296,17 @@ body{background:#7FFFD4}
 	<div>I have completed the lab on HTTP and worked a little on TCP. Here is the link to <a href = "lab.html">my lab</a>.  
 
 
-One of the exercise that was about authorization.  In order to do this lab you will need to know a little bit of how Wireshark works and know what HTTP is.  If you need help on Wireshark or need a refresher, <a href = "http://www-net.cs.umass.edu/wireshark-labs/Wireshark_Intro_v7.0.pdf">read this pdf</a>.  Or if you would like to read about HTTP before starting Wireshark, here is a <a href = "https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol"> Wikipedia article about HTTP</a>.  Now when we talk about authorization.  Authorization in computer science is a way to have only certain people have access to something, like bank account, amazon account, or school email.  In order to get an authorization you need credentials.  Credentials is usally a username and password.  We will look at how HTTP deals with authorization.
+One of the exercise that was about authorization.  In order to do this lab you will need to know a little bit of how Wireshark works and know what HTTP is.  If you need help on Wireshark or need a refresher, <a href = "http://www-net.cs.umass.edu/wireshark-labs/Wireshark_Intro_v7.0.pdf">read this PDF</a>.  Or if you would like to read about HTTP before starting Wireshark, here is a <a href = "https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol"> Wikipedia article about HTTP</a>.  Now when we talk about authorization.  Authorization in computer science is a way to have only certain people have access to something, like bank account, amazon account, or school email.  In order to get an authorization you need credentials.  Credentials is usually a username and password.  We will look at how HTTP deals with authorization.
 
 
 
-If you type http://gaia.cs.umass.edu/wireshark-labs/protected_pages/HTTP-wireshark-file5.html into the url, it will take you to another screen, and a pop up will appear asking for you username and password.  Meanwhile on Wireshark, the client sent a GET HTTP and the server responded with a 401 Unauthorized.</div>
+If you type http://gaia.cs.umass.edu/wireshark-labs/protected_pages/HTTP-wireshark-file5.html into the URL, it will take you to another screen, and a pop up will appear asking for you username and password.  Meanwhile on Wireshark, the client sent a GET HTTP and the server responded with a 401 Unauthorized.</div>
 	<img src = "pic/401.png" style = "margin:20px">
 
-	<div>401 Unauthorizated means that we did not have the right authentication/credential.  However, if we type in the correct username and password (in this case, username is "wireshark-students" and password is "network"), then the client sends another GET HTTP, except with a new field called Authorization with the credentials.</div>
+	<div>401 Unauthorized means that we did not have the right authentication/credential.  However, if we type in the correct username and password (in this case, username is "wireshark-students" and password is "network"), then the client sends another GET HTTP, except with a new field called Authorization with the credentials.</div>
 <img src = "pic/authorization.png" style = "margin:20px">
 
-	<div>Since you have the correct authorization, you gain access to the web page which give you the contect and we have a 200 OK instead 401 Unauthorized.</div>
+	<div>Since you have the correct authorization, you gain access to the web page which gives you the content and we have a 200 OK instead 401 Unauthorized.</div>
 <img src = "pic/200.png" style = "margin:20px">
 
 
