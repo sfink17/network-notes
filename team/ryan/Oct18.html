@@ -79,6 +79,46 @@
 				<li><b>Source-specific multicast (SSM)</b>: Only a single sender is allowed to send traffic into the multicast tree.  Simplifies tree contruction.</li>
 			</ul>
 		<h2>Lecture</h2>
+			<ul>
+				<li>Finite State Machine (FSM): An abstract machine that can be in only a finite number of states.  A method for recognizing if a string belongs or does not belong to a regular language.</li>
+				<li>Finite Automaton (FA): Same as FSM</li>
+				<li>Regular language</li>
+				<li>Regular expressions--expresses regular language. Used in search functions in many programming languages and text editors.</li>
+				<li>FA = (Q, Σ (sigma), δ (Delta), q0, F).  This is a Tuple~=(roughly the same as) a Vector</li>
+					<ul>
+						<li>Q = set of states</li>
+						<li>Sigma = alphabet: set of symbols</li>
+						<li>Delta = A transition function. δ(9,a)->9'</li>
+						<li>q0 = Starting state.</li>
+						<li>F = Set of final (accepting) states.</li>
+					</ul>
+				<li>Let A be a set: A = {1,2,3}</br>Let B be a set: B = {a,b,c}</br>What is A*B?</li>
+					<ul>
+						<li>{(1,a),(2,a),(3,a),(1,b),(2,b),(3,b),(1,c),(2,c),(3,c)}</li>
+					</ul>
+				<li>What is a relation?</li>
+					<ul>
+						<li>A subset of A*B</li>
+					</ul>
+				<li>G = (V,E).  This is a graph.</li>
+					<ul>
+						<li>V = verticies/nodes</li>
+						<li>E = edges = subset of all possible pairs of vertices/nodes</li>
+						<li>V * V = set of pair of vertices/nodes</li>
+						<li>E is less than or equal to V * V</li>
+					</ul>
+				<li>Edges might be weighted</li>
+				<li>Dijkstra's Algorithm</li>
+					<ul>
+						<li>At each stage, we will have:</li>
+							<ol>
+								<li>A set of verticies whose distance from the starting point is <u>known.  Subset of V.</u></li>
+								<li>A set of verticies for which we have only <u>estimates</u> of distances from the starting point.  Remainder of V (another subset)</li>
+								<li>For each <u>known</u> vertex, we know preceding vertex on shortest path to that vertex (from starting point).</li>
+							</ol>
+						<li>While(there are still vertices whose distance from starting point is not yet known with certianty){<br> Add one more vertex to the set whose distance is known</br>}
+					</ul>
+			</ul>
 		<h2>Lab</h2>
 		<div style="text-align:left">
 			<a href="Oct17.html">Previous</a>
