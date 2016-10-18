@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="UTF-8">
+      <link rel="stylesheet" type="text/css" href="../css/notes.css"/>
+   </head>
+   <body>
+      <script src="jquery-3.1.1.min.js"></script>
+      <div class="nav-bar"> 
+      	<a class="home" href="../hello.html"><h4 class="home">HOME</h4></a>
+      </div>
+      <div style="overflow: hidden">
+      <div class="col-1"></div>
+      <div class="col-2">
+         <div class="title">
+            <h1 class="section">CHAPTER 3.4.2: Pipelined Reliable Data Transfer Protocol</h1>
+            <ul>
+               <li><span class="section">Utilization</span> of the sender (or the channel) is the fraction of time the sender is actually busy sending bits into the channel:<br>
+                  <p class='display'>U<sub>sender</sub> = (L/R)/(RTT + L/R)</p>
+               </li>
+               <li>The stop-and-wait protocol has a rather dismal sender utilization.</li>
+               <li>The solution to this particular performance problem is simple: Rather than operate in a stop-and-wait manner, the sender is allowed to send multiple packets without waiting for acknowledgments</li>
+               <li>This technique is called <span class="section">Pipelining</span></li>
+               <li>
+                  <h3 class="section">Consequences for rdt:</h2>
+                     <ul>
+                        <li>The range of sequence numbers must be increased (not only 1 and 0).</li>
+                        <li>The sender and receiver sides of the protocols may have to buffer more than one packet. Minimally, the sender will have to buffer packets that have been transmitted but not yet acknowledged.</li>
+                        <li>The range of sequence numbers needed and the buffering requirements will depend on the manner in which a data transfer protocol responds to lost, corrupted, and overly delayed packets. Two basic approaches toward pipelined error recovery can be identified: <span>Go-Back-N</span> and <span>selective repeat</span>.</li>
+                     </ul>
+               </li>
+            </ul>
+            <div style="padding:5px 15px">
+               <h2 class="section">1. Go-Back-N</h2>
+               <ul>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+               </ul>
+            </div>
+            <div style="padding:5px 15px">
+               <h2 class="section">2. SR</h2>
+               <ul>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+               </ul>
+            </div>
+         </div>
+      </div>
+      <script src="script.js"></script>
+      <div class="col-3"></div>
+  </div>
+   </body>
+</html>
