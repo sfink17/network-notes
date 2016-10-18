@@ -1,19 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js">
+</script>
 <title>
 CSC-317 Notes
 </title>
 </head>
 <body>
-<button onclick = "oc(822)">8.2.2 Notes</button>
-<button onclick = "oc(823)">8.2.3 Notes</button>
-<button onclick = "oc(824)">8.2.4 Notes</button>
-<button onclick = "oc(825)">8.2.5 Notes</button>
-<button onclick = "oc(826)">8.2.6 Notes</button>
-<button onclick = "oc(827)">8.2.7 Notes</button>
+<button onclick = "oc(822)">1.5-1.8 Notes</button>
+<button onclick = "oc(823)">2.1-2.2 Notes</button>
+<button onclick = "oc(824)">2.37-2.5 Notes</button>
+<button onclick = "oc(825)">2.6-2.8 Notes</button>
+<button onclick = "oc(826)">3.1-3.3 Notes</button>
+<button onclick = "oc(827)">3.4-3.5 Notes</button>
+<button onclick = "oc(828)">3.6-3.8 Notes</button>
+<button onclick = "oc(829)">4.1-4.3 Notes</button>
+<button onclick = "oc(8210)">4.4 Notes</button>
+<button onclick = "oc(8211)">4.5-4.6 Notes</button>
+<style>
+body{background-color:#7FFFD4}
+</style>
 <div id = "822" style = "display:none">
-    <h1>8.2.2 Notes</h1>
+    <h1>1.5-1.8 Notes</h1>
 	<ul>
 		<li>1961 to 1972</li>
 			<ul>
@@ -73,7 +82,7 @@ CSC-317 Notes
 
 
 <div id = "823" style  ="display:none">
-	<h1>8.2.3 Notes</h1>
+	<h1>2.1-2.2 Notes</h1>
 		<ul>
 			<li><h2>P2P(Peer To Peer)</h2></li>
 			<li>future challenges:
@@ -143,7 +152,7 @@ CSC-317 Notes
 </div>
 
 <div id = "824" style  ="display:none">
-	<h1>8.2.4 Notes</h1>
+	<h1>2.37-2.5 Notes</h1>
 		<ul>
 			<li><h2>SMTP</h2></li>
 			<ul>
@@ -189,7 +198,7 @@ CSC-317 Notes
 
 
 <div id = "825" style  ="display:none">
-	<h1>8.2.5 Notes</h1>
+	<h1>2.6-2.8 Notes</h1>
 		<h2>TCP vs UDP</h2>
 		<h3>UDP client</h3>
 		<div>from socket import *<br>serverName = &#39hostname&#39<br>serverPort = 12000<br>clientSocket = socket(socket.AF_INET, socket.SOCK_DGRAM)<br>message = raw_input(&#39Input lowercase sentence:&#39)<br>clientSocket.sendto(message,(serverName, serverPort))<br>modifiedMessage, serverAddress = clientSocket.recvfrom(2048)<br>print modifiedMessage<br>clientSocket.close()<br></div>
@@ -433,7 +442,7 @@ knock on the door and send the server a sentence to modify</li>
 -->
 
 <div id = "826" style = "display:none">
-    <h1>8.2.6 Notes</h1>
+    <h1>3.1-3.3 Notes</h1>
 <h2>Demultiplexing</h2>
 <ul><li>At the receiving end, the transport layer examines these fields to identify the receiving socket and then directs the segment to that socket. This job of delivering the data in a transport&#45layer segment to the correct socket is called demultiplexing.
 </li></ul>
@@ -456,7 +465,7 @@ knock on the door and send the server a sentence to modify</li>
 
 
 <div id = "827" style  ="display:none">
-	<h1>8.2.7 Notes</h1>
+	<h1>3.4-3.5 Notes</h1>
 <h2>Reliable Data Transfer over a Perfectly Reliable Channel</h2>
 <h4>finite-state machine (FSM):</h4> <ul><li>is a mathematical model of computation used to design both computer programs and sequential logic circuits.</li></ul>
 <h2>The different FSM</h2>
@@ -478,8 +487,8 @@ have the sender number its data packets by putting a sequence number into this
 field.  1-bit sequence number will suffice, since it will allow the receiver
 to know whether the sender is resending the previously transmitted packet</li></ul>
 		</ul>
-<img src = "rdt21.png" style = "border:3px solid black;">
-<img src = "rdt21r.png" style = "border:3px solid black;">
+<img src = "pic/rdt21.png" style = "border:3px solid black;">
+<img src = "pic/rdt21r.png" style = "border:3px solid black;">
 		<ul>
 			<li><h3>rdt2.2</h3></li>
 				<ul><li>is that the receiver must
@@ -501,8 +510,8 @@ packet being acknowledged by a received ACK message.</li></ul>
 
 
 
-<img src = "rdt22r.png" style = "border:3px solid black;">
-<img src = "rdt30.png" style = "border:3px solid black;">
+<img src = "pic/rdt22r.png" style = "border:3px solid black;">
+<img src = "pic/rdt30.png" style = "border:3px solid black;">
 
 
 <!--put the burden of detecting and recovering from lost packets on the sender.
@@ -532,6 +541,250 @@ rdt3.0 is sometimes known as the <b>alternating-bit protocol</b>.</div></li><li>
 <hr style="height:3px;border:none;color:#333;background-color:#333;">
 		
 </div>
+
+
+<div id = "828" style  ="display:none">
+	<h1>3.6-3.8 Notes</h1>
+<h2>Congestion-Control Algorithms</h2>
+
+<ul><li><h3>Slow Start</h3></li>
+<ul>
+	<li>cwnd (The congestion window, which imposes a constraint on the rate at which a TCP sender can send traffic into the network.) begins at 1 MSS and increases by 1 MSS every time a transmitted segment is first acknowledged.
+</li>
+	<li>TCP sends the first segment into the network and waits for an acknowledgment. When this acknowledgment arrives, the TCP sender increases the congestion window by one MSS and sends out two maximum-sized segments.</li>
+</ul>
+<div style = "margin-top:10px;margin-bottom:10px;"><i>When should this exponential growth end? Slow start provides several answers to this question</i>.</div>
+
+<ol>
+	<li>If there is a loss event (i.e., congestion) indicated by a timeout</li>
+	<li>When slow start hits the ssthresh, then it stops doubling and transitions into congestion avoidance mode (TCP increases cwnd more cautiously when in congestion-avoidance mode).</li>
+	<li>When three duplicate ACKs are detected, in which case TCP performs fast retransmit and enters the fast recovery state.</li>
+</ol>
+
+<img src = "pic/ss.png" style = "border:2px solid black;margin-top:20px;">
+
+<li><h3>Congestion Avoidance</h3></li>
+
+<ul>
+	<li>Increases the value of cwnd by just a single MSS every RTT</li>
+	<li>Example:</li>
+	<ul><li>if MSS (Maximum Segment Size) is 1,460 bytes and cwnd is 14,600 bytes, then 10 segments are being sent within an RTT (Round-Trip Time). Each arriving ACK (assuming one ACK per segment) increases the congestion window size by 1/10 MSS, and thus, the value of the congestion window will</li></ul>
+	<li>triple duplicate ACKs received</li>
+	<ul>
+		<li>value of ssthresh to be half the value of cwnd when the triple duplicate ACKs were received.  Then fast-recovery state is then entered.</li>
+	</ul>
+</ul>
+
+<img src = "pic/fast.png" style = "border:2px solid black;margin-top:20px;">
+
+<li><h3>Fast Recovery</h3></li>
+<ul>
+	<li>TCP Tahoe</li>
+	<ul><li>cut its congestion window to 1 MSS and entered the slow-start phase after either a timeout-indicated or triple-duplicate-ACK-indicated loss event.</li></ul>
+	<li>TCP Reno</li>
+	<ul><li>Incorported fast recovery</li>
+		<li>newer version of TCP</li>
+		<li>threshold is initially equal to 8 MSS.</li></ul>
+	<li>Example</li>
+	<ul>
+		<li>For the first eigth transmission reounds, Tahoe and Reno take identical actions.</li>
+		<li>The congestion window then climbs linearly until a triple duplicateACK event occurs, just after transmission round 8.</li>
+		<li>Triple duplicate ACK is detected</li>
+		<li>Under TCP Reno, the congestion window is set to cwnd = 6 X MSS and then grows linearly.</li>
+		<li>Under TCP Tahoe, the congestion window is set to 1 MSS and grows exponentially until it reaches the value of ssthresh, at which point it grows linearly.</li></ul>
+</ul>
+
+<img src = "pic/congestion.png" style = "border:2px solid black;margin-top:20px;">
+
+
+</ul>
+
+<hr style="height:3px;border:none;color:#333;background-color:#333;">
+		
+</div>
+
+
+
+<div id = "829" style  ="display:none">
+	<h1>4.1-4.3 Notes</h1>
+<h2>Router</h2>
+<ul>
+	<li>Forwarding: refers to the router-local action of transferring a packet from an input link interface to the appropriate output link interface.</li>
+	<li>Routing: refers to the network-wide process that determines the end-to-end paths that packets take from source to destination.</li>
+	<li>forwarding table: examine the packet header, get an index for that and pushes it to the outgoing link interface to shich the packet is to be forwarded.</li>
+	<li><h3>Input Processing</h3></li>
+		<ul>
+			<li>The forwarding table is computed and updated
+by the routing processor, with a shadow copy typically stored at each input port.</li>
+			<li>And if the switch fabric is not used, then it will be passed onto the switch fabric.</li>
+		</ul>
+	<li><h3>Switch fabric</h3></li>
+		<ul>
+			<li><h4>Switching via memory:</h4></li>
+			<ul>
+				<li>switching between input and output ports being done under direct control of the CPU (routing processor).</li>
+				<li> Input and output ports functioned as traditional I/O
+devices in a traditional operating system.</li>
+				<li>The packet was then copied
+from the input port into processor memory.</li>
+				<li>the router extracts the destination address and then looks up the direction from the forwarding table.  After that, it sends the packet to the output's port buffer.</li>
+				<li>And if the switch fabric is not used, then it will be passed onto the switch fabric.</li>
+
+			</ul>
+			<li><h4>Swithcing via a bus</h4></li>
+			<ul>
+				<li>an input port transfers a packet directly to the
+output port over a shared bus, without intervention by the routing processor.</li>
+				<li>by having the input port pre-pend a switch-internal label (header) to the packet indicating the local output port to which this packet is being transferred and transmitting the packet onto the bus.</li>
+				<li>The packet is received by all output ports, but only the port that matches the label will keep the packet.</li>
+				<li>label is then removed at the output port</li>
+				<li>If there are multiplies arriving at the same time, then they go one at a time because each packet can cross the bus one at a time.</li>
+				<li>bus is often sufficient for
+routers that operate in small local area and enterprise networks</li>
+
+
+			</ul>
+			<li><h4>Switching via an interconnection network.</h4></li>
+				<ul>
+					<li>A crossbar switch is an interconnection network consisting of 2N buses that connect N input ports to N output ports</li>
+					<li>Each vertical bus intersects each horizontal bus at a crosspoint, which can be opened or closed at any time by the switch fabric controller</li>
+				</ul>
+		</ul>
+<img src = "pic/switch.png" style = "border:3px solid black; margin:15px">
+	<li><h3>Output Processing</h3></li>
+		<ul>
+			<li>takes packets that have been stored in the output port’s memory and transmits them over the output link.</li>
+		</ul>
+		<li><h3>Routing Processor</h3></li>
+<ul><li>maintains routing tables and attached link state information,
+and computes the forwarding table for the router</li></ul>
+</ul>
+
+<hr style="height:3px;border:none;color:#333;background-color:#333;">
+		
+</div>
+
+
+<div id = "8210" style  ="display:none">
+	<h1>4.4 Notes</h1>
+<h2>Comparing IPv4 and IPv6</h2>
+<h3>Structure of IPv4</h3>
+	<ul>
+		<li>Version number: These 4 bits specity the IP protocal version of the datagram.</li>
+		<li>Header length: these 4 bits are needed to dertermine where in the IP datagram the data actually begins.</li>
+		<li>Type of service: The type of service (TOS) bits were included in the IPv4 header to allow different types of IP datagrams (for example, datagrams particularly requiring low delay, high throughput, or reliability) to be distinguished from each other.</li>
+		<li>Datagram length: This is the total length of the IP datagram (header plus data), measured in bytes.</li>
+		<li>Identifier, flags, fragmentation offset: These three fields have to do with so-called IP fragmentation</li>
+		<li>Time-to-Live: The time-to-live (TTL) field is included to ensure that datagrams do not circulate forever (due to, for example, a long-lived routing loop) in the network.  If the TTL field reaches 0, the datagram must be dropped.</li>
+		<li>Protocal: The value of this field indicates the specific transport-layer protocol to which the data portion of this IP datagram should be passed. </li>
+		<li>Header checksum: The header checksum aids a router in detecting bit errors in a received IP datagram. </li>
+		<li>Source and destination IP addresses: When a source creates a datagram, it inserts its IP address into the source IP address field and inserts the address of the ultimate destination into the destination IP address field.</li>
+		<li>Options: The options fields allow an IP header to be extended</li>
+		<li>Data: contains the transport-layer segment (TCP or UDP) to be delivered to the destination. However, the data field can carry other types of data, such as ICMP (Internet Control Message Protocal) messages</li>
+	</ul>
+
+<img src = "pic/IPv4.png" style = "margin:10px">
+
+
+<h3>Differences</h3>
+	<ul>
+		<li>Expanded addressing capabilities: IPv6 increases the size of the IP address from 32 to 128 bits</li>
+		<li>A streamlined 40-byte header: a number of IPv4 fields have
+been dropped or made optional, allowing for faster processing of the IP datagram.</li>
+		<li>Flow labeling and priority: Like the TOS field in IPv4, can be used to give priority to certain datagrams within a flow, or it can be used to give priority to datagrams from certain applications.</li>
+	</ul>
+<h3>Structure of IPv6</h3>
+	<ul>
+		<li>Version: IPv6 carries a value of 6 in this field</li>
+		<li>Traffic class: 8-bit field is similar in spirit to the TOS field we saw in IPv4.</li>
+		<li>Flow label: 20-bit field is used to identify a flow of datagrams.</li>
+		<li>Payload length: 16-bit value is treated as an unsigned integer giving the number of bytes in the IPv6 datagram following the fixed-length, 40-byte datagram header.</li>
+		<li>Next header: Identifies the protocol to which the contents (data field) of this datagram will be delivered (for example, to TCP or UDP). The field uses
+the same values as the protocol field in the IPv4 header</li>
+		<li>Hop limit: The contents of this field are decremented by one by each router that forwards the datagram. If the hop limit count reaches zero, the datagram is
+discarded.</li>
+		<li>Source and destination addresses: Various formats of the IPv6 128-bit address.</li>
+		<li>Data: This is the payload portion of the IPv6 datagram. When the datagram reaches its destination, the payload will be removed from the IP datagram and
+passed on to the protocol specified in the next header field.</li>
+	</ul>
+
+
+<img src = "pic/IPv6.png" style = "margin:10px">
+
+
+<h3>IPv4, but no longer in IPv6</h3>
+	<ul>
+		<li>Fragmentation/Reassembly: IPv6 does not allow for fragmentation and reassembly at intermediate routers; these operations can be performed only by the source
+and destination. If an IPv6 datagram received by a router is too large to be forwarded over the outgoing link, the router simply drops the datagram and sends a &#34Packet Too Big&#34 ICMP error message back to the sender.</li>
+		<li>Header checksum: Because the transport-layer (for example, TCP and UDP) and link-layer (for example, Ethernet) protocols in the Internet layers perform checksumming, the designers of IP probably felt that this functionality was sufficiently
+redundant in the network layer that it could be removed. This allows for faster processing of IP packets.</li>
+		<li>Options: An options field is no longer a part of the standard IP header. However,it has not gone away. Instead, the options field is one of the possible  next headers pointed to from within the IPv6 header.</li>
+	</ul>
+
+
+<hr style="height:3px;border:none;color:#333;background-color:#333;">
+		
+</div>
+
+
+<div id = "8211" style  ="display:block">
+	<h1>4.4 Notes</h1>
+<h2>The Link-State (LS) Routing Algorithm and The Distance-Vector (DV) Routing Algorithm</h2>
+
+<ul>
+	<li>Uese Dijkstra's algorithm</li>
+	<li>What can be done to prevent such oscillations (which can occur in any algorithm, not just an LS algorithm, that uses a congestion or delay-based link metric)?</li>
+	<ul><li>solution is to ensure
+that not all routers run the LS algorithm at the same time. This seems a more
+reasonable solution, since we would hope that even if routers ran the LS algorithm
+with the same periodicity, the execution instance of the algorithm would not be
+the same at each node.</li></ul>
+</ul>
+
+
+<img src = "pic/LS.jpg">
+
+
+<h3>The Distance-Vector (DV) Routing Algorithm</h3>
+<ul>
+	<li>asynchronous</li>
+	<li>uses Bellman-Ford equation</li>
+	<li>Example: it is easy to see that dv (z) = 5, dx (z) = 3, and dw(z) = 3. Plugging these values into Equation 4.1, along with the costs c(u,v) = 2, c(u,x) = 1, and c(u,w) = 5, gives du(z) = min{2 + 5, 5 + 3, 1 + 3} = 4
+	<li>With the DV algorithm, each node x maintains the following
+routing information: </li>
+		<ul>
+			<li>For each neighbor v, the cost c(x,v) from x to directly attached neighbor, v</li>
+			<li>Node x&#39s distance vector, that is, Dx = [Dx
+(y): y in N], containing x&#39s estimate of
+its cost to all destinations, y, in N</li>
+			<li>The distance vectors of each of its neighbors, that is, Dv = [Dv (y): y in N] for each neighbor v of x</li>
+		</ul>
+</ul>
+<img src = "pic/DV.GIF">
+
+
+<h2>LS vs DV</h2>
+<h4>Let’s conclude our study of LS and DV algorithms with a quick comparison of some of their attributes. Recall that N is the set of nodes (routers) and E is the set of edges (links):</h4>
+
+<ul>
+	<li>Message complexity. We have seen that LS requires each node to know the cost of each link in the network. This requires O(|N| |E|) messages to be sent. Also, whenever a link cost changes, the new link cost must be sent to all nodes. The DV algorithm requires message exchanges between directly connected neighbors at each iteration. We have seen that the time needed for the algorithm to converge can depend on many factors. When link costs change, the DV algorithm will propagate the results of the changed link cost only if the new link cost results in a changed least-cost path for one of the nodes attached to that link.
+</li>
+	<li>Speed of convergence. We have seen that our implementation of LS is an O(|N|2) algorithm requiring O(|N| |E|)) messages. The DV algorithm can converge slowly and can have routing loops while the algorithm is converging. DV also suffers from the count-to-infinity problem.
+</li>
+	<li>Robustness. What can happen if a router fails, misbehaves, or is sabotaged? Under LS, a router could broadcast an incorrect cost for one of its attached links (but no others). A node could also corrupt or drop any packets it received as part of an LS broadcast. But an LS node is computing only its own forwarding tables; other nodes are performing similar calculations for themselves. This means route calculations are somewhat separated under LS, providing a degree of robustness. Under DV, a node can advertise incorrect least-cost paths to any or all destinations. (Indeed, in 1997, a malfunctioning router in a small ISP provided national backbone routers with erroneous routing information. This caused other routers to flood the malfunctioning router with traffic and caused large portions of the Internet to become disconnected for up to several hours [Neumann 1997].) More generally, we note that, at each iteration, a node’s calculation in DV is passed on to its neighbor and then indirectly to its neighbor’s neighbor on the next iteration. In this sense, an incorrect node calculation can be diffused through the entire network under DV.
+</li>
+
+
+</ul>
+
+<a href = "https://www.youtube.com/watch?v=gdmfOwyQlcI">A refresher on Dijkstra's Algorithm</a>
+
+<div>For a refresher on Bellman-Ford <a href = "https://www.youtube.com/watch?v=iTW2yFYd1Nc">click here</a> or <a href = "https://www.youtube.com/watch?v=obWXjtg0L64">click here</a>.</div>
+
+<hr style="height:3px;border:none;color:#333;background-color:#333;">
+		
+</div>
+
 
 
 <script>
