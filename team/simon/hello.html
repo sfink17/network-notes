@@ -34,6 +34,7 @@
 	<p id="notesLink">Oct. 4 Notes</p>
 	<p id="oct10Link">Oct. 10 Notes</p>
 	<p id="oct11Link">Oct. 11 Notes</p>
+	<p id="spanningLink">Spanning Trees</p>
 	<p id="assignmentLink">Assignment 0</p>
 	<p id="assignmentLink1">Assignment 1</p>
       </div>
@@ -193,6 +194,29 @@ This is the correct value as indicated by the book. But if we want to use this v
 	</ol>
 	</div>
 	
+<div id="spanning"  style="display:none;">
+<h1>
+        Spanning Trees
+    </h1>
+	<p>
+	In many broadcast protocols, such as RPF, the proliferation of packets is complete, and safe from broadcast storms, but may be inefficient. Despite the fact that links not on the shortest path go unnoticed, packets are still broadcast to all adjacent routers; even to deaf ears, bandwidth is bandwidth. To stop this unchecked flow in practice, a <b>spanning tree</b> may be utilized. Spanning trees prevent redundant packages by making an abbreviated graph, including all nodes and only one edge connecting each of them. A broadcast emnating from any of the included nodes will know to travel only to the adjacent nodes in the spanning tree, and to ignore any edges that are not noted as such.<br><br>
+	The first, and most pressing issue in the utilization of spanning trees is that of their creation itself. Several algorithms exist that might serve our purposes. The only one mentioned in the text is known as the <b>center-based approach</b>. The protocol is as follows:<br><br>
+	<ol>
+		<li>Establish a single node to be the "center." This will serve as the root of the spanning tree.</li><br>
+		<li>Tree-join messages are sent from every node in the graph through adjacent links. Nodes one hop from the center will join the tree first.</li><br>
+		<li>The nodes now newly part of the spanning tree will act as hubs for the two-hop nodes, accepting their requests and incorporating them into the tree. This continues ad infinitum.</li><br>
+	</ol>
+	<br><br>
+	Evidently, this algorithm is extremely simple. Another algorithm that might be used to create a spanning tree, one not mentioned in the text, is called a <b>breadth-first search.</b> BFS was initially created in the 50's by E.F. Moore to find the shortest route through a maze, but although it is primarily used to measure path length in unweigted graphs, it just happens to yield a very nice tree with only one link connecting each node. The protocol for this is as follows:<br><br>
+	<ol>
+		<li>Start again from a single root node. Create an empty queue for later use.</li><br>
+		<li>Search for all adjacent nodes. For each node found that is not yet part of the tree (currently, all of them), append them to the tree, mark the current base as its parent, and then add them to the queue.</li><br>
+		<li>Once all adjacent nodes at the root have been dealt with, go to the next node in the queue and repeat steps two and three.</li><br>
+	</ol>
+
+    </p>
+	</div>
+
 	<div id="davies"  style="display:none;">
 	<h1>
        <u> Donald Davies</u>
