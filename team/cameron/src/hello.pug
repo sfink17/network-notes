@@ -19,18 +19,18 @@ html(lang="en" ng-app)
         h1 Cam's Network Notes
     .container
       .row
-        .col-xs-8
+        .col-sm-8
           h1.center Graded Exercises
           .row
             .col-xs-3
               button.btn-primary.btn.btn-block(ng-click="post = 'week0'") Week0
             .col-xs-3
-              button.btn-primary.btn.btn-block(disabled) Week1
+              button.btn-primary.btn.btn-block(ng-click="post = 'week1'") Week1
             .col-xs-3
               button.btn-primary.btn.btn-block(disabled) Week2
             .col-xs-3
               button.btn-primary.btn.btn-block(disabled) Week3
-        .col-xs-4
+        .col-sm-4
           h1.center Notes
           h3 Chapter 3
           .row
@@ -44,6 +44,8 @@ html(lang="en" ng-app)
         .col-xs-12
           .post(ng-show="post == 'week0'")
             include:markdown-it(linkify=true, langPrefix="highlight-") _posts/graded-week0.md
+          .post(ng-show="post == 'week1'")
+            include:markdown-it(linkify=true, langPrefix="highlight-") _posts/graded-week1.md
           .post(ng-show="post == '3.1'")
             include:markdown-it(linkify=true, langPrefix="highlight-") _posts/notes-3.1.md 
           .post(ng-show="post == '3.2'")
