@@ -17,6 +17,8 @@ CSC-317 Notes
 <button onclick = "oc(828)">3.6-3.8 Notes</button>
 <button onclick = "oc(829)">4.1-4.3 Notes</button>
 <button onclick = "oc(8210)">4.4 Notes</button>
+<button onclick = "oc(8211)">4.5-4.6 Notes</button>
+<button onclick = "oc(8212)">4.7-4.8 Notes</button>
 <style>
 body{background-color:#7FFFD4}
 </style>
@@ -720,6 +722,115 @@ redundant in the network layer that it could be removed. This allows for faster 
 		<li>Options: An options field is no longer a part of the standard IP header. However,it has not gone away. Instead, the options field is one of the possible  next headers pointed to from within the IPv6 header.</li>
 	</ul>
 
+
+<hr style="height:3px;border:none;color:#333;background-color:#333;">
+		
+</div>
+
+
+<div id = "8211" style  ="display:none">
+	<h1>4.5-4.6 Notes</h1>
+<h2>The Link-State (LS) Routing Algorithm and The Distance-Vector (DV) Routing Algorithm</h2>
+<h3>The Link-State(LS) Routing Algorithm</h3>
+<ul>
+	<li>Each node floods using link state packets (LSP) to find all of its neighbors.</li>
+	<li>each node will receive every other node's LSP, combining all of the LSPs into a full topology of the network.</li>
+	<li>Each node uses Dijkstra's algorithm (which should give up identical tables).</li>
+	<li>After Dijkstra's is run they will make a forwarding table for each node.</li>
+	<li>When there are any changes, flood update is sent out and recomputed and links are update.</li>
+	<ul>	<li>If a link is missing or removed, then the link is removed.</li>
+		<li>If a node is missing or removed, then the links to that node will be removed, removing the node from the tree.  This is like a tree in programming, if we remove the links to a node in a tree, that node disappears from the tree.</li>
+		<li>If a new node is added or an old one is updated, then a LSP will update all of the links.</li>
+</ul>
+</ul>
+
+
+<img style = "margin:15px" src = "pic/LS.jpg">
+
+<div>Here is an example you can try out.<div>
+
+<img style = "margin:15px" src = "pic/ex.png">
+
+
+
+<h3>The Distance-Vector (DV) Routing Algorithm</h3>
+<ul>
+	<li>asynchronous</li>
+	<li>uses Bellman-Ford equation</li>
+	<li>Example: it is easy to see that dv (z) = 5, dx (z) = 3, and dw(z) = 3. Plugging these values into Equation 4.1, along with the costs c(u,v) = 2, c(u,x) = 1, and c(u,w) = 5, gives du(z) = min{2 + 5, 5 + 3, 1 + 3} = 4
+	<li>With the DV algorithm, each node x maintains the following
+routing information: </li>
+		<ul>
+			<li>For each neighbor v, the cost c(x,v) from x to directly attached neighbor, v</li>
+			<li>Node x&#39s distance vector, that is, Dx = [Dx
+(y): y in N], containing x&#39s estimate of
+its cost to all destinations, y, in N</li>
+			<li>The distance vectors of each of its neighbors, that is, Dv = [Dv (y): y in N] for each neighbor v of x</li>
+		</ul>
+</ul>
+<img src = "pic/DV.GIF">
+
+
+<h2>LS vs DV</h2>
+<h4>Let&#39s conclude our study of LS and DV algorithms with a quick comparison of some of their attributes. Recall that N is the set of nodes (routers) and E is the set of edges (links):</h4>
+
+<ul>
+	<li>Message complexity. We have seen that LS requires each node to know the cost of each link in the network. This requires O(|N| |E|) messages to be sent. Also, whenever a link cost changes, the new link cost must be sent to all nodes. The DV algorithm requires message exchanges between directly connected neighbors at each iteration. We have seen that the time needed for the algorithm to converge can depend on many factors. When link costs change, the DV algorithm will propagate the results of the changed link cost only if the new link cost results in a changed least-cost path for one of the nodes attached to that link.
+</li>
+	<li>Speed of convergence. We have seen that our implementation of LS is an O(|N|2) algorithm requiring O(|N| |E|)) messages. The DV algorithm can converge slowly and can have routing loops while the algorithm is converging. DV also suffers from the count-to-infinity problem.
+</li>
+	<li>Robustness. What can happen if a router fails, misbehaves, or is sabotaged? Under LS, a router could broadcast an incorrect cost for one of its attached links (but no others). A node could also corrupt or drop any packets it received as part of an LS broadcast. But an LS node is computing only its own forwarding tables; other nodes are performing similar calculations for themselves. This means route calculations are somewhat separated under LS, providing a degree of robustness. Under DV, a node can advertise incorrect least-cost paths to any or all destinations. (Indeed, in 1997, a malfunctioning router in a small ISP provided national backbone routers with erroneous routing information. This caused other routers to flood the malfunctioning router with traffic and caused large portions of the Internet to become disconnected for up to several hours [Neumann 1997].) More generally, we note that, at each iteration, a node’s calculation in DV is passed on to its neighbor and then indirectly to its neighbor’s neighbor on the next iteration. In this sense, an incorrect node calculation can be diffused through the entire network under DV.
+</li>
+
+
+</ul>
+
+<a href = "https://www.youtube.com/watch?v=gdmfOwyQlcI">A refresher on Dijkstra's Algorithm</a>
+
+<div>For a refresher on Bellman-Ford <a href = "https://www.youtube.com/watch?v=iTW2yFYd1Nc">click here</a> or <a href = "https://www.youtube.com/watch?v=obWXjtg0L64">click here</a>.</div>
+
+<hr style="height:3px;border:none;color:#333;background-color:#333;">
+		
+</div>
+
+
+
+
+<div id = "8212" style  ="display:none">
+	<h1>4.7-4.8 Notes</h1>
+<h2>Flooding</h2>
+<ul>
+	<li>It sends packets to its neighbors and they send it to their neighbors, except for the one it recived the packet from.  This is simple, but there is a huge flaw.  If there is a cycle, the message would be sent through that in an endless loop, known as <i>broadcast storm</i></li>
+	<ul>	<li>Solution 1: Sequence-number-controlled flooding, which mean a source node adds its address or unique identifier, and broadcast sequence number are attached to the packet.  Each node has a list of the source and sequence number, so if that packet shows up again, it will drop the packet.</li>
+		<li>Solution 2: Reverse path forwarding (RPF) or reverse path broadcast (RPB).  The node will only accept and send the packet to its neighboring node if the link that is on its own shortest unicast path back to the source.</li>
+	</ul>
+	<li>Sequence-number-controlled flooding and RPF avoid broadcast storms, but they do not get rid of redundant broadcast packets.</li>
+	<ul>	<li>Solution: spanning tree</li></ul>
+</ul>
+
+<h2>Spanning Tree</h2>
+<ul>
+	<li> In the center-based approach to building a spanning tree, a center node (also known as a rendezvous point or a core) is defined</li>
+	<li>Example:</li>
+	<ul><li>If we start by making E the center of the tree.  Then F is the first to join the tree, when it sends a tree-join message to E.  the single link EF becomes the initial spaning tree.  Then B joins in by sending a message via D.  After that, A joins the spanning tree.  A will use B to join tree, and since B is already part of the tree, A's tree-join message will result in the AB link being immediatly grafted onto the spanning tree.  C then decides to join, connecting to E.  Finally, G join the tree via D, so GD link is grafted onto the spanning tree at node D.</li></ul>
+</ul>
+
+
+<img src = "pic/tree.png">
+
+<h2>Multicast</h2>
+<ul>
+	<li><h3>Address indirection:</h3> That is, a single identifier is used for the group of receivers, and a copy of the packet that is addressed to the group using this single identifier is delivered to all of the multicast receivers associated with that group.</li>
+	<li><h3>Multicast group:</h3> The group of receivers associated with a class address is referred to as a multicast group.</li>
+</ul>
+
+<ul>
+	<li><h2>IGMP</h2></li>
+	<ul>	<li><h3>Message type 1 and 2:</h3> Membership_query which can be sent to all host on the local network which then the host repsond with a IGMP membership_report.  The host can send a membership_report when that host joins for the first time.</li>
+		<li><h3>Message type 3:</h3> leave_group, however; that is optional.  So how do you leave without that message.  The answer is that you just do not respond to the memebership_query.  This is sometimes called soft state in an Internet protocal.  In a soft state protocal, the state is removed via a timeout event.</li></ul>
+</ul>
+
+	
 
 <hr style="height:3px;border:none;color:#333;background-color:#333;">
 		
