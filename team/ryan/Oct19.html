@@ -18,6 +18,33 @@
 				<li><i>nslookup -type=MX cornellcollege.edu</i> -- looks up mail sever address fo cornellcollege.edu</li>
 				<li>Java doc notation = /**....*/</li>
 				<li>method to check for valid message.  To address, from address, etc.</li>
+				<li><u>Some ginger kid:</u>
+				<li><b>Spanning Trees</b></li>
+				<li>Avoids constant cycling links like occurs duing broadcast storms</li>
+				<li>Avoids broadcast storms</li>
+				<li>Center based approach:</li>
+					<ul>
+						<li>Set a single node to be the "center".  Serves are root of spanning tree.</li>
+						<li>Tree-join messages are sent from every node in graph (or graph subset).  Hop from node to node till it reaches either the center, or a branch that already reaches the center.</li>
+						<li>Nodes not part of the spanning tree, act as hubs for either further nodes trying to join, or messages sent though the spanning three.</li>
+					</ul>
+				<li><u>Joe:</u></li>
+				<li><b>Dijkstra's algorithm</b></li>
+				<li>Created random graph of Edges and Nodes.</li>
+				<li>test function that lists what nodes are connected by an edge</li>
+				<li><u>Salem:</u></li>
+				<li><b>Link-state (LS) routing algorithm</b></li>
+				<li>each node floods using link state packets to find all of its neighbors</li>
+				<li> each node receives every other nodes' LSP, combines them into a full topology of the network</li>
+				<li>Each node uses dijkstra's algorithm</li>
+				<li>Makes a forwarding table for each node</li>
+				<li>Flood update sent out and recomputed if there are changes</li>
+					<ul>
+						<li>Link missing or removed, then link is removed</li>
+						<li>node missing or removed, then links to that node are removed (removing node by association).</li>
+						<li>if new node is added, or old one updated then LSP updates all of the links</li>
+					</ul>
+				<li><b>Distance-vector (DV) algoritm</b></li>
 				<li>
 			</ul>
 		<h2>Lab</h2>
