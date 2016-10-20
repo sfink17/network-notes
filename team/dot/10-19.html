@@ -1,0 +1,46 @@
+node: any device which runs a link-layer protocol
+-hosts, routers, switches, wifi access points, etc
+
+link: communication channel connecting adjacent nodes
+
+transmitting node encapsulates datagram ina link-layer frame and sends frame into link
+
+EX: travel agent planning a trip from new jersey to switzerland
+-agent decides it's best to take a taxi to the jersey airport, a plane to the switzerland airport, and a train to the specific town in switzerland
+-once reservations are made and tickets are bought, it is the various transport companies' jobs to get the traveller to the destination
+-traveller = datagram, transportation companies = links, agent = routing protocol
+
+possible link-layer protocol services:
+-framing
+--data field where datagram is inserted and some header fields
+--structure specified by link-layer protocol
+-link access
+--Medium Access Control protocol specifies rules for transmitting frame onto link
+--simplest for point-to-point links directly connection exactly two nodes
+--more complicated when multiple nodes share one broadcast link (multiple access problem)
+--coordinates frame transmissions of nodes
+-reliable delivery
+--guarantees to move each datagram across the link without error
+--acheived similar to TCP, with ACKs and retransmissions
+--often used for links with high error rates (like wifi)
+--aims to correct error locally instead of forcing source to retransmit the whole thing
+--unnecessary overhead for more reliable methods (fiber, coax, twisted-pair)
+-error detection and correction
+--bit errors introduced by attenuation and noise
+--more sophisticated than checksum, implemented in hardware
+--able to determine exactly where the error is and then fix it
+
+link layer mostly implemented in a network adapter (aka Network Interface Card)
+-heart of NIC, link-layer controller, a single special-purpose chip that implements many services
+-most functionality in hardware
+-originally separate cards, modern day integrated into motherboard (LAN-on-motherboard)
+
+sending side, controller takes a datagram, encapsulates it in a link-layer frame and fills out header fields, and transmits into communication link as per link-access protocol
+-possibly sets error detection bits
+
+receiving side, controller receives frame, extracts datagram
+-possibly checks for and corrects errors
+
+server link software does high-level tasks like assembling addressing info and activating hardware
+
+receiver link software handles interrupts, errors, and passing the extracted datagram up
