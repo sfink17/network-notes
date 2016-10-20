@@ -5,6 +5,12 @@
 </script>
 <script src="js/functions.js">
 </script>
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
 <title>
     Simon Fink's Notes Page
 </title>
@@ -35,6 +41,7 @@
 	<p id="oct10Link">Oct. 10 Notes</p>
 	<p id="oct11Link">Oct. 11 Notes</p>
 	<p id="spanningLink">Spanning Trees</p>
+	<p id="randomLink">Random Access Protocol</p>
 	<p id="assignmentLink">Assignment 0</p>
 	<p id="assignmentLink1">Assignment 1</p>
       </div>
@@ -193,7 +200,21 @@ This is the correct value as indicated by the book. But if we want to use this v
 	
 	</ol>
 	</div>
-	
+	<div id="random" style="display:none;">
+	<h1>
+		<u>Random Access Protocols:</u>
+	</h1>
+	<h2>
+		ALOHA and Efficiency
+	</h2>
+	<p>
+	The division of bandwidth between competing nodes must be handled at the link layer. One class of protocols that handles this is called <b>Random Access</b>, and as its name implies, utilizes probability to ensure proper data handling. Like TDM, frames are sent over single timeslots. These timeslots are synchronized across the network, so that each discrete frame begins simultaneously at all nodes. Nodes may send frames on demand, without limitation, so when networks consist of multiple nodes, collisions are inevitable. When these collisions occur, each node has a set probability, <i>p</i>, that they will retransmit their data during each subsequent timeslot. When the frame is successfully transmitted, retransmission will stop. <br><br>
+	One of the simplest implementations of RAP is slotted ALOHA, which adheres to the previously defined rules with little modification. To find the efficiency of this protocol in larger networks, we must first find the ideal probability, <i>p*</i>. The probability that a node will successfully retransmit is equal to <b>p<b> multiplied by the probability of all other nodes not retransmitting, or $P = p ( 1 - p ) ^ {N - 1}$. To utilize our maximum bandwidth, we only need a single node to successfully retransmit at a time, given by the previous function multiplied by the number of nodes, or $P_t = Np(1 - p)^{N-1}$. Let's investigate the properties of this function. We want to find the local maxima between 0 and 1, so let's try taking the derivative: $$P_t' = N (1 - p )^{N-2}(1 - pN)$$<br> 
+			We're interested in the points where $P_t' = 0$. Thus, we can divide out the first part of the right side of the function, leaving $1 - pN = 0$, or $p = \frac{1}{N}$. Thus, as N grows to infinity, p reduces to zero. Now we can find the efficiency. We now know that $nP = 1$, so our function reduces to: $$P_t = (1 - p)^{N-1}$$<br>
+			We also know that $p = 1/N$. Substituting this into our equation and taking the limit as N goes to infinity, we get: $$\lim_{N\to\infty} (1 - \frac{1}{N})^{N-1} = \frac{1}{e}$$	
+	</p>
+	</div>
+
 <div id="spanning"  style="display:none;">
 <h1>
         Spanning Trees
