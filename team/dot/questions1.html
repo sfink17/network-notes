@@ -14,13 +14,13 @@
 		<li class="answer">When TCP is opening a connection, the client sends out a packet asking to open a new connection with the
 			server.</li>
 		<li class="answer">The server responds with an acknowledgement of that request and its own request to do the same.
-			At this point the server is now open to receieve any requests from the client.</li>
+			At this point the server is now open to receive any requests from the client.</li>
 		<li class="answer">The client responds to the server's request with an acknowledgement of its own.
 			At this point the client is open to receive further response packets from the server.</li>
 	</ol>
 	<li class="question">What function do cookies serve? Why is this function necessary?</li>
 	<ul>
-		<li class="answer"><strike><b>They are delicious and I want them</b><span style="color:blue"><sup>[citation needed]</sup></span>.</strike></li>
+		<li class="answer"><strike><b>They are delicious and I want them</b></strike><span style="color:blue"><sup>[citation needed]</sup></span>.</li>
 		<li class="answer">HTTP is a stateless protocol, which means no information about a user's previous actions are stored.
 			Cookies allow the storage of some information for use on multiple pages, such as login information or the contents
 			of a user's cart on a shopping site.</li>
@@ -67,11 +67,11 @@
 		single large packet going to output port A. Input port B has a large packet going to output port A and a smaller packet
 		behind it going to output port B. The router starts moving the packet from input port A to output port A, so the first
 		packet in input port B must wait until the packet from input port A has finished before it can start moving. Even though
-		output port B is free and ready to accept packets, the second packet cannot start being moved, beacuse <b>the packet at the
+		output port B is free and ready to accept packets, the second packet cannot start being moved, because <b>the packet at the
 		head of the line is blocking it</b>.</li></ul>
 </ol>
 <ol>
-	<li class="question">Suppose you can access the caches in the local DNS servers of your department.	Can you propose a way to 
+	<li class="question">Suppose you can access the caches in the local DNS servers of your department. Can you propose a way to 
 		roughly determine the Web servers (outside your	department) that are most popular among the users in your department? Explain.</li>
 	<ul><li class="answer">As a DNS cache utilizes TTL for its records, it must also store the last time they were accessed.
 		With this in mind, you could regularly check the cache to see which records have been recently modified.
@@ -81,7 +81,7 @@
 	<ul><li class="answer">DNS is needed to find the IP address of the server containing the information, TCP is needed to transmit
 		the data received, and an application will be needed to display the data to the user.</li></ul>
 </ol>
-<p style="font-size:5px; color:white">There are no hugs in computer science</p>
+<p class="help">There are no hugs in computer science</p>
 <a href="./hello.html">Home</a>
 </body>
 </html>
