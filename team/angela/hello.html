@@ -5,7 +5,7 @@
     Hello
 </title>
 </head>
-<body><body bgcolor="#1e8449">
+<body><body bgcolor="#99ff99">
     <h1>
         Angela Aley
     </h1>
@@ -231,8 +231,94 @@ were meant to be used rarely</li>
 <li>Node x's distance vector, that is, <b> D</b><sub>x</sub> = [D<sub>x</sub>(y):y in N], containing x's estimate of its cost to all destinations, y, in N</il>
 <il>The distance vectors of each of its neighbors, that is <b> D</b><sub>x</sub> = [D<sub>x</sub>(y):y in N] for each neighbor v of x </li><br><br>
 </ul>
+<<<<<<< HEAD
 <img src="code.png">
 </body>
+=======
+</ul>
+<img src="code.png">
+</body>
+<body>
+	<h1>
+         <b>(Oct 18)Network Layer</b>
+    	</h1>
+	<h2>4.7.2 Multicast(405-412)</h2>
+<ul>	
+
+<li><b>Multicast</b>: Multicast packets are delieverd only to a subset of network nodes.</li>
+<li><b>Address indirection</b>: Multicast packets can't hold the addresses of all the destinationsit would be <b>too much</b>. Instead use a single identifier for a group of receivers, packets with the identifier are copies and delivered to all the multicast receivers associated with that group.</li>
+<li><b>Multicast group</b>: Group of receivers associated with a class D address (multicast identifier)</li>
+<li>Internet Group Management Protocol (IGMP)</li>
+<ul>
+<li>The IGMP protocol version 3 perates between a host and its directly attached router </li>
+
+<li>IGMP provides the means for a host to inform its attached router that an application
+running on the host wants to join a specific multicast group. Given that the scope of
+IGMP interaction is limited to a host and its attached router, another protocol is clearly required to coordinate the multicast routers throughout the Internet, so that multicast datagrams are routed to their final destinations. This latter
+functionality is accomplished by network-layer multicast routing algorithms, such as
+those we will consider shortly. Network-layer multicast in the Internet thus consists of
+two complementary components: IGMP and multicast routing protocols </li>
+<li>IGMP has only three message types. That are carried within an IP datagram, with an IP protocol number of 2. The membership_query message is sent by a router to all hosts on an attached interface to determine the set of all multicast groups that have been joined by the hosts on that interface.Hosts respond to a membership_query
+message with an IGMP membership_report message.</li>
+<li>the router infers that a host is no longer in the multicast group if it no longer
+responds to a membership_query message with the given group address. This is
+an example of what is sometimes called <b>soft state </b> in an Internet protocol.</li>
+</ul>
+<li><b>Multicast routing problem</b>  Hosts joined to the mul-
+ticast group are shaded in color; their immediately attached router is also shaded in
+color. As shown below, only a subset of routers actually needs to receive the multicast traffic. In  only routers A, B, E, and F need to receive the multicast traffic. Since none of the hosts attached to router D are joined to the multicast group and since router C has no attached hosts, neither C nor D needs to receive the multicast group traffic. <b>The goal of multicast routing, then, is to find a tree of links that connects all of the routers that have attached hosts belonging to the multicast group.</b> </li>
+<p>the diagram:</p>
+<img src="http://www.networkinginfoblog.com/contentsimages/Multicast%20hosts%20their%20attached%20routers%20and%20other%20routers.JPG" height="493" width="546">
+<li>Two approaches have been adopted for determining the multicast
+routing tree</li><ul>
+<li><b>Multicast routing using a group-shared tree</b>:a center-based approach is used to construct the multicast routing tree, with  edge  routers  with  attached  hosts belonging  to  the  multicast  group sending oin messages addressed to the center node</li>
+<li><b>Multicast routing using a source-based tree </b>:The second approach constructs a multicast routing tree for each source in the multicast group. In practice, an RPF algorithm (with source node x) is used to construct  a  multicast  forwarding  tree  for  multicast  datagrams  originating  at source x. The solution to the problem of receiving unwanted multicast  packets  under  RPF  is  known  as  <b>pruning</b>. A  multicast  router that receives multicast packets and has no attached hosts joined to that group will send a prune message to its upstream router</li></ul>
+
+
+</ul>
+<h1>
+         <b>(Oct 19)Lecture and dinner</b>
+    	</h1>
+	<h2>Radio Waves and Red Lobster</h2>
+</body>
+<body>
+	<h1>
+         <b>(Oct 20)Link Layer</b>
+    	</h1>
+	<h2>5.4.1  Link-Layer Addressing and ARP (462-4)</h2>
+<ul>	
+
+<li>Hosts and routers have link-layer addresses. which may be surprising.</li>
+<li>MAC Addresses</li><ul>
+<li>it is not hosts and routers that have link-layer addresses but rather their
+adapters that have link-layer addresses. </li>
+<li>A link-layer address is variously called a <b> LAN address</b>, a <b>physical address</b>, or a <b>MAC address.</b> Because MAC address seems to be the most popular term, we'll henceforth refer to link-layer addresses as MAC addresses</li>
+
+<li>One interesting property of MAC addresses is that no two adapters have the
+same address. HOW? The answer is that the IEEE manages the MAC address space.</li>
+
+<li>An adapter's MAC address has a flat structure and doesn't change no matter where the adapter goes. An  adapter's  MAC  address  is  analogous  to  a  person's social  security  number,  which  also  has  a  flat  addressing  structure  and  which doesn't change no matter where the person goes where as An IP address is analogous to a person's postal address, which is hierarchical and which must be changed whenever a person moves.it is useful for a host and router interfaces to have both a network-layer address and a MAC address </li>
+<li>When an adapter wants to send a frame to some destination adapter, the sending adapter inserts the destination adapter's MAC address into the frame and then
+sends the frame into the LAN. When  an  adapter  receives  a  frame,  it  will  check  to  see whether the destination MAC address in the frame matches its own MAC address.an adapter may receive a frame that isn't addressed  to  it. If there isn't a match, the adapter discards the frame, without passing the network-layer datagram up. The destination only will be interrupted when the frame is received </li>
+<li>sometimes a sending adapter does want all the other adapters on the LAN to receive and process the frame it is about to send. In this case, the sending
+adapter inserts a special MAC <b>broadcast address</b> into the destination address field of the frame.</li>
+</ul>
+<li>Keeping the layers independent</li>
+<ul>
+<li> There are several reasons why hosts and router interfaces have MAC addresses in addition to network-layer addresses</li>
+<li>1) LANs are designed for arbitrary network-layer protocols,
+not just for IP and the Internet. If adapters were assigned IP addresses rather than “neutral”
+MAC addresses, then adapters would not easily be able to support other network-layer
+protocols </li>
+<li>f adapters were to use network-layer addresses instead of MAC addresses, the network-layer address would have to be stored in the adapter RAM and reconfigured every time the adapter was moved </li>
+<li>Another option is to not use any addresses in the adapters and have each adapter pass the data (typically, an IP datagram) of each frame it receives up the protocol stack.The network layer could then check for a matching network-layer address. One problem with this option is that the host would be interrupted by every frame sent on the LAN, including by frames that were destined for other hosts on the same broadcast LAN. In summary, in order for the layers to be largely independent building blocks in a network architecture, different layers need to have their own addressing scheme</li>
+
+</ul>
+
+</ul>
+
+</body>
+>>>>>>> upstream/master
 </html>
 
 
