@@ -88,6 +88,10 @@
   .detail {
   }
 
+  span {
+    color: red;
+  }
+
   /*Fraction*/
   span.frac {
     display: inline-block;
