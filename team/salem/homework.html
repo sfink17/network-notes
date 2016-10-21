@@ -18,10 +18,8 @@ CSC-317 Notes
 <button onclick = "oc(829)">4.1-4.3 Notes</button>
 <button onclick = "oc(8210)">4.4 Notes</button>
 <button onclick = "oc(8211)">4.5-4.6 Notes</button>
-<<<<<<< HEAD
-=======
 <button onclick = "oc(8212)">4.7-4.8 Notes</button>
->>>>>>> upstream/master
+<button onclick = "oc(8213)">5.1-5.3 Notes</button>
 <style>
 body{background-color:#7FFFD4}
 </style>
@@ -731,24 +729,6 @@ redundant in the network layer that it could be removed. This allows for faster 
 </div>
 
 
-<<<<<<< HEAD
-<div id = "8211" style  ="display:block">
-	<h1>4.4 Notes</h1>
-<h2>The Link-State (LS) Routing Algorithm and The Distance-Vector (DV) Routing Algorithm</h2>
-
-<ul>
-	<li>Uese Dijkstra's algorithm</li>
-	<li>What can be done to prevent such oscillations (which can occur in any algorithm, not just an LS algorithm, that uses a congestion or delay-based link metric)?</li>
-	<ul><li>solution is to ensure
-that not all routers run the LS algorithm at the same time. This seems a more
-reasonable solution, since we would hope that even if routers ran the LS algorithm
-with the same periodicity, the execution instance of the algorithm would not be
-the same at each node.</li></ul>
-</ul>
-
-
-<img src = "pic/LS.jpg">
-=======
 <div id = "8211" style  ="display:none">
 	<h1>4.5-4.6 Notes</h1>
 <h2>The Link-State (LS) Routing Algorithm and The Distance-Vector (DV) Routing Algorithm</h2>
@@ -768,11 +748,10 @@ the same at each node.</li></ul>
 
 <img style = "margin:15px" src = "pic/LS.jpg">
 
-<div>Here is an example you can try out.<div>
+<div>Here is an example you can try out.</div>
 
 <img style = "margin:15px" src = "pic/ex.png">
 
->>>>>>> upstream/master
 
 
 <h3>The Distance-Vector (DV) Routing Algorithm</h3>
@@ -794,11 +773,7 @@ its cost to all destinations, y, in N</li>
 
 
 <h2>LS vs DV</h2>
-<<<<<<< HEAD
-<h4>Let’s conclude our study of LS and DV algorithms with a quick comparison of some of their attributes. Recall that N is the set of nodes (routers) and E is the set of edges (links):</h4>
-=======
 <h4>Let&#39s conclude our study of LS and DV algorithms with a quick comparison of some of their attributes. Recall that N is the set of nodes (routers) and E is the set of edges (links):</h4>
->>>>>>> upstream/master
 
 <ul>
 	<li>Message complexity. We have seen that LS requires each node to know the cost of each link in the network. This requires O(|N| |E|) messages to be sent. Also, whenever a link cost changes, the new link cost must be sent to all nodes. The DV algorithm requires message exchanges between directly connected neighbors at each iteration. We have seen that the time needed for the algorithm to converge can depend on many factors. When link costs change, the DV algorithm will propagate the results of the changed link cost only if the new link cost results in a changed least-cost path for one of the nodes attached to that link.
@@ -819,8 +794,6 @@ its cost to all destinations, y, in N</li>
 		
 </div>
 
-<<<<<<< HEAD
-=======
 
 
 
@@ -865,7 +838,103 @@ its cost to all destinations, y, in N</li>
 </div>
 
 
->>>>>>> upstream/master
+
+<div id = "8213" style  ="display:none">
+	<h1>5.1-5.3 Notes</h1>
+<h2>Multiple Access Links and Protocols</h2>
+<ul>
+	<li><h3>Channel Partitioning Protocols</h3></li>
+	<ul>
+		<li>TDM (Time-Division Multiplexing)</li>
+		<ul>
+			<li>appealing because it eliminates collisions and is perfectly fair: Each node gets a dedicated transmission rate of R/N bps during each frame time.</li>
+			<li>First drawback, a node is limited to an average rate of
+R/N bps even when it is the only node with packets to send.</li>
+			<li>Second drawback, a node must always wait for its turn in the transmission sequence&#45again, even when it is the only node with a frame to send.</li>
+			<li>So, this is a poor choice for this.</li>
+		</ul>
+		<li>FDM (Frequency-Division Multiplexing)</li>
+		<ul>
+			<li>Divides the R bps channel into different frequencies (each with a bandwidth of R/N) and assigns each frequency to one of the N nodes.</li>
+			<li>It avoids collisions and divides the bandwidth fairly among the N nodes.</li>
+			<li>Shares a principal disadvantage with TDM&#45a node is limited
+to a bandwidth of R/N, even when it is the only node with packets to send.</li>
+		</ul>
+		<ul>
+		<li>Code Division Multiple Access (CDMA)</li>
+		<ul>
+			<li>Each node uses its unique code to encode the data bits it sends.</li>
+			<li>CDMA networks have the wonderful property that different nodes can transmit simultaneously and yet have their respective receivers correctly receive a sender&#39s encoded data bits in spite of interfering transmissions by other nodes.</li>
+		</ul>
+	</ul>
+		<li><h3>Random Access Protocols</h3></li>
+		<ul>
+			<li>Slotted ALOHA</li>
+			<ul>
+				<li>Allows a node to transmit continuously at the full rate, R, when that node is the only active node.</li>
+				<li>highly decentralized, because each node detects
+collisions and independently decides when to retransmit.</li>
+				<li>First drawback, a certain fraction of the slots will have collisions and will therefore be &#34wasted.&#34</li>
+				<li>Second drawback, another fraction of the slots will be empty because all active nodes refrain from transmitting</li>
+				<li>The <b>efficiency</b> of a slotted multiple access protocol is defined to be the long-run fraction of successful slots in the case when there are a large number of active nodes, each always having a large number of frames to send. </li>
+
+
+			</ul>
+			<li>pure ALOHA</li>
+			<ul>
+				<li>Unslotted, fully decentralized protocol.</li>
+				<li>When a frame first arrives</li>
+				<li>The node immediately transmits the frame in its entirety into the broadcast channel.</li>
+				<li>If a transmitted frame experiences a collision
+with one or more other transmissions, the node will then immediately retransmit the frame with probability p.</li>
+			</ul>
+
+
+
+			<li>Carrier Sense Multiple Access (CSMA)</li>
+			<ul>
+				<li>Example: B begins transmitting.</li>
+				<li>The downward propagation of B&#39s bits with increasing time indicates that a nonzero amount of time is needed</li>
+				<li>At time t1 (t1 > t0), node D has a frame to send.</li>
+				<li>B is currently transmitting at time t1, the bits being transmitted by B have yet to reach D, and thus D senses the channel idle at t1.</li>
+				<li>D thus begins transmitting its frame.</li>
+				<li>B&#39s transmission begins to interfere with D&#39s transmission at D</li>
+				<li>End-to-end channel propagation delay of a broadcast channel—the time it takes for a signal to propagate from one of the nodes to another</li>
+			</ul>
+
+<img src = "pic/CSMA.png" style = "margin:15px">
+
+			<li>Carrier Sense Multiple Access with Collision Dection (CSMA/CD)</li>
+			<ul>
+				<li>The binary exponential backoff algorithm</li>
+				<li>node chooses the value of K at random from {0, 1, 2, . . . . 2n 1}. Thus, the more collisions experienced by a frame, the larger the interval from which K is chosen.</li>
+			</ul>
+		</ul>
+
+<img src = "pic/collision.png" style = "margin:15px">
+
+		<li><h3>Taking-Turns Protocols</h3></li>
+		<ul>
+			<li>Polling protocol</li>
+			<ul>
+				<li>Master node polls each of the nodes in a round-robin fashion.</li>
+				<li>First drawback, the protocol introduces a polling delay&#45the amount of time required to notify a node that it can transmit.</li>
+				<li>Second drawback, master node fails</li>
+			</ul>
+			<li>Token-Passing Protocol</li>
+			<ul>
+				<li>token is exchanged among the nodes in some fixed order</li>
+			</ul>
+		</ul>
+	</ul>
+</ul>
+
+	
+
+<hr style="height:3px;border:none;color:#333;background-color:#333;">
+		
+</div>
+
 
 
 <script>
