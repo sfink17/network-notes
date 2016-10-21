@@ -12,11 +12,11 @@
 <h3>Changes from listed instructions</h3>
 <ol>
 	<li>I always restricted all captures to my computer's IP, to avoid cluttering the window with unnecessary information</li>
-	<li>The school's internet is too fast for their 'long' page to be divided, so I used their sample capture for that problem</li>
+	<li>The school's internet is too fast for their 'long' page to be divided, so I used the sample capture for that problem</li>
 </ol>
 <h3>Lab</h3>
 <ol>
-  <li>Capture all HTTP packets when visiting <a href="http://gaia.cs.umass.edu/wireshark-labs/HTTP-wireshark-file1.html">this site</a></li>
+  <li>Capture all HTTP packets when visiting <a href="http://gaia.cs.umass.edu/wireshark-labs/HTTP-wireshark-file1.html">this site</a> (standard practice capture)</li>
   <ul>
     <li><image src="./images/wireshark01.png" alt="Capture for Lab 1" style="width:1079;height:451;"></li>
   </ul>
@@ -26,7 +26,7 @@
     <li>The server returned the status code '200 OK'</li>
     <li>The file was last modified a few seconds before I accessed it</li>
   </ol>
-  <li>Cleare the cache and capture all HTTP packets when visiting <a href="http://gaia.cs.umass.edu/wireshark-labs/HTTP-wireshark-file2.html">this site</a>, then immediately refresh the page</li>
+  <li>Clear the cache and capture all HTTP packets when visiting <a href="http://gaia.cs.umass.edu/wireshark-labs/HTTP-wireshark-file2.html">this site</a>, then immediately refresh the page (examine page caching)</li>
   <ul>
     <li><image src="./images/wireshark02.png" alt="Capture for Lab 1" style="width:1074;height:615;"></li>
   </ul>
@@ -34,7 +34,7 @@
     <li>The second time the page was loaded, the browser recognized that it already had the most recent version of the page in its cache and didn't actually send the HTML data</li>
     <li>Because of this, the second request received a status code of '304 Not Modified'</li>
   </ol>
-  <li>Capture all HTTP packets when visiting <a href="http://gaia.cs.umass.edu/wireshark-labs/HTTP-wireshark-file3.html">this page</a></li>
+  <li>Capture all HTTP packets when visiting <a href="http://gaia.cs.umass.edu/wireshark-labs/HTTP-wireshark-file3.html">this page</a> (very long page)</li>
   <ul>
     <li><image src="./images/wireshark03.png" alt="Capture for Lab 1" style="width:1184;height:529;"></li>
   </ul>
@@ -49,7 +49,7 @@
 		  <li>End of HTML document</li>
 	  </ol>
   </ol>
-  <li>Capture all HTTP packets when visiting <a href="http://gaia.cs.umass.edu/wireshark-labs/HTTP-wireshark-file4.html">this page</a></li>
+  <li>Capture all HTTP packets when visiting <a href="http://gaia.cs.umass.edu/wireshark-labs/HTTP-wireshark-file4.html">this page</a> (page with images)</li>
   <ul>
     <li><image src="./images/wireshark04.png" alt="Capture for Lab 1" style="width:1076;height:531;"></li>
   </ul>
@@ -64,16 +64,16 @@
     <li>The second image needed two messages because the first one returned that the image had been moved elsewhere</li>
     <li>The images seem to have been downloaded in serial, based on the timestamps on the response messages</li>
   </ol>
-  <li>Capture all HTTP packets when visiting <a href="http://gaia.cs.umass.edu/wireshark-labs/protected_pages/HTTP-wireshark-file5.html">this page</a></li>
+  <li>Capture all HTTP packets when visiting <a href="http://gaia.cs.umass.edu/wireshark-labs/protected_pages/HTTP-wireshark-file5.html">this page</a> (password protected page)</li>
   <ul>
     <li><img src="./images/wireshark05.png" alt="Capture for Lab 1" style="width:1073;height:450;"></li>
   </ul>
   <ol>
-    <li>What is the server's response (status code and phrase) in response to the initial HTTP GET message from your browser?</li>
+    <li>The server responds to the initial HTTP GET message with the error code 401 Unauthorized</li>
     <li>When the browser sends the second HTTP GET message, it has a new field: Authorization, containing the username and password</li>
   </ol>
 </ol>
-<p style="font-size:5px; color:white">There are no hugs in computer science</p>
+<p class="help">There are no hugs in computer science</p>
 <a href="./hello.html">Home</a>
 </body>
 </html>
