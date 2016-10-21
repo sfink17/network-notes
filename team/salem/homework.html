@@ -18,7 +18,10 @@ CSC-317 Notes
 <button onclick = "oc(829)">4.1-4.3 Notes</button>
 <button onclick = "oc(8210)">4.4 Notes</button>
 <button onclick = "oc(8211)">4.5-4.6 Notes</button>
+<<<<<<< HEAD
+=======
 <button onclick = "oc(8212)">4.7-4.8 Notes</button>
+>>>>>>> upstream/master
 <style>
 body{background-color:#7FFFD4}
 </style>
@@ -728,6 +731,24 @@ redundant in the network layer that it could be removed. This allows for faster 
 </div>
 
 
+<<<<<<< HEAD
+<div id = "8211" style  ="display:block">
+	<h1>4.4 Notes</h1>
+<h2>The Link-State (LS) Routing Algorithm and The Distance-Vector (DV) Routing Algorithm</h2>
+
+<ul>
+	<li>Uese Dijkstra's algorithm</li>
+	<li>What can be done to prevent such oscillations (which can occur in any algorithm, not just an LS algorithm, that uses a congestion or delay-based link metric)?</li>
+	<ul><li>solution is to ensure
+that not all routers run the LS algorithm at the same time. This seems a more
+reasonable solution, since we would hope that even if routers ran the LS algorithm
+with the same periodicity, the execution instance of the algorithm would not be
+the same at each node.</li></ul>
+</ul>
+
+
+<img src = "pic/LS.jpg">
+=======
 <div id = "8211" style  ="display:none">
 	<h1>4.5-4.6 Notes</h1>
 <h2>The Link-State (LS) Routing Algorithm and The Distance-Vector (DV) Routing Algorithm</h2>
@@ -751,6 +772,7 @@ redundant in the network layer that it could be removed. This allows for faster 
 
 <img style = "margin:15px" src = "pic/ex.png">
 
+>>>>>>> upstream/master
 
 
 <h3>The Distance-Vector (DV) Routing Algorithm</h3>
@@ -772,7 +794,11 @@ its cost to all destinations, y, in N</li>
 
 
 <h2>LS vs DV</h2>
+<<<<<<< HEAD
+<h4>Let’s conclude our study of LS and DV algorithms with a quick comparison of some of their attributes. Recall that N is the set of nodes (routers) and E is the set of edges (links):</h4>
+=======
 <h4>Let&#39s conclude our study of LS and DV algorithms with a quick comparison of some of their attributes. Recall that N is the set of nodes (routers) and E is the set of edges (links):</h4>
+>>>>>>> upstream/master
 
 <ul>
 	<li>Message complexity. We have seen that LS requires each node to know the cost of each link in the network. This requires O(|N| |E|) messages to be sent. Also, whenever a link cost changes, the new link cost must be sent to all nodes. The DV algorithm requires message exchanges between directly connected neighbors at each iteration. We have seen that the time needed for the algorithm to converge can depend on many factors. When link costs change, the DV algorithm will propagate the results of the changed link cost only if the new link cost results in a changed least-cost path for one of the nodes attached to that link.
@@ -793,6 +819,8 @@ its cost to all destinations, y, in N</li>
 		
 </div>
 
+<<<<<<< HEAD
+=======
 
 
 
@@ -837,6 +865,7 @@ its cost to all destinations, y, in N</li>
 </div>
 
 
+>>>>>>> upstream/master
 
 
 <script>

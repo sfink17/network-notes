@@ -12,6 +12,14 @@ $("#subcontent").children().filter(":visible").fadeOut("slow", function(){
 $("#assignment").fadeIn("slow");});
 $("#asn0").fadeOut("slow");
 });
+$("#spanningLink").click(function(){
+$("#welcome").fadeOut("slow", function(){
+$("#spanning").fadeIn("slow");});
+});
+$("#randomLink").click(function(){
+$("#welcome").fadeOut("slow", function(){
+$("#random").fadeIn("slow");});
+});
 $("#asn1").click(function(){
 $("#subcontent").children().filter(":visible").fadeOut("slow", function(){
 $("#assignment1").fadeIn("slow");});
