@@ -2,7 +2,7 @@
 <html>
 <head>
 <title>
-    Exercise 1
+    Exercise
 </title>
 </head>
 <body>
@@ -26,6 +26,7 @@ body{background:#7FFFD4}
 
 <button onclick = oc('ex0')>Exercise 0</button>
 <button onclick = oc('ex1')>Exercise 1</button>
+<button onclick = oc('ex2')>Exercise 2</button>
 <div id = "ex0" style = "display:none">
 <h1>Exercise  0</h1>
 <button onclick = "oc(123)">Q&A </button>
@@ -245,6 +246,10 @@ body{background:#7FFFD4}
 			</ul>
 	</ol>
 
+
+
+<hr style = "height:3px;border:none;color:#333;background-color:#333;">
+
 </div>
 
 
@@ -285,6 +290,7 @@ body{background:#7FFFD4}
 
 
 
+<hr style = "height:3px;border:none;color:#333;background-color:#333;">
 
 </div>
 
@@ -314,8 +320,105 @@ If you type http://gaia.cs.umass.edu/wireshark-labs/protected_pages/HTTP-wiresha
 
 <h1 style = "text-align:center">Lab</h1>
 <div>If you would like to do any of the <a href = "http://www-net.cs.umass.edu/wireshark-labs/">wireshark labs</a>.  If you would like to look at the lab that I did, <a href = "http://www-net.cs.umass.edu/wireshark-labs/Wireshark_HTTP_v7.0.pdf">click here</a></div>
+
+
+
+<hr style = "height:3px;border:none;color:#333;background-color:#333;">
 </div>
 </div>
+
+
+<div id = "ex2" style = "display:none">
+<h1>Exercise 2</h1>
+<button onclick = "oc(8910)">LinkedIn</button>
+<button onclick =  "oc(91011)">Link-State Routing Algorithm</button>
+<button onclick = "oc(246)">Github Project</button>
+
+<div id = "8910" style = "display:none">
+	<h1 style = "text-align:center">LinkedIn</h1>
+<div>This is my LinkedIn account.  If this does not work, then you can type in my name, Salem Ozaki, in LinkedIn.</div>
+<a href = "https://www.linkedin.com/in/salem-ozaki-a26770122?trk=hp-identity-name" style = "margin-top:15px">LinkedIn Account</a>
+
+
+<hr style = "height:3px;border:none;color:#333;background-color:#333;">
+</div>
+
+
+
+
+
+
+<div id = "91011" style = "display:none">
+	<h1 style = "text-align:center">Link-State Routing Algorithm</h1>
+<h2>Dijkstra's Algorithm</h2>
+<h3>Book's example</h3>
+<img src = "pic/path.png" style = "display:block">
+<hr style = "height:2px;border:none;color:red;background-color:red;">
+<img src = "pic/path1.png">
+<img src = "pic/link-state.png">
+<hr style = "height:2px;border:none;color:red;background-color:red;">
+<img src = "pic/path2.png">
+<img src = "pic/link-state.png">
+<hr style = "height:2px;border:none;color:red;background-color:red;">
+<img src = "pic/path3.png">
+<img src = "pic/link-state.png">
+<hr style = "height:2px;border:none;color:red;background-color:red;">
+<img src = "pic/path4.png">
+<img src = "pic/link-state.png">
+<hr style = "height:2px;border:none;color:red;background-color:red;">
+<img src = "pic/path5.png">
+<img src = "pic/link-state.png">
+<hr style = "height:2px;border:none;color:red;background-color:red;">
+<img src = "pic/path6.png">
+<img src = "pic/least.png" style = "margin-bottom:30px">
+
+<hr style = "height:3px;border:none;color:red;background-color:red;">
+
+<h3>Sample Example</h3>
+<img src = "pic/path.png">
+<img src = "pic/shortest.png">
+<img src = "pic/shortest1.png">
+<img src = "pic/link-state2.png">
+<hr style = "height:2px;border:none;color:red;background-color:red;">
+<img src = "pic/shortest2.png">
+<img src = "pic/link-state.png">
+<hr style = "height:2px;border:none;color:red;background-color:red;">
+<img src = "pic/shortest3.png">
+<img src = "pic/link-state.png">
+<hr style = "height:2px;border:none;color:red;background-color:red;">
+<img src = "pic/shortest4.png">
+<img src = "pic/link-state.png">
+<hr style = "height:2px;border:none;color:red;background-color:red;">
+<img src = "pic/shortest5.png">
+<img src = "pic/link-state.png">
+<hr style = "height:2px;border:none;color:red;background-color:red;">
+<img src = "pic/shortest6.png">
+<img src = "pic/link-state.png">
+<hr style = "height:2px;border:none;color:red;background-color:red;">
+<img src = "pic/shortest7.png">
+<img src = "pic/forwarding-table.png">
+<hr style = "height:3px;border:none;color:#333;background-color:#333;">
+</div>
+
+
+
+
+
+
+<div id = "246" style = "display:none">
+	<h1 style = "text-align:center">Github Project</h1>
+
+
+
+
+<hr style = "height:3px;border:none;color:#333;background-color:#333;">
+
+</div>
+
+</div>
+
+
+
 <script>
 function oc(id){
 	if(document.getElementById(id).style.display == "none"){
