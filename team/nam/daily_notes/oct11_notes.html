@@ -26,7 +26,10 @@
 			<p>There are separate FSMs for the sender and for the receiver.</p>
 				<h4 class="section">1. Reliable Data Transfer over a Perfectly Reliable Channel: rdt1.0</h4>
 				<p>This is the simplest case, in which the underlying channel is completely reliable.</p>
-				<img class="display" src="../img/rdt0.PNG"/>
+				<figure>
+					<img class="display" src="../img/rdt0.PNG"/>
+					<figcaption class="display">Fig1. A rdt1.0</figcaption>
+				</figure>
 				<ul>
 					<li>Figure a defines the operation of the sender</li>
 					<li>Figure b defines the operation of the receiver</li>
@@ -36,7 +39,10 @@
 				</ul>
 				<h4 class="section">2. Reliable Data Transfer over a Channel with Bit Errors: rdt2.0</h4>
 				<p>A more realistic model of the underlying channel is one in which bits in a packet may be corrupted.</p>
-				<img class="display" src="../img/rdt1.PNG"/>
+				<figure>	
+					<img class="display" src="../img/rdt1.PNG"/>
+					<figcaption class="display" >Fig2. - A rdt2.0</figcaption>
+				</figure>
 				<ul>
 					<li>This message-dictation protocol uses both positive acknowledgments (“OK”) and negative acknowledgments (“Please repeat that.”).</li>
 					<li>In a computer networksetting, reliable data transfer protocols based on such retransmission are known as <b>ARQ (Automatic Repeat reQuest)</b> protocols.</li>
@@ -52,7 +58,14 @@
 					<li>In particular, we haven’t accounted for the possibility that the ACK or NAK packet could be corrupted!</li>
 				</ul>
 				<p>Protocol rdt2.1 uses both positive and negative acknowledgments from the receiver to the sender.</p>
-				<img class="display" src="../img/rdt2-1.PNG"/>
+				<figure>	
+					<img class="display" src="../img/rdt2-1.PNG"/>
+					<figcaption class="display">Fig3. - A rdt2.1 sender.</figcaption>
+				</figure>
+				<figure>
+					<img class="display" src="../img/rdt2-1-receiver.PNG"/>
+					<figcaption class="display">Fig4. - A rdt2.1 receiver</figcaption>
+				</figure>
 				<ul>
 					<li>We add a new field to the data packet and have the sender number its data packets by putting a sequence number into this field.</li>
 					<li>The receiver then need only check this sequence number to determine whether or not the received packet is a retransmission.</li>
@@ -62,6 +75,15 @@
 					<li>When a corrupted packet is received, the receiver sends a negative acknowledgment.</li>
 
 				</ul>
+				<p>Protocol rdt2.2 use only ACK by letting isNAK(rcvpkt) == isACK(rcvpkt, 1) when waiting for ACK or NAK 0.</p>
+				<figure>
+					<img class="display" src="../img/rdt2-2.PNG"/>
+					<figcaption class="display">Fig4. - A rdt2.2 sender</figcaption>
+				</figure>
+				<figure>
+					<img class="display" src="../img/rdt2-2-receiver.PNG"/>
+					<figcaption class="display">Fig5. - A rdt2.2 receiver</figcaption>
+				</figure>
 		</div>
 		<script src="script.js"></script>
 		<div class="col-3"></div>
