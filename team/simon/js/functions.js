@@ -89,9 +89,8 @@ $("#asn1").fadeIn("slow");
   function openMenu2() {
     document.getElementById("menu2").classList.toggle("show");
   }
-
+  
  
-
   //Closes menu when clicked outside
   window.onclick = function(event) {
   if (!event.target.matches('.dropbtn')) {

@@ -2,12 +2,12 @@
 <html>
 <head>
 <title>
-    Exercise 1
+    Exercise
 </title>
 </head>
 <body>
 <style>
-.answer{color:#c10000;}
+.answer{color:red;}
 
 a:visited{
 text-decoration:underline;
@@ -21,11 +21,12 @@ color:blue;
 
 a:hover{color:#EF4264}
 
-body{background:#a6ffe1}
+body{background:#7FFFD4}
 </style>
 
 <button onclick = oc('ex0')>Exercise 0</button>
 <button onclick = oc('ex1')>Exercise 1</button>
+<button onclick = oc('ex2')>Exercise 2</button>
 <div id = "ex0" style = "display:none">
 <h1>Exercise  0</h1>
 <button onclick = "oc(123)">Q&A </button>
@@ -171,6 +172,7 @@ body{background:#a6ffe1}
 				<li>It is 16-bits that is added to a packet and is used to prevent corruption.</li>
 				<li>By converting all the 0s to 1s and converting all 1s to 0s.  When added it should produce 1111111111111111.  If there is a 0 in the sum, then there is an error in that packet.</li>
 			</ul>
+
 		<li>Match the correct rdt with the correct added feature or basic feature. (page 206 to page 215)</li>
 			<ul class = "answer"><li>Answer:</li>
 			<ul class = "answer">
@@ -211,11 +213,12 @@ body{background:#a6ffe1}
 					<li>This is to deal with lost packets.</li>
 				</ul>
 			</ul>
+
 		<li>What are the names of the three major components of a TCP congestion-control algorithm? (page 272 to page 277)</li>
 			<ul class = "answer"><li>Answer:</li></ul>
 			<ul class = "answer">
 				<li>Slow Start</li>
-				<li>Congestion Avoidance</li>
+				<li>Congestion Avoidence</li>
 				<li>Fast Recovery</li>
 			</ul>
 
@@ -242,6 +245,10 @@ body{background:#a6ffe1}
 				<li>Imposes a constraint on the rate at which a TCP sender can send traffic into the network, denoted cwnd.</li>
 			</ul>
 	</ol>
+
+
+
+<hr style = "height:3px;border:none;color:#333;background-color:#333;">
 
 </div>
 
@@ -275,7 +282,7 @@ body{background:#a6ffe1}
 
 		<li><h4>P16 pg 290:</h4></li>
 			<ul>
-				<li>Question: Suppose an application uses rdt 3.0 as its transport layer protocol. As the stop-and-wait protocol has very low channel utilization (shown in the cross country example), the designers of this application let the receiver keep sending back a number (more than two) of alternating ACK 0 and ACK 1 even if the corresponding data have not arrived at the receiver. Would this application design increase the channel utilization? Why? Are there any potential problems with this approach? Explain.</li>
+				<li>Question: Suppose an application uses rdt 3.0 as its transport layer protocol. As the stop-and-wait protocol has very low channel utilization (shown in the crosscountry example), the designers of this application let the receiver keep sending back a number (more than two) of alternating ACK 0 and ACK 1 even if the corresponding data have not arrived at the receiver. Would this application design increase the channel utilization? Why? Are there any potential problems with this approach? Explain.</li>
 				<li class = "answer">Answer: Yes, it might increase the channel utilization, however; it would be at the risk of corruption because the ACK 0 and ACK 1 were made to keep track of which ACK went with which packet.  If there is a corrupted packet, then the server cannot ask for another transmission of that packet because it does not keep track of which packet needs to be resent.</li>
 			</ul>
 <div style = "margin-top:15px"><b><i>I did P16 with the knowledge I have on rdt.</i></b></div>
@@ -283,6 +290,7 @@ body{background:#a6ffe1}
 
 
 
+<hr style = "height:3px;border:none;color:#333;background-color:#333;">
 
 </div>
 
@@ -296,24 +304,121 @@ body{background:#a6ffe1}
 	<div>I have completed the lab on HTTP and worked a little on TCP. Here is the link to <a href = "lab.html">my lab</a>.  
 
 
-One of the exercise that was about authorization.  In order to do this lab you will need to know a little bit of how Wireshark works and know what HTTP is.  If you need help on Wireshark or need a refresher, <a href = "http://www-net.cs.umass.edu/wireshark-labs/Wireshark_Intro_v7.0.pdf">read this PDF</a>.  Or if you would like to read about HTTP before starting Wireshark, here is a <a href = "https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol"> Wikipedia article about HTTP</a>.  Now when we talk about authorization.  Authorization in computer science is a way to have only certain people have access to something, like bank account, amazon account, or school email.  In order to get an authorization you need credentials.  Credentials is usually a username and password.  We will look at how HTTP deals with authorization.
+One of the exercise that was about authorization.  In order to do this lab you will need to know a little bit of how Wireshark works and know what HTTP is.  If you need help on Wireshark or need a refresher, <a href = "http://www-net.cs.umass.edu/wireshark-labs/Wireshark_Intro_v7.0.pdf">read this pdf</a>.  Or if you would like to read about HTTP before starting Wireshark, here is a <a href = "https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol"> Wikipedia article about HTTP</a>.  Now when we talk about authorization.  Authorization in computer science is a way to have only certain people have access to something, like bank account, amazon account, or school email.  In order to get an authorization you need credentials.  Credentials is usally a username and password.  We will look at how HTTP deals with authorization.
 
 
 
-If you type http://gaia.cs.umass.edu/wireshark-labs/protected_pages/HTTP-wireshark-file5.html into the URL, it will take you to another screen, and a pop up will appear asking for you username and password.  Meanwhile on Wireshark, the client sent a GET HTTP and the server responded with a 401 Unauthorized.</div>
+If you type http://gaia.cs.umass.edu/wireshark-labs/protected_pages/HTTP-wireshark-file5.html into the url, it will take you to another screen, and a pop up will appear asking for you username and password.  Meanwhile on Wireshark, the client sent a GET HTTP and the server responded with a 401 Unauthorized.</div>
 	<img src = "pic/401.png" style = "margin:20px">
 
-	<div>401 Unauthorized means that we did not have the right authentication/credential.  However, if we type in the correct username and password (in this case, username is "wireshark-students" and password is "network"), then the client sends another GET HTTP, except with a new field called Authorization with the credentials.</div>
+	<div>401 Unauthorizated means that we did not have the right authentication/credential.  However, if we type in the correct username and password (in this case, username is "wireshark-students" and password is "network"), then the client sends another GET HTTP, except with a new field called Authorization with the credentials.</div>
 <img src = "pic/authorization.png" style = "margin:20px">
 
-	<div>Since you have the correct authorization, you gain access to the web page which gives you the content and we have a 200 OK instead 401 Unauthorized.</div>
+	<div>Since you have the correct authorization, you gain access to the web page which give you the contect and we have a 200 OK instead 401 Unauthorized.</div>
 <img src = "pic/200.png" style = "margin:20px">
 
 
 <h1 style = "text-align:center">Lab</h1>
 <div>If you would like to do any of the <a href = "http://www-net.cs.umass.edu/wireshark-labs/">wireshark labs</a>.  If you would like to look at the lab that I did, <a href = "http://www-net.cs.umass.edu/wireshark-labs/Wireshark_HTTP_v7.0.pdf">click here</a></div>
+
+
+
+<hr style = "height:3px;border:none;color:#333;background-color:#333;">
 </div>
 </div>
+
+
+<div id = "ex2" style = "display:none">
+<h1>Exercise 2</h1>
+<button onclick = "oc(8910)">LinkedIn</button>
+<button onclick =  "oc(91011)">Link-State Routing Algorithm</button>
+<button onclick = "oc(246)">Github Project</button>
+
+<div id = "8910" style = "display:none">
+	<h1 style = "text-align:center">LinkedIn</h1>
+<div>This is my LinkedIn account.  If this does not work, then you can type in my name, Salem Ozaki, in LinkedIn.</div>
+<a href = "https://www.linkedin.com/in/salem-ozaki-a26770122?trk=hp-identity-name" style = "margin-top:15px">LinkedIn Account</a>
+
+
+<hr style = "height:3px;border:none;color:#333;background-color:#333;">
+</div>
+
+
+
+
+
+
+<div id = "91011" style = "display:none">
+	<h1 style = "text-align:center">Link-State Routing Algorithm</h1>
+<h2>Dijkstra's Algorithm</h2>
+<h3>Book's example</h3>
+<img src = "pic/path.png" style = "display:block">
+<hr style = "height:2px;border:none;color:red;background-color:red;">
+<img src = "pic/path1.png">
+<img src = "pic/link-state.png">
+<hr style = "height:2px;border:none;color:red;background-color:red;">
+<img src = "pic/path2.png">
+<img src = "pic/link-state.png">
+<hr style = "height:2px;border:none;color:red;background-color:red;">
+<img src = "pic/path3.png">
+<img src = "pic/link-state.png">
+<hr style = "height:2px;border:none;color:red;background-color:red;">
+<img src = "pic/path4.png">
+<img src = "pic/link-state.png">
+<hr style = "height:2px;border:none;color:red;background-color:red;">
+<img src = "pic/path5.png">
+<img src = "pic/link-state.png">
+<hr style = "height:2px;border:none;color:red;background-color:red;">
+<img src = "pic/path6.png">
+<img src = "pic/least.png" style = "margin-bottom:30px">
+
+<hr style = "height:3px;border:none;color:red;background-color:red;">
+
+<h3>Sample Example</h3>
+<img src = "pic/path.png">
+<img src = "pic/shortest.png">
+<img src = "pic/shortest1.png">
+<img src = "pic/link-state2.png">
+<hr style = "height:2px;border:none;color:red;background-color:red;">
+<img src = "pic/shortest2.png">
+<img src = "pic/link-state.png">
+<hr style = "height:2px;border:none;color:red;background-color:red;">
+<img src = "pic/shortest3.png">
+<img src = "pic/link-state.png">
+<hr style = "height:2px;border:none;color:red;background-color:red;">
+<img src = "pic/shortest4.png">
+<img src = "pic/link-state.png">
+<hr style = "height:2px;border:none;color:red;background-color:red;">
+<img src = "pic/shortest5.png">
+<img src = "pic/link-state.png">
+<hr style = "height:2px;border:none;color:red;background-color:red;">
+<img src = "pic/shortest6.png">
+<img src = "pic/link-state.png">
+<hr style = "height:2px;border:none;color:red;background-color:red;">
+<img src = "pic/shortest7.png">
+<img src = "pic/forwarding-table.png">
+<hr style = "height:3px;border:none;color:#333;background-color:#333;">
+</div>
+
+
+
+
+
+
+<div id = "246" style = "display:none">
+	<h1 style = "text-align:center">Github Project</h1>
+
+
+
+
+<hr style = "height:3px;border:none;color:#333;background-color:#333;">
+
+</div>
+
+</div>
+
+
+
 <script>
 function oc(id){
 	if(document.getElementById(id).style.display == "none"){
