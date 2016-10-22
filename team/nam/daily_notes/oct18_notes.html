@@ -48,6 +48,118 @@
                      </figure>
                   </ul>
                </li>
+
+
+               <li>
+                  <h3>To understand this algorithm, let examine another example on a different routing graph.</h3>
+                  <br>
+                  <br>
+                  <img class="display" src="../img/routing.PNG"/>
+                  <br>
+                  <br>
+                  Let say A is the source node. We will compute the shortest path from A to every other node in this graph
+                  <table style="width:100%">
+                    <tr>
+                      <th>step</th>
+                      <th>n=N'</th>
+                     <th>D(B), p(B)</th>
+                     <th>D(C), p(C)</th>
+                     <th>D(D), p(D)</th>
+                     <th>D(E), p(E)</th>
+                     <th>D(F), p(F)</th>
+                    </tr>
+                    <tr>
+                      <td>0</td>
+                      <td>A</td>
+                      <td>3, A</td>
+                      <td>5, A</td>
+                      <td>9, A</td>
+                      <td>&infin;</td>
+                      <td>&infin;</td>
+                    </tr>
+                    <tr>
+                      <td>1</td>
+                      <td>AB</td>
+                      <td>3, A</td>
+                      <td>5, A</td>
+                      <td>7, B</td>
+                      <td>10, B</td>
+                      <td>&infin;</td>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td>ABC</td>
+                      <td>3, A</td>
+                      <td>5, A</td>
+                      <td>7, B</td>
+                      <td>10, B</td>
+                      <td>13, C</td>
+                    </tr>
+                    <tr>
+                      <td>3</td>
+                      <td>ABCD</td>
+                      <td>3, A</td>
+                      <td>5, A</td>
+                      <td>7, B</td>
+                      <td>9, D</td>
+                      <td>0, D</td>
+                    </tr>
+                    <tr>
+                      <td>4</td>
+                      <td>ANBCE</td>
+                      <td>3, A</td>
+                      <td>5, A</td>
+                      <td>7, B</td>
+                      <td>9, D</td>
+                      <td>0, D</td>
+                    </tr>
+                    <tr>
+                      <td>5</td>
+                      <td>ABCDEF</td>
+                      <td>3, A</td>
+                      <td>5, A</td>
+                      <td>7, B</td>
+                      <td>9, D</td>
+                      <td>0, D</td>
+                    </tr>
+                  </table>
+               </li>
+               <br>
+               The routing table for A would be 
+               <br>
+                  <table style="width:100%">
+                    <tr>
+                      <th>Destination</th>
+                      <th>Link</th>
+                    </tr>
+                  <tr>
+                     <th>B</th>
+                     <th>(A,B)</th>
+                  </tr>
+                  <tr>
+                     <th>C</th>
+                     <th>(A,C)</th>
+                  </tr>
+                  <tr>
+                     <th>D</th>
+                     <th>(A,B)</th>
+                  </tr>
+                  <tr>
+                     <th>E</th>
+                     <th>(A,B)</th>
+                  </tr>
+                  <tr>
+                     <th>F</th>
+                     <th>(A,B)</th>
+                  </tr>
+               </table>
+
+               
+
+
+
+
+
                <li>
                   Oscillations with congestion-sensitive routing can happen where link costs are equal to the load carried on the link<br>
                   <figure>
