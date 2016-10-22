@@ -1,0 +1,16 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Graded Exercise 2</title>
+    </head>
+    <body>
+        <h1>Graded Exercise 2</h1>
+        <h3>Questions on Reading</h3>
+        
+        <h3>Bob Metcalfe</h3>
+        
+        <h3>New Repository</h3>
+        <p>The link below will be the download to the github repository for the lab assignment (multithread web server). In the repository, there will be a LICENSSE and a README. There will be a test code in the same folder as the java code called test.html</p>
+        <a href = "https://github.com/NHarata/MultiThreadedWebServer.git">This is the link to the clone/download of my lab that includes javadoc in the code.</a>
+    </body>
+</html>
