@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+    Week 2: Routing Algorithm Lesson
+</title>
+</head>
+<body>
+<h1>
+Routing Algorithm Lesson
+</h1>
+<p>
+    To get information from one host to another and vice versa, packets of data typically travel through various routers.
+Each host is usually directly connected to a <u>default router</u>, normally the router that is closest to them. This is also
+known as its first-hop router. When a host sends packets of data like this, that hosts default router is called the
+<u>source router</u>, and the host its communicating with's default router is considered the <u>destination router</u>. So our
+goal becomes clear, how do we get from the source router to the destination router as quickly as possible?
+    The answer lies in routing algorithms. Routing algorithms are mathematical problems that allow us to determine the
+shortest path from the source to the destination. The picture below (Figure 4.27 from the text) represents a group of connected
+routers in a computer network. Notice how each router has its own identifying name (x,y,etc), and a number of connections to
+other routers. Each of these connections also has a number associated with it, representing the <i>cost</i> of traveling it.
+The cost includes not only distance, but other aspects of the connection as well, such as speed. Though, we're just going to take
+the cost as a given value.
+<img src="https://flic.kr/p/NiFPvK" alt="Figure 4.27" height="287" width="191">
+    Using these paths and routing algorithms, we should be able to determine the path with the lowest total cost. There are two
+ primary ways this is accomplished, link-state algorithms, and distance-vector routing algorithms. For this lesson, we'll only
+ be going over link-state algorithms.
+    The main difference between link-state algorithms and distance-vector routing algorithms is how much knowledge the algorithm
+has about the router network. In a link-state algorithm, the algorithm has <u>global</u> knowledge, meaning that it knows all of
+the costs between all of the routers in the network. So, if we use the figure above as an example, it's as though it already
+knows the entirety of that figure. It knows,for instance, that the cost from v to x is 2, and that z to w is 5, and so on.
+    Of the link-state algorithms, Dijkstra's algorithm is the predominant algorithm used. Dijkstra's algorithm will find the
+lowest cost path from a given source router to all other routers. I believe the easiest way to show how Dijkstra's algorithm
+works is to simply work through an example. So, why don't we just use Figure 4.27 above?
+    Say we want to find the lowest cost path to any router, starting from router z. To begin, we create a table (such as the
+table provided below). The leftmost column should simply be labeled 'Step', the second 'Completed', and then one additional
+column for each router in the network that is not the source router. So, in this example, you should have 7 total columns.
+Step, Completed, u, v, w, x, and y. Steps will tell us how many times we've looped the algorithm. Finished tells us which
+routers we have found the lowest cost path to, and each of the router columns tell us the current lowest path we have found
+to arrive there.
+    Once your table is set up, we begin with the initialization step. This step is labled as '0'. Under 'Finished', write
+the source router (in this case, z) and look at all of the paths leading to other routers from that source router. Write the
+associated cost underneath each of those routers columns. This will tell us the lowest cost path that we currently have from
+the source router to those routers. So, in this case, we have two paths leading from our source router z (w and y). So, in
+step 0 of column w we write 5z, and in step 0 of column y we write 2z. Then, to complete the initialization step, we write a I
+in each column that we currently aren't connected to. This signifies that we have not found any path to these routers yet, and
+so it would take infinite time to reach them.
+    After the initialization step, we begin to loop the algorithm, meaning that we will perform this step as many times as it
+takes until we are finished. In short, during these loops, we do the following:
+    1. Look at the previous step, and determine which column has the lowest cost.
+    2. Add that router to our 'Finished' column. We have found the lowest cost path to that router.
+    3. Look at each of that routers paths, and see if following them leads to a new lowest path to other routers.
+    4. Update the table if so.
+    5. Move onto the next Step.
+    
+    So, why don't we try this for our example? Looking at our table, we see that y has the lowest cost of the routers not in
+ our 'finished' column. As such, we add 'y' to 'Finished' in step 1. (If we were creating this table by hand, I would also
+ circle the y column, just to signify that that column is finished, though this isn't necessary.
+    We then look back at our network of routers, and see that y has two paths leading from it (not counting the one leading
+back to z). First, there's router x. Following the path from z to y to x, we see that the cost is 3. Since 3 is less than
+infinity, we update the table in step 1, replacing x's 'i' with '3y'. Then, we look at the other path from y, router w.
+Following the path from X to Y to W, we find that the total cost is '3'. Once again, this is less than our current lowest
+cost of 5, so we replace it in step 1 from 5z to 3y. We still don't have a path to u or v, so those remain 'i'. Since we are
+finished with 'y', we do not put anything in its column in step 1, to show that it is finished and we have found its lowest 
+cost path.
+    We then repeat this process for step 2. Since there is a tie between w and x for lowest cost, it doesn't matter which we
+ choose. We decide on x for no reason in particular, and add it to our 'Finished' column in step 2. We then look at each path
+ x has that isn't part of our 'Finished' column, and we see it has a path to u, v, and w. We take the lowest cost from x, 3,
+ and add it to x's path to u, 1, to reach 4. Since 4 is less than infinity, we update step 2 of our table, from 'i' to '4x'.
+ We do the same for v, and update our table to '5x'. Finally, we take a look at x's path to w. Getting to x costs 3, and from
+ x to w costs 3, for a total cost of 6. Since 6 is greater than w's currently lowest cost of 3, we ignore the result, and
+ simply write '3y' in step 2 of our table under w, to show that its current lowest cost path is still 3, following the router
+ y. Once again, since both x and y are in our finished column, their column is left blank in step 2.
+    We again repeat this process for step 3. W is the lowest cost, so again we add it to our finished column in step 3 of our table. We
+ see that router w is connected to v and u, the only two routers not in our finished column, and check to see if we can
+ update our lowest cost paths. We determine getting to router u following router w has a total cost of 8, and router v has a
+ cost of 6. Neither beats our current lowest cost path, and so nothing new is updated, we simply copy down those columns into
+ step 3 of our table.
+    We come to step 4, and find that u has the current lowest path, and add it to our finished column. We take a look at our
+ network, see that it takes a cost of 6 to reach v. Again, 5 is lower, and so its not updated.
+    Finally, in step 5, we move our final column v to our finihsed column, and Dijkstras algorithm is complete. We see that
+  it takes a cost of 4 to reach u, 5 to reach v,  3 to reach w and x, and 2 to reach y.
+  
+  
+  <style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+.tg .tg-yw4l{vertical-align:top}
+</style>
+<table class="tg">
+  <tr>
+    <th class="tg-031e">Step</th>
+    <th class="tg-031e">Completed</th>
+    <th class="tg-031e">u</th>
+    <th class="tg-yw4l">v</th>
+    <th class="tg-yw4l">w</th>
+    <th class="tg-yw4l">x</th>
+    <th class="tg-yw4l">y</th>
+  </tr>
+  <tr>
+    <td class="tg-031e">0</td>
+    <td class="tg-031e">z</td>
+    <td class="tg-031e">i</td>
+    <td class="tg-yw4l">i</td>
+    <td class="tg-yw4l">5,z</td>
+    <td class="tg-yw4l">i</td>
+    <td class="tg-yw4l">2,z</td>
+  </tr>
+  <tr>
+    <td class="tg-031e">1</td>
+    <td class="tg-031e">z,y</td>
+    <td class="tg-031e">i</td>
+    <td class="tg-yw4l">i</td>
+    <td class="tg-yw4l">3,y</td>
+    <td class="tg-yw4l">3,y</td>
+    <td class="tg-yw4l"></td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l">2</td>
+    <td class="tg-yw4l">z,y,x</td>
+    <td class="tg-yw4l">4,x</td>
+    <td class="tg-yw4l">5,x</td>
+    <td class="tg-yw4l">3,y</td>
+    <td class="tg-yw4l"></td>
+    <td class="tg-yw4l"></td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l">3</td>
+    <td class="tg-yw4l">z,y,x,w</td>
+    <td class="tg-yw4l">4,x</td>
+    <td class="tg-yw4l">5,x</td>
+    <td class="tg-yw4l"></td>
+    <td class="tg-yw4l"></td>
+    <td class="tg-yw4l"></td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l">4</td>
+    <td class="tg-yw4l">z,y,x,w,u</td>
+    <td class="tg-yw4l"></td>
+    <td class="tg-yw4l">5,x</td>
+    <td class="tg-yw4l"></td>
+    <td class="tg-yw4l"></td>
+    <td class="tg-yw4l"></td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l">5</td>
+    <td class="tg-yw4l">z,y,x,w,u</td>
+    <td class="tg-yw4l"></td>
+    <td class="tg-yw4l"></td>
+    <td class="tg-yw4l"></td>
+    <td class="tg-yw4l"></td>
+    <td class="tg-yw4l"></td>
+  </tr>
+</table>
+
+</p>
+</body>
+</html>
