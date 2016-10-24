@@ -6,35 +6,13 @@
     <meta charset="utf-8" />
     <title>Henry Weeks Graded Assignment 0</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script>
-        $(document).ready(function () {
-            $("#questionsListShow").click(function () {
-                $("#questionsListDiv").animate({ height: 'show' }, 1000);
-            });
-            $("#questionsListHide").click(function () {
-                $("#questionsListDiv").animate({ height: 'hide' }, 1000);
-            });
-
-            $("#descriptionShow").click(function () {
-                $("#description").animate({ height: 'show' }, 1000);
-            });
-            $("#descriptionHide").click(function () {
-                $("#description").animate({ height: 'hide' }, 1000);
-            });
-
-            $("#instructionsShow").click(function () {
-                $("#instructionsDiv").animate({ height: 'show' }, 1000);
-            });
-            $("#instructionsHide").click(function () {
-                $("#instructionsDiv").animate({ height: 'hide' }, 1000);
-            });
-        });
-    </script>
+    <script src="HenrysJSFunctions.js"></script>
 </head>
 <body>
     <h1 id="pageHeader">Henry Weeks: Graded Assignment 1</h1>
 
     <h3 id="questionsHeader">10 Sample Questions About The Material With Answers</h3>
+    <h4>Chapter 1 Questions</h4>
     <div class="buttons">
     <button type="button" id="questionsListShow">Show Questions</button>
     <button type="button" id="questionsListHide">Hide Questions</button>
@@ -43,23 +21,23 @@
         <ol id="questionsList">
             <li id="question1">
                 <p>
-                    Q:  What are the two overlaying protocols that control the sending and receiving
-                    of information on the internet?
+                    Q:  What are the different types of delay at a node in a packet-switch network?
                 </p>
                 <p>
-                    A:  TCP (Transmission Control Protocol) and IP (Internet Protocol)
-                </p>
+                    A:  A node in a packet-switch network may suffer from processing, queuing, transmission, and
+                    propogation delays together make up what is called total nodal delay.
+                </p> 
             </li>
             <li id="question2">
                 <p>
-                    Q:  What are distributed applications and why are they considered distributed?
+                    Q:  What is meant by the phrase "A Network of Networks"?
                 </p>
                 <p>
-                    A:  Distrubted applications are applications which run on end systems.  That is
-                    to say, these applications run on separate hosts and use the internet to send and
-                    receive data with applications running on other remote host machines.  They are
-                    therefore considered distributed because they communicate across a network as opposed
-                    to internally with applications on the same machine.
+                    A:  This is part of our theme of layers of abstraction.  There are routers and communication
+                    links which span the entire globe, and this in itself is a network.  However, there is not
+                    one single ISP which manages this entire global network.  Instead, ISPs charge and segment
+                    networks on an individual basis, or sometimes in small chunks of routers.  These are each networks
+                    as well, and we therefore call this system a network of interconnected networks.
                 </p>
             </li>
             <li id="question3">
@@ -72,48 +50,16 @@
                     and/or receipt of a message or other event.
                 </p>
             </li>
-            <li id="question4">
-                <p>
-                    Q:  Name three physical mediums for transmitting data on the internet.
-                </p>
-                <p>
-                    A:  Possibilities: Fiber Optic Cable, Coaxial Cable, Twisted Pair Copper Wire (Insulated
-                    and Unshielded), Satellite Radio Channels, Terrestrial Radio Channels.
-                </p>
-            </li>
-            <li id="question5">
-                <p>
-                    Q:  What is meant by the phrase "A Network of Networks"?
-                </p>
-                <p>
-                    A:  This is part of our theme of layers of abstraction.  There are routers and communication
-                    links which span the entire globe, and this in itself is a network.  However, there is not
-                    one single ISP which manages this entire global network.  Instead, ISPs charge and segment
-                    networks on an individual basis, or sometimes in small chunks of routers.  These are each networks
-                    as well, and we therefore call this system a network of interconnected networks.
-                </p>
-            </li>
-            <li id="question6">
-                <p>
-                    Q:  What are the different types of delay at a node in a packet-switch network?
-                </p>
-                <p>
-                    A:  A node in a packet-switch network may suffer from processing, queuing, transmission, and
-                    propogation delays together make up what is called total nodal delay.
-                </p>
-            </li>
-            <li id="question7">
-                <p>
-                    Q:  For what kind of application is it critical to have low delay, and for what kind is it not
-                    ciritical for low delays, but desirable for high throughput?
-                </p>
-                <p>
-                    A:  Internet telephony, video calling, and gaming requires low delay because the real-time information
-                    is critical.  For file transfering it is not critical to have low delays, but it is desirable
-                    to have high throughput to get the entire file quickly.
-                </p>
-            </li>
-            <li id="question8">
+        </ol>
+        </div>
+        <h4>Chapter 2 Questions</h4>
+        <div class="buttons">
+            <button type="button" id="questionsList2Show">Show Questions</button>
+            <button type="button" id="questionsList2Hide">Hide Questions</button>
+        </div>
+        <div id="questionsList2Div">
+        <ol id="questionsList2">
+            <li id="question1">
                 <p>
                     Q:  Please name the two network application architectures and give one advantage of each.
                 </p>
@@ -125,6 +71,45 @@
                     users, so that the network connections are not dependent on a single point of failure.
                 </p>
             </li>
+            <li id="question5">
+                <p>
+                    Q:  For what kind of application is it critical to have low delay, and for what kind is it not
+                    ciritical for low delays, but desirable for high throughput?
+                </p>
+                <p>
+                    A:  Internet telephony, video calling, and gaming requires low delay because the real-time information
+                    is critical.  For file transfering it is not critical to have low delays, but it is desirable
+                    to have high throughput to get the entire file quickly.
+                </p>
+            </li>
+            <li id="question6">
+               <p>
+                   Q:  What is the relationship between a socket and a port?  What are the well known port numbers?
+               </p>
+                <p>
+                    A:  In the context of this course a socket is an application level software component that allows 
+                    the application to transmit and receive data, and a port is an endpoint on a network which is defined 
+                    at an operating system level.  A socket on an application is designated a port number, allowing the 
+                    computer to porperly deliver data from the network to the correct process on the local machine.<br/>
+                    
+                </p>
+            </li>
+            </ol>
+            </div>
+        <h4>Chapter 3 Questions</h4>
+    
+        <div class="buttons">
+            <button type="button" id="questionsList3Show">Show Questions</button>
+            <button type="button" id="questionsList3Hide">Hide Questions</button>
+        </div>
+    <div id="questionsList3Div">
+        <ol id="questionsList3">
+            <li id="question7">
+               
+            </li>
+            <li id="question8">
+               
+            </li>
         </ol>
     </div>
     
@@ -134,28 +119,50 @@
     <button type="button" id="descriptionHide">Hide Problems</button>
     </div>
     <div id="description">
-        <p id="descriptionP">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Leonard Kleinrock is an important American computer 
-            scientist who, among other things, worked very closely with the development of the first 
-            pieces of hardware that comprised the internet in the early days.&nbsp;&nbsp;He graduated from 
-            MIT with a doctorate in computer science in 1963, and then joined the faculty at UCLA where he 
-            remains today.<br/><br/>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Kleirock's most recognized and significant work was 
-            done on queuing theory, which is instrumental to packet switching and in turn the concepts of 
-            computer networks that we are learning about in this class.&nbsp;&nbsp;In his PhD research 
-            Kleinrock describes his work as being to, "establish a mathematical theory of packet networks...".
-            &nbsp;&nbsp;This work would become critical not only in his work at MIT on the first ARPANET 
-            message, but also for the operation of the world wide web today.<br/><br/>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We saw in the movie "Lo and Behold" the machine that 
-            Charley Kline used to send the first message on October 29th, 1969.&nbsp;&nbsp;Kleinrock oversaw this 
-            operation and after the first system crash the system was recovered and a month later the first 
-            permanent ARPANET link between Stanford and MIT was established.<br/><br/>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Leonard Kleinrock has since made a number of contributions 
-            to the bureaucratic acceptance of the use of the internet for personal reasons, and was inducted into 
-            the Internet Hall of Fame in 2012, among receiving a number of other nationally significant awards.
-            &nbsp;&nbsp;These include the National Medal of Science, which he received in 2008, and an induction into IEEE-Eta 
-            Kappa Nu in 2011.  This man has lead an incredible life, and his work has undoubtedly help shape the 
-            landscape of modern society.
+                <p>
+                    <b>P26 from Chapter 2.  Page 177</b> Suppose Bob joins a BitTorrent torrent, but he does not 
+                    want to upload any data to any other peers (so called free-riding).<br/><br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;a. Bob claims that he can receive a complete copy of the file 
+                    that is shared by the swarm. Is Bob’s claim possible? Why or why not?<br/><br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;b. Bob further claims that he can further make his “free-riding” more efficient
+                    by using a collection of multiple computers (with distinct IP
+                    addresses) in the computer lab in his department. How can he do that?
+                </p>
+                <p>
+                    Answer to part A:  Bob's claim is possible.  There is nothing inherent in the peer-to-peer architecture 
+                    to prevent someone from "free-riding".  For a time BitTorrent's primary weakness was its reliance on a base 
+                    of altruistic users.  Because of the legal gray area that file sharing services represent, some users are 
+                    reluctant to expose themselves by sharing parts of files themselves and instead stick strictly to downloading.    
+                    As recently as five years ago, BitTorrent has been implementing reward systems for users who have a good record 
+                    of contributing to the community, punishing those who take advantage of the services it has to offer.
+                </p>
+        <p>
+            Answer to part B:  Bob could make his file harvesting more efficient by using multiple computers.  Consider the answer to 
+            part A which demonstrates that BitTorrent uses a reward system to prevent users from downloading files without contributing themselves.  
+            There is nothing to stop Bob from sharing the same piece of a file from multiple different computers, wile using those distinct computers to 
+            download distinct portions of a file.  This would allow Bob to gain more file fragments per shared fragment, proportional to the number of computers 
+            Bob was able to use.
+        </p>
+                <p>
+                    <b>P26 from Chapter 3. Page 293</b>Consider transferring an enormous file of L bytes from Host A to Host B.
+                    Assume an MSS of 536 bytes.<br /><br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;a. What is the maximum value of L such that TCP sequence numbers are not
+                    exhausted? Recall that the TCP sequence number field has 4 bytes.<br /><br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;b. For the L you obtain in (a), find how long it takes to transmit the file.
+                    Assume that a total of 66 bytes of transport, network, and data-link header
+                    are added to each segment before the resulting packet is sent out over a
+                    155 Mbps link. Ignore flow control and congestion control so A can pump
+                    out the segments back to back and continuously.
+                </p>
+                <p>
+                    Answer to Part A:  If the Maximum Segment Size is 536 bytes, and the TCP sequence flag requires 4 bytes, then the 
+                    maximum amount of data in each TCP segment is 536 - 4 = 532 bytes.  Since the sequence number is alloted 4 bytes, 
+                    there can be 2 ^ 32 or 4,294,967,295 distinct segments in the file.  This means that the maximum size of L is 
+                    (2 ^ 32) x 532 bytes = 2.284 terabytes.
+                </p>
+        <p>
+            Answer to Part B:  On a 155 Mbps network, ignoring flow and congestion control, this download should take 2,464.1 hours.  
+            Around 100 days.
         </p>
     </div>
     <h3 id="instructionsHeader">Wireshark Lab #3: TCP</h3>

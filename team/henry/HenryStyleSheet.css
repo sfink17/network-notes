@@ -33,12 +33,12 @@ h1, h2, h3, h4, h5, h6{
     margin: auto;
     text-align: center;
 }
-#questionsList{
+#questionsList, #questionsList2, #questionsList3{
     background-color: #ffffff;
     margin: auto;
     width: 550px;
 }
-#questionsListDiv{
+#questionsListDiv, #questionsList2Div, #questionsList3Div{
     border-top: solid;
     border-bottom: solid;
     display: none;
