@@ -2,7 +2,7 @@
 <html>
 <head>
 <title>
-    Exercise 1
+    Exercise
 </title>
 </head>
 <body>
@@ -26,6 +26,7 @@ body{background:#7FFFD4}
 
 <button onclick = oc('ex0')>Exercise 0</button>
 <button onclick = oc('ex1')>Exercise 1</button>
+<button onclick = oc('ex2')>Exercise 2</button>
 <div id = "ex0" style = "display:none">
 <h1>Exercise  0</h1>
 <button onclick = "oc(123)">Q&A </button>
@@ -137,13 +138,13 @@ body{background:#7FFFD4}
 </div>
 </div>
 
-<div id = "ex1" style = "display:block">
+<div id = "ex1" style = "display:none">
 <h1>Exercise 1</h1>
 <button onclick = "oc(456)">Q&A</button>
 <button onclick =  "oc(567)">Two Problems</button>
 <button onclick = "oc(678)">Wireshark</button>
 
-<div id = "456" style = "display:block">
+<div id = "456" style = "display:none">
 	<h1 style = "text-align:center">Q&A</h1>
 	<ol>
 		<li>What are the two requirements for transport-layer multiplexing? (page 192)</li>
@@ -245,6 +246,10 @@ body{background:#7FFFD4}
 			</ul>
 	</ol>
 
+
+
+<hr style = "height:3px;border:none;color:#333;background-color:#333;">
+
 </div>
 
 
@@ -252,7 +257,7 @@ body{background:#7FFFD4}
 
 
 
-<div id = "567" style = "display:block">
+<div id = "567" style = "display:none">
 	<h1 style = "text-align:center">Two Problems</h1>
 	<ol>
 		<li><h4>P29 pg 294:</h4></li>
@@ -285,6 +290,7 @@ body{background:#7FFFD4}
 
 
 
+<hr style = "height:3px;border:none;color:#333;background-color:#333;">
 
 </div>
 
@@ -293,7 +299,7 @@ body{background:#7FFFD4}
 
 
 
-<div id = "678" style = "display:block">
+<div id = "678" style = "display:none">
 	<h1 style = "text-align:center">Wireshark</h1>
 	<div>I have completed the lab on HTTP and worked a little on TCP. Here is the link to <a href = "lab.html">my lab</a>.  
 
@@ -314,8 +320,155 @@ If you type http://gaia.cs.umass.edu/wireshark-labs/protected_pages/HTTP-wiresha
 
 <h1 style = "text-align:center">Lab</h1>
 <div>If you would like to do any of the <a href = "http://www-net.cs.umass.edu/wireshark-labs/">wireshark labs</a>.  If you would like to look at the lab that I did, <a href = "http://www-net.cs.umass.edu/wireshark-labs/Wireshark_HTTP_v7.0.pdf">click here</a></div>
+
+
+
+<hr style = "height:3px;border:none;color:#333;background-color:#333;">
 </div>
 </div>
+
+
+<div id = "ex2" style = "display:none">
+<h1>Exercise 2</h1>
+<button onclick = "oc(8910)">LinkedIn</button>
+<button onclick =  "oc(91011)">Link-State Routing Algorithm</button>
+<button onclick = "oc(246)">Github Project</button>
+
+<div id = "8910" style = "display:none">
+	<h1 style = "text-align:center">LinkedIn</h1>
+<div>This is my LinkedIn account.  If this does not work, then you can type in my name, Salem Ozaki, in LinkedIn.</div>
+<a href = "https://www.linkedin.com/in/salem-ozaki-a26770122?trk=hp-identity-name" style = "margin-top:15px">LinkedIn Account</a>
+
+
+<hr style = "height:3px;border:none;color:#333;background-color:#333;">
+</div>
+
+
+<div id = "91011" style = "display:none">
+	<h1 style = "text-align:center">Link-State Routing Algorithm</h1>
+<h2>Dijkstra's Algorithm</h2>
+<!--<h3>Book's example</h3>
+<img src = "pic/path.png" style = "display:block">
+<hr style = "height:2px;border:none;color:red;background-color:red;">
+<img src = "pic/path1.png">
+<img src = "pic/link-state.png">
+<hr style = "height:2px;border:none;color:red;background-color:red;">
+<img src = "pic/path2.png">
+<img src = "pic/link-state.png">
+<hr style = "height:2px;border:none;color:red;background-color:red;">
+<img src = "pic/path3.png">
+<img src = "pic/link-state.png">
+<hr style = "height:2px;border:none;color:red;background-color:red;">
+<img src = "pic/path4.png">
+<img src = "pic/link-state.png">
+<hr style = "height:2px;border:none;color:red;background-color:red;">
+<img src = "pic/path5.png">
+<img src = "pic/link-state.png">
+<hr style = "height:2px;border:none;color:red;background-color:red;">
+<img src = "pic/path6.png">
+<img src = "pic/least.png" style = "margin-bottom:30px">
+
+<hr style = "height:3px;border:none;color:red;background-color:red;">
+-->
+
+
+<h3>Sample Example</h3>
+<img src = "pic/net.png">
+<ul><li><div>We will use the graph you see below to make a least cost path and a forwarding table for A.</div></li>
+<li><div>For clarification:
+<ul>
+<li>D(v): cost of the least&#45cost path from the source node to destination v as of this iteration of the algorithm.</li>
+<li>p(v): previous node (neighbor of v) along the current least&#45cost path from the source to v.</li>
+<li>N&#39: subset of nodes; v is in N&#39 if the least&#45cost path from the source to v is definitively known.</li>
+</ul></div></li>
+</ul>
+<hr style = "height:2px;border:none;color:red;background-color:red;">
+<img src = "pic/net1.png">
+<img src = "pic/link1.png">
+<div>2,a in the graph above means that 2 is the distance from the root (A), and a is the previous node.</div>
+<div>All of the distance from A starts at infinity.  We start from A and grab all of A's neighbors(B, C, and D).
+<ul><li>The distance between A and B is 2 which is less than infinity, so B's distance is switched to 2 and the previous node is A.</li>
+<li>The distance between A and C is 3 which is less than infinity, so C's distance is stwitched to 3 and the previous node is A.</li>
+<li>The distance between A and D is 4 which is less than infinity, so D's distance is stwitched to 4 and the previous node is A.</li>
+<li>E and F are not direct neighbors of A, so their distance are infinity</li></ul>
+<div>A is added to N&#39 which indicates that A has been checked.</div>
+</div>
+<hr style = "height:2px;border:none;color:red;background-color:red;">
+<img src = "pic/net2.png">
+<img src = "pic/link2.png">
+<div>B is the closest to the starting node A and that is not already in N&#39. So it will be checked next.</div>
+<ul>
+	<li>C has a distance of 7 from B and the distance from A to C is 3, so C&#39s status is not updated because 7 is greater than 3.</li>
+	<li>F has a distance of 7 from B and the distance is currently infinity, so F&#39s status is updated to 7 with the previous node set to B, because 7 is less than infinity.</li>
+	<li>A is in N&#39 , which means that A has already checked all of its neighbors.</li>
+</ul>
+<hr style = "height:2px;border:none;color:red;background-color:red;">
+<img src = "pic/net3.png">
+<img src = "pic/link3.png">
+<div>C is the closest to the starting node A and is not in N&#39. So C will be checked next.</div>
+<ul>
+	<li>D has a distance of 8 from C and the distance from A to D is 4, so D&#39s status is not updated because 8 is greater than 4.</li>
+	<li>E has a distance of 4 from C and the distance is currently infinity, so E&#39s status is updated to 4 with the previous node set to C, because 4 is less than infinity.</li>
+	<li>F has a distance of 6 from C and the distance from B to F is 7, so F&#39s status is updated to 6 with the previous node set to C, because 6 is less than 7.</li>
+</ul>
+<hr style = "height:2px;border:none;color:red;background-color:red;">
+<img src = "pic/net4.png">
+<img src = "pic/link4.png">
+<div>D is the closest to the starting node A and is not in N&#39 (Note: we could have also chosen E). So C will be checked next.</div>
+<ul>
+	<li>E has a distance of 8 from D and the distance from A to D is 4, so D&#39s status is not updated because 8 is greater than 4.</li>
+	<li>Again, C and A are not included because they are already in N&#39.</li>
+</ul>
+<hr style = "height:2px;border:none;color:red;background-color:red;">
+<img src = "pic/net5.png">
+<img src = "pic/link5.png">
+<div>E is the closest to the starting node A and is not in N&#39. So E will be checked next.</div>
+<ul>
+	<li>F has a distance of 5 from E and the distance from C to F is 6, so F&#39s status is updated to 5 with the previous node set to E, because 5 is less than 6.</li>
+</ul>
+<hr style = "height:2px;border:none;color:red;background-color:red;">
+<img src = "pic/net6.png">
+<img src = "pic/link6.png">
+<div>Finally, F is the only node that is not in N&#39. So F will be checked.</div>
+<ul>
+	<li>Since all of the F&#39s neighbors are in N&#39, we do not do anything with F.</li>
+</ul>
+<hr style = "height:2px;border:none;color:red;background-color:red;">
+<img src = "pic/net7.png">
+<img src = "pic/forwarding-table.png">
+<ul><li><div>Now the least cost path has been found and we can make a forwarding table.</div></li>
+<li><div>On the left side we have the destinations and on the left side we have the link we are going to use to send the packet (Note: each node has its own forwarding table, so this node only needs to know which node to send the packet to that is on the shortest path to the destination.</div></li>
+<h3>This concludes our lesson.  Please feel free to visit these websites that could help you.</h3>
+<ul>
+	<li><a href = "https://www.youtube.com/watch?v=1nnzBNPo78Y">https://www.youtube.com/watch?v=1nnzBNPo78Y</a></li>
+	<li><a href = "https://www.youtube.com/watch?v=2_0AwfQWKUk">https://www.youtube.com/watch?v=2_0AwfQWKUk</a></li>
+	<li><a href = "http://www.ciscopress.com/articles/article.asp?p=2180210&seqNum=11">http://www.ciscopress.com/articles/article.asp?p=2180210&seqNum=11</a></li>
+	<li><a href = "https://en.wikipedia.org/wiki/Link-state_routing_protocol">https://en.wikipedia.org/wiki/Link-state_routing_protocol</a></li>
+</ul>
+<hr style = "height:3px;border:none;color:#333;background-color:#333;">
+</div>
+
+
+
+
+
+
+<div id = "246" style = "display:none">
+	<h1 style = "text-align:center">Github Project</h1>
+<div>This is the project on multithreading that I worked on and modified.</div>
+<a href = "https://github.com/STOzaki/WebServer">My Multithreading Project</a>
+
+
+
+
+<hr style = "height:3px;border:none;color:#333;background-color:#333;">
+
+</div>
+
+</div>
+
+
+
 <script>
 function oc(id){
 	if(document.getElementById(id).style.display == "none"){

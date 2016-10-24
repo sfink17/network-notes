@@ -3,7 +3,7 @@
     
 <style>
     li {margin: 10px 0;}
-    h1 {align-content: center}
+    h1 {text-align: center}
     .answer{color:red;}
     
     /* Code for tabs obtained from W3schools.com */
@@ -34,7 +34,11 @@
     ul.tab li a:hover {background-color: #ddd;}
 
     /* Create an active/current tablink class */
-    ul.tab li a:focus, .active {background-color: #ccc;}
+    ul.tab li a:focus, .active {
+	background-color: #ccc;
+	color:blue;
+	text-decoration:underline;
+	}
 
     /* Style the tab content */
     .tabcontent {

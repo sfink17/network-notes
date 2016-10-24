@@ -37,7 +37,7 @@
 			<li>Receiver Feedback</li>
 			<li><b>A</b>utomatic <b>R</b>epeat re<b>Q</b>uests</li>
 			<ul>
-				<li>Send a message back when a packet is recieved</li>
+				<li>Send a message back when a packet is received</li>
 				<li>ACK: positive, packet received properly</li>
 				<li>NAK: negative, packet had an error</li>
 			</ul>
@@ -101,10 +101,10 @@
 		<li>How do you detect packet loss? Timeouts!</li>
 		<ul>
 			<li><span style="color:chartreuse">Timeout</span>: a timer which, after a set amount of time, decides that the packet did not arrive and needs to be resent</li><li>The timeout time cannot be less than the minimum delay for a packet's round-trip</li>
-			<li>The timeout time has no reason to be more than a packet's worst-case rount-trip delay</li>
+			<li>The timeout time has no reason to be more than a packet's worst-case round-trip delay</li>
 			<li>Worst-case delay time itself doesn't work well, because you want to detect the loss as soon as possible</li>
 			<li>Worst-case delay is also hard to calculate given the number of factors</li>
-			<li>If the timeout time isn't the worst-case delay, there is a possibility of duplicate packets, but those are already ahandled so it's not a big deal</li>
+			<li>If the timeout time isn't the worst-case delay, there is a possibility of duplicate packets, but those are already handled so it's not a big deal</li>
 		</ul>
 		<li>Sending side</li>
 		<ol>
@@ -137,7 +137,7 @@
 </ul>
 	<p>The book provided pseudo-code for each step of the process along with the finite state diagrams,
 		but I felt that the function was more important than attempting to copy the pseudo-code.</p>
-<p style="font-size:5px; color:white">There are no hugs in computer science</p>
+<p class="help">There are no hugs in computer science</p>
 <a href="./hello.html">Home</a>
 </body>
 </html>
