@@ -286,4 +286,3 @@ $("#asn2").fadeIn("slow");
       }
       return fAnswer;
     }
-
