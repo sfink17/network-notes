@@ -6,6 +6,7 @@
 <title>
 CSC-317 Notes
 </title>
+<script type = "text/javascript" src = "jquery-3.1.1.min.js"></script>
 </head>
 <body>
 <button onclick = "oc(822)">1.5-1.8 Notes</button>
@@ -20,6 +21,7 @@ CSC-317 Notes
 <button onclick = "oc(8211)">4.5-4.6 Notes</button>
 <button onclick = "oc(8212)">4.7-4.8 Notes</button>
 <button onclick = "oc(8213)">5.1-5.3 Notes</button>
+<button onclick = "oc(8214)">5.4-5.5 Notes</button>
 <style>
 body{background-color:#7FFFD4}
 </style>
@@ -899,7 +901,7 @@ with one or more other transmissions, the node will then immediately retransmit 
 				<li>B is currently transmitting at time t1, the bits being transmitted by B have yet to reach D, and thus D senses the channel idle at t1.</li>
 				<li>D thus begins transmitting its frame.</li>
 				<li>B&#39s transmission begins to interfere with D&#39s transmission at D</li>
-				<li>End-to-end channel propagation delay of a broadcast channel—the time it takes for a signal to propagate from one of the nodes to another</li>
+				<li>End-to-end channel propagation delay of a broadcast channel&#45the time it takes for a signal to propagate from one of the nodes to another</li>
 			</ul>
 
 <img src = "pic/CSMA.png" style = "margin:15px">
@@ -936,15 +938,129 @@ with one or more other transmissions, the node will then immediately retransmit 
 </div>
 
 
+<div id = "8214" style  ="display:none">
+	<h1>5.4-5.5 Notes</h1>
+<h2>Swithced Local Area Networks</h2>
+<ul>
+	<li>A link-layer address is variously called a LAN address, a physical address, or a MAC address.</li>
+	<li>No two adapters have the same MAC address because the IEEE manes the MAC address space.</li>
+	<li>ARP module in the sending host takes any IP adress on the same LAN as input, and return the corresponding MAC</li>
+	<li>The sender uses the ARP protocal to resolve the address:</li>
+	<ul><li>the sender constructs a special packet called an ARP packet. An ARP packet has several fields, including the sending and receiving IP and MAC addresses. Both ARP query and response packets have the same format.</li></ul>
+</ul>
+<h2>Ethernet</h2>
+<ul>
+	<li>Ethernet's success:</li>
+	<ul>
+		<li>First, Ethernet was the first widely deployed high-speed LAN. Because it was deployed early, network administrators became intimately familiar with Ethernet—its wonders and its quirks— and were reluctant to switch over to other LAN technologies when they came on the scene.</li>
+		<li>Second, token ring, FDDI, and ATM were more complex and expensive than Ethernet, which further discouraged network administrators from switching over.</li>
+		<li>Third, if new technology had higher data rate, ethernet would always fought back, producing versions that operated at equal data rates or higher.</li>
+		<li>Finally, because Ethernet has been so popular, Ethernet hardware (in particular, adapters and switches) has become a commodity and is remarkably cheap.</li>
+		<li></li>
+	</ul>
+	<li>A hub is a physical-layer device that acts on individual bits rather than frames. When a bit, representing a zero or a one, arrives from one interface, the hub simply re-creates the bit, boosts its energy strength, and transmits the bit onto all the other interfaces. Thus, Ethernet with a hub-based star topology is also a broadcast LAN&#45whenever a hub receives a bit from one of its interfaces, it sends a copy out on all of its other interfaces.</li>
+	<li>Ethernet installations continued to use a star topology, but the hub at the center was replaced with a switch.</li>
+	<li>Six fields of the Ethernet frame:</li>
+	<ul>
+		<li>Data field (46 to 1,500 bytes). This field carries the IP datagram. The maximum transmission unit (MTU) of Ethernet is 1,500 bytes.</li>
+		<li>Destination address (6 bytes). This field contains the MAC address of the destination adapter.</li>
+		<li>Source address (6 bytes). This field contains the MAC address of the adapter that transmits the frame onto the LAN.</li>
+		<li>Type field (2 bytes). The type field permits Ethernet to multiplex network-layer protocols.</li>
+		<li>Cyclic redundancy check (CRC) (4 bytes). The purpose of the CRC field is to allow the receiving adapter, adapter B, to detect bit errors in the frame.</li>
+		<li>Preamble (8 bytes). The Ethernet frame begins with an 8-byte preamble field. Each of the first 7 bytes of the preamble has a value of 10101010; the last byte is 10101011. The first 7 bytes of the preamble serve to “wake up” the receiving adapters and to synchronize their clocks to that of the sender&#39s clock.  A receiving adapter can lock onto adapter A’s clock simply by locking onto the bits in the first 7 bytes of the preamble. The last 2 bits of the eighth byte of the preamble (the first two consecutive 1s) alert adapter B that the &#34important stuff&#34 is about to come.</li>
+	</ul>
+	<li>Filtering is the switch function that determines whether a frame should be forwarded to some interface or should just be dropped.</li>
+	<li>Forwarding is the switch function that determines the interfaces to which a frame should be directed, and then moves the frame to those interfaces.</li>
+	<li>Switch filtering and forwarding are done with a switch table, which contains:</li>
+	<ul>
+		<li>a MAC address.</li>
+		<li>the switch interface that leads toward that MAC address.</li>
+		<li>the time at which the entry was placed in the table.</li>
+	</ul>
+	<li>Switches are self-learning. This capability is accomplished as follows:</li>
+	<ul>
+		<li>The switch table is initially empty.</li>
+		<li>For each incoming frame received on an interface, the switch stores in its table:</li>
+		<ol>
+			<li>The MAC address in the frame’s source address field.</li>
+			<li>The interface from which the frame arrived.</li>
+			<li>the current time.</li>
+		</ol>
+		<li>The switch deletes an address in the table if no frames are received with that address as the source address after some period of time (the aging time).</li>
+	</ul>
+</ul>
+
+	
+
+<hr style="height:3px;border:none;color:#333;background-color:#333;">
+		
+</div>
+
+
+<div id = "8214" style  ="display:none">
+	<h1>5.6-5.8 Notes</h1>
+<h2>Overview</h2>
+<div>For this part, they give a great example of what we have learned until now, so I thought I would share that with people.<br>
+The scenario is that someone named Bob plugs his laptop into the network for the first time, so it first need to run a DHCP protocal to obtain an IP from the local DHCP server:</div>
+
+	
+
+<hr style="height:3px;border:none;color:#333;background-color:#333;">
+		
+</div>
+
+
+
 
 <script>
+var previous = null;
 function oc(id){
-	if(document.getElementById(id).style.display == "none"){
-		document.getElementById(id).style.display = "block";
-	} else {
-		document.getElementById(id).style.display = "none";
+	if(previous == null){
+			$(document).ready(function(){
+			$("button").hide();
+			$("#" + id).fadeIn(2000);});
+			$(document).ready(function(){
+			setTimeout(function(){$("button").show();},2500)});
+			previous = id;
+	} else if(previous == id){
+			$(document).ready(function(){
+			$("button").hide();
+			$("#" + id).fadeOut(500);});
+			$(document).ready(function(){
+			setTimeout(function(){$("button").show();},1000)});
+			previous = null;
+	}else {
+			$(document).ready(function(){
+			$("button").hide();
+			$("#" + previous).fadeOut(1000);
+			setTimeout(function(){$("#" + id).fadeIn(1000);},1005);
+			});
+			$(document).ready(function(){
+			setTimeout(function(){$("button").show();previous = id;},2005)});
 	}
 }
+
+
+
+
+
+
+
+		/*This is my old code:
+		
+		if(document.getElementById(id).style.display == "none"){
+			$(document).ready(function(){
+			$("button").hide();
+			$("#" + id).fadeIn(2000);});
+			$(document).ready(function(){
+			setTimeout(function(){$("button").show();},2500)});
+		} else {
+			$(document).ready(function(){
+			$("button").hide();
+			$("#" + id).fadeOut(500);});
+			$(document).ready(function(){
+			setTimeout(function(){$("button").show();},1000)});
+		} */
 </script>
 </body>
 </html>
