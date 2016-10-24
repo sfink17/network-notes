@@ -25,6 +25,11 @@ $("#subcontent").children().filter(":visible").fadeOut("slow", function(){
 $("#assignment1").fadeIn("slow");});
 $("#asn1").fadeOut("slow");
 });
+$("#asn2").click(function(){
+$("#subcontent").children().filter(":visible").fadeOut("slow", function(){
+$("#assignment2").fadeIn("slow");});
+$("#asn1").fadeOut("slow");
+});
 $("#assignmentLink").click(function(){
 $("#welcome").fadeOut("slow", function(){
 $("#assignment").fadeIn("slow");});
@@ -32,6 +37,10 @@ $("#assignment").fadeIn("slow");});
 $("#assignmentLink1").click(function(){
 $("#welcome").fadeOut("slow", function(){
 $("#assignment1").fadeIn("slow");});
+});
+$("#assignmentLink2").click(function(){
+$("#welcome").fadeOut("slow", function(){
+$("#assignment2").fadeIn("slow");});
 });
 $("#notesLink").click(function(){
 $("#welcome").fadeOut("slow", function(){
@@ -75,6 +84,11 @@ $("#assignment1").fadeOut("slow", function(){
 $("#textQA").fadeIn("slow");});
 $("#asn1").fadeIn("slow");
 });
+$("#dijkstraLink").click(function(){
+$("#assignment2").fadeOut("slow", function(){
+$("#dijkstra").fadeIn("slow");});
+$("#asn1").fadeIn("slow");
+});
 });
 
 
@@ -88,6 +102,9 @@ $("#asn1").fadeIn("slow");
 
   function openMenu2() {
     document.getElementById("menu2").classList.toggle("show");
+  }
+  function openMenu3() {
+    document.getElementById("menu3").classList.toggle("show");
   }
   
  
@@ -103,6 +120,9 @@ $("#asn1").fadeIn("slow");
     }
   if (document.getElementById("menu2").classList.contains("show")) {
     document.getElementById("menu2").classList.toggle("show");
+    }
+	if (document.getElementById("menu3").classList.contains("show")) {
+    document.getElementById("menu3").classList.toggle("show");
     }
   }
 }
@@ -266,4 +286,3 @@ $("#asn1").fadeIn("slow");
       }
       return fAnswer;
     }
-
