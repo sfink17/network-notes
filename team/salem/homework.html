@@ -22,6 +22,7 @@ CSC-317 Notes
 <button onclick = "oc(8212)">4.7-4.8 Notes</button>
 <button onclick = "oc(8213)">5.1-5.3 Notes</button>
 <button onclick = "oc(8214)">5.4-5.5 Notes</button>
+<button onclick = "oc(8215)">5.6-5.8 Notes</button>
 <style>
 body{background-color:#7FFFD4}
 </style>
@@ -456,11 +457,11 @@ knock on the door and send the server a sentence to modify</li>
 <h2>UDP rather than over TCP</h2>
 <ul>
 <li><h3>Finer application-level control over what data is sent, and when:</h3></li>
-<ul><li>Under UDP, as soon as an application process passes data to UDP, UDP will package the data inside a UDP segment and immediately pass the segment to the network layer. TCP, on the other hand, has a congestion-control mechanism that throttles the transport-layer TCP sender when one or more links between the source and destination hosts become excessively congested. TCP will also continue to resend a segment until the receipt of the segment has been acknowledged by the destination, regardless of how long reliable delivery takes. Since real-time applications often require a minimum sending rate, do not want to overly delay segment transmission, and can tolerate some data loss, TCP's service model is not particularly well matched to these applications' needs. As discussed below, these applications can use UDP and implement, as part of the application, any additional functionality that is needed beyond UDP's no-frills segment-delivery service.</li></ul>
+<ul><li>Under UDP, as soon as an application process passes data to UDP, UDP will package the data inside a UDP segment and immediately pass the segment to the network layer. TCP, on the other hand, has a congestion-control mechanism that throttles the transport-layer TCP sender when one or more links between the source and destination hosts become excessively congested. TCP will also continue to resend a segment until the receipt of the segment has been acknowledged by the destination, regardless of how long reliable delivery takes. Since real-time applications often require a minimum sending rate, do not want to overly delay segment transmission, and can tolerate some data loss, TCP&#39s service model is not particularly well matched to these applications&#39 needs. As discussed below, these applications can use UDP and implement, as part of the application, any additional functionality that is needed beyond UDP&#39s no-frills segment-delivery service.</li></ul>
 <li><h3>No connection establishment:</h3></li>
-<ul><li>As we'll discuss later, TCP uses a three-way handshake before it starts to transfer data. UDP just blasts away without any formal preliminaries. Thus UDP does not introduce any delay to establish a connection. This is probably the principal reason why DNS runs over UDP rather than TCP, DNS would be much slower if it ran over TCP. HTTP uses TCP rather than UDP, since reliability is critical for Web pages with text. But, as we briefly discussed in Section 2.2, the TCP connection-establishment delay in HTTP is an important contributor to the delays associated with downloading Web documents.</li></ul>
+<ul><li>As we&#39ll discuss later, TCP uses a three-way handshake before it starts to transfer data. UDP just blasts away without any formal preliminaries. Thus UDP does not introduce any delay to establish a connection. This is probably the principal reason why DNS runs over UDP rather than TCP, DNS would be much slower if it ran over TCP. HTTP uses TCP rather than UDP, since reliability is critical for Web pages with text. But, as we briefly discussed in Section 2.2, the TCP connection-establishment delay in HTTP is an important contributor to the delays associated with downloading Web documents.</li></ul>
 <li><h3>No Connection Stat</h3></li>
-<ul><li>TCP maintains connection state in the end systems. This connection state includes receive and send buffers, congestion-control parameters, and sequence and acknowledgment number parameters. We will see in Section 3.5 that this state information is needed to implement TCP's reliable data transfer service and to provide congestion control. UDP, on the other hand, does not maintain connection state and does not track any of these parameters. For this reason, a server devoted to a particular application can typically support many more active clients when the application runs over UDP rather than TCP.</li></ul>
+<ul><li>TCP maintains connection state in the end systems. This connection state includes receive and send buffers, congestion-control parameters, and sequence and acknowledgment number parameters. We will see in Section 3.5 that this state information is needed to implement TCP&#39s reliable data transfer service and to provide congestion control. UDP, on the other hand, does not maintain connection state and does not track any of these parameters. For this reason, a server devoted to a particular application can typically support many more active clients when the application runs over UDP rather than TCP.</li></ul>
 <li><h3>Small Packet Header Overhead</h3></li>
 <ul><li>The TCP segment has 20 bytes of header overhead in every segment, whereas UDP has only 8 bytes of overhead.</li></ul>
 </ul>
@@ -631,7 +632,7 @@ by the routing processor, with a shadow copy typically stored at each input port
 devices in a traditional operating system.</li>
 				<li>The packet was then copied
 from the input port into processor memory.</li>
-				<li>the router extracts the destination address and then looks up the direction from the forwarding table.  After that, it sends the packet to the output's port buffer.</li>
+				<li>the router extracts the destination address and then looks up the direction from the forwarding table.  After that, it sends the packet to the output&#39s port buffer.</li>
 				<li>And if the switch fabric is not used, then it will be passed onto the switch fabric.</li>
 
 			</ul>
@@ -737,9 +738,9 @@ redundant in the network layer that it could be removed. This allows for faster 
 <h3>The Link-State(LS) Routing Algorithm</h3>
 <ul>
 	<li>Each node floods using link state packets (LSP) to find all of its neighbors.</li>
-	<li>each node will receive every other node's LSP, combining all of the LSPs into a full topology of the network.</li>
-	<li>Each node uses Dijkstra's algorithm (which should give up identical tables).</li>
-	<li>After Dijkstra's is run they will make a forwarding table for each node.</li>
+	<li>each node will receive every other node&#39s LSP, combining all of the LSPs into a full topology of the network.</li>
+	<li>Each node uses Dijkstra&#39s algorithm (which should give up identical tables).</li>
+	<li>After Dijkstra&#39s is run they will make a forwarding table for each node.</li>
 	<li>When there are any changes, flood update is sent out and recomputed and links are update.</li>
 	<ul>	<li>If a link is missing or removed, then the link is removed.</li>
 		<li>If a node is missing or removed, then the links to that node will be removed, removing the node from the tree.  This is like a tree in programming, if we remove the links to a node in a tree, that node disappears from the tree.</li>
@@ -788,7 +789,7 @@ its cost to all destinations, y, in N</li>
 
 </ul>
 
-<a href = "https://www.youtube.com/watch?v=gdmfOwyQlcI">A refresher on Dijkstra's Algorithm</a>
+<a href = "https://www.youtube.com/watch?v=gdmfOwyQlcI">A refresher on Dijkstra&#39s Algorithm</a>
 
 <div>For a refresher on Bellman-Ford <a href = "https://www.youtube.com/watch?v=iTW2yFYd1Nc">click here</a> or <a href = "https://www.youtube.com/watch?v=obWXjtg0L64">click here</a>.</div>
 
@@ -815,7 +816,7 @@ its cost to all destinations, y, in N</li>
 <ul>
 	<li> In the center-based approach to building a spanning tree, a center node (also known as a rendezvous point or a core) is defined</li>
 	<li>Example:</li>
-	<ul><li>If we start by making E the center of the tree.  Then F is the first to join the tree, when it sends a tree-join message to E.  the single link EF becomes the initial spaning tree.  Then B joins in by sending a message via D.  After that, A joins the spanning tree.  A will use B to join tree, and since B is already part of the tree, A's tree-join message will result in the AB link being immediatly grafted onto the spanning tree.  C then decides to join, connecting to E.  Finally, G join the tree via D, so GD link is grafted onto the spanning tree at node D.</li></ul>
+	<ul><li>If we start by making E the center of the tree.  Then F is the first to join the tree, when it sends a tree-join message to E.  the single link EF becomes the initial spaning tree.  Then B joins in by sending a message via D.  After that, A joins the spanning tree.  A will use B to join tree, and since B is already part of the tree, A&#39s tree-join message will result in the AB link being immediatly grafted onto the spanning tree.  C then decides to join, connecting to E.  Finally, G join the tree via D, so GD link is grafted onto the spanning tree at node D.</li></ul>
 </ul>
 
 
@@ -950,7 +951,7 @@ with one or more other transmissions, the node will then immediately retransmit 
 </ul>
 <h2>Ethernet</h2>
 <ul>
-	<li>Ethernet's success:</li>
+	<li>Ethernet&#39s success:</li>
 	<ul>
 		<li>First, Ethernet was the first widely deployed high-speed LAN. Because it was deployed early, network administrators became intimately familiar with Ethernet—its wonders and its quirks— and were reluctant to switch over to other LAN technologies when they came on the scene.</li>
 		<li>Second, token ring, FDDI, and ATM were more complex and expensive than Ethernet, which further discouraged network administrators from switching over.</li>
@@ -997,11 +998,39 @@ with one or more other transmissions, the node will then immediately retransmit 
 </div>
 
 
-<div id = "8214" style  ="display:none">
+<div id = "8215" style  ="display:none">
 	<h1>5.6-5.8 Notes</h1>
 <h2>Overview</h2>
 <div>For this part, they give a great example of what we have learned until now, so I thought I would share that with people.<br>
-The scenario is that someone named Bob plugs his laptop into the network for the first time, so it first need to run a DHCP protocal to obtain an IP from the local DHCP server:</div>
+The scenario is that someone named Bob wants to get a webpage from Google.  But, this is the first time he pluged his laptop into the school&#39s network.  The first things that needs to happen is to run a DHCP protocal to obtain an IP from the local DHCP server:</div>
+<ol>
+	<li>The operating system on Bob&#39s laptop creates a DHCP request message (Section 4.4.2) and puts this message within a UDP segment (Section 3.3) with destination port 67 (DHCP server) and source port 68 (DHCP client). The UDP segment is then placed within an IP datagram (Section 4.4.1) with a broadcast IP destination address (255.255.255.255) and a source IP address of 0.0.0.0, since Bob&#39s laptop doesn&#39t yet have an IP address.</li>
+	<li>The IP datagram containing the DHCP request message is then placed within an Ethernet frame (Section 5.4.2). The Ethernet frame has a destination MAC addresses of FF:FF:FF:FF:FF:FF so that the frame will be broadcast to all devices connected to the switch (hopefully including a DHCP server); the frame&#39s source MAC address is that of Bob&#39s laptop, 00:16:D3:23:68:8A.</li>
+	<li>The broadcast Ethernet frame containing the DHCP request is the first frame sent by Bob&#39s laptop to the Ethernet switch. The switch broadcasts the incoming frame on all outgoing ports, including the port connected to the router.</li>
+	<li>The router receives the broadcast Ethernet frame containing the DHCP request on its interface with MAC address 00:22:6B:45:1F:1B and the IP datagram is extracted from the Ethernet frame. The datagram&#39s broadcast IP destination address indicates that this IP datagram should be processed by upper layer protocols at this node, so the datagram&#39s payload (a UDP segment) is thus demultiplexed (Section 3.2) up to UDP, and the DHCP request message is extracted from the UDP segment. The DHCP server now has the DHCP request message.</li>
+	<li>Let&#39s suppose that the DHCP server running within the router can allocate IP addresses in the CIDR (Section 4.4.2) block 68.85.2.0/24. In this example, all IP addresses used within the school are thus within Comcast&#39s address block.  Let&#39s suppose the DHCP server allocates address 68.85.2.101 to Bob&#39s laptop. The DHCP server creates a DHCP ACK message (Section 4.4.2) containing this IP address, as well as the IP address of the DNS server (68.87.71.226), the IP address for the default gateway router (68.85.2.1), and the subnet block (68.85.2.0/24) (equivalently, the “network mask”). The DHCP message is put inside a UDP segment, which is put inside an IP datagram, which is put inside an Ethernet frame. The Ethernet frame has a source MAC address of the router&#39s interface to the home network (00:22:6B:45:1F:1B) and a destination MAC address of Bob&#39s laptop (00:16:D3:23:68:8A).</li>
+	<li>The Ethernet frame containing the DHCP ACK is sent (unicast) by the router to the switch. Because the switch is self-learning (Section 5.4.3) and previously received an Ethernet frame (containing the DHCP request) from Bob&#39s laptop, the switch knows to forward a frame addressed to 00:16:D3:23:68:8A only to the output port leading to Bob&#39s laptop.</li>
+	<li>Bob&#39s laptop receives the Ethernet frame containing the DHCP ACK, extracts the IP datagram from the Ethernet frame, extracts the UDP segment from the IP datagram, and extracts the DHCP ACK message from the UDP segment. Bob&#39s DHCP client then records its IP address and the IP address of its DNS server. It also installs the address of the default gateway into its IP forwarding table (Section 4.1). Bob&#39s laptop will send all datagrams with destination address outside of its subnet 68.85.2.0/24 to the default gateway. At this point, Bob&#39s laptop has initialized its networking components and is ready to begin processing the Web page fetch. (Note that only the last two DHCP steps of the four presented in Chapter 4 are actually necessary.)</li>
+	<li>The operating system on Bob&#39s laptop thus creates a DNS query message (Section 2.5.3), putting the string “www.google.com” in the question section of the DNS message. This DNS message is then placed within a UDP segment with a destination port of 53 (DNS server). The UDP segment is then placed within an IP datagram with an IP destination address of 68.87.71.226 (the address of the DNS server returned in the DHCPACK in step 5) and a source IP address of 68.85.2.101.
+</li>
+	<li>Bob&#39s laptop then places the datagram containing the DNS query message in an Ethernet frame. This frame will be sent (addressed, at the link layer) to the gateway router in Bob&#39s school&#39s network. However, even though Bob&#39s laptop knows the IP address of the school&#39s gateway router (68.85.2.1) via the DHCP ACK message in step 5 above, it doesn&#39t know the gateway router&#39s MAC address. In order to obtain the MAC address of the gateway router, Bob&#39s laptop will need to use the ARP protocol (Section 5.4.1).</li>
+	<li>Bob&#39s laptop creates an ARP query message with a target IP address of 68.85.2.1 (the default gateway), places the ARP message within an Ethernet frame with a broadcast destination address (FF:FF:FF:FF:FF:FF) and sends the Ethernet frame to the switch, which delivers the frame to all connected devices, including the gateway router.</li>
+	<li>The gateway router receives the frame containing the ARP query message on the interface to the school network, and finds that the target IP address of 68.85.2.1 in the ARP message matches the IP address of its interface. The gateway router thus prepares an ARP reply, indicating that its MAC address of 00:22:6B:45:1F:1B corresponds to IP address 68.85.2.1. It places the ARP reply message in an Ethernet frame, with a destination address of 00:16:D3:23:68:8A (Bob&#39s laptop) and sends the frame to the switch, which delivers the frame to Bob&#39s laptop.</li>
+	<li>Bob&#39s laptop receives the frame containing the ARP reply message and extracts the MAC address of the gateway router (00:22:6B:45:1F:1B) from the ARP reply message.</li>
+	<li>Bob&#39s laptop can now (finally!) address the Ethernet frame containing the DNS query to the gateway router&#39s MAC address. Note that the IP datagram in this frame has an IP destination address of 68.87.71.226 (the DNS server), while the frame has a destination address of 00:22:6B:45:1F:1B (the gateway router). Bob&#39s laptop sends this frame to the switch, which delivers the frame to the gateway router.</li>
+	<li>The gateway router receives the frame and extracts the IP datagram containing the DNS query. The router looks up the destination address of this datagram (68.87.71.226) and determines from its forwarding table that the datagram should be sent to the leftmost router in the Comcast network in Figure 5.32. The IP datagram is placed inside a link-layer frame appropriate for the link connecting the school&#39s router to the leftmost Comcast router and the frame is sent over this link.</li>
+<img src = "pic/Figure5.32.png">
+	<li>The leftmost router in the Comcast network receives the frame, extracts the IP datagram, examines the datagram&#39s destination address (68.87.71.226) and determines the outgoing interface on which to forward the datagram towards the DNS server from its forwarding table, which has been filled in by Comcast&#39s intra-domain protocol (such as RIP, OSPF or IS-IS, Section 4.6) as well as the Internet&#39s inter-domain protocol, BGP.</li>
+	<li>Eventually the IP datagram containing the DNS query arrives at the DNS server. The DNS server extracts the DNS query message, looks up the name www.google.com in its DNS database (Section 2.5), and finds the DNS resource record that contains the IP address (64.233.169.105) for www.google.com. (assuming that it is currently cached in the DNS server). Recall that this cached data originated in the authoritative DNS server (Section 2.5.2) for googlecom. The DNS server forms a DNS reply message containing this hostname-to-IPaddress mapping, and places the DNS reply message in a UDP segment, and the segment within an IP datagram addressed to Bob&#39s laptop (68.85.2.101). This datagram will be forwarded back through the Comcast network to the school&#39s router and from there, via the Ethernet switch to Bob&#39s laptop.</li>
+	<li>Bob&#39s laptop extracts the IP address of the server www.google.com from the DNS message. Finally, after a lot of work, Bob&#39s laptop is now ready to contact the www.google.com server!</li>
+	<li>Now that Bob&#39s laptop has the IP address of www.google.com, it can create the TCP socket (Section 2.7) that will be used to send the HTTP GET message (Section 2.2.3) to www.google.com. When Bob creates the TCP socket, the TCP in Bob&#39s laptop must first perform a three-way handshake (Section 3.5.6) with the TCP in www.google.com. Bob&#39s laptop thus first creates a TCP SYN segment with destination port 80 (for HTTP), places the TCP segment inside an IP datagram with a destination IP address of 64.233.169.105 (www.google.com), places the datagram inside a frame with a destination MAC address of 00:22:6B:45:1F:1B (the gateway router) and sends the frame to the switch.</li>
+	<li>The routers in the school network, Comcast&#39s network, and Google&#39s network forward the datagram containing the TCP SYN towards www.google.com, using the forwarding table in each router, as in steps 14–16 above. Recall that the router forwarding table entries governing forwarding of packets over the inter-domain link between the Comcast and Google networks are determined by the BGP protocol (Section 4.6.3).</li>
+	<li>Eventually, the datagram containing the TCP SYN arrives at www.google.com. The TCP SYN message is extracted from the datagram and demultiplexed to the welcome socket associated with port 80. A connection socket (Section 2.7) is created for the TCP connection between the Google HTTP server and Bob&#39s laptop. A TCP SYNACK (Section 3.5.6) segment is generated, placed inside a datagram addressed to Bob&#39s laptop, and finally placed inside a link-layer frame appropriate for the link connecting www.google.com to its first-hop router.</li>
+	<li>The datagram containing the TCP SYNACK segment is forwarded through the Google, Comcast, and school networks, eventually arriving at the Ethernet card in Bob&#39s laptop. The datagram is demultiplexed within the operating system to the TCP socket created in step 18, which enters the connected state.</li>
+	<li>With the socket on Bob&#39s laptop now (finally!) ready to send bytes to www.google .com, Bob&#39s browser creates the HTTP GET message (Section 2.2.3) containing the URL to be fetched. The HTTP GET message is then written into the socket, with the GET message becoming the payload of a TCP segment. The TCP segment is placed in a datagram and sent and delivered to www.google.com as in steps 18–20 above.</li>
+	<li>The HTTP server at www.google.com reads the HTTP GET message from the TCP socket, creates an HTTP response message (Section 2.2), places the requested Web page content in the body of the HTTP response message, and sends the message into the TCP socket.</li>
+	<li>The datagram containing the HTTP reply message is forwarded through the Google, Comcast, and school networks, and arrives at Bob&#39s laptop. Bob&#39s Web browser program reads the HTTP response from the socket, extracts the html for the Web page from the body of the HTTP response, and finally ( finally!) displays the Web page!</li>
+</ol>
 
 	
 
@@ -1017,26 +1046,27 @@ var previous = null;
 function oc(id){
 	if(previous == null){
 			$(document).ready(function(){
-			$("button").hide();
+			$("button").fadeOut(500);
+			
 			$("#" + id).fadeIn(2000);});
 			$(document).ready(function(){
-			setTimeout(function(){$("button").show();},2500)});
+			setTimeout(function(){$("button").fadeIn(500);},1000)});
 			previous = id;
 	} else if(previous == id){
 			$(document).ready(function(){
-			$("button").hide();
+			$("button").fadeOut(500);
 			$("#" + id).fadeOut(500);});
 			$(document).ready(function(){
-			setTimeout(function(){$("button").show();},1000)});
+			setTimeout(function(){$("button").fadeIn(500);},1000)});
 			previous = null;
 	}else {
 			$(document).ready(function(){
-			$("button").hide();
+			$("button").fadeOut(500);
 			$("#" + previous).fadeOut(1000);
 			setTimeout(function(){$("#" + id).fadeIn(1000);},1005);
 			});
 			$(document).ready(function(){
-			setTimeout(function(){$("button").show();previous = id;},2005)});
+			setTimeout(function(){$("button").fadeIn(500);previous = id;},2005)});
 	}
 }
 
