@@ -2,6 +2,10 @@ body {
 	background-color: black;
 	background-image: url("images/stars.gif");
 	background-attachment: fixed;
+	cursor: url("images/matrix.png"), auto;
+}
+a {
+	cursor: url("images/screen.png"), pointer;
 }
 a:link {
 	color: deepskyblue;
@@ -26,6 +30,11 @@ li {
 }
 th {
     color: aqua;
+}
+.help {
+	color: white;
+	font-size: 5px;
+	cursor: url(images/help.png), auto;
 }
 /* used in linux.html */
 .code {

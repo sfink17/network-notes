@@ -5,6 +5,12 @@
 </script>
 <script src="js/functions.js">
 </script>
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
 <title>
     Simon Fink's Notes Page
 </title>
@@ -28,17 +34,18 @@
 	<br>
     </p>
 
-    <div class="dropdown">
+    <span><div class="dropdown">
       <button onclick="openMenu()" class="dropbtn">Notes and Files</button>
       <div id="menu" class="dropdown-content">
 	<p id="notesLink">Oct. 4 Notes</p>
 	<p id="oct10Link">Oct. 10 Notes</p>
 	<p id="oct11Link">Oct. 11 Notes</p>
+	<p id="spanningLink">Spanning Trees</p>
+	<p id="randomLink">Random Access Protocol</p>
 	<p id="assignmentLink">Assignment 0</p>
 	<p id="assignmentLink1">Assignment 1</p>
       </div>
     </div>
-
     
 </div>
 
@@ -113,8 +120,8 @@ This is the correct value as indicated by the book. But if we want to use this v
 	<h1>Quiz: Sections 1-3</h1>
 	<h2>Chapter 1</h2>
 	<br>
-	<em>True or False: Transmission delay is the time taken for a packet to transmit across the physical medium</em>
-	<p><mark>False: This descripes the propagation delay. Transmission delay describes the time it takes the data to be pushed into the network.</mark></p>
+	<em>True or False: Transmission delay is the time taken for a packet to transmit across the physical medium.</em>
+	<p><mark>False: This describes the propagation delay. Transmission delay describes the time it takes the data to be pushed into the network.</mark></p>
 	<br><br> 
 	<em>Name all five layers in the IP stack, in descending order.</em>
 	<p><mark>Application, transport, network, link, and physical.</mark></p>
@@ -192,7 +199,44 @@ This is the correct value as indicated by the book. But if we want to use this v
 	
 	</ol>
 	</div>
-	
+	<div id="random" style="display:none;">
+	<h1>
+		<u>Random Access Protocols:</u>
+	</h1>
+	<h2>
+		ALOHA and Efficiency
+	</h2>
+	<p>
+	The division of bandwidth between competing nodes must be handled at the link layer. One class of protocols that handles this is called <b>Random Access</b>, and as its name implies, utilizes probability to ensure proper data handling. Like TDM, frames are sent over single timeslots. These timeslots are synchronized across the network, so that each discrete frame begins simultaneously at all nodes. Nodes may send frames on demand, without limitation, so when networks consist of multiple nodes, collisions are inevitable. When these collisions occur, each node has a set probability, <i>p</i>, that they will retransmit their data during each subsequent timeslot. When the frame is successfully transmitted, retransmission will stop. <br><br>
+	One of the simplest implementations of RAP is slotted ALOHA, which adheres to the previously defined rules with little modification. To find the efficiency of this protocol in larger networks, we must first find the ideal probability, <i>p*</i>. The probability that a node will successfully retransmit is equal to <b>p<b> multiplied by the probability of all other nodes not retransmitting, or $P = p ( 1 - p ) ^ {N - 1}$. To utilize our maximum bandwidth, we only need a single node to successfully retransmit at a time, given by the previous function multiplied by the number of nodes, or $P_t = Np(1 - p)^{N-1}$. Let's investigate the properties of this function. We want to find the local maxima between 0 and 1, so let's try taking the derivative: $$P_t' = N (1 - p )^{N-2}(1 - pN)$$<br> 
+			We're interested in the points where $P_t' = 0$. Thus, we can divide out the first part of the right side of the function, leaving $1 - pN = 0$, or $p = \frac{1}{N}$. Thus, as N grows to infinity, p reduces to zero. Now we can find the efficiency. We now know that $nP = 1$, so our function reduces to: $$P_t = (1 - p)^{N-1}$$<br>
+			We also know that $p = 1/N$. Substituting this into our equation and taking the limit as N goes to infinity, we get: $$\lim_{N\to\infty} (1 - \frac{1}{N})^{N-1} = \frac{1}{e}$$	
+	</p>
+	</div>
+
+<div id="spanning"  style="display:none;">
+<h1>
+        Spanning Trees
+    </h1>
+	<p>
+	In many broadcast protocols, such as RPF, the proliferation of packets is complete and safe from broadcast storms, but may be inefficient. Despite the fact that links not on the shortest path go unnoticed, packets are still broadcast to all adjacent routers; even to deaf ears, bandwidth is bandwidth. To stop this unchecked flow in practice, a <b>spanning tree</b> may be utilized. Spanning trees prevent redundant packages by making an abbreviated graph, including all nodes and only one edge connecting each of them. A broadcast emnating from any of the included nodes will know to travel only to the adjacent nodes in the spanning tree, and to ignore any edges that are not noted as such.<br><br>
+	The first, and most pressing issue in the utilization of spanning trees is that of their creation itself. Several algorithms exist that might serve our purposes. The only one mentioned in the text is known as the <b>center-based approach</b>. The protocol is as follows:<br><br>
+	<ol>
+		<li>Establish a single node to be the "center." This will serve as the root of the spanning tree.</li><br>
+		<li>Tree-join messages are sent from every node in the graph through adjacent links. Nodes one hop from the center will join the tree first.</li><br>
+		<li>The nodes now newly part of the spanning tree will act as hubs for the two-hop nodes, accepting their requests and incorporating them into the tree. This continues ad infinitum.</li><br>
+	</ol>
+	<br><br>
+	Evidently, this algorithm is extremely simple. Another algorithm that might be used to create a spanning tree, one not mentioned in the text, is called a <b>breadth-first search.</b> BFS was initially created in the 50's by E.F. Moore to find the shortest route through a maze, but although it is primarily used to measure path length in unweigted graphs, it just happens to yield a very nice tree with only one link connecting each node. The protocol for this is as follows:<br><br>
+	<ol>
+		<li>Start again from a single root node. Create an empty queue for later use.</li><br>
+		<li>Search for all adjacent nodes. For each node found that is not yet part of the tree (currently, all of them), append them to the tree, mark the current base as its parent, and then add them to the queue.</li><br>
+		<li>Once all adjacent nodes at the root have been dealt with, go to the next node in the queue and repeat steps two and three.</li><br>
+	</ol>
+
+    </p>
+	</div>
+
 	<div id="davies"  style="display:none;">
 	<h1>
        <u> Donald Davies</u>
