@@ -87,7 +87,7 @@ $("#asn1").fadeIn("slow");
 $("#dijkstraLink").click(function(){
 $("#assignment2").fadeOut("slow", function(){
 $("#dijkstra").fadeIn("slow");});
-$("#asn1").fadeIn("slow");
+$("#asn2").fadeIn("slow");
 });
 });
 
