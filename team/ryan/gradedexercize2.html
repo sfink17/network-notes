@@ -31,6 +31,7 @@
 			</div>
 		<h2><u>Lesson</u></h2>
 		<h3>Link-State Routing Algorithm</h3>
+			<p>Link to presentation <a href="https://docs.google.com/a/cornellcollege.edu/presentation/d/1n9nVHf9lVU-4eh4XD2H9zPYqzqPQzceTo6ZuobUjFac/edit?usp=sharing"> Here</a>
 			<p>Comes from the <b>Dijkstra's</b> best route algorithm.  Finds the shortest path first, uses accumulated cost along a path from source to destination to determin a path.</br>The Link-state algorithm is a <b>global routing algorithm</b>, this means that it has global knowledge about the network (nodes, edges, and cost) before it preforms the calculation.</br>To get the knowledge of the network nodes send out a <b>Link-State broadcast</b> which sends a packet to all other nodes in the network containing the identities and costs of the attached links.  </br>It is an iterative algorithm and after <i>K</i> iterations the least-cost path to <i>K</i> nodes are known.  And among all the least-cost paths to all destination nodes, these <i>K</i> paths will have <i>K</i> smallest costs.</br>Link-State has an order of complexity of n<sup>2</sup>, this is because during the first iteration we must search though n nodes, and during the second we must search though n-1 nodes, and so on for n iterations.  When this is done the total number of nodes to search is n(n+1)/2.</br>EXAMPLE:</p>
 			<img src="linkstate1.jpg" alt="link state graph example">
 			<p>For this example the following notation will be used</br></p>
@@ -39,7 +40,9 @@
 			<p>Finally for a network where link costs are equal to the load carried on the link there arises some problems.  If the links are circular then each time the LS algorithm is run the nodes would switch between clockwise and counter clockwise, due to the presence of their own traffic counting as weight on the path.  There are two ways to prevent oscillations on the network, one is to have LS not take into account the traffic on a link, but that is not feasible since the goal of routing is to avoid congestion.  Second we could simply ensure that the routers do not run the LS algorithm at the same time.  To do this we have each router randomize the time the send out a link advertisement to avoid synchronizing.</p>
 		<h2><u>Programming Exercize</u></h2>
 			<div style="text-align:center">
-			<a href="https://github.com/Oldkin/CSC-317">Multithread webserver</a></br></br></br>
+			<a href="https://github.com/ArcusGears/CSC-317-Ryan">Multithread webserver</a></br>
+			<p>Worked on with Akash</p></br>
+			</br></br>
 			</div>
 		<!-- http://docs.oracle.com/javase/tutorial/networking/sockets/clientServer.html -->
 		<!--http://cs.lmu.edu/~ray/notes/javanetexamples/-->
