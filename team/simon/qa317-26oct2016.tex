@@ -100,8 +100,10 @@
 
   \begin{enumerate}
     \item 0.79 percent.
-    \item 
-    \item WRITE YOUR ANSWER HERE
+    \item In networks with overly high traffic intensity, clients will experience packet loss; that is, packets arriving at the router will find a 
+	full queue, and be dropped.
+    \item In a packet switched network, a dropped packet can be simply retransmitted, 
+	forgoing the need to retransmit entire messages, or sit through an excessively long queue.
     \end{enumerate}
 
     \end{answer}
@@ -192,11 +194,11 @@
   \begin{answer}
 
   \begin{enumerate}
-    \item WRITE YOUR ANSWER HERE
-    \item WRITE YOUR ANSWER HERE
-    \item WRITE YOUR ANSWER HERE
-    \item WRITE YOUR ANSWER HERE
-    \item WRITE YOUR ANSWER HERE
+    \item 32 bits.
+    \item $2^32$, or about 4.3 billion.
+    \item 45.40.136.115
+    \item 2D.28.88.73
+    \item 00101101 00101000 10001000 01110011
     \end{enumerate}
 
     \end{answer}
@@ -228,9 +230,9 @@
   \begin{answer}
 
   \begin{enumerate}
-    \item WRITE YOUR ANSWER HERE
-    \item WRITE YOUR ANSWER HERE
-    \item WRITE YOUR ANSWER HERE
+    \item 33 $(2^33)$
+    \item 38 $(10^38)$
+    \item Approx. $2^95$, or 40 trillion quadrillion.
     \end{enumerate}
 
     \end{answer}
@@ -247,9 +249,9 @@
   \begin{answer}
 
   \begin{enumerate}
-    \item WRITE YOUR ANSWER HERE
-    \item WRITE YOUR ANSWER HERE
-    \item WRITE YOUR ANSWER HERE
+    \item These addresses are reserved for \textbf{realms}, aka a network whose IP address is only relevant to other hosts in the network.
+    \item $2^24$ (16.8 million).
+    \item $2^16$ (65 thousand).
     \item WRITE YOUR ANSWER HERE
     \end{enumerate}
 
@@ -260,7 +262,9 @@
     addressing when a programmer specifies a port number?
 
   \begin{answer}
-    WRITE YOUR ANSWER HERE
+    A port number is a transport layer address reserved for the use of specific network applications. When specifying
+	a port number, a programmer must be sure to not use one of the 1024 well-known ports, and should pick something unused
+	(or at least relatively obscure).
     \end{answer}
 
   \item Here is an address: d4:9a:20:0a:49:00
@@ -274,14 +278,14 @@
   \begin{answer}
 
   \begin{enumerate}
-    \item WRITE YOUR ANSWER HERE
-    \item WRITE YOUR ANSWER HERE
-    \item WRITE YOUR ANSWER HERE
+    \item A MAC (Media Access Control) address. This is a link layer address.
+    \item MAC addresses identify all interfaces (hosts, routers, etc.) operating in a LAN.
+    \item 48 bits.
     \end{enumerate}
 
     \end{answer}
 
-  \item What kinds of addresses to the headers in each of these kinds
+  \item What kinds of addresses do the headers in each of these kinds
       of packets contain? (Your choices are IP addresses, MAC addresses,
       and port numbers.)
   \begin{enumerate}
@@ -293,9 +297,9 @@
   \begin{answer}
 
   \begin{enumerate}
-    \item WRITE YOUR ANSWER HERE
-    \item WRITE YOUR ANSWER HERE
-    \item WRITE YOUR ANSWER HERE
+    \item Port numbers
+    \item IP addresses
+    \item MAC addresses
     \end{enumerate}
 
     \end{answer}
@@ -322,10 +326,12 @@
   \begin{answer}
 
   \begin{enumerate}
-    \item WRITE YOUR ANSWER HERE
-    \item WRITE YOUR ANSWER HERE
-    \item WRITE YOUR ANSWER HERE
-    \item WRITE YOUR ANSWER HERE
+    \item DHCP will automatically assign either a permanent or temporary IP address to each host when it connects to the network. 
+	It also provides the host with local network information, including its subnet mask, the first-hop router address, and the DNS server address.
+    \item DHCP is useful in large networks where hosts may be constantly leaving and entering. In public WiFi networks, this ensures a user can enjoy a temporary
+	IP address, and in resedential networks, it allows the ISP to pool large userbases in smaller, dynamically controlled subnets.
+    \item DHCP uses UDP at port 67.
+    \item At this stage, the host does not yet have an assigned IP address. The only messages it is able to receive are broadcasts across the subnet.
     \end{enumerate}
 
     \end{answer}
@@ -335,10 +341,13 @@
   \begin{answer}
 
   \begin{enumerate}
-    \item WRITE YOUR ANSWER HERE
-    \item WRITE YOUR ANSWER HERE
-    \item WRITE YOUR ANSWER HERE
-    \item WRITE YOUR ANSWER HERE
+    \item NAT uses arbitrary port numbers to identify local hosts, rather than as process addresses. This can cause problems for servers
+	on the local network that may wait for data at specific, well known ports.
+    \item There may be security/privacy risks. NAT routers process data up to the transport layer, whereas other routers only need processing
+	up to the network layer.
+    \item As another security risk, NAT routers work specifically by acting as a middle man, modifying IP addresses and port numbers to
+	redirect traffic. 
+    \item NAT is an unnecessary patchwork solution to IP address shortage that would be rendered obsolete under IPv6 protocol.
     \end{enumerate}
 
     \end{answer}
@@ -352,8 +361,8 @@
   \begin{answer}
 
   \begin{enumerate}
-    \item WRITE YOUR ANSWER HERE
-    \item WRITE YOUR ANSWER HERE
+    \item Between hostnames and IP addresses.
+    \item Between MAC addresses and IP addresses.
     \end{enumerate}
 
     \end{answer}
@@ -369,8 +378,8 @@
   \begin{answer}
 
   \begin{enumerate}
-    \item WRITE YOUR ANSWER HERE
-    \item WRITE YOUR ANSWER HERE
+    \item Link layer
+    \item Transport layer
     \end{enumerate}
 
     \end{answer}
@@ -380,8 +389,8 @@
     of $\infty$ to the number and $NULL$ (unknown) to the label.
     It updates these values in the course of its execution.
   \begin{enumerate}
-    \item What does the number denote?
-    \item What does the label denote?
+    \item Total path cost
+    \item Previous node in least cost path
     \end{enumerate}
   
   \begin{answer}
@@ -412,7 +421,7 @@
   \begin{answer}
 
   \begin{align*}
-    \parbox{4cm}{LHS HERE} & = \parbox{4cm}{RHS HERE}
+    $d_x(y) = {\min}_v \{c(x,v) + d_v(y) \} $
     \end{align*}
 
     \end{answer}
@@ -428,10 +437,10 @@
   \begin{answer}
 
   \begin{enumerate}
-    \item WRITE YOUR ANSWER HERE
-    \item WRITE YOUR ANSWER HERE
-    \item WRITE YOUR ANSWER HERE
-    \item WRITE YOUR ANSWER HERE
+    \item Iterative
+    \item Asynchronous
+    \item Distributed
+    \item Both? (Will put self in a quescient, waiting state, but not terminate)
     \end{enumerate}
 
     \end{answer}
@@ -449,9 +458,9 @@
   \begin{answer}
 
   \begin{enumerate}
-    \item WRITE YOUR ANSWER HERE 
-    \item WRITE YOUR ANSWER HERE 
-    \item WRITE YOUR ANSWER HERE 
+    \item The handling of reachability information between discrete autonomous systems.
+    \item Inter-AS routing
+    \item Intra-AS routing
     \end{enumerate}
 
     \end{answer}
@@ -496,8 +505,9 @@
   \begin{answer}
 
   \begin{enumerate}
-    \item WRITE YOUR ANSWER HERE
-    \item WRITE YOUR ANSWER HERE
+    \item By counting the bits in each row and column, and noting the tallies that are odd, the receiver
+	knows which rows and columns are missing bits (R3, C3, in this case).
+    \item By matching erroneous rows and columns, the receiver can simply invert the intersecting bit.
     \end{enumerate}
 
     \end{answer}
@@ -549,8 +559,8 @@
   \begin{answer}
 
   \begin{enumerate}
-    \item WRITE YOUR ANSWER HERE
-    \item WRITE YOUR ANSWER HERE
+    \item When it is decreased
+    \item When it is increased
     \end{enumerate}
 
     \end{answer}
@@ -584,11 +594,11 @@
   \begin{answer}
 
   \begin{enumerate}
-    \item WRITE YOUR ANSWER HERE
-    \item WRITE YOUR ANSWER HERE
-    \item WRITE YOUR ANSWER HERE
-    \item WRITE YOUR ANSWER HERE
-    \item WRITE YOUR ANSWER HERE
+    \item Router
+    \item Switch
+    \item Switch
+    \item Router
+    \item Switch
     \end{enumerate}
 
     \end{answer}
@@ -640,9 +650,9 @@
   \begin{answer}
 
   \begin{enumerate}
-    \item WRITE YOUR ANSWER HERE
-    \item WRITE YOUR ANSWER HERE
-    \item WRITE YOUR ANSWER HERE
+    \item There are no borrows in modulo-2 subtraction. All bits are converted to zeros except ORs $(1-0, 0-1)$.
+    \item 0100
+    \item Consecutive bit errors less than $r+1$.
     \end{enumerate}
 
     \end{answer}
